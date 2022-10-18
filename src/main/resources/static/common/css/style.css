@@ -1,17 +1,17 @@
-@font-face{
+/*@font-face{
     src: url("../../common/font/CuteFont-Regular.ttf");
         font-family: "Cute Font"; 
- }
+ }*/
 *{
 	text-decoration: none;
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0 auto;
 	list-style: none;
-	font-family: "Cute Font";
+	font-family: "Nanum Gothic";
 }
 html, body{
-	background-color: #f7f7f7;
+	background-color: #fff;
 }
 
 .col-12{
@@ -60,7 +60,7 @@ html, body{
 
 #a{
 	position: relative;
-	z-index: 0;
+	z-index: 1;
 }
 #a::before{
 	content: "";
@@ -76,7 +76,7 @@ html, body{
 	background-position: 5% 85%;
 	height: 100px;
 	opacity: 0.8;
-	z-index: -4;
+	z-index: -1;
 }
 #a{
 	display: flex;
@@ -87,7 +87,7 @@ html, body{
 }
 #top_a > li{
 	display:inline-block;
-	margin-left: 1%;
+	margin-left: 2%;
 
 }
 #top_a > li:first-child{
@@ -99,13 +99,15 @@ html, body{
 	transition: .2s;
 }
 #top_a > li > a{
-	font-size:13px;
-	color:#D0D0D0;
+	font-size:1em;
+	color:#777;
 }
 #searchs{
 	display: flex;
 	justify-content: flex-end;
 	margin-top:15px;
+	position: relative;
+	z-index: 3;
 }
 #search{
 
@@ -114,6 +116,7 @@ html, body{
 #search > h2{
 	display: inline-block;
 	margin-right: 2%;
+	font-size: 2em;
 }
 #search > input{
 	border-radius: 10px;
@@ -143,24 +146,24 @@ html, body{
 	opacity: 0.8;
 }
 
+#navigation_bar{
+	background-color:#ff83ab;
+	display: flex;
+	height: 80px;
+}
+
 #logo{
 	display: flex;
-	left: 0;
-	position: absolute;
 }
 
 #logo > a > img{
-	width: 150px;
+	width: 130px;
 	height: 80px;
-	position: absolute;
 }
 
-#gnb{
-	height: 80px;
-	background-color:#ff83ab;
-	padding-left: 20px;
+#gnb_bar{
+	margin: 0;
 }
-
 #gnb_bar > li{
 	width: 13%;
 	display: inline-block;
@@ -170,7 +173,7 @@ html, body{
 #gnb_bar > li > a{
 	font-weight: bold;
 	color: #fff;
-	font-size: 17px;
+	font-size: 1.2em;
 }
 #gnb_bar > li:hover a{
 	text-decoration: underline;
@@ -196,6 +199,7 @@ html, body{
 	margin-left: 0;
 	color: #ADADAD;
 	font-weight: bold;
+	font-size: 2em;
 }
 
 #content_main{
@@ -211,7 +215,7 @@ html, body{
 	word-spacing: 0;
 }
 .content > img{
-	width: 40%;
+	width: 50%;
 	height: 200px;
 	border-bottom:solid 2px #d9d9d9;
 }
@@ -220,7 +224,7 @@ html, body{
 	transition: .2s;
 }
 .content > h2{
-	font-size: 15px;
+	font-size: 23pt;
 	color:#333;
 }
 .content:hover h2{
@@ -229,13 +233,15 @@ html, body{
 }
 
 .content > p{
-	font-size: 15px;
+	width: 100%;
+	font-size: 12pt;
 	color:#c9c9c9;
-	padding:10px 20%;
+	padding:5px 20%;
 	height: 40px;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	
 }
 .content:hover p{
 	text-decoration: underline;
@@ -254,9 +260,12 @@ html, body{
 	
 }
 #footer{
-	height: 80px;
 	border-top:solid 2px #d9d9d9;
 	margin: 50px 0 30px 0;
+}
+#footer > div{
+	display: flex;
+	flex-wrap: wrap;
 }
 #footer > div > p{
 	text-align: center;

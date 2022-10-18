@@ -4,14 +4,17 @@
 	<meta charset="utf-8">
 	<title>과자샵</title>
 	
-	<link rel="stylesheet" type="text/css" href="common/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="common/css/style.css">
 	<link rel="stylesheet" type="text/css" href="common/css/swiper.css">
 	<link rel="stylesheet" type="text/css" href="common/css/type01.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 	<script src="js/swiper.min.js"></script>
 
 	<script type="text/javascript">
-
+	
 	$(function() {
 		var swiper = new Swiper('.swiper-container', {
 			pagination: '.swiper-pagination',
@@ -23,17 +26,16 @@
 			loop: true
 		});
 	});
-	$(document).ready(function() {
-
-	});
+	$(document).ready(function(){
+       $('#sidebar').zoom({ on:'click' });
+        });
 	</script>
 </head>
 <body>
-	<div class="col-10" id="container">
+	<div class="col-9" id="container">
 		<div class="col-12" id="header">
 			<div class="col-12" id="a">
 				<ul class="col-9" id="top_a">
-					<li><a href="#">친구목록</a></li>
 					<li><a href="#">장바구니</a></li>
 					<li><a href="#">주문정보</a></li>
 					<li><a href="#">고객정보</a></li>
@@ -45,7 +47,7 @@
 					<h2>Search</h2>
 					<input class="col-7" type="text" name="text" placeholder="검색할 내용을 입력하세요.">
 					<div class="col-1" id="search_btn">
-
+						
 					</div>
 				</div>
 			</div>
@@ -53,8 +55,8 @@
 				<div class="col-2" id="logo">
 					<a href="#"><img src="img/logo2.png"></a>
 				</div>
-				<div class="col-12" id="gnb">
-					<ul class="col-10" id="gnb_bar">
+				<div class="col-10" id="gnb">
+					<ul class="col-12" id="gnb_bar">
 						<li><a href="#">인기상품</a></li>
 						<li><a href="#">세일상품</a></li>
 						<li><a href="#">크리스피</a></li>
@@ -88,44 +90,40 @@
 			</div>
 
 			<div class="col-12" id="content_main">
-				<div class="col-4 content">
-					<img src="img/asd.jpg">
+				<div class="col-3 content">
+					<img src="img/asd.jfif">
+					<p>간략한 소개입니다 입니다 입니다.입니다.입니다.입니다.입니다.입니다 인비낟</p>
+					<h2>가격</h2>
+				</div><div class="col-3 content">
+					<img src="img/asd.jfif">
 					<p>간략한 소개</p>
 					<h2>가격</h2>
-				</div><div class="col-4 content">
-					<img src="img/asd.jpg">
+				</div><div class="col-3 content">
+					<img src="img/asd.jfif">
 					<p>간략한 소개</p>
 					<h2>가격</h2>
-				</div><div class="col-4 content">
-					<img src="img/asd.jpg">
+				</div><div class="col-3 content">
+					<img src="img/asd.jfif">
 					<p>간략한 소개</p>
 					<h2>가격</h2>
-				</div><div class="col-4 content">
-					<img src="img/asd.jpg">
+				</div><div class="col-3 content">
+					<img src="img/asd.jfif">
 					<p>간략한 소개</p>
 					<h2>가격</h2>
-				</div><div class="col-4 content">
-					<img src="img/asd.jpg">
+				</div><div class="col-3 content">
+					<img src="img/asd.jfif">
 					<p>간략한 소개</p>
 					<h2>가격</h2>
-				</div><div class="col-4 content">
-					<img src="img/asd.jpg">
+				</div><div class="col-3 content">
+					<img src="img/asd.jfif">
 					<p>간략한 소개</p>
 					<h2>가격</h2>
-				</div><div class="col-4 content">
-					<img src="img/asd.jpg">
-					<p>간략한 소개</p>
-					<h2>가격</h2>
-				</div><div class="col-4 content">
-					<img src="img/asd.jpg">
-					<p>간략한 소개</p>
-					<h2>가격</h2>
-				</div>
-				<div class="col-4 content">
-					<img src="img/asd.jpg">
+				</div><div class="col-3 content">
+					<img src="img/asd.jfif">
 					<p>간략한 소개</p>
 					<h2>가격</h2>
 				</div>
+				
 				<div id="page_move">
 					<ul>
 						<li><a href=""><</a></li>
@@ -154,7 +152,4 @@
 	</div>
 
 </body>
-<script>
-	$("#haeder").load("./html/common/header.html");
-</script>
 </html>
