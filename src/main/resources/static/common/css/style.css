@@ -108,17 +108,21 @@ html, body{
 	margin-top:15px;
 	position: relative;
 	z-index: 3;
+	margin-bottom: 30px;
 }
 #search{
 
 	margin-right: 0;
 }
-#search > h2{
+#search_main_input{
+	display: flex;
+}
+#search_main_input > h2{
 	display: inline-block;
 	margin-right: 2%;
 	font-size: 2em;
 }
-#search > input{
+#search_main_input > input{
 	border-radius: 10px;
 	border:solid 2px #fffb6d;
 	padding:10px;
@@ -126,11 +130,11 @@ html, body{
 	outline: none;
 }
 #search_btn{
-	position: relative;
+	position: absolute;
 	width: 20px;
 	height: 20px;
-	bottom: 28px;
-	left: 90px;
+	right: 1%;
+	top: 8px;
 }
 #search_btn::before{
 	content: "";
