@@ -6,33 +6,13 @@
 	
 	<link rel="stylesheet" type="text/css" href="common/css/style.css">
 	<link rel="stylesheet" type="text/css" href="common/css/swiper.css">
-	<link rel="stylesheet" type="text/css" href="common/css/type01.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-	<script src="js/swiper.min.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">	
 
-	<script type="text/javascript">
-	
-	$(function() {
-		var swiper = new Swiper('.swiper-container', {
-			pagination: '.swiper-pagination',
-			nextButton: '.swiper-button-next',
-			prevButton: '.swiper-button-prev',
-			autoplay: 4000 ,
-			slidesPerView: 1,
-			paginationClickable: true,
-			loop: true
-		});
-	});
-	$(document).ready(function(){
-       $('#sidebar').zoom({ on:'click' });
-        });
-	</script>
 </head>
 <body>
-	<div class="col-9 container">
+	<div class="col-9" id="container">
 		<div class="col-12" id="header">
 			<div class="col-12" id="a">
 				<ul class="col-9" id="top_a">
@@ -92,51 +72,16 @@
 			</div>
 
 			<div class="col-12" id="content_main">
-				<div class="col-3 content">
-					<img src="img/asd.jpg">
-					<p>간략한 소개입니다 입니다 입니다.입니다.입니다.입니다.입니다.입니다 인비낟</p>
-					<h2>가격</h2>
-				</div><div class="col-3 content">
-					<img src="img/asd.jpg">
-					<p>간략한 소개</p>
-					<h2>가격</h2>
-				</div><div class="col-3 content">
-					<img src="img/asd.jpg">
-					<p>간략한 소개</p>
-					<h2>가격</h2>
-				</div><div class="col-3 content">
-					<img src="img/asd.jpg">
-					<p>간략한 소개</p>
-					<h2>가격</h2>
-				</div><div class="col-3 content">
-					<img src="img/asd.jpg">
-					<p>간략한 소개</p>
-					<h2>가격</h2>
-				</div><div class="col-3 content">
-					<img src="img/asd.jpg">
-					<p>간략한 소개</p>
-					<h2>가격</h2>
-				</div><div class="col-3 content">
-					<img src="img/asd.jpg">
-					<p>간략한 소개</p>
-					<h2>가격</h2>
-				</div><div class="col-3 content">
-					<img src="img/asd.jpg">
-					<p>간략한 소개</p>
-					<h2>가격</h2>
-				</div>
+				<div class="col-6" id="login">
+					<div class="col-12" id="login_font">
+						<h2>LOGIN</h2>
+					</div>	
 				
-				<div id="page_move">
-					<ul>
-						<li><a href=""><</a></li>
-						<li><a href="">1</a></li>
-						<li><a href="">2</a></li>
-						<li><a href="">3</a></li>
-						<li><a href="">4</a></li>
-						<li><a href="">5</a></li>
-						<li><a href="">></a></li>
-					</ul>
-				</div>
+					<div class="col-12" id="login_input">
+						<input type="text" name="id" placeholder="아이디를 입력하세요.">
+						<input type="password" name="pwd" placeholder="비밀번호를 입력하세요.">
+					</div>
+				</div>	
 			</div>
 		</div>
 	</div>
