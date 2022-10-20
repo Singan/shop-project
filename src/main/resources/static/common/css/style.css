@@ -186,16 +186,16 @@ html, body{
 }
 
 #banner{
-	height: 400px;
-	margin-top:50px;
+	height: 300px;
+	margin-top:20px;
 	background-color: #e9e9e9;
 }
 #main_slider{
-	height: 400px;
+	height: 300px;
 }
 
 #content_header{
-	margin-top: 100px;
+	margin-top: 70px;
 	border-bottom: solid 2px #A9A9A9;
 	padding-bottom: 30px;
 }
@@ -279,4 +279,57 @@ html, body{
 }
 #footer > div > p > a{
 	color:#a9a9a9;
+}
+
+
+/*login css style*/
+
+
+#login{
+	height: 300px;
+
+	margin-top: 90px;
+}
+#login_input{
+	text-align: center;
+}
+#login_input > input {
+	width: 100%;
+	height: 40px;
+	border-radius: 7px;
+	border:solid 1px #d9d9d9;
+	outline: none;
+	margin-top: 15px;
+	padding: 10px;
+}
+
+#login_id_pwd > ul{
+	margin-top: 10px;
+}
+#login_id_pwd > ul > li{
+	display: inline-block;
+	margin-right: 10px;
+}
+#login_id_pwd > ul > li > a{
+	font-size: 0.9em;
+	color: #a9a9a9;
+}
+#login_id_pwd > ul > li:hover a{
+	border-bottom: solid 1px #898989;
+	color:#898989;
+	transition: all .2s;
+}
+#login_button{
+	margin-top:20px;
+}
+#login_button > button{
+	width: 100%;
+	height: 50px;
+	background-color: #ff83ab;
+	border:none;
+	border-radius: 8px;
+	color:#fff;
+	font-size: 1.1em;
+	font-weight: bold;
+	cursor: pointer;
 }
