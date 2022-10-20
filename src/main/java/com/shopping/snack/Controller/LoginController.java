@@ -18,6 +18,6 @@ public class LoginController {
     @GetMapping("/login")
     public String loginHtml(){
         System.out.println("loginHTML");
-        return "login.html";
+        return "./html/login.html";
     }
 }
