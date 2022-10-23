@@ -6,11 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class LoginController {
-    @GetMapping("/test")
-    public String test(){
-        System.out.println("고장났어요 고장");
-        return "./html/test.html";
-    }
+
     @GetMapping("/")
     public String index(){
         System.out.println("인덱스접속");
