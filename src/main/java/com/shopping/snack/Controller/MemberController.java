@@ -9,6 +9,6 @@ public class MemberController {
     @GetMapping("/member/join")
     public String joinHtml(){
         System.out.println("조인");
-        return "join.html";
+        return "./html/join.html";
     }
 }
