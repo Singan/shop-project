@@ -437,3 +437,83 @@ body::-webkit-scrollbar {
     font-weight: bold;
     font-size: 2em;
 }
+#profile_picture{
+	margin-top: 30px;
+	height: 180px;
+	border:solid 1px #e9e9e9;
+	border-radius: 100%;
+	position: relative;
+	background-image: url("../../img/profile_picture_img.png");
+}
+#profile_picture > button, #profile_picture > button > img{
+	width: 40px;
+	height: 55px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+#profile_picture > button{
+
+	background-color:transparent;
+	border:none;
+	cursor: pointer;
+}
+#profile_picture:hover button > img{
+	transform:rotate(45deg);
+	transition: .2s;
+}
+
+#profile_infomation{
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 70px;
+}
+.profile_user_infomation, .profile_infomations{
+	padding:30px;
+	border:solid 1px #c9c9c9;
+	margin-top:-1px;
+}
+.profile_infomations{
+	background-color: #ff83ab;
+	
+
+}
+.profile_infomations > h2{
+	text-align: center;
+	font-size: 1.0em;
+	color: #f7f7f7;
+
+}
+.profile_user_infomation > input{
+	width: 200px;
+	height: 30px;
+	text-align: center;
+	
+}
+.profile_user_infomation > button{
+	width: 80px;
+	height: 35px;
+	border-radius: 7px;
+	border :none;
+}
+#profile_pwd_change > input{
+	text-align: left;
+	padding: 5px;
+	outline-color: #d9d9d9d9;
+	border-radius: 5px;
+	border: solid 2px #777;
+}
+
+#profile_submit{
+	margin-top: 50px;
+}
+#profile_submit > button {
+	width: 200px;
+	height: 70px;
+	border-radius: 10px;
+	border:none;
+	background-color: #98b7ff;
+	color:#fff;
+	font-size: 1.2em;
+	font-weight: bold;
+}
