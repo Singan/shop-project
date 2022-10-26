@@ -24,4 +24,5 @@ public class LoginController {
         System.out.println(loginDTO.getId() + loginDTO.getPwd());
         return "./html/login.html";
     }
+
 }
