@@ -356,7 +356,7 @@ html, body{
 	display: inline-block;
 	font-size: 1.2em;
 	color: #333;
-
+	width: 130px;
 }
 .sign_up_input > input{
 	border : none;
@@ -382,4 +382,17 @@ html, body{
 .sign_up_input > button:hover{
 	background-color:#ff83ab;
 	transition: .2s;
+}
+
+#phone_number > input{
+	width: 8.3%;
+
+}
+
+#gender_choice > input{
+	width: 5%;
+}
+#email_address{
+	width: 100px;
+	height: 35px;
 }
