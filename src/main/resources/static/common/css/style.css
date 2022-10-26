@@ -198,12 +198,12 @@ body::-webkit-scrollbar {
 	height: 300px;
 }
 
-#content_header{
+#main_content_header{
 	margin-top: 70px;
 	border-bottom: solid 2px #A9A9A9;
 	padding-bottom: 30px;
 }
-#content_header > h2{
+#main_content_header > h2{
 	margin-left: 0;
 	color: #ADADAD;
 	font-weight: bold;
@@ -412,4 +412,28 @@ body::-webkit-scrollbar {
 	color:#fff;
 	font-size: 1.2em;
 	font-weight: bold;
+}
+
+
+
+
+
+
+
+/*porfile.html css */
+
+
+
+
+#profile_content_header{
+	margin-top: 70px;
+	padding-bottom: 30px;
+	border-bottom: solid 2px #d9d9d9;
+
+
+}
+#profile_content_header > h2{
+	color: #ADADAD;
+    font-weight: bold;
+    font-size: 2em;
 }
