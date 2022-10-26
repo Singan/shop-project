@@ -2,12 +2,13 @@ package com.shopping.snack.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/member")
 public class MemberController {
-    @GetMapping("/")
-    public String index(){
-        System.out.println("인덱스접속");
-        return "index.html";
+    @GetMapping("/join")
+    public String joinHtml(){
+        return "join.html";
     }
 }
