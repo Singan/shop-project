@@ -3,6 +3,7 @@ package com.shopping.snack.controller;
 import com.shopping.snack.DTO.JoinDTO;
 import com.shopping.snack.DTO.LoginDTO;
 import com.shopping.snack.db.repository.MemberRepository;
+import com.shopping.snack.db.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequiredArgsConstructor
 public class MemberController {
-    private final MemberRepository memberRepository;
+    private final MemberService memberService;
     @GetMapping("/member/join")
     public String joinHtml(){
         System.out.println("조인");
@@ -24,6 +25,6 @@ public class MemberController {
     @ResponseBody
     public Long join(@RequestBody JoinDTO joinDTO){
 
-        return memberRepository.join(joinDTO.getMember());
+        return memberService.join(joinDTO.getMember());
     }
 }
