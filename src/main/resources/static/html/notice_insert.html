@@ -2,13 +2,13 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>과자샵_마이페이지</title>
+	<title>과자샵_로그인</title>
 	
 	<link rel="stylesheet" type="text/css" href="../common/css/style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
 </head>
 <body>
 	<div class="col-9 container">
@@ -16,11 +16,10 @@
 			<div class="col-12" id="a">
 				<ul class="col-12" id="top_a">
 					<li><a href="/notice">공지사항</a></li>
-					<li><a href="#">친구목록</a></li>
 					<li><a href="#">장바구니</a></li>
 					<li><a href="#">주문정보</a></li>
-					<li><a href="/mypage">마이페이지</a></li>
-					<li><a href="/logout">로그아웃</a></li>
+					<li><a href="/login">로그인</a></li>
+					<li><a href="/member/join">회원가입</a></li>
 				</ul>
 			</div>
 			<div class="col-12" id="searchs">
@@ -55,58 +54,39 @@
 
 	<div class="col-9 container">		
 		<div class="col-12" id="content">
-		
-			<div class="col-12" id="profile_content_header">
-				<h2 class="col-12">마이페이지</h2>
-			</div>	
-			<div class="col-3">
-				<div class="col-6" id="profile_picture">
-					<button><img src="../img/plus_button.png"></button>
-				</div>
+			<div class="col-12" id="notice_insert_content_header">
+				<h2>공지사항 등록</h2>
 			</div>
-			<div class="col-12" id="profile_infomation">
-				<div class="col-2 profile_infomations">
-					<h2>아이디</h2>
-				</div>
-				<div class="col-10 profile_user_infomation">
-					<input type="" name="" disabled="disabled" placeholder="hello">
+
+			<div class="col-12" id="notice_insert_content_container">
+
+				<div class="col-12 notice_insert_content" >
+					<div class="col-1">
+						<p>작성자</p>
+					</div>
+					<div class="col-11 notice_insert_contnets">
+						<input type="text" name="insert_contnets">
+					</div>
 				</div>
 
-				<div class="col-2 profile_infomations">
-					<h2>비밀번호</h2>
-				</div>
-				<div class="col-10 profile_user_infomation" id="profile_pwd_change">
-					<input type="password" name="pwd_change" placeholder="비밀번호">
-					<input type="password" name="pwd_change" placeholder="비밀번호 확인">
-					<button>변경하기</button>
-				</div>
-
-				<div class="col-2 profile_infomations">
-					<h2>이름</h2>
-				</div>
-				<div class="col-10 profile_user_infomation">
-					<input type="" name="" disabled="disabled" placeholder="maria">
+				<div class="col-12 notice_insert_content" >
+					<div class="col-1">
+						<p>작성자</p>
+					</div>
+					<div class="col-11 notice_insert_contnets">
+						<input type="text" name="insert_contnets" value="관리자" disabled="disabled">
+					</div>
 				</div>
 
-				<div class="col-2 profile_infomations">
-					<h2>주소</h2>
-				</div>
-				<div class="col-10 profile_user_infomation" id="profile_address">
-					<input type="text" name="address" value="경기도 광주시 양벌2동 123-23">
-					<button>변경하기</button>
+				<div class="col-12 notice_insert_content" >
+					<div class="col-12">
+						<p>내용</p>
+					</div>
+					<div class="col-12 notice_insert_contnets" id="notice_insert_contnet_content">
+						<input type="text" name="insert_contnets" placeholder="내용을 입력해주세요.">
+					</div>
 				</div>
 
-				<div class="col-2 profile_infomations">
-					<h2>이메일</h2>
-				</div>
-				<div class="col-10 profile_user_infomation" id="profile_email">
-					<input type="text" name="email" value="nice@naver.com">
-					<button>변경하기</button>
-				</div>
-				
-			</div>
-			<div class="col-2" id="profile_submit">
-				<button>변경하기</button>
 			</div>
 			
 		</div>
@@ -124,5 +104,6 @@
 			<p class="col-3"><a href="#">1:1문의 바로가기</a></p>
 		</div>
 	</div>
+
 </body>
 </html>
