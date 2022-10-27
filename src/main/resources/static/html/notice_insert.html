@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>과자샵_로그인</title>
+	<title>과자샵_공지사항</title>
 	
 	<link rel="stylesheet" type="text/css" href="../common/css/style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,7 +65,7 @@
 						<p>제목</p>
 					</div>
 					<div class="col-11 notice_insert_contnets">
-						<input type="text" name="insert_contnets">
+						<input type="text" name="insert_contnets_title" placeholder="제목을 입력해주세요.">
 					</div>
 				</div>
 
@@ -74,7 +74,20 @@
 						<p>작성자</p>
 					</div>
 					<div class="col-11 notice_insert_contnets">
-						<input type="text" name="insert_contnets" value="관리자" disabled="disabled">
+						<input type="text" name="insert_contnets_id" value="관리자" disabled="disabled">
+					</div>
+				</div>
+
+				<div class="col-12 notice_insert_content" >
+					<div class="col-1">
+						<p>사진첨부</p>
+					</div>
+					<div class="col-11 notice_insert_contnets" id="insert_content_image">
+						<form class="col-1" id="insert_content_image">
+							<label for="insert_content_image_upload">업로드</label>
+							<input type="file" id="insert_content_image_upload" name="insert_contents_image_button" value="이미지 찾기" multiple>
+						</form>
+							
 					</div>
 				</div>
 
@@ -83,15 +96,15 @@
 						<p>내용</p>
 					</div>
 					<div class="col-12 notice_insert_contnets" id="notice_insert_contnet_content">
-						<textarea class="col-12" name="notice_insert_contnet_content" placeholder="내용을 입력주세요."></textarea>
+						<textarea class="col-12" name="notice_insert_contnet_content" placeholder="내용을 입력해주세요."></textarea>
 					</div>
 				</div>
 
 			</div>
 
 			<div class="col-2 submit">
-	            <button id="submit">등록</button>
-	        </div>
+            	<input type="submit" name="sign_up_submit">
+            </div>
 		</div>
 	</div>
 	
