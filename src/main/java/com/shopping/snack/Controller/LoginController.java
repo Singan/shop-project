@@ -1,12 +1,16 @@
 package com.shopping.snack.controller;
 
 import com.shopping.snack.DTO.LoginDTO;
+import com.shopping.snack.db.entity.Member;
+import com.shopping.snack.db.service.MemberService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
+@RequiredArgsConstructor
 public class LoginController {
-
+    private final MemberService memberService;
     @GetMapping("/")
     public String index(){
         System.out.println("인덱스접속");
@@ -19,10 +23,10 @@ public class LoginController {
     }
     @PostMapping("/login")
     @ResponseBody
-    public String login(@RequestBody LoginDTO loginDTO){
-        System.out.println("성공?");
-        System.out.println(loginDTO.getId() + loginDTO.getPwd());
-        return "./html/login.html";
+    public Member login(@RequestBody LoginDTO loginDTO){
+        Member member = new Member();
+        member.setMemberId(loginDTO.getId());
+        return memberService.findMember(member);
     }
 
 }
