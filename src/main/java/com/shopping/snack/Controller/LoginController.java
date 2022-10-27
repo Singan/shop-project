@@ -1,4 +1,4 @@
-package com.shopping.snack.Controller;
+package com.shopping.snack.controller;
 
 import com.shopping.snack.DTO.LoginDTO;
 import org.springframework.stereotype.Controller;
