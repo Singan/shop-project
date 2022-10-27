@@ -1,7 +1,6 @@
 package com.shopping.snack.DTO;
 
 import com.shopping.snack.db.entity.Member;
-import jdk.vm.ci.meta.Local;
 import lombok.Getter;
 import lombok.Setter;
 
