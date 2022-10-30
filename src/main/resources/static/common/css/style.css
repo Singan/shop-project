@@ -62,12 +62,12 @@ body::-webkit-scrollbar {
 	padding-top:30px;
 }
 
-#main_content_header, #profile_content_header, #notice_content_header, #notice_insert_content_header{
+#main_content_header, #profile_content_header, #notice_content_header, #notice_insert_content_header, #basket_content_header{
 	margin-top: 70px;
 	border-bottom: solid 2px #d9d9d9;
 	padding-bottom: 30px;
 }
-#main_content_header > h2, #profile_content_header > h2, #notice_content_header > h2, #notice_insert_content_header > h2{
+#main_content_header > h2, #profile_content_header > h2, #notice_content_header > h2, #notice_insert_content_header > h2, #basket_content_header > h2{
 	margin-left: 0;
 	color: #ADADAD;
 	font-weight: bold;
@@ -644,4 +644,65 @@ s
 	border:none;
 	padding: 5px;
 	outline: none;
+}
+
+
+
+
+
+/*basket.html  css*/
+
+
+
+
+
+
+#basket_content_container{
+	display: flex;
+	height: 110px;
+	margin-top:30px;
+	border-bottom: solid 1px #d9d9d9;
+}
+
+.basket_contnet_image{
+	
+
+}
+.basket_content_image > img{
+	width: 100px;
+	height: 100px;
+
+
+}
+
+.basket_content_font > p{
+	color: #a9a9a9;
+	line-height: 50px;
+}
+
+.basket_content_counter > h2{
+	margin-left: 10px;
+}
+.basket_content_counter > div, .basket_content_counter > input{
+	margin-top: 20px;
+}
+.basket_content_counter > div {
+	padding-left: 5px;
+}
+.basket_content_counter > input{
+	width: 25px;
+	height: 25px;
+}
+
+#resuit{
+	display: inline-block;
+	width: 20%;
+}
+
+.basket_content_delete{
+	background-image: url(../../img/delete_button.png);
+	background-size: 17%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	cursor: pointer;
 }
