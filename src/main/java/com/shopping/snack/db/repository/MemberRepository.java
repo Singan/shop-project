@@ -21,6 +21,6 @@ public class MemberRepository {
     }
     public Member findMember(Member member){
         return em.createQuery("select m from Member m where m.memberId = :id",Member.class).setParameter(
-                "id",member.getMemberId())).getSingleResult();
+                "id",member.getMemberId()).getSingleResult();
     }
 }
