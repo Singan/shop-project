@@ -7,6 +7,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequiredArgsConstructor
 public class LoginController {
@@ -23,10 +26,17 @@ public class LoginController {
     }
     @PostMapping("/login")
     @ResponseBody
-    public Member login(@RequestBody LoginDTO loginDTO){
+    public Member login(HttpServletRequest request, @RequestBody LoginDTO loginDTO){
         Member member = new Member();
         member.setMemberId(loginDTO.getId());
-        return memberService.findMember(member);
+
+        Member findMember = memberService.findMember(member);
+        if(findMember.getMemberPassword().equals(member.getMemberPassword())){
+            HttpSession httpSession = request.getSession();
+            httpSession.setAttribute(member.getMemberId(),member);
+            return findMember;
+        };
+        return null;
     }
 
 }
