@@ -34,13 +34,16 @@
 	  const resultElement = document.getElementById('resuit');
 	  
 	  let number = resultElement.innerText;
-	  
+	  let min_minus = document.getElementsByName("min")[0];
+		
 	  if(type === 'plus') {
 	    number = parseInt(number) + 1;
 	  }else if(type === 'minus')  {
-	  	if (number <= 0) {
+	  	if (number <= 1) {
 	  		alert("더이상 내릴 수 없습니다.");
-	  		number = 0;
+	  		number = 1;
+	  		min_minus.setAttribute('disabled', 'disabled');
+
 	  	}else{
 	  		number = parseInt(number) - 1;
 	  	}
@@ -121,17 +124,18 @@
 					</div>
 					<div class="col-9 basket_content_font">
 						<h2>포카칩 오리지널맛 200g </h2>
-						<p>asdasdasdasdasdasdasdasd</p>
+						<p>asdasdasdasdasdasdasdasd</p> 
 					</div>
 					<div class="col-1 basket_content_counter">
 						<h2>수량</h2>
 						<input type='button'
 						       onclick='count("plus")'
 						       value='+'/>
-						<div id='resuit' class="resuit">0</div>
+						<div id='resuit' class="resuit">1</div>
 						<input type='button'
 						       onclick='count("minus")'
-						       value='-'/>
+						       value='-'
+						       name="min" />
 						
 						
 					</div>
@@ -139,6 +143,8 @@
 						
 					</div>
 				</div>
+
+				
 			</form>
 			
 
