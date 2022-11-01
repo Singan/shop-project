@@ -784,3 +784,78 @@ s
 	background-color: #739dff;
 	transition: .2s;
 }
+
+
+
+
+
+
+
+/*lucky_box_.html css*/
+
+
+
+.lucky_box_content_contaner{
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 20px;
+
+}
+#lucky_box_image{
+	height: 500px;
+	background-image: url(../../img/lucky_box_img.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#lucky_box_content{
+	height: 500px;
+	position: relative;
+	padding:5% 0 0 5%;
+}
+#lucky_box_purchase{
+	width: 40%;
+	position: absolute;
+	bottom: 0;
+
+}
+#lucky_box_basket{
+	width: 40%;
+	position: absolute;
+	bottom: 0;
+	left: 55%;
+}
+#lucky_box_content > form > p{
+	margin-top: 30px;
+	font-size: 0.8em;
+	color: #d9d9d9;
+}
+#lucky_box_components{
+	margin-top: 70px;
+}
+#lucky_box_components_header > h2{
+	text-align: center;
+	padding-bottom: 20px;
+	border-bottom: solid 2px #d9d9d9;
+}
+
+#lucky_box_components_img{
+	height: 500px;
+	background-image: url(../../img/lucky_box_components_image.png);
+	background-repeat: no-repeat;
+
+}
+#lucky_box_components_font{
+	margin-top: 20px;
+}
+#lucky_box_components_font > h3,#lucky_box_components_font > p{
+	display: inline-block;
+}
+#lucky_box_components_font > h3{
+	padding-bottom: 10px;
+	border-bottom: solid 1px #333;
+}
+#lucky_box_components_font > p{
+	margin-top: 10px;
+	font-size: 1em;
+	color: #555;
+}
