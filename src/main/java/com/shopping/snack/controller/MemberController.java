@@ -24,7 +24,7 @@ public class MemberController {
     @PostMapping("/member/join")
     @ResponseBody
     public Long join(@RequestBody JoinDTO joinDTO){
-
+        System.out.println("회원가입 post");
         return memberService.join(joinDTO.getMember());
     }
 }

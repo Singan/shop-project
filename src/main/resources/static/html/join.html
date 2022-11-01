@@ -11,121 +11,112 @@
     <script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
 </head>
 <body>
-<div class="col-9 container">
-    <div class="col-12" id="header">
-        <div class="col-12" id="a">
-            <ul class="col-12" id="top_a">
-                <li><a href="#">공지사항</a></li>
-                <li><a href="#">장바구니</a></li>
-                <li><a href="#">주문정보</a></li>
-                <li><a href="/login">로그인</a></li>
-                <li><a href="/member/join">회원가입</a></li>
-            </ul>
-        </div>
-        <div class="col-12" id="searchs">
-            <div class="col-4" id="search">
-
-                <div class="col-12" id="search_main_input">
-                    <h2>Search</h2>
-                    <input class="col-10" type="text" name="text" placeholder="검색할 내용을 입력하세요.">
-                    <div class="col-1" id="search_btn"></div>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-12" id="navigation_bar">
-            <div class="col-2" id="logo">
-                <a href="/"><img src="../img/logo2.png"></a>
-            </div>
-            <div class="col-10" id="gnb">
-                <ul class="col-12" id="gnb_bar">
-                    <li><a href="#">인기상품</a></li>
-                    <li><a href="#">세일상품</a></li>
-                    <li><a href="#">크리스피</a></li>
-                    <li><a href="#">캔디</a></li>
-                    <li><a href="#">초콜릿</a></li>
-                    <li><a href="#">음료</a></li>
-                    <li><a href="#">럭키박스</a></li>
+    <div class="col-9 container">
+        <div class="col-12" id="header">
+            <div class="col-12" id="a">
+                <ul class="col-12" id="top_a">
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">장바구니</a></li>
+                    <li><a href="#">주문정보</a></li>
+                    <li><a href="/login">로그인</a></li>
+                    <li><a href="/member/join">회원가입</a></li>
                 </ul>
             </div>
-        </div>
-    </div>
-</div>
+            <div class="col-12" id="searchs">
+                <div class="col-4" id="search">
 
+                    <div class="col-12" id="search_main_input">
+                        <h2>Search</h2>
+                        <input class="col-10" type="text" name="text" placeholder="검색할 내용을 입력하세요.">
+                        <div class="col-1" id="search_btn"></div>
 
-    <div class="col-9 container">
-        <div class="col-12" id="content">
-            <form>
-                <h1 class="col-10 sign_up_header">회원가입</h1>
-                <div class="col-12">
-                    <div class="col-8 sign_up_input" id="name_input" >
-                        <h2>이름 : </h2>
-                        <input type="text" name="id" placeholder="이름을 입력주세요." required oninvalid="'필수입력입니다'">
                     </div>
                 </div>
-                <div class="col-8 sign_up_input" id="phone_number">
-                    <h2>휴대폰 : </h2>
-                    <input type="text" name="phone" required>-
-                    <input type="text" name="phone" required>-
-                    <input type="text" name="phone" required>
-                    <button>인증번호 받기</button>
-                </div>
-                <div class="col-8 sign_up_input" id="id_input">
-                    <h2>아이디 : </h2>
-                    <input type="text" name="id" placeholder="아이디를 입력주세요." required>
-                </div>
-                <div class="col-8 sign_up_input" id="pwd_input">
-                    <h2>비밀번호 : </h2>
-                    <input type="password" name="pwd" placeholder="비밀번호를 입력주세요." required>
-                </div>
-                <div class="col-8 sign_up_input" id="re_pwd_input">
-                    <h2>비밀번호 확인 : </h2>
-                    <input type="password" name="pwd_confirm" placeholder="비밀번호를 입력주세요." required>
-                </div>
-                <div class="col-8 sign_up_input" id="birth_input">
-                    <h2>생년월일 : </h2>
-                    <input type="date" name="birth" value="2021-01-01" required>
-                </div>
-                <div class="col-8 sign_up_input" id="gender_choice">
-                    <h2>성별 : </h2>
-                    <input type="radio" name="gender" value="man" checked="checked">남
-                    <input type="radio" name="gender" value="woman">여
-                </div>
-                <div class="col-8 sign_up_input">
-                    <h2>기본주소지 : </h2>
-                    <input type="text" name="address" required>
-                </div>
-                <div class="col-8 sign_up_input">
-                    <h2>이메일 : </h2>
-                    <input type="text" name="email" required> @
-                    <select name="email" id="sign_up_email">
-                        <option>naver.com</option>
-                        <option>daum.net</option>
-                        <option>google.com</option>
-                    </select>
-                </div>
-                <div class="col-2 submit">
-                    <input type="submit" name="sign_up_submit">
-                </div>
-            </form>
             </div>
-            
-                
+            <div class="col-12" id="navigation_bar">
+                <div class="col-2" id="logo">
+                    <a href="/"><img src="../img/logo2.png"></a>
+                </div>
+                <div class="col-10" id="gnb">
+                    <ul class="col-12" id="gnb_bar">
+                        <li><a href="#">인기상품</a></li>
+                        <li><a href="#">세일상품</a></li>
+                        <li><a href="#">크리스피</a></li>
+                        <li><a href="#">캔디</a></li>
+                        <li><a href="#">초콜릿</a></li>
+                        <li><a href="#">음료</a></li>
+                        <li><a href="#">럭키박스</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
-<div class="col-12" id="footer">
-    <div class="col-10">
-        <p class="col-3">사업자등록번호 : 123-456-789</p>
-        <p class="col-3">통신판매입신고번호 : 312-2165-1235</p>
-        <p class="col-3">대표이사 : 나다</p>
-        <p class="col-3"><a href="#">사업자등록확인</a></p>
-        <p class="col-3">이메일 : asdasd@google.com</p>
-        <p class="col-3">주소 : 경기도 성남시 중원구 239-23</p>
-        <p class="col-3">대표전화 : 123-4151</p>
-        <p class="col-3"><a href="#">1:1문의 바로가기</a></p>
+
+        <div class="col-9 container">
+            <div class="col-12" id="content">
+                <form onsubmit="return false;" >
+                    <h1 class="col-10 sign_up_header">회원가입</h1>
+                    <div class="col-12">
+                        <div class="col-8 sign_up_input" id="name_input" >
+                            <h2>이름 : </h2>
+                            <input type="text" name="id" placeholder="이름을 입력주세요." required oninvalid="'필수입력입니다'">
+                        </div>
+                    </div>
+                    <div class="col-8 sign_up_input" id="phone_number">
+                        <h2>휴대폰 : </h2>
+                        <input type="text" name="phone" required>-
+                        <input type="text" name="phone" required>-
+                        <input type="text" name="phone" required>
+                        <button>인증번호 받기</button>
+                    </div>
+                    <div class="col-8 sign_up_input" id="id_input">
+                        <h2>아이디 : </h2>
+                        <input type="text" name="id" placeholder="아이디를 입력주세요." required>
+                    </div>
+                    <div class="col-8 sign_up_input" id="pwd_input">
+                        <h2>비밀번호 : </h2>
+                        <input type="password" name="pwd" placeholder="비밀번호를 입력주세요." required>
+                    </div>
+                    <div class="col-8 sign_up_input" id="re_pwd_input">
+                        <h2>비밀번호 확인 : </h2>
+                        <input type="password" name="pwd_confirm" placeholder="비밀번호를 입력주세요." required>
+                    </div>
+                    <div class="col-8 sign_up_input" id="birth_input">
+                        <h2>생년월일 : </h2>
+                        <input type="date" name="birth" value="2021-01-01" required>
+                    </div>
+                    <div class="col-8 sign_up_input" id="gender_choice">
+                        <h2>성별 : </h2>
+                        <input type="radio" name="gender" value="man" checked="checked">남
+                        <input type="radio" name="gender" value="woman">여
+                    </div>
+                    <div class="col-8 sign_up_input">
+                        <h2>기본주소지 : </h2>
+                        <input type="text" name="address" required>
+                    </div>
+                    <div class="col-8 sign_up_input">
+                        <h2>이메일 : </h2>
+                        <input type="text" name="email" required> @
+                        <select name="email" id="sign_up_email">
+                            <option>naver.com</option>
+                            <option>daum.net</option>
+                            <option>google.com</option>
+                        </select>
+                    </div>
+                    <div class="col-2 submit">
+                        <input type="submit" name="sign_up_submit" id="submit">
+                    </div>
+                </form>
+                </div>
+
+
+        </div>
     </div>
-</div>
+
+    <div className="col-12" id="footer">
+
+    </div>
 
 </body>
 <script>
@@ -162,4 +153,6 @@
 
 
 </script>
+<script src="/common/js/footer.js"></script>
+
 </html>
