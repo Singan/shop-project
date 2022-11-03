@@ -24,7 +24,6 @@ $.ready($.ajax({
                         headerString +="<li><a href='/mypage'>마이페이지</a></li><li><a href='/logout'>로그아웃</a></li>"
                     }
                     console.log("login +" + login)
-                    top_a.html(headerString)
        			},
   })
 )

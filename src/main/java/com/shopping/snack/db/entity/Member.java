@@ -33,4 +33,6 @@ public class Member {
     private String memberEmail;
     @Column(name = "member_phone")
     private String memberPhone;
+    @Column(name = "member_name")
+    private String memberName;
 }

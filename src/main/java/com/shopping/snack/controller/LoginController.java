@@ -18,13 +18,13 @@ public class LoginController {
     @GetMapping("/login")
     public String loginHtml(){
         System.out.println("loginHTML");
-        return "html/login.html";
+        return "/html/login";
     }
     @GetMapping("/logout")
     public String logout(HttpServletRequest request){
         request.getSession().setAttribute("user",null);
         System.out.println("로그아웃");
-        return "/";
+        return "/index";
     }
     @PostMapping("/login")
     @ResponseBody

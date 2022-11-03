@@ -16,7 +16,7 @@ public class JoinDTO {
     private String gender;
     private String address;
     private String email;
-
+    private String name;
     private String phone;
     public Member getMember(){
         Member member = new Member();
@@ -27,6 +27,7 @@ public class JoinDTO {
         member.setMemberEmail(this.email);
         member.setMemberPassword(this.pwd);
         member.setMemberPhone(this.phone);
+        member.setMemberName(this.name);
         return member;
     }
 }

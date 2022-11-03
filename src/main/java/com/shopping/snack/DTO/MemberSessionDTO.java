@@ -8,4 +8,5 @@ import lombok.Setter;
 public class MemberSessionDTO {
     private Long memberNo;
     private String memberId;
+    private String name;
 }
