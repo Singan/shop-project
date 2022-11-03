@@ -18,7 +18,7 @@ public class LoginController {
     @GetMapping("/login")
     public String loginHtml(){
         System.out.println("loginHTML");
-        return "./html/login.html";
+        return "html/login.html";
     }
     @GetMapping("/logout")
     public String logout(HttpServletRequest request){
