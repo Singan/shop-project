@@ -54,7 +54,6 @@
 
 	<div class="col-9 container">		
 		<div class="col-12" id="content">
-			<form>
 				<div class="col-3" id="login">
 					<div class="col-12" id="login_font">
 						<h2>LOGIN</h2>
@@ -73,10 +72,7 @@
 						<button id="submit" class="submit">로그인</button>
 					</div>
 				</div>
-			</form>
-			
-		
-			
+
 		</div>
 	</div>
 	
@@ -102,8 +98,11 @@
 			dataType : "json",
 			contentType: 'application/json',
 			success:(data)=>{
-				console.log(data)
-				document.cookie = "sId:"+data.no;
+			console.log(data);
+				if(data){
+					location.href = "/";
+				}
+
 			},
 			fail:()=>{
 				alert("없는 사용자입니다.")
