@@ -34,6 +34,7 @@ public class LoginController {
         if(findMember.getMemberPassword().equals(member.getMemberPassword())){
             HttpSession httpSession = request.getSession();
             httpSession.setAttribute(member.getMemberId(),member);
+
             return findMember;
         };
         return null;

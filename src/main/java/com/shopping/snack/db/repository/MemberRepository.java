@@ -1,4 +1,4 @@
-package com.shopping.snack.db.repository;
+ package com.shopping.snack.db.repository;
 
 import com.shopping.snack.db.entity.Member;
 import lombok.RequiredArgsConstructor;

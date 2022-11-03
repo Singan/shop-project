@@ -103,6 +103,7 @@
 			contentType: 'application/json',
 			success:(data)=>{
 				console.log(data)
+				document.cookie = "sId:"+data.no;
 			},
 			fail:()=>{
 				alert("없는 사용자입니다.")
