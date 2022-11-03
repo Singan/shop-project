@@ -14,18 +14,7 @@ import javax.servlet.http.HttpSession;
 @RequiredArgsConstructor
 public class LoginController {
     private final MemberService memberService;
-    @GetMapping("/")
-    public String index(HttpServletRequest request){
-        HttpSession httpSession = request.getSession();
-        System.out.println("index Get");
-        return "index.html";
-    }
-    @GetMapping("/loginCheck")
-    @ResponseBody
-    public Object indexPost(HttpServletRequest request){
-        System.out.println("로그인 체크");
-        return request.getSession().getAttribute("user");
-    }
+
     @GetMapping("/login")
     public String loginHtml(){
         System.out.println("loginHTML");
