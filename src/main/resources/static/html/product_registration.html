@@ -2,15 +2,13 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>과자샵</title>
+	<title>과자샵_공지사항</title>
 	
 	<link rel="stylesheet" type="text/css" href="../common/css/style.css">
-	<link rel="stylesheet" type="text/css" href="../common/css/swiper.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 	<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
-	<script src="../js/swiper.min.js"></script>
 </head>
 <body>
 	<div class="col-9 container">
@@ -20,8 +18,8 @@
 					<li><a href="#">공지사항</a></li>
 					<li><a href="#">장바구니</a></li>
 					<li><a href="#">주문정보</a></li>
-					<li><a href="/login">로그인</a></li>
-					<li><a href="/member/join">회원가입</a></li>
+					<li><a href="/mypage">마이페이지</a></li>
+					<li><a href="/logout">로그아웃</a></li>
 				</ul>
 			</div>
 			<div class="col-12" id="searchs">
@@ -53,45 +51,63 @@
 			</div>
 		</div>
 	</div>
-		
-			
+
 	<div class="col-9 container">		
-		<div class="col-12 lucky_box_content_contaner" id="content">
-			<div class="col-12 content_header" id="lucky_content_header">
-					<h2 class="col-12">럭키박스</h2>
-				</div>
-			<div class="col-6" id="lucky_box_image">
-				
+		<div class="col-12" id="registration_content">
+			<div class="col-12 content_header">
+				<h2>상품등록</h2>
 			</div>
-			<div class="col-6" id="lucky_box_content">
-				<form>
-					<h1>오리온 과자세트</h1>
-					<p>여러가지 과자를 맛볼 수 있는 가성비 템 ! 지금 구매하세요!</p>
-					<div class="col-12 product_content_btn" id="">
-						<input id="lucky_box_purchase" class="submit" type="button" name="lucky_box_purchase"  value="구매하기">
-						<input id="lucky_box_basket" class="submit" type="button" name="lucky_box_purchase"  value="장바구니에 담기">
-					</div>
-				</form>
-			</div>
-			<div class="col-12" id="lucky_box_components">
-				<div class="col-12" id="lucky_box_components_header">
-					<h2>제품상세</h2>
-				</div>
-				<div class="col-6" id="lucky_box_components_img">
+			<div class="col-12" id="registration_upload_container">
+				<div class="col-2" id="registration_upload_image">
 					
 				</div>
-				<div class="col-6" id="lucky_box_components_font">
-					<h3>구성품</h3>
-					<p>고래밥, 배배, 초코칩쿠키, 오감자, 왕꿈틀이, 마이구미, 비틀즈, 오뜨 포카칩 오리지널, 초코송이, 꼬북칩, 썬칩, 눈을감자</p>
+				<div class="col-10" id="registration_upload_btn">
+					<input type="file" name="registration_upload_btn">
 				</div>
+
+
 			</div>
+			<div class="col-12" id="registration_contents">
+				
+				<div class="col-12 notice_insert_content" >
+					<div class="col-1">
+						<p>제품명</p>
+					</div>
+					<div class="col-11 notice_insert_contnets">
+						<input type="text" name="insert_contnets_title" placeholder="제목을 입력해주세요.">
+					</div>
+				</div>
+				
+				<div class="col-12 notice_insert_content" >
+					<div class="col-1">
+						<p>제품명</p>
+					</div>
+					<div class="col-11 notice_insert_contnets">
+						<input type="text" name="insert_contnets_title" placeholder="제목을 입력해주세요.">
+					</div>
+				</div>
+				<div class="col-12 notice_insert_content" >
+					<div class="col-12">
+						<p>내용</p>
+					</div>
+					<div class="col-12 " id="registration_contnet_content">
+						<textarea class="col-12" name="registration_contnet_content" placeholder="내용을 입력해주세요."></textarea>
+					</div>
+				</div>
+
+			</div>
+			
+
+			<div class="col-2 insert_btn">
+            	<input type="submit" name="sign_up_submit" value="등록">
+            </div>
 		</div>
 	</div>
-		
-	<div class="col-12" id="footer">
+	
+   <div class="col-12" id="footer">
 
-	</div>
+   </div>
+   <script src="/common/js/footer.js"></script>
 
 </body>
-	<script src="/common/js/footer.js"></script>
 </html>

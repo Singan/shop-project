@@ -62,16 +62,31 @@ body::-webkit-scrollbar {
 	padding-top:30px;
 }
 
-#main_content_header, #profile_content_header, #notice_content_header, #notice_insert_content_header, #basket_content_header{
+.content_header{
 	margin-top: 70px;
 	border-bottom: solid 2px #d9d9d9;
 	padding-bottom: 30px;
 }
-#main_content_header > h2, #profile_content_header > h2, #notice_content_header > h2, #notice_insert_content_header > h2, #basket_content_header > h2{
+.content_header > h2{
 	margin-left: 0;
 	color: #ADADAD;
 	font-weight: bold;
 	font-size: 2em;
+}
+.insert_btn > input{
+	width: 200px;
+    height: 70px;
+    border-radius: 10px;
+    border: none;
+    background-color: #98b7ff;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.insert_btn > input:hover{
+	background-color: #739dff;
+    transition: .2s;
 }
 .submit{
 	width: 100%;
@@ -652,6 +667,12 @@ s
 	outline: none;
 }
 
+#notice_insert_submit{
+	width: 200px;
+	height: 70px;
+	background-color:transparent;
+	margin-top: 20px;
+}
 
 
 
@@ -810,20 +831,19 @@ s
 #lucky_box_content{
 	height: 500px;
 	position: relative;
-	padding:5% 0 0 5%;
-}
-#lucky_box_purchase{
-	width: 40%;
-	position: absolute;
-	bottom: 0;
+	padding-top:5%;
 
 }
-#lucky_box_basket{
-	width: 40%;
+.product_content_btn{
+	display: flex;
 	position: absolute;
 	bottom: 0;
-	left: 55%;
+	flex-wrap: nowrap;
 }
+.product_content_btn > input{
+	margin-right: 20px;
+}
+
 #lucky_box_content > form > p{
 	margin-top: 30px;
 	font-size: 0.8em;
@@ -858,4 +878,94 @@ s
 	margin-top: 10px;
 	font-size: 1em;
 	color: #555;
+}
+
+
+
+
+
+
+/*product_detail.html css*/
+
+
+#product_content_heart{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	bottom: 60px;
+	left: 0;
+	background-image: url(../../img/heart.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	cursor: pointer;
+
+}
+#product_content_heart:hover{
+	background-image: url(../../img/heart_hover.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	transition: .2s;
+}
+
+
+
+
+
+
+
+
+/*product_registration.html css*/
+
+
+
+
+
+#registration_upload_container{
+	display: flex;
+	
+}
+#registration_upload_image{
+	margin:70px 0 0 0;
+	border:solid 1px #d0d0d0;
+	height: 200px;
+}
+#registration_upload_btn{
+	position: relative;
+}
+#registration_upload_btn > input{
+	position: absolute;
+	bottom: 0;
+	left: 20px;
+}
+#registration_contents{
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 20px;
+	border: solid 1px #d9d9d9;
+}
+.registration_content_form{
+	margin-top: 20px;
+	display: flex;
+}
+.registration_content_form > div >  h3{
+	display: inline-block;
+	text-align: center;
+}
+.registration_content_form > div > input{
+	border-radius: 5px;
+	border:solid 1px #d9d9d9;
+	outline: none;
+	height: 25px;
+	margin-left: 10px;
+	padding: 5px;
+	color: #333;
+}
+#registration_contnet_content{
+	height: 300px;
+}
+#registration_contnet_content > textarea{
+	
+	border:none;
+	padding: 5px;
+	outline: none;
 }
