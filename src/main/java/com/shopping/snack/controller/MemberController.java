@@ -18,7 +18,7 @@ public class MemberController {
     @GetMapping("/member/join")
     public String joinHtml(){
         System.out.println("조인");
-        return "/html/join.html";
+        return "/html/member/join.html";
     }
 
     @PostMapping("/member/join")
@@ -26,5 +26,17 @@ public class MemberController {
     public Long join(@RequestBody JoinDTO joinDTO){
         System.out.println("회원가입 post");
         return memberService.join(joinDTO.getMember());
+    }
+
+    @GetMapping("/member/find")
+    public String findIdOrPwd(){
+        System.out.println("아이디 비밀번호 찾기");
+        return "/html/member/find_id_password";
+    }
+
+    @GetMapping("/member/profile")
+    public String profile(){
+        System.out.println("프로필");
+        return "/html/member/profile";
     }
 }
