@@ -919,7 +919,6 @@ s
 
 
 
-
 #registration_upload_container{
 	display: flex;
 	
@@ -961,11 +960,36 @@ s
 	color: #333;
 }
 #registration_contnet_content{
-	
+	height: 200px;
 }
 #registration_contnet_content > textarea{
-	
+	height: 150px;
 	border:none;
-	padding: 5px;
+	padding: 10px;
 	outline: none;
+}
+#registration_content_text{
+	height: 250px;
+	border-bottom: solid 1px #d9d9d9;
+    display: flex;
+    flex-wrap: wrap;
+}
+#registration_content_text > div:first-child{
+	height: 50px;
+	border-bottom: solid 1px #d9d9d9;
+}
+#registration_category_choice{
+    -o-appearance: none;
+  	-webkit-appearance: none;
+  	-moz-appearance: none;
+  	appearance: none;
+    width: 150px;
+    height: 40px;
+    background: url('../../img/down_arrow2.png') calc(100% - 5px) center no-repeat;
+    background-size: 20px;
+    padding: 5px 30px 5px 10px;
+    border-radius: 4px;
+    outline: 0 none;
+    margin:5px 0 0 5px;
+    border:solid 1px #d9d9d9;
 }

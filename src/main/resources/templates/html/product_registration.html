@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>과자샵_공지사항</title>
 	
-	<link rel="stylesheet" type="text/css" href="../common/css/style.css">
+	<link rel="stylesheet" type="text/css" href="common/css/style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
@@ -33,32 +33,65 @@
 
 			</div>
 			<div class="col-12" id="registration_contents">
+				<form class="col-12">
+					<div class="col-12 notice_insert_content" >
+						<div class="col-1">
+							<p>제품명</p>
+						</div>
+						<div class="col-11 notice_insert_contnets">
+							<input type="text" name="insert_contnets_title" placeholder="제품명을 입력해주세요.">
+						</div>
+					</div>
+					
+					<div class="col-12 notice_insert_content" >
+						<div class="col-1">
+							<p>가격</p>
+						</div>
+						<div class="col-11 notice_insert_contnets">
+							<input type="text" name="insert_contnets_title" placeholder="가격을 입력해주세요.">
+						</div>
+					</div>
+					<div class="col-12 notice_insert_content" >
+						<div class="col-1">
+							<p>수량</p>
+						</div>
+						<div class="col-11 notice_insert_contnets">
+							<input type="text" name="insert_contnets_title" placeholder="수량을 입력해주세요.">
+						</div>
+					</div>
+					<div class="col-12 notice_insert_content" >
+						<div class="col-1">
+							<p>할인율</p>
+						</div>
+						<div class="col-11 notice_insert_contnets">
+							<input type="text" name="insert_contnets_title" placeholder="할인율을 입력해주세요.">
+						</div>
+					</div>
+					<div class="col-12 notice_insert_content" >
+						<div class="col-1">
+							<p>카테고리</p>
+						</div>
+						<div class="col-11 notice_insert_contnets">
+							<select name="category_choice" id="registration_category_choice">
+							    <option value="" selected="selected">카테고리 선택</option>
+							    <option value="">세일상품</option>
+							    <option value="회사원" >크리스피</option>
+							    <option value="기타">캔디</option>
+							    <option value="기타">초콜릿</option>
+							    <option value="기타">음료</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-12 notice_insert_content" id="registration_content_text">
+						<div class="col-12">
+							<p>내용</p>
+						</div>
+						<div class="col-12 " id="registration_contnet_content">
+							<textarea class="col-12" name="registration_contnet_content" placeholder="내용을 입력해주세요."></textarea>
+						</div>
+					</div>
+				</form>
 				
-				<div class="col-12 notice_insert_content" >
-					<div class="col-1">
-						<p>제품명</p>
-					</div>
-					<div class="col-11 notice_insert_contnets">
-						<input type="text" name="insert_contnets_title" placeholder="제목을 입력해주세요.">
-					</div>
-				</div>
-				
-				<div class="col-12 notice_insert_content" >
-					<div class="col-1">
-						<p>제품명</p>
-					</div>
-					<div class="col-11 notice_insert_contnets">
-						<input type="text" name="insert_contnets_title" placeholder="제목을 입력해주세요.">
-					</div>
-				</div>
-				<div class="col-12 notice_insert_content" >
-					<div class="col-12">
-						<p>내용</p>
-					</div>
-					<div class="col-12 " id="registration_contnet_content">
-						<textarea class="col-12" name="registration_contnet_content" placeholder="내용을 입력해주세요."></textarea>
-					</div>
-				</div>
 
 			</div>
 			
