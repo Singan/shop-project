@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ServiceController {
     @GetMapping("/member/basket")
     public String basket(){
-        System.out.println("프로필");
+        System.out.println("basket");
         return "/html/service/basket";
     }
     @GetMapping("/notice")
-    public String profile(){
-        System.out.println("프로필");
+    public String notice(){
+        System.out.println("notice");
         return "/html/service/notice";
     }
+
 }
