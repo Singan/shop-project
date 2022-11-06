@@ -253,7 +253,7 @@ body::-webkit-scrollbar {
 	letter-spacing: 0;
 	word-spacing: 0;
 }
-.content > img{
+.content > a > img{
 	width: 50%;
 	height: 200px;
 	border-bottom:solid 2px #d9d9d9;
