@@ -14,5 +14,9 @@ public class AdminController {
         System.out.println("loginHTML");
         return "/html/admin/notice_insert.html";
     }
-
+    @GetMapping("/product/insert")
+    public String productInsert(){
+        System.out.println("loginHTML");
+        return "/html/admin/notice_insert.html";
+    }
 }
