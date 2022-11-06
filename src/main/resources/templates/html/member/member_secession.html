@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>과자샵_회원탈퇴</title>
+	
+	<link rel="stylesheet" type="text/css" href="common/css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+	<div class="col-9 container">
+		<div class="col-12" id="header" th:replace="/html/common/header :: header">
+
+		</div>
+	</div>
+
+	<div class="col-9 container">		
+		<div class="col-12" id="member_secession_content">
+			<form>
+				<div class="col-12 content_header">
+					<h2>회원 탈퇴</h2>
+				</div>
+				<div class="col-12" id="member_secession_confirm">
+					<h2>회원탈퇴를 하시려면 비밀번호를 입력해주세요!</h2>
+					<input id="member_secession_confirm_password" type="text" name="member_secession_confirm_password" placeholder="비밀번호">
+				</div>
+				<div class="col-2 insert_btn">
+		            	<input type="submit" name="member_secession_submit" value="회원탈퇴">
+		        </div>
+			</form>
+			
+		</div>
+	</div>
+	
+   <div class="col-12" id="footer">
+
+   </div>
+   <script src="/common/js/footer.js"></script>
+
+</body>
+</html>
