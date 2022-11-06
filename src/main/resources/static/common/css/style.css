@@ -241,7 +241,7 @@ body::-webkit-scrollbar {
 	height: 300px;
 }
 
-#content_main{
+#content_main, .content_main{
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -560,7 +560,8 @@ s
 	text-align: center;
 	font-size: 1.0em;
 	color:#333;
-
+<<<<<<< HEAD
+=======
 }
 .notice_content_column{
 	display: flex;
@@ -919,6 +920,7 @@ s
 
 
 
+
 #registration_upload_container{
 	display: flex;
 	
@@ -1000,11 +1002,7 @@ s
 
 
 
-
-
-
-
-/*product_order.html css*/
+/*product_order.html , member_product_order.htmlcss*/
 
 
 
@@ -1025,10 +1023,12 @@ s
 	color: #a0a0a0;
 }
 .product_order_information{
-	
+	display: flex;
+	flex-wrap: wrap;
+    align-items: center;
 }
 .product_order_information > h2,p{
-	line-height: 300%;
+	width: 100%;
 	color: #a0a0a0;
 }
 .payment_information{
@@ -1087,6 +1087,62 @@ s
 
 
 
+/*product_gift_find.html css*/
+
+
+
+.gift_find_header{
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+}
+.gift_find_header_content,.gift_find_header_content > h2{
+	display: inline-block;
+	font-size: 0.9em;
+}
+#roduct_gift_find{
+	width: 400px;
+	margin:0;
+}
+.friend_list{
+	height: 50px;
+	margin-top: 10px;
+	border: solid 2px #e9e9e9;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+}
+.friend_profile_image{
+	width: 40px;
+	height: 40px;
+
+}
+.friend_profile_image > img{
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+}
+.gift_find_friend_choice{
+	width: 90px;
+	height: 30px;
+	cursor: pointer;
+	outline:none;
+	border: none;
+	background-color: #98b7ff;
+	border-radius: 8px;
+	color: #fff;
+}
+.gift_find_friend_choice:hover{
+	background-color: #739dff;
+	transition: .2s;
+}
+
+
+
+
+
+
+
 
 
 /*recently_viewde_products.html css*/
@@ -1111,11 +1167,6 @@ s
 	background-color: #739dff;
 	transition: .2s;
 }
-
-
-
-
-
 
 
 
