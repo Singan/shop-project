@@ -17,7 +17,7 @@ public class ProductController {
         return "index.html";
     }
     @GetMapping("/product/detail")
-    public String productDetail(HttpServletRequest request){
+    public String productDetail(HttpServletRequest request,String no){
         HttpSession httpSession = request.getSession();
         System.out.println("index Get");
         return "/html/product/product_detail.html";

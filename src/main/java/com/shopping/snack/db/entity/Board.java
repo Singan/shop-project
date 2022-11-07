@@ -19,6 +19,9 @@ public class Board {
     @ManyToOne(fetch = FetchType.LAZY)
     private Member boardWriter;
 
+    @Column(name = "board_title")
+    private String boardTitle;
+
     @Column(name = "board_day")
     private LocalDate boardDay;
 
