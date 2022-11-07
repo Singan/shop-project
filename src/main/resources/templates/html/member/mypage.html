@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>과자샵</title>
+	
+	<link rel="stylesheet" type="text/css" href="/common/css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+	<div class="col-9 container">
+		<div class="col-12" id="header" th:replace="/html/common/header :: header">
+
+		</div>
+	</div>
+
+	<div class="col-9 container">		
+		<div class="col-12">
+			<div class="col-12 content_header">
+				<h2>마이페이지</h2>
+				<div class="col-2 left_menu_btn">
+					<div class="col-8 left_menu_btns">
+						<input type="button" name="go_basket" value="장바구니">
+					</div>
+					<div class="col-8 left_menu_btns">
+						<input type="button" name="go_basket" value="고객센터">
+					</div>
+					<!-- 선택 됐을때  -->
+					<div class="col-8 left_menu_btns" id="left_menu_btns_choice">
+						<input type="button" name="go_basket" value="마이페이지">
+					</div>
+					<div class="col-8 left_menu_btns">
+						<input type="button" name="go_basket" value="공지사항">
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-3 ">
+				<div class="col-6 profile_picture">
+					
+				</div>
+				<div class="col-12">
+					<div class="col-12 user_welcome">
+						<h2>짱구님 어서오세요 !</h2>
+					</div>
+				</div>
+				
+			</div>
+			<div class="col-9 mypage_btn">
+				<div class="col-12 mypage_btns">
+					<a href=""><input class="mypage_move_btn" type="button" name="" value="회원정보 수정"></a>
+				</div>
+				<div class="col-12 mypage_btns">
+					<a href=""><input class="mypage_move_btn" type="button" name="" value="쿠폰 확인"></a>
+				</div>
+				<div class="col-12 mypage_btns">
+					<a href=""><input class="mypage_move_btn" type="button" name="" value="주문내역"></a>
+				</div>
+				<div class="col-12 mypage_btns">
+					<a href=""><input class="mypage_move_btn" type="button" name="" value="내가 쓴 후기"></a>
+				</div>
+				<div class="col-12 mypage_btns">
+					<a href=""><input class="mypage_move_btn" type="button" name="" value="최근 본 상품"></a>
+				</div>
+				<div class="col-12 mypage_btns">
+					<a href=""><input class="mypage_move_btn" type="button" name="" value="찜목록"></a>
+				</div>
+				<div class="col-12 mypage_btns">
+					<a href=""><input class="mypage_move_btn" type="button" name="" value="회원탈퇴"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+   <div class="col-12" id="footer">
+
+   </div>
+   <script src="/common/js/footer.js"></script>
+
+</body>
+</html>
