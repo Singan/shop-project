@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>과자샵</title>
+	
+	<link rel="stylesheet" type="text/css" href="common/css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+	<div class="col-9 container">
+		<div class="col-12" id="header" th:replace="/html/common/header :: header">
+
+		</div>
+	</div>
+
+	<div class="col-9 container">		
+		<div class="col-12">
+			<div class="col-12 content_header">
+				<h2>공지사항</h2>
+			</div>
+
+			<div class="col-12" id="notice_detail_content_container">
+				<div class="col-12 detail_content">
+					<div class="col-12 detail_title">
+						<h2>안녕하세요. 새로 오픈한 과자샵입니다. 잘부탁드립니다!</h2>
+					</div>
+					<div class="col-12 write_name">
+						<h2>관리자</h2>
+						<p>2022.11.17</p>
+					</div>
+					<div class="col-12 notice_content">
+						<div class="col-12 notice_conent_image">
+							<img src="img/thanks.png">
+ 						</div>
+						<div class="col-12 notice_content_write">
+							<p>안녕하세요<br> 고객님 오늘도 저희 과자샵을 찾아주셔서 정말 감사인사 드립니다. <br>앞으로도 많은 사랑과 응원 부탁드립니다 ! 감사합니다.<br></p>
+						</div>
+						<div class="col-12 go_list_btn">
+							<input type="button" name="go_to_list_button" value="목록"> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+   <div class="col-12" id="footer">
+
+   </div>
+   <script src="/common/js/footer.js"></script>
+
+</body>
+</html>
