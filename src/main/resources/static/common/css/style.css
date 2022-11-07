@@ -150,6 +150,22 @@ body::-webkit-scrollbar {
 	font-size:1em;
 	color:#777;
 }
+#porduct_admin_write{
+	position: absolute;
+	width: 70px;
+	height: 35px;
+	bottom: 10px;
+	right: 0;
+	background-color:#98b7ff;
+	border:none; 
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+}
+#porduct_admin_write:hover{
+	background-color: #739dff;
+	transition: .2s;
+}
 #searchs{
 	display: flex;
 	justify-content: flex-end;
@@ -670,7 +686,7 @@ body::-webkit-scrollbar {
 }
 #insert_content_image > label{
 	width: 80%;
-	height: 90%;
+	height: 45px;
 	text-align: center;
 	line-height: 50px;
 	background-color:#98b7ff;
@@ -678,7 +694,8 @@ body::-webkit-scrollbar {
 	color:#fff;
 	font-weight: bold;
 	cursor: pointer;
-	margin-top: 1px;
+	margin:2px 0 0 5px;
+
 }
 #insert_content_image > label:hover{
 	background-color: #739dff;
@@ -752,7 +769,7 @@ body::-webkit-scrollbar {
 	height: 25px;
 }
 
-#resuit{
+#result{
 	display: inline-block;
 	width: 20%;
 }
@@ -789,26 +806,27 @@ body::-webkit-scrollbar {
 #find_id{
 	height: 300px;
 	margin-top: 90px;
+	
+}
+.user_phone{
 	position: relative;
 }
-
-#find_user_id_phone_btn{
+.find_user_id_phone_btn{
 	width: 70px;
 	height: 35px;
 	position: absolute;
-	bottom: 165px;
-	right: -20px;
 	border-radius: 7px;
 	border:none;
 	cursor: pointer;
 	color: #fff;
 	background-color:#98b7ff; 
+	margin-left: 10px;
 }
-#find_user_id_phone_btn:hover{
+.find_user_id_phone_btn:hover{
 	background-color: #739dff;
 	transition: .2s;
 }
-#find_id_button > button{
+.find_id_pwd_btn{
 	margin-top:20px;
 }
 
@@ -1179,7 +1197,7 @@ body::-webkit-scrollbar {
 
 
 
-#recently_viewde_products_btn{
+.recently_viewde_products{
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
