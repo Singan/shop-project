@@ -3,10 +3,7 @@ package com.shopping.snack.db.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -16,7 +13,7 @@ import java.util.Date;
 public class Member {
     @Id
     @Column(name = "member_no")
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long memberNo;
 
     @Column(name = "member_id")
@@ -35,4 +32,7 @@ public class Member {
     private String memberPhone;
     @Column(name = "member_name")
     private String memberName;
+    @Column(name = "member_roles")
+    private String memberRoles;
+
 }
