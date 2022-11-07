@@ -26,10 +26,10 @@ public class AdminController {
         return "/html/admin/notice_insert.html";
     }
     @PostMapping("/notice/insert")
-    public String noticeInsert(HttpServletRequest request,@RequestBody BoardDTO boardDTO){
+    public String noticeInsert(HttpServletRequest request, BoardDTO boardDTO){
         Member member =(Member)request.getSession().getAttribute("user");
         Long no = boardService.boardInsert(boardDTO,member);
-        return "/notice/detail?no="+no;
+        return "redirect:/notice/detail?no="+no;
     }
     @GetMapping("/product/insert")
     public String productInsert(){

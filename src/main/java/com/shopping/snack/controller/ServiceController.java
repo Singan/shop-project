@@ -4,6 +4,7 @@ import com.shopping.snack.db.entity.Board;
 import com.shopping.snack.db.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -20,17 +21,17 @@ public class ServiceController {
         return "/html/service/basket";
     }
     @GetMapping("/notice")
-    public String noticeList(){
-        ModelAndView modelAndView = new ModelAndView();
+    public String noticeList(Model model){
+
         List<Board> boardList = boardService.boardList();
-        modelAndView.addObject("boardList",boardList);
+        model.addAttribute("boardList",boardList);
         return "/html/service/notice.html";
     }
     @GetMapping("/notice/detail")
-    public String noticeDetail(Long no){
-        ModelAndView modelAndView = new ModelAndView();
+    public String noticeDetail(Model model,Long no){
+
         Board board = boardService.boardDetail(no);
-        modelAndView.addObject("board",board);
+        model.addAttribute("board",board);
         return "/html/service/notice_detail.html";
     }
 }
