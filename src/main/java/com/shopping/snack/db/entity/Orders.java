@@ -1,5 +1,6 @@
 package com.shopping.snack.db.entity;
 
+import com.shopping.snack.db.enumClass.OrdersStatus;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,5 +17,9 @@ public class Orders {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "orders_status")
-    private Long ordersStatus;
+    private OrdersStatus ordersStatus;
+
+    @JoinColumn(name = "orders_member")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Member ordersMember;
 }
