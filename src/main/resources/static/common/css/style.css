@@ -613,8 +613,22 @@ body::-webkit-scrollbar {
 	cursor: pointer;
 }
 
-
-
+#notice_admin_write{
+	position: absolute;
+	width: 70px;
+	height: 35px;
+	bottom: 10px;
+	right: 0;
+	background-color:#98b7ff;
+	border:none; 
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+}
+#notice_admin_write:hover{
+	background-color: #739dff;
+	transition: .2s;
+}
 
 
 /*notice_insert.html css*/
