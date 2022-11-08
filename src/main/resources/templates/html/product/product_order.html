@@ -26,79 +26,64 @@
 				<div class="col-2" id="registration_upload_image">
 					
 				</div>
-				<div class="col-10" id="registration_upload_btn">
-					<input type="file" name="registration_upload_btn">
+				<div class="col-12 product_order_contents">
+					<div class="col-2 product_order_content_image">
+						
+					</div>
+					<div class="col-6 product_order_information">
+						<h2>제품명</h2>
+						<h2>가격</h2>
+						<p>간략한 소개</p>
+					</div>
+					<div class="col-2 product_order_quantity">
+						<h2>1개</h2>
+					</div>
 				</div>
-
-
-			</div>
-			<div class="col-12" id="registration_contents">
-				<form class="col-12">
-					<div class="col-12 notice_insert_content" >
-						<div class="col-1">
-							<p>제품명</p>
+				<div class="col-12 content_header">
+					<h2>결제하기</h2>
+				</div>
+				<div class="col-11 payment_information">
+					<div class="col-12 payment_information_content">
+						<h2>이름</h2>
+						<input type="text" name="payment_information_name">
+					</div>
+					<div class="col-12 payment_information_content">
+						<h2>주소</h2>
+						<input type="text" name="payment_information_address">
+						<div class="payment_information_small_btn">
+							<input id="payment_information_address_search" class="payment_information_small_button" type="button" name="payment_information_address_search" value="찾기">
 						</div>
-						<div class="col-11 notice_insert_contnets">
-							<input type="text" name="insert_contnets_title" placeholder="제품명을 입력해주세요.">
+						
+					</div>
+					<div class="col-12 payment_information_content">
+						<h2>상세주소</h2>
+						<input type="text" name="payment_information_address_detail">
+					</div>
+					<div class="col-12 payment_information_content" id="payment_information_phone">
+						<h2>휴대폰 번호</h2>
+						<input type="text" name="payment_information_phone_number">-
+						<input type="text" name="payment_information_phone_number">-
+						<input type="text" name="payment_information_phone_number">
+						<div class="payment_information_small_btn">
+							<input id="payment_information_phone_number" class="payment_information_small_button" type="button" name="payment_information_phone_certification" value="인증번호 받기">
+						</div>
+						
+					</div>
+					<div class="col-12 payment_information_content">
+						<h2>쿠폰</h2>
+						<input type="text" name="payment_information_coupon">
+						<div class="payment_information_small_btn">
+							<input id="payment_information_coupon" class="payment_information_small_button" type="button" name="payment_information_phone_certification" value="쿠폰보기">
 						</div>
 					</div>
-					
-					<div class="col-12 notice_insert_content" >
-						<div class="col-1">
-							<p>가격</p>
-						</div>
-						<div class="col-11 notice_insert_contnets">
-							<input type="text" name="insert_contnets_title" placeholder="가격을 입력해주세요.">
-						</div>
-					</div>
-					<div class="col-12 notice_insert_content" >
-						<div class="col-1">
-							<p>수량</p>
-						</div>
-						<div class="col-11 notice_insert_contnets">
-							<input type="text" name="insert_contnets_title" placeholder="수량을 입력해주세요.">
-						</div>
-					</div>
-					<div class="col-12 notice_insert_content" >
-						<div class="col-1">
-							<p>할인율</p>
-						</div>
-						<div class="col-11 notice_insert_contnets">
-							<input type="text" name="insert_contnets_title" placeholder="할인율을 입력해주세요.">
-						</div>
-					</div>
-					<div class="col-12 notice_insert_content" >
-						<div class="col-1">
-							<p>카테고리</p>
-						</div>
-						<div class="col-11 notice_insert_contnets">
-							<select name="category_choice" id="registration_category_choice">
-							    <option value="" selected="selected">카테고리 선택</option>
-							    <option value="">세일상품</option>
-							    <option value="회사원" >크리스피</option>
-							    <option value="기타">캔디</option>
-							    <option value="기타">초콜릿</option>
-							    <option value="기타">음료</option>
-							</select>
-						</div>
-					</div>
-					<div class="col-12 notice_insert_content">
-						<div class="col-12">
-							<p>내용</p>
-						</div>
-						<div class="col-12 " id="registration_contnet_content">
-							<textarea class="col-12" name="registration_contnet_content" placeholder="내용을 입력해주세요."></textarea>
-						</div>
-					</div>
-				</form>
+				</div>
 				
 
-			</div>
+				<div class="col-2 insert_btn">
+	            	<input type="submit" name="product_order_submit" value="완료">
+	            </div>
+			</form>
 			
-
-			<div class="col-2 insert_btn">
-            	<input type="submit" name="sign_up_submit" value="등록">
-            </div>
 		</div>
 	</div>
 	

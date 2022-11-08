@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>과자샵</title>
+	
+	<link rel="stylesheet" type="text/css" href="/common/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/common/css/order_list.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+	<div class="col-9 container">
+		<div class="col-12" id="header" th:replace="/html/common/header :: header">
+
+		</div>
+	</div>
+
+	<div class="col-9 container">		
+		<div class="col-12" id="product_order_content">
+			<form>
+				<div class="col-12 content_header">
+					<h2>주문정보</h2>
+				</div>
+				<div class="col-12 product_order_contents">
+					<div class="col-2 product_order_content_image">
+						
+					</div>
+					<div class="col-6 product_order_information">
+						<h2>제품명</h2>
+						<h2>가격</h2>
+						<p>간략한 소개</p>
+					</div>
+					<div class="col-2 product_order_quantity">
+						<h2>1개</h2>
+						<input class="cancel_btn" type="button" name="cancel_btn" value="취소하기">
+						
+					</div>
+				</div>
+
+				<div class="col-12 product_order_contents">
+					<div class="col-2 product_order_content_image">
+						
+					</div>
+					<div class="col-6 product_order_information">
+						<h2>제품명</h2>
+						<h2>가격</h2>
+						<p>간략한 소개</p>
+					</div>
+					<div class="col-2 product_order_quantity">
+						<h2>1개</h2>
+						<input class="cancel_btn" type="button" name="cancel_btn" value="취소하기">
+					</div>
+				</div>
+
+				<div class="col-12 product_order_contents">
+					<div class="col-2 product_order_content_image">
+						
+					</div>
+					<div class="col-6 product_order_information">
+						<h2>제품명</h2>
+						<h2>가격</h2>
+						<p>간략한 소개</p>
+					</div>
+					<div class="col-2 product_order_quantity">
+						<h2>1개</h2>
+						<input class="cancel_btn" type="button" name="cancel_btn" value="취소하기">
+					</div>
+				</div>
+			</form>
+			
+		</div>
+	</div>
+	
+   <div class="col-12" id="footer">
+
+   </div>
+   <script src="/common/js/footer.js"></script>
+
+</body>
+</html>
