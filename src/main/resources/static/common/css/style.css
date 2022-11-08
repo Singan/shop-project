@@ -581,7 +581,7 @@ body::-webkit-scrollbar {
 #notice_container{
 	height: 40px;
 	line-height: 40px;
-	margin-top: 31px;
+	margin-top: 30px;
 	display: flex;
 	border: solid 1px #e9e9e9;
 	background-color: #F7F7F7;
@@ -589,11 +589,27 @@ body::-webkit-scrollbar {
 
 
 .notice_board > h2{
+	height: 40px;
 	text-align: center;
 	font-size: 1.0em;
 	color:#333;
 <<<<<<< HEAD
 =======
+}
+.notice_content{
+	height: 40px;
+	line-height: 40px;
+	margin-top: 20px;
+	display: flex;
+	border-top: solid 1px #d9d9d9;
+	border-bottom: solid 1px #d9d9d9;
+}
+#content > h2{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 .notice_content_column{
 	display: flex;
