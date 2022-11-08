@@ -22,9 +22,9 @@ public class ProductController {
         System.out.println("index Get");
         return "/html/product/product_detail.html";
     }
-    @GetMapping("/product/order")
+    @GetMapping("/member/order")
     public String product_order(){
         System.out.println("프로필");
-        return "/html/product/product_order";
+        return "/html/member/order_list.html";
     }
 }
