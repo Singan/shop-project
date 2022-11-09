@@ -150,7 +150,7 @@ body::-webkit-scrollbar {
 	font-size:1em;
 	color:#777;
 }
-#porduct_admin_write{
+#product_admin_write{
 	position: absolute;
 	width: 70px;
 	height: 35px;
@@ -161,8 +161,10 @@ body::-webkit-scrollbar {
 	border-radius: 5px;
 	color: #fff;
 	cursor: pointer;
+	text-align: center;
+	line-height: 35px;
 }
-#porduct_admin_write:hover{
+#product_admin_write:hover{
 	background-color: #739dff;
 	transition: .2s;
 }
@@ -592,8 +594,7 @@ body::-webkit-scrollbar {
 	text-align: center;
 	font-size: 1.0em;
 	color:#333;
-<<<<<<< HEAD
-=======
+
 }
 .notice_content_column{
 	display: flex;
@@ -963,7 +964,7 @@ body::-webkit-scrollbar {
 
 
 
-/*product_registration.html css*/
+/*product_insert.html css*/
 
 
 

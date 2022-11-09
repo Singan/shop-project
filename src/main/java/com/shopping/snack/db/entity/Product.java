@@ -25,4 +25,13 @@ public class Product {
     private Long productType;
     @Column(name = "product_price")
     private Long productPrice;
+
+    @Column(name = "product_discount")
+    private Long productDiscount;
+
+    @Column(name = "product_cate")
+    private String productCate;
+
+    @Column(name = "product_view")
+    private Boolean productView;
 }

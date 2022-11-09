@@ -32,14 +32,15 @@
 
 
 			</div>
+			<form class="col-12" action="/product/insert" method="post">
 			<div class="col-12" id="registration_contents">
-				<form class="col-12">
+
 					<div class="col-12 notice_insert_content" >
 						<div class="col-1">
 							<p>제품명</p>
 						</div>
 						<div class="col-11 notice_insert_contnets">
-							<input type="text" name="insert_contnets_title" placeholder="제품명을 입력해주세요.">
+							<input type="text" name="name" placeholder="제품명을 입력해주세요.">
 						</div>
 					</div>
 					
@@ -48,7 +49,7 @@
 							<p>가격</p>
 						</div>
 						<div class="col-11 notice_insert_contnets">
-							<input type="text" name="insert_contnets_title" placeholder="가격을 입력해주세요.">
+							<input type="text" name="price" placeholder="가격을 입력해주세요.">
 						</div>
 					</div>
 					<div class="col-12 notice_insert_content" >
@@ -56,7 +57,7 @@
 							<p>수량</p>
 						</div>
 						<div class="col-11 notice_insert_contnets">
-							<input type="text" name="insert_contnets_title" placeholder="수량을 입력해주세요.">
+							<input type="text" name="count" placeholder="수량을 입력해주세요.">
 						</div>
 					</div>
 					<div class="col-12 notice_insert_content" >
@@ -64,7 +65,7 @@
 							<p>할인율</p>
 						</div>
 						<div class="col-11 notice_insert_contnets">
-							<input type="text" name="insert_contnets_title" placeholder="할인율을 입력해주세요.">
+							<input type="text" name="discountRate" placeholder="할인율을 입력해주세요.">
 						</div>
 					</div>
 					<div class="col-12 notice_insert_content" >
@@ -72,10 +73,10 @@
 							<p>카테고리</p>
 						</div>
 						<div class="col-11 notice_insert_contnets">
-							<select name="category_choice" id="registration_category_choice">
+							<select name="category" id="registration_category_choice">
 							    <option value="" selected="selected">카테고리 선택</option>
-							    <option value="">세일상품</option>
-							    <option value="회사원" >크리스피</option>
+							    <option value="세일상품">세일상품</option>
+							    <option value="크리스피" >크리스피</option>
 							    <option value="기타">캔디</option>
 							    <option value="기타">초콜릿</option>
 							    <option value="기타">음료</option>
@@ -87,19 +88,17 @@
 							<p>내용</p>
 						</div>
 						<div class="col-12 " id="registration_contnet_content">
-							<textarea class="col-12" name="registration_contnet_content" placeholder="내용을 입력해주세요."></textarea>
+							<textarea class="col-12" name="content" placeholder="내용을 입력해주세요."></textarea>
 						</div>
 					</div>
-				</form>
-				
 
 			</div>
-			
-
 			<div class="col-2 insert_btn">
             	<input type="submit" name="sign_up_submit" value="등록">
             </div>
+			</form>
 		</div>
+
 	</div>
 	
    <div class="col-12" id="footer">
