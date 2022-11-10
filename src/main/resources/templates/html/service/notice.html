@@ -40,17 +40,17 @@
 			</div>
 			<div class="col-12 notice_content" th:each="board : ${boardList}">
 					<div class="col-1 notice_board">
-						<h2 th:text="{board.getBoardNo()}">1</h2>
+						<h2 th:text="${board.getBoardNo()}">1</h2>
 					</div>
-<!--					<div class="col-6 notice_board" id="content">-->
-<!--						<a href="/notice/detail"><h2>동해물과 백두산이 동해물과 백두산이동해물과 백두산이동해물과 백두산이동해물과 백두산이동해물과 백두산이동해물과 백두산이</h2></a>-->
-<!--					</div>-->
-<!--					<div class="col-2 notice_board">-->
-<!--						<h2>관리자</h2>-->
-<!--					</div>-->
-<!--					<div class="col-2 notice_board">-->
-<!--						<h2>2022.11.08</h2>-->
-<!--					</div>-->
+					<div class="col-6 notice_board" id="content">
+						<a th:href="@{/notice/detail(no=${board.getBoardNo()})}"><h2 th:text="${board.getBoardTitle()}"></h2></a>
+					</div>
+					<div class="col-2 notice_board">
+						<h2 th:text="${board.getBoardWriter().getMemberName()}">관리자</h2>
+					</div>
+					<div class="col-2 notice_board">
+						<h2 th:text="${board.getBoardDay()}">2022.11.08</h2>
+					</div>
 			</div>
 	
 		</div>

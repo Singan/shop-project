@@ -28,4 +28,6 @@ public class Board {
 
     @Column(name = "board_content")
     private String boardContent;
+
+
 }

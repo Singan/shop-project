@@ -3,6 +3,7 @@ package com.shopping.snack.DTO;
 import com.shopping.snack.db.entity.Product;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.web.multipart.MultipartFile;
 
 @Getter
 @Setter
@@ -13,7 +14,7 @@ public class ProductInsertDTO {
     private String category;
     private Long discountRate;
     private Long price;
-    private String thumbnail;
+    private MultipartFile thumbnail;
 
     public Product getProduct(){
         Product product = new Product();
@@ -24,6 +25,7 @@ public class ProductInsertDTO {
         product.setProductDiscount(this.discountRate);
         product.setProductPrice(this.price);
 
+        //product.setProductThumbnail(this.thumbnail);
         return product;
     }
 }
