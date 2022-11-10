@@ -14,21 +14,6 @@
 
 	<script type="text/javascript">
 	
-	$(function() {
-		var swiper = new Swiper('.swiper-container', {
-			pagination: '.swiper-pagination',
-			nextButton: '.swiper-button-next',
-			prevButton: '.swiper-button-prev',
-			autoplay: 4000 ,
-			slidesPerView: 1,
-			paginationClickable: true,
-			loop: true
-		});
-	});
-	$(document).ready(function(){
-       $('#sidebar').zoom({ on:'click' });
-        });
-
 	function count(type)  {
 	
 	  const resultElement = document.getElementById('result');
@@ -38,14 +23,17 @@
 		
 	  if(type === 'plus') {
 	    number = parseInt(number) + 1;
+	  	min_minus.removeAttribute('disabled');
+	  
 	  }else if(type === 'minus')  {
 	  	if (number <= 1) {
 	  		alert("더이상 내릴 수 없습니다.");
 	  		number = 1;
-	  		min_minus.setAttribute('disabled', 'disabled');
+	  		min_minus.setAttribute('disabled', true);
 
 	  	}else{
 	  		number = parseInt(number) - 1;
+	  		min_minus.removeAttribute('disabled');
 	  	}
 	   
 	  }
@@ -60,29 +48,15 @@
 		</div>
 	</div>
 		
-			<div class="col-12" id="banner">
-				<div id="main_slider" class="swiper-container">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide"><img src="../img/a.png" alt="Slide 1" /></div>
-						<div class="swiper-slide"><img src="../img/b.png" alt="Slide 1" /></div>
-						<div class="swiper-slide"><img src="../img/c.png" alt="Slide 1" /></div>
-						<div class="swiper-slide"><img src="../img/d.png" alt="Slide 1" /></div>
-						<div class="swiper-slide"><img src="../img/dong5.jpeg" alt="Slide 1" /></div>
-					</div>	
-					<div class="swiper-pagination"></div>
-					<!-- Add Arrows -->
-					<div class="swiper-button-next"></div>
-					<div class="swiper-button-prev"></div>
-				</div>	
-			</div>
+			
 	<div class="col-9 container">		
-		<div class="col-12" id="content">
+		<div class="col-12">
 			<form>
-				<div class="col-12 content_header" id="basket_content_header">
+				<div class="col-12 content_header">
 					<h2 class="col-12">장바구니</h2>
 				</div>
 
-				<div class="col-11" id="basket_content_container">
+				<div class="col-11 basket_content_container">
 					<div class="col-1 basket_content_image">
 						<img src="../img/snack_photo1.png">
 					</div>
