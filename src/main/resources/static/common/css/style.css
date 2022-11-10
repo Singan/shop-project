@@ -1333,7 +1333,7 @@ body::-webkit-scrollbar {
 	display: inline-block;
 }
 
-.notice_conent_image{
+.notice_content_image{
 	display: flex;
 	flex-wrap: wrap;
 	margin:40px 0;
@@ -1346,7 +1346,7 @@ body::-webkit-scrollbar {
 	display: flex;
 	flex-direction: row-reverse;
 }
-.go_list_btn > input{
+.go_list_btn > a > input{
 	width: 100px;
 	height: 35px;
 	margin:10px 0 0 0;
@@ -1356,7 +1356,7 @@ body::-webkit-scrollbar {
 	background-color: #efefef;
 	font-size:0.9em;
 }
-.go_list_btn > input:hover{
+.go_list_btn > a > input:hover{
 	background-color: #e5e5e5;
 	transition: .2s;
 }
