@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -46,7 +47,7 @@ public class AdminController {
     }
 
     @PostMapping("/product/insert")
-    public String productInsert(ProductInsertDTO productInsertDTO){
+    public String productInsert(ProductInsertDTO productInsertDTO ,  @RequestBody MultipartFile file){
         System.out.println("loginHTML");
         Member member =(Member)request.getSession().getAttribute("user");
         if(member == null){

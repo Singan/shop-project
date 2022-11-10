@@ -6,6 +6,8 @@ import com.shopping.snack.db.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ProductService {
@@ -14,5 +16,8 @@ public class ProductService {
     public Long productInsert(ProductInsertDTO productInsertDTO){
         return productRepository.productInsert(productInsertDTO.getProduct());
     }
+    public List<Product> productList(){
 
+        return productRepository.productList();
+    }
 }

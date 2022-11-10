@@ -47,58 +47,16 @@
 			</div>
 		
 				
-			
-			<div class="col-12" id="content_main">
-				<div class="col-3 content">
-					<a href="/product/detail">
+		
+			<div class="col-12" id="content_main" >
+				<div class="col-3 content" th:each="product : ${productList}">
+					<a th:href="@{/product/detail(no=${product.getProductNo()})}">
 						<img src="img/asd.jpg">
-						<p>간략한 소개입니다 입니다 입니다.입니다.입니다.입니다.입니다.입니다 인비낟</p>
-						<h2>가격</h2>
-					</a>
-				</div><div class="col-3 content">
-					<a href="/product/detail">
-						<img src="img/asd.jpg">
-						<p>간략한 소개입니다 입니다 입니다.입니다.입니다.입니다.입니다.입니다 인비낟</p>
-						<h2>가격</h2>
+						<p th:text="${product.getProductName()}"></p>
+						<h2 th:text="${product.getProductPrice()}"></h2>
 					</a>
 				</div>
-				<div class="col-3 content">
-					<a href="/product/detail">
-						<img src="img/asd.jpg">
-						<p>간략한 소개입니다 입니다 입니다.입니다.입니다.입니다.입니다.입니다 인비낟</p>
-						<h2>가격</h2>
-					</a>
-				</div>
-				<div class="col-3 content">
-					<a href="/product/detail">
-						<img src="img/asd.jpg">
-						<p>간략한 소개입니다 입니다 입니다.입니다.입니다.입니다.입니다.입니다 인비낟</p>
-						<h2>가격</h2>
-					</a>
-				</div>
-				<div class="col-3 content">
-					<a href="/product/detail">
-						<img src="img/asd.jpg">
-						<p>간략한 소개입니다 입니다 입니다.입니다.입니다.입니다.입니다.입니다 인비낟</p>
-						<h2>가격</h2>
-					</a>
-				</div>
-				<div class="col-3 content">
-					<a href="/product/detail">
-						<img src="img/asd.jpg">
-						<p>간략한 소개입니다 입니다 입니다.입니다.입니다.입니다.입니다.입니다 인비낟</p>
-						<h2>가격</h2>
-					</a>
-				</div>
-				<div class="col-3 content">
-					<a href="/product/detail">
-						<img src="img/asd.jpg">
-						<p>간략한 소개입니다 입니다 입니다.입니다.입니다.입니다.입니다.입니다 인비낟</p>
-						<h2>가격</h2>
-					</a>
-				</div>
-				
-				
+
 				<div id="page_move">
 					<ul>
 						<li><a href=""><</a></li>

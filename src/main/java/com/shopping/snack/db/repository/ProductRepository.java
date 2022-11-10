@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
@@ -18,5 +19,11 @@ public class ProductRepository {
     public Long productInsert(Product product){
         em.persist(product);
         return product.getProductNo();
+    }
+
+
+    public List<Product> productList(){
+
+        return em.createQuery("select p from Product p").getResultList();
     }
 }
