@@ -1,0 +1,87 @@
+.mylist{
+	position: fixed;
+	right: 0;
+}
+.wishlist{
+	height: 50px;
+	border-radius: 6px;
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+
+}
+.list_title{
+	background-color: #e9e9e9;
+	position: relative;
+}
+.list_title > h2{
+	text-align: center;
+	line-height: 50px;
+	font-size: 1.0em;
+	color: #555;
+
+	
+}
+.list_title:hover {
+	background-color: #d5d5d5;
+	transition: .2s;
+}
+.dropdown{
+	width: 35px;
+    height: 35px;
+    position: absolute;
+    right: 0;
+    top: 5px;
+}
+
+
+#wishlist_content{
+	display: none;
+}
+#basketlist_content{
+	display: none;
+}
+.list_contents{
+	display: flex;
+	height: 60px;
+	background-color: #fff;
+	padding:10px 0;
+	border-top:solid 1px #d9d9d9;
+	border-bottom:solid 1px #d9d9d9;
+}
+.list_image{
+	border: solid 1px #333;
+}
+.list_text > h2{
+	font-size: 1.0em;
+}
+.list_text > p{
+	width: 80%;
+	margin-left: 0;
+	font-size: 0.8em;
+	color: #a9a9a9;
+	overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+
+}
+.list_more{
+	height: 50px;
+}
+.list_more > button{
+	width: 100%;
+	height: 100%;
+	background-color: #98b7ff;
+	border: none;
+	font-weight: bold;
+	font-size: 0.9em;
+	cursor: pointer;
+	color: #fff;
+}
+.list_more > button:hover{
+	background-color: #739dff;
+	transition: .2s;
+}
+.dropdown{
+	transform: rotate(0deg);
+}
