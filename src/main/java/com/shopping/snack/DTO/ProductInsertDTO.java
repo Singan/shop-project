@@ -14,7 +14,7 @@ public class ProductInsertDTO {
     private String category;
     private Long discountRate;
     private Long price;
-    private MultipartFile thumbnail;
+    //private MultipartFile thumbnail;
 
     public Product getProduct(){
         Product product = new Product();

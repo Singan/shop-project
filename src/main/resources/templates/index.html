@@ -48,15 +48,16 @@
 		
 				
 			
-			<div class="col-12" id="content_main" th:each="product : ${productList}">
-				<div class="col-3 content">
+			<div class="col-12" id="content_main" >
+				<div class="col-3 content" th:each="product : ${productList}">
 					<a th:href="@{/product/detail(no=${product.getProductNo()})}">
 						<img src="img/asd.jpg">
-						<p th:text="${product.getProductName()}">간략한 소개입니다 입니다 입니다.입니다.입니다.입니다.입니다.입니다 인비낟</p>
-						<h2 th:text="가격 : ${product.getProductPrice()}"></h2>
+						<p th:text="${product.getProductName()}"></p>
+						<h2 th:text="${product.getProductPrice()}"></h2>
 					</a>
 				</div>
-				
+
+
 				<div id="page_move">
 					<ul>
 						<li><a href=""><</a></li>
