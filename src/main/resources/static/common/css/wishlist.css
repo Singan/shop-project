@@ -1,0 +1,14 @@
+.basket_content_font > a{
+	color:#333;
+	display: inline-block;
+}
+.basket_content_font > a:hover{
+	text-decoration: underline;
+}
+.wishlist_heart{
+	background-image: url(../../img/heart_hover.png);
+	background-size: 40%;
+	background-repeat: no-repeat;
+	background-position: center 10px;
+	cursor: pointer;
+}
