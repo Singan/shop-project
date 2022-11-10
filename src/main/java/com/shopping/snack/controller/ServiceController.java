@@ -34,4 +34,11 @@ public class ServiceController {
         model.addAttribute("board",board);
         return "/html/service/notice_detail.html";
     }
+
+    @GetMapping("/product/category")
+    public String categorySelect(){
+
+
+        return "/html/product/content_list.html";
+    }
 }
