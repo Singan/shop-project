@@ -6,7 +6,7 @@
             <li><a href="/member/order">주문정보</a></li>
             <li th:if="${session.user ==null}"><a href="/login">로그인</a></li>
             <li th:if="${session.user ==null}"><a href="/member/join">회원가입</a></li>
-            <li th:if="${session.user !=null}"><a href="/mypage">마이페이지</a></li>
+            <li th:if="${session.user !=null}"><a href="/member/profile">마이페이지</a></li>
             <li th:if="${session.user !=null}"><a href="/logout">로그아웃</a></li>
             <li th:if="${session.user !=null}" th:text="${session.user.getMemberName()+'님 환영합니다.'} "></li>
         </ul>

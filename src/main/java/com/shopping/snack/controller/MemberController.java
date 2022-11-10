@@ -31,12 +31,12 @@ public class MemberController {
     @GetMapping("/member/find")
     public String findIdOrPwd(){
         System.out.println("아이디 비밀번호 찾기");
-        return "/html/member/find_id_password";
+        return "/html/member/find_id_password.html";
     }
 
     @GetMapping("/member/profile")
     public String profile(){
         System.out.println("프로필");
-        return "/html/member/profile";
+        return "/html/member/profile.html";
     }
 }
