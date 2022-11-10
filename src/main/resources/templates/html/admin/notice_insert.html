@@ -5,6 +5,7 @@
 	<title>과자샵</title>
 	
 	<link rel="stylesheet" type="text/css" href="/common/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/common/css/notice_detail.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
@@ -18,59 +19,37 @@
 	</div>
 
 	<div class="col-9 container">		
-		<div class="col-12" id="notice_insert_content">
-			<div class="col-12 content_header" id="notice_insert_content_header">
-				<h2>공지사항 등록</h2>
+		<div class="col-12">
+			<div class="col-12 content_header">
+				<h2>공지사항</h2>
 			</div>
-			<form method="post" action="/notice/insert">
-				<div class="col-12" id="notice_insert_content_container">
 
-					<div class="col-12 notice_insert_content" >
-						<div class="col-1">
-							<p>제목</p>
+			<div class="col-12" id="notice_detail_content_container">
+				<div class="col-12 detail_content">
+					<div class="col-12 detail_title">
+						<h2 th:text="${board.getBoardTitle()}"></h2>
+					</div>
+					<div class="col-12 write_name">
+						<h2>관리자</h2>
+						<p>2022.11.17</p>
+					</div>
+					<div class="col-12 notice_content">
+						<div class="col-12 notice_content_image">
+							<img src="img/thanks.png">
+ 						</div>
+						<div class="col-12 notice_content_write" th:text="${board.getBoardContent()}">
+							<p>안녕하세요<br> 고객님 오늘도 저희 과자샵을 찾아주셔서 정말 감사인사 드립니다. <br>앞으로도 많은 사랑과 응원 부탁드립니다 ! 감사합니다.<br></p>
 						</div>
-						<div class="col-11 notice_insert_contents">
-							<input type="text" name="title" placeholder="제목을 입력해주세요.">
+						<div class="col-12 go_list_btn">
+							<a href="/notice"><input type="button" name="go_to_list_button" value="목록"></a> 
 						</div>
 					</div>
-
-					<div class="col-12 notice_insert_content" >
-						<div class="col-1">
-							<p>작성자</p>
-						</div>
-						<div class="col-11 notice_insert_contents">
-							<input type="text" name="writer" value="관리자" disabled="disabled">
-						</div>
-					</div>
-
-					<div class="col-12 notice_insert_content" >
-						<div class="col-1">
-							<p>사진첨부</p>
-						</div>
-						<div class="col-11 notice_insert_contents" id="insert_content_image">
-							<label class="col-1" for="insert_content_image_upload">업로드</label>
-							<input type="file" id="insert_content_image_upload" name="thumbnail" value="이미지 찾기" multiple>
-						</div>
-					</div>
-
-					<div class="col-12 notice_insert_content" >
-						<div class="col-12">
-							<p>내용</p>
-						</div>
-						<div class="col-12 notice_insert_contents" id="notice_insert_contnet_content">
-							<textarea class="col-12" name="content" placeholder="내용을 입력해주세요."></textarea>
-						</div>
-					</div>
-
 				</div>
-
-				<div class="col-2 insert_btn">
-	            	<input type="submit" name="sign_up_submit" value="등록">
-	            </div>
-        	</form>
+			</div>
 		</div>
 	</div>
-	<div class="col-12" id="footer" th:replace="/html/common/footer.html :: footer">
+	
+   <div class="col-12" id="footer" th:replace="/html/common/footer.html :: footer">
 	</div>
 
 </body>
