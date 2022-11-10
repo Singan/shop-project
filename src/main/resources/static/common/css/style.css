@@ -283,7 +283,7 @@ body::-webkit-scrollbar {
 	box-shadow: 1px 1px 3px 1px #dadce0;
 	transition: .2s;
 }
-.content > h2{
+.content > a > h2{
 	font-size: 23pt;
 	color:#333;
 }
@@ -292,7 +292,7 @@ body::-webkit-scrollbar {
 	
 }
 
-.content > p{
+.content > a > p{
 	width: 100%;
 	font-size: 12pt;
 	color:#c9c9c9;
@@ -618,6 +618,7 @@ body::-webkit-scrollbar {
 	text-overflow: ellipsis;
 	font-size: 1.0em;
 	color:#333;
+	text-align: center;
 }
 .notice_content_column{
 	display: flex;
