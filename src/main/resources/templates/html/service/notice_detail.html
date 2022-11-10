@@ -27,7 +27,8 @@
 			<div class="col-12" id="notice_detail_content_container">
 				<div class="col-12 detail_content">
 					<div class="col-12 detail_title">
-						<h2 th:text="${board.getBoardTitle()}"></h2>					</div>
+						<h2 th:text="${board.getBoardTitle()}"></h2>
+					</div>
 					<div class="col-12 write_name">
 						<h2>관리자</h2>
 						<p>2022.11.17</p>
@@ -36,9 +37,9 @@
 						<div class="col-12 notice_content_image">
 							<img src="img/thanks.png">
  						</div>
-						<div class="col-12 notice_content_write" th:text="${board.getBoardContent()}">
+						<div class="col-12 notice_content_write" th:text="${board.getBoardContent()}"></div>
 						<div class="col-12 go_list_btn">
-							<a href="/notice"><input type="button" name="go_to_list_button" value="">목록</a>
+							<a href="/notice"><button name="go_to_list_button">목록</button></a>
 						</div>
 					</div>
 				</div>
@@ -46,7 +47,6 @@
 		</div>
 	</div>
 
-	<div class="col-12" id="footer" th:replace="/html/common/footer.html :: footer">
-	</div>
+	<div class="col-12" id="footer" th:replace="/html/common/footer.html :: footer"></div>
 </body>
 </html>
