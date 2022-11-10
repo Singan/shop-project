@@ -11,10 +11,11 @@ public class BoardDTO {
 
     private String title;
     private String content;
-
-    BoardDTO(String title, String content){
+    private String thumbnail;
+    BoardDTO(String title, String content,String thumbnail){
         this.title = title;
         this.content = content;
+        this.thumbnail = thumbnail;
     }
 
     public Board boardCreate(Member member){

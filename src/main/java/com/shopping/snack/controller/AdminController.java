@@ -25,7 +25,7 @@ public class AdminController {
     public String goNoticeInsert(){
         Member member =(Member)request.getSession().getAttribute("user");
         if(member==null){
-            return "/login";
+            return "redirect:/login";
         }
         return "/html/admin/notice_insert.html";
     }
