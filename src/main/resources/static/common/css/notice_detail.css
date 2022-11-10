@@ -68,7 +68,7 @@
 .go_list_btn > a{
 	margin: 0;
 }
-.go_list_btn > a > input{
+.go_list_btn > a > button{
 	width: 100px;
 	height: 35px;
 	border-radius: 8px;
@@ -78,7 +78,7 @@
 	font-size:0.9em;
 
 }
-.go_list_btn > a > input:hover{
+.go_list_btn > a > button:hover{
 	background-color: #e5e5e5;
 	transition: .2s;
 }
