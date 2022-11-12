@@ -22,6 +22,8 @@ public class Board {
     @Column(name = "board_title")
     private String boardTitle;
 
+    @Column(name = "board_img")
+    private String boardImg;
 
     @Column(name = "board_day")
     private LocalDate boardDay;

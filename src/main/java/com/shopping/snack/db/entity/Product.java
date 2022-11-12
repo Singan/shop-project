@@ -34,4 +34,6 @@ public class Product {
 
     @Column(name = "product_view")
     private Boolean productView;
+
+
 }

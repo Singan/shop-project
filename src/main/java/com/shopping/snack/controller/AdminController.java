@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.util.Base64;
 
 @Controller
 @RequiredArgsConstructor
@@ -31,8 +33,16 @@ public class AdminController {
         return "/html/admin/notice_insert.html";
     }
     @PostMapping("/notice/insert")
-    public String noticeInsert( BoardDTO boardDTO){
+    public String noticeInsert( BoardDTO boardDTO ,  @RequestBody MultipartFile image) throws IOException{
         Member member =(Member)request.getSession().getAttribute("user");
+        String photoImg = null;
+        if (image != null) {
+            Base64.Encoder encoder = Base64.getEncoder();
+            byte[] photoEncode = encoder.encode(image.getBytes());
+            System.out.println(photoEncode);
+            photoImg = new String(photoEncode, "UTF8");
+            boardDTO.setThumbnail(photoImg);
+        }
         Long no = boardService.boardInsert(boardDTO,member);
         return "redirect:/notice/detail?no="+no;
     }
@@ -47,11 +57,18 @@ public class AdminController {
     }
 
     @PostMapping("/product/insert")
-    public String productInsert(ProductInsertDTO productInsertDTO ,  @RequestBody MultipartFile file){
+    public String productInsert(ProductInsertDTO productInsertDTO ,  @RequestBody MultipartFile image) throws IOException {
         System.out.println("loginHTML");
         Member member =(Member)request.getSession().getAttribute("user");
         if(member == null){
             return "redirect:/login";
+        }
+        String photoImg = null;
+        if (image != null) {
+            Base64.Encoder encoder = Base64.getEncoder();
+            byte[] photoEncode = encoder.encode(image.getBytes());
+            photoImg = new String(photoEncode, "UTF8");
+            productInsertDTO.setThumbnail(photoImg);
         }
         productService.productInsert(productInsertDTO);
         return "redirect:/";

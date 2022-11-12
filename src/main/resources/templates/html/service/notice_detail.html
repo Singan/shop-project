@@ -35,8 +35,8 @@
 					</div>
 					<div class="col-12 notice_content">
 						<div class="col-12 notice_content_image">
-							<img src="img/thanks.png">
- 						</div>
+							<img th:src="'data:image/jpeg;base64,'+${board.getBoardImg()}"
+								 th:if="${board.getBoardImg() != null}">  						</div>
 						<div class="col-12 notice_content_write" th:text="${board.getBoardContent()}"></div>
 						<div class="col-12 go_list_btn">
 							<a href="/notice"><button name="go_to_list_button">목록</button></a>
