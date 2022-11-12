@@ -8,7 +8,8 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
+	<script src="/js/profile.js"></script>
 </head>
 <body>
 	<div class="col-9 container">
@@ -24,8 +25,10 @@
 				<h2 class="col-12">마이페이지</h2>
 			</div>	
 			<div class="col-3">
-				<div class="col-6" id="profile_picture">
-					<button><img src="../img/plus_button.png"></button>
+				<div class="col-6 profile_picture">
+					<img src="/img/profile_picture_img.png" class="profile_image">
+					<label class="col-1 input_file_button" for="profile_picture_btn"><img src="/img/plus_button.png"></label>
+					<input id="profile_picture_btn" type="file" name="profile_picture_btn" onchange="readprofile(this)">
 				</div>
 			</div>
 			<div class="col-12" id="profile_infomation">
@@ -70,13 +73,15 @@
 				
 			</div>
 			<div class="col-2 insert_btn" id="profile_submit">
-				<input type="submit" name="profile_submit" value="변경하기">
+				<input id="profile_btn" type="submit" name="profile_submit" value="변경하기">
 			</div>
 			
 		</div>
 	</div>
+	
+   <div class="col-12" id="footer">
 
-	<div class="col-12" id="footer" th:replace="/html/common/footer.html :: footer">
-	</div>
+   </div>
+   <script src="/common/js/footer.js"></script>
 </body>
 </html>
