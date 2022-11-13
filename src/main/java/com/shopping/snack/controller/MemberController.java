@@ -35,6 +35,12 @@ public class MemberController {
     }
 
     @GetMapping("/member/profile")
+    public String profileGo(){
+        System.out.println("프로필");
+        return "/html/member/profile.html";
+    }
+
+    @PostMapping("/member/profile")
     public String profile(){
         System.out.println("프로필");
         return "/html/member/profile.html";
