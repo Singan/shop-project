@@ -13,7 +13,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "member_no")
     private Long productNo;
-    @Column(name = "product_thumbnail")
+    @Column(name = "product_thumbnail"  ,columnDefinition = "LONGTEXT")
     private String productThumbnail;
     @Column(name = "product_name")
     private String productName;

@@ -34,5 +34,8 @@ public class Member {
     private String memberName;
     @Column(name = "member_roles")
     private String memberRoles;
+    @Column(name = "member_image"  ,columnDefinition = "LONGTEXT")
+    private String memberImage;
+
 
 }

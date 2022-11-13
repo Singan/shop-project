@@ -14,7 +14,6 @@ public class ProductInsertDTO {
     private String category;
     private Long discountRate;
     private Long price;
-    private String thumbnail;
 
     public Product getProduct(){
         Product product = new Product();
@@ -24,7 +23,6 @@ public class ProductInsertDTO {
         product.setProductCate(this.category);
         product.setProductDiscount(this.discountRate);
         product.setProductPrice(this.price);
-        product.setProductThumbnail(this.thumbnail);
         return product;
     }
 }

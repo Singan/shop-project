@@ -16,6 +16,12 @@ public class ProductService {
     public Long productInsert(ProductInsertDTO productInsertDTO){
         return productRepository.productInsert(productInsertDTO.getProduct());
     }
+
+    public Long productInsert(ProductInsertDTO productInsertDTO,String thumbnail){
+        Product product=productInsertDTO.getProduct();
+        product.setProductThumbnail(thumbnail);
+        return productRepository.productInsert(product);
+    }
     public List<Product> productList(){
 
         return productRepository.productList();

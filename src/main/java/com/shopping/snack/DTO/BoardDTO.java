@@ -12,8 +12,6 @@ public class BoardDTO {
 
     private String title;
     private String content;
-    private String thumbnail;
-
 
     public Board boardCreate(Member member){
         Board board = new Board();
@@ -21,7 +19,6 @@ public class BoardDTO {
         board.setBoardWriter(member);
         board.setBoardContent(this.content);
         board.setBoardTitle(this.title);
-        board.setBoardImg(this.thumbnail);
         return board;
     }
 }

@@ -36,14 +36,22 @@ public class AdminController {
     public String noticeInsert( BoardDTO boardDTO ,  @RequestBody MultipartFile image) throws IOException{
         Member member =(Member)request.getSession().getAttribute("user");
         String photoImg = null;
+        System.out.println(image != null);
+        System.out.println(image);
+        System.out.println("왜안됨??");
+        Long no = null;
         if (image != null) {
+            System.out.println("왜안됨?");
             Base64.Encoder encoder = Base64.getEncoder();
             byte[] photoEncode = encoder.encode(image.getBytes());
             System.out.println(photoEncode);
+            System.out.println("-=======================");
             photoImg = new String(photoEncode, "UTF8");
-            boardDTO.setThumbnail(photoImg);
+            System.out.println(photoImg.length());
+            no = boardService.boardInsert(boardDTO,member,photoImg);
+        }else{
+            no = boardService.boardInsert(boardDTO,member);
         }
-        Long no = boardService.boardInsert(boardDTO,member);
         return "redirect:/notice/detail?no="+no;
     }
     @GetMapping("/product/insert")
@@ -68,9 +76,8 @@ public class AdminController {
             Base64.Encoder encoder = Base64.getEncoder();
             byte[] photoEncode = encoder.encode(image.getBytes());
             photoImg = new String(photoEncode, "UTF8");
-            productInsertDTO.setThumbnail(photoImg);
         }
-        productService.productInsert(productInsertDTO);
+        productService.productInsert(productInsertDTO,photoImg);
         return "redirect:/";
     }
 }
