@@ -22,7 +22,7 @@ public class Board {
     @Column(name = "board_title")
     private String boardTitle;
 
-    @Column(name = "board_img" , columnDefinition = "LONGTEXT")
+    @Column(name = "board_img" , columnDefinition = "MEDIUMTEXT")
     private String boardImg;
 
     @Column(name = "board_day")

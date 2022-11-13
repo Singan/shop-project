@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 import java.io.IOException;
 import java.util.Base64;
 
@@ -41,7 +42,6 @@ public class AdminController {
         System.out.println("왜안됨??");
         Long no = null;
         if (image != null) {
-            System.out.println("왜안됨?");
             Base64.Encoder encoder = Base64.getEncoder();
             byte[] photoEncode = encoder.encode(image.getBytes());
             System.out.println(photoEncode);
