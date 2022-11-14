@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>과자샵</title>
+	
+	<link rel="stylesheet" type="text/css" href="/common/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/common/css/friendlist.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+	<script
+	  src="https://code.jquery.com/jquery-3.6.1.min.js"
+	  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+	  crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="col-9 container">
+		<div class="col-12" id="header" th:replace="/html/common/header :: header">
+
+		</div>
+	</div>
+
+	<div class="col-9 container">		
+		<div class="col-12">
+			<div class="col-12 content_header">
+                <h2>친구목록</h2>
+            </div>
+        </div>
+		<div class="main">
+		    <input type="radio" id="tab-1" name="show" />
+		    <input type="radio" id="tab-2" name="show" />
+		    <input type="radio" id="tab-3" name="show" checked/>
+		    <div class="col-10 tab">
+		   	    <label for="tab-1">친구신청</label>
+		        <label for="tab-2">친구목록</label>
+		        <label for="tab-3">친구검색</label>
+		    </div>
+		    <div class="col-9 contents">
+		      <div class="content-dis">
+		        <div class="col-12">      
+		            <h2 class="col-12 contents_text">내게 온 친구목록</h2>
+		            <div class="col-12 classify">
+		                <div class="col-4 classify_haeder">
+		                    <h2>친구 닉네임</h2>
+		                </div>
+		                <div class="col-4 classify_haeder">
+		                    <h2>아이디</h2>
+		                </div>
+		                <div class="col-4 classify_haeder">
+		                    <h2>승낙여부</h2>
+		                </div>
+		            </div>
+		            <form>
+		                <div class="col-12 classify_content">
+		                    <div class="col-4 classify_haeder">
+		                        <h2>단추</h2>
+		                    </div>
+		                    <div class="col-4 classify_haeder">
+		                        <h2>danchu</h2>
+		                    </div>
+		                    <div class="col-4 whether">
+		                        <input id="accept" class="button" type="button" name="okay" value="수락하기">
+		                        <input id="reject" class="button" type="button" name="no" value="거절하기">
+		                    </div>
+		                </div>
+		            </form>
+		        </div>
+		        <div class="col-12">
+		            <h2 class="col-12 contents_text">내가 보낸 친구목록</h2>
+		            <div class="col-12 classify">
+		                <div class="col-4 classify_haeder">
+		                    <h2>친구 닉네임</h2>
+		                </div>
+		                <div class="col-4 classify_haeder">
+		                    <h2>아이디</h2>
+		                </div>
+		                <div class="col-4 classify_haeder">  
+
+		                </div>
+		            </div>
+		            <form>
+		                <div class="col-12 classify_content">
+		                    <div class="col-4 classify_haeder">
+		                        <h2>단추</h2>
+		                    </div>
+		                    <div class="col-4 classify_haeder">
+		                        <h2>danchu</h2>
+		                    </div>
+		                    <div class="col-4 whether">
+		                        <input id="cancel" class="button" type="button" name="cancel" value="취소하기">
+		                    </div>
+		                </div>
+		            </form>
+		        </div>   
+		    </div>
+		    <div class="content-dis">
+		    	<div class="col-12">
+		            <h2 class="col-12 contents_text">친구목록</h2>
+		            <div class="col-12 classify">
+		                <div class="col-4 classify_haeder">
+		                    <h2>친구 닉네임</h2>
+		                </div>
+		                <div class="col-4 classify_haeder">
+		                    <h2>아이디</h2>
+		                </div>
+		                <div class="col-4 classify_haeder">  
+
+		                </div>
+		            </div>
+		            <form>
+		                <div class="col-12 classify_content">
+		                    <div class="col-4 classify_haeder">
+		                        <h2>우엉</h2>
+		                    </div>
+		                    <div class="col-4 classify_haeder">
+		                        <h2>hello</h2>
+		                    </div>
+		                    <div class="col-4 whether">
+		                        <input id="delete" class="button" type="button" name="delete" value="삭제">
+		                    </div>
+		                </div>
+		            </form>
+		        </div>
+	    	</div>
+		    <div class="content-dis">
+		    	<form>
+			    	<div class="col-12">
+			    		<h2 class="col-12 contents_text">친구검색</h2>
+			            <div class="col-12 friend_search">
+			            	<input class="search" type="text" name="search">
+			            	<input id="search_btn" type="button" name="search_btn">
+			            </div>
+			            <div class="col-12 classify">
+			                <div class="col-4 classify_haeder">
+			                    <h2>친구 닉네임</h2>
+			                </div>
+			                <div class="col-4 classify_haeder">
+			                    <h2>아이디</h2>
+			                </div>
+			                <div class="col-4 classify_haeder">  
+
+			                </div>
+			            </div>
+			            
+			            <div class="col-12 classify_content">
+			                <div class="col-4 classify_haeder">
+			                    <h2>우엉</h2>
+			                </div>
+			                <div class="col-4 classify_haeder">
+			                    <h2>hello</h2>
+			                </div>
+			                <div class="col-4 whether">
+			                    <input id="add" class="button" type="button" name="okay" value="친구신청">
+			                </div>
+			            </div>   
+			        </div>
+			    </form>    
+		    </div>
+		</div>    
+	</div>    
+	    
+	    
+	
+   <div class="col-12" id="footer">
+
+   </div>
+
+</body>
+</html>
