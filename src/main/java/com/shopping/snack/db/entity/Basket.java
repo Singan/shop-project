@@ -1,24 +1,19 @@
 package com.shopping.snack.db.entity;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.*;
 
 @Entity
-@Getter
-@Setter
-public class Dibs {
+public class Basket {
     @Id
-    @Column(name = "dibs_no")
+    @Column(name = "basket_no")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long disNo;
+    private Long basket_no;
 
-    @JoinColumn(name="dibs_member")
+    @JoinColumn(name="basket_member")
     @ManyToOne(fetch = FetchType.LAZY)
     private Member member;
 
-    @JoinColumn(name="dibs_product")
+    @JoinColumn(name="basket_product")
     @ManyToOne(fetch = FetchType.LAZY)
     private Product product;
 }
