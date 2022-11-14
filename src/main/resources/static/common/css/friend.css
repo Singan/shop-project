@@ -1,0 +1,151 @@
+.main{
+    margin-top: 30px;
+}
+.main > input[type=radio] {
+    display: none;
+}
+#tab-1:checked ~ .tab label:nth-child(1),
+#tab-2:checked ~ .tab label:nth-child(2),
+#tab-3:checked ~ .tab label:nth-child(3),
+#tab-4:checked ~ .tab label:nth-child(4) {
+    background-color: #e9e9e9;
+    box-shadow: none;
+    transition: .2s;
+}
+.contents > div {
+    display: none;
+}
+#tab-1:checked ~ .contents > div:nth-child(1),
+#tab-2:checked ~ .contents > div:nth-child(2),
+#tab-3:checked ~ .contents > div:nth-child(3) {
+    display: block;
+}
+        
+.tab {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.tab label {
+    font-size: 18px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: #f3f3f3;
+}
+.contents {
+    background-color: #fff;
+    min-height: 250px;
+}
+.contents > div{
+    line-height: 1.5;      
+}
+.choice_btn{
+	display: flex;
+	padding:20px 0 ;
+}
+
+.contents_text{
+	margin:10px auto;
+	color: #444;
+	margin-top: 20px;  
+}
+.choice_btn > div > button{
+	width: 100%;
+	height: 50px;
+	background-color: #e9e9e9;
+	border:solid 1px #ccc;
+	font-size: 1.0em;
+	color:#555;
+	font-weight: bold;
+}
+.choice_btn > div > button:hover{
+	background-color: #f3f3f3;
+	transition: .2s;
+}
+.classify{
+	background-color: #f9f9f9;
+}
+.classify,
+.classify_content{
+	display: flex;
+	padding: 5px 0;
+	border-bottom: solid 1px #d9d9d9;
+}
+
+
+.classify_haeder > h2{
+	text-align: center;
+	color: #555;
+	font-size: 1.1em;
+	line-height: 40px;
+}
+.whether{
+	text-align: center;
+}
+.button{
+	width: 130px;
+	height: 40px;
+	border:none;
+	border-radius: 5px;
+	color:#fff;
+}
+#accept,#delete,
+#add{
+	background-color: #98b7ff;
+}
+#accept:hover, 
+#delete:hover, 
+#add:hover{
+	background-color: #739dff;
+	transition: .2s;
+}
+#reject{
+	background-color: #ff5f92;
+}
+#reject:hover{
+	background-color: #ff3f7c;
+	transition: .2s;
+}
+
+#cancel{
+	background-color: #ff5f92;
+}
+#cancel:hover{
+	background-color: #ff3f7c;
+	transition: .2s;
+}
+.friend_search{
+	text-align: right;
+	position: relative;
+}
+.search{
+	width: 250px;
+	height: 30px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border:solid 2px #ccc;
+	outline: none;
+	padding:5px 25px 5px 5px;
+}
+.search:focus{
+	border:solid 2px #aaa;
+}
+#search_btn{
+	width: 25px;
+	height: 25px;
+	background-color:transparent;
+	background-image: url(/img/search_logo.png);
+	background-size: 100%;
+	border: none;
+	position: absolute;
+	top: 2px;
+	right: 0;
+	cursor: pointer;
+}

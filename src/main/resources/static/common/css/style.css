@@ -863,6 +863,14 @@ body::-webkit-scrollbar {
 	background-position: center center;
 	cursor: pointer;
 }
+.basket_content_delete > button{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-color:transparent;
+	border:none;
+	cursor: pointer;
+}
 
 
 

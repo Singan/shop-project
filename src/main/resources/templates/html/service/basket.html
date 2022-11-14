@@ -9,37 +9,12 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-	<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
-	<script src="../js/swiper.min.js"></script>
+	<script
+	  src="https://code.jquery.com/jquery-3.6.1.min.js"
+	  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+	  crossorigin="anonymous"></script>
 
-	<script type="text/javascript">
-	
-	function count(type)  {
-	
-	  const resultElement = document.getElementById('result');
-	  
-	  let number = resultElement.innerText;
-	  let min_minus = document.getElementsByName("min")[0];
-		
-	  if(type === 'plus') {
-	    number = parseInt(number) + 1;
-	  	min_minus.removeAttribute('disabled');
-	  
-	  }else if(type === 'minus')  {
-	  	if (number <= 1) {
-	  		alert("더이상 내릴 수 없습니다.");
-	  		number = 1;
-	  		min_minus.setAttribute('disabled', true);
-
-	  	}else{
-	  		number = parseInt(number) - 1;
-	  		min_minus.removeAttribute('disabled');
-	  	}
-	   
-	  }
-	  resultElement.innerText = number;
-	}
-	</script>
+	<script type="text/javascript" src="/js/basket.js"></script>
 </head>
 <body>
 	<div class="col-9 container">
@@ -78,7 +53,7 @@
 						
 					</div>
 					<div class="col-1 basket_content_delete">
-						
+						<button></button>
 					</div>
 				</div>	
 			</form>	
