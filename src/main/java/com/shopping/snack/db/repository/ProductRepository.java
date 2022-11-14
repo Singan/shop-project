@@ -26,4 +26,8 @@ public class ProductRepository {
 
         return em.createQuery("select p from Product p").getResultList();
     }
+
+    public Product productFind(Long no){
+        return em.find(Product.class , no);
+    }
 }

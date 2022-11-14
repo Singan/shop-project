@@ -26,4 +26,8 @@ public class ProductService {
 
         return productRepository.productList();
     }
+
+    public Product productFind(Long no){
+        return productRepository.productFind(no);
+    }
 }

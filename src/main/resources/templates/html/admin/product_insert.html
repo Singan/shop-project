@@ -124,7 +124,7 @@
 		reader.onload = function (ee) {
 
 			$("#registration_upload_image").html("<img src='" + ee.target.result+"'/>") // div 안에 img 만드는 버전
-			$("#registration_upload_image").css("background-image","url("+ee.target.result+")"); // div 백그라운드 바꾸는 버전
+			//$("#registration_upload_image").css("background-image","url("+ee.target.result+")"); // div 백그라운드 바꾸는 버전
 
 		}
 		reader.readAsDataURL(e.target.files[0]);
