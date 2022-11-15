@@ -35,10 +35,5 @@ public class ServiceController {
         return "/html/service/notice_detail.html";
     }
 
-    @GetMapping("/product/category")
-    public String categorySelect(){
 
-
-        return "/html/product/content_list.html";
-    }
 }

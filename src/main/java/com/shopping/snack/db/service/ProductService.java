@@ -26,7 +26,10 @@ public class ProductService {
 
         return productRepository.productList();
     }
+    public List<Product> productList(String category){
 
+        return productRepository.productList(category);
+    }
     public Product productFind(Long no){
         return productRepository.productFind(no);
     }

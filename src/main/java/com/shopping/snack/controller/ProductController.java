@@ -1,5 +1,7 @@
 package com.shopping.snack.controller;
 
+import com.shopping.snack.db.enumClass.Category;
+import com.shopping.snack.db.enumClass.SpecialProduct;
 import com.shopping.snack.db.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -29,5 +31,24 @@ public class ProductController {
     public String product_order(){
         System.out.println("주문정보");
         return "/html/member/order_list.html";
+    }
+    @GetMapping("/product/category")
+    public String categorySelect(String category,Model model) throws IllegalArgumentException{
+        model.addAttribute("category",category);
+        SpecialProduct[] sp = SpecialProduct.values();
+        Category[] ct = Category.values();
+        for (SpecialProduct s:sp) {
+            if(s.name().equals(category)){
+                return "/html/product/content_list.html";
+            }
+        }
+        for (Category c:ct) {
+            if(c.name().equals(category)){
+                model.addAttribute("productList", productService.productList(category));
+                return "/html/product/content_list.html";
+            }
+        }
+        return "redirect:/";
+
     }
 }

@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "member_no")
+    @Column(name = "product_no")
     private Long productNo;
     @Column(name = "product_thumbnail"  ,columnDefinition = "MEDIUMTEXT")
     private String productThumbnail;
@@ -35,5 +35,6 @@ public class Product {
     @Column(name = "product_view")
     private Boolean productView;
 
-
+    @Column(name="product_short_des")
+    private String productShort;
 }

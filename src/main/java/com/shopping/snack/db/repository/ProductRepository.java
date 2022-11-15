@@ -27,6 +27,12 @@ public class ProductRepository {
         return em.createQuery("select p from Product p").getResultList();
     }
 
+    public List<Product> productList(String category){
+
+        return em.createQuery("select p from Product p where p.productCate = :category")
+                .setParameter("category",category)
+                .getResultList();
+    }
     public Product productFind(Long no){
         return em.find(Product.class , no);
     }
