@@ -27,7 +27,7 @@ public class ProductController {
     }
     @GetMapping("/member/order")
     public String product_order(){
-        System.out.println("프로필");
+        System.out.println("주문정보");
         return "/html/member/order_list.html";
     }
 }

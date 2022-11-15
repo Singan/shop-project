@@ -1,55 +1,53 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="utf-8">
-	<title>과자샵</title>
-	
-	<link rel="stylesheet" type="text/css" href="/common/css/style.css">
-	<link rel="stylesheet" type="text/css" href="/common/css/notice_detail.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-	<script
-	  src="https://code.jquery.com/jquery-3.6.1.min.js"
-	  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
-	  crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <title>과자샵</title>
+    <link rel="stylesheet" type="text/css" href="/common/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/common/css/notice_detail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
 </head>
 <body>
-	<div class="col-9 container">
-		<div class="col-12" id="header" th:replace="/html/common/header :: header">
+<div class="col-9 container">
+    <div class="col-12" id="header" th:replace="/html/common/header :: header">
 
-		</div>
-	</div>
+    </div>
+</div>
 
-	<div class="col-9 container">		
-		<div class="col-12">
-			<div class="col-12 content_header">
-				<h2>공지사항</h2>
-			</div>
+<div class="col-9 container">
+    <div class="col-12">
+        <div class="col-12 content_header">
+            <h2>공지사항</h2>
+        </div>
 
-			<div class="col-12" id="notice_detail_content_container">
-				<div class="col-12 detail_content">
-					<div class="col-12 detail_title">
-						<h2 th:text="${board.getBoardTitle()}"></h2>
-					</div>
-					<div class="col-12 write_name">
-						<h2>관리자</h2>
-						<p>2022.11.17</p>
-					</div>
-					<div class="col-12 notice_content">
-						<div class="col-12 notice_content_image">
-							<img th:src="'data:image/jpeg;base64,'+${board.getBoardImg()}"
-								 th:if="${board.getBoardImg() != null}">  						</div>
-						<div class="col-12 notice_content_write" th:text="${board.getBoardContent()}"></div>
-						<div class="col-12 go_list_btn">
-							<a href="/notice"><button name="go_to_list_button">목록</button></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+        <div class="col-12" id="notice_detail_content_container">
+            <div class="col-12 detail_content">
+                <div class="col-12 detail_title">
+                    <h2 th:text="${board.getBoardTitle()}"></h2>
+                </div>
+                <div class="col-12 write_name">
+                    <h2>관리자</h2>
+                    <p>2022.11.17</p>
+                </div>
+                <div class="col-12 notice_content">
+                    <div class="col-12 notice_content_image">
+                        <img th:src="'data:image/jpeg;base64,'+${board.getBoardImg()}"
+                             th:if="${board.getBoardImg() != null}"></div>
+                    <div class="col-12 notice_content_write" th:text="${board.getBoardContent()}"></div>
+                    <div class="col-12 go_list_btn">
+                        <a href="/notice">
+                            <button name="go_to_list_button">목록</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-	<div class="col-12" id="footer" th:replace="/html/common/footer.html :: footer"></div>
+<div class="col-12" id="footer" th:replace="/html/common/footer.html :: footer"></div>
 </body>
 </html>
