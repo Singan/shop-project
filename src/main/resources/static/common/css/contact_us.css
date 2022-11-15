@@ -1,0 +1,143 @@
+.modal{ 
+	height: 100%;
+    position:absolute;
+    background: rgba(0,0,0,0.8);
+    top:0; 
+    left:0;
+    z-index: 1;
+    display: none;
+}
+
+.modal_content{
+    height:600px;
+    background:#fff;
+    border-radius:10px;
+    position:relative; 
+	top: 20%;
+	padding:20px;
+    box-sizing:border-box; 
+}
+.modal_out_btn{
+	position: absolute;
+	right: 0;
+	top:15px;
+	cursor: pointer;
+}
+.modal_out_btn > img{
+	width: 25px;
+	height: 25px;
+}
+.model_layout{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	border-top:solid 1px #d9d9d9;
+	border-bottom: solid 1px #d9d9d9;
+	margin-left: 0;
+	margin-top:-1px;
+}
+.title, .write{
+	margin:10px 0;
+}
+.title > h2{
+	font-size: 1.2em;
+	border-right: solid 1px #d9d9d9;
+	margin-right: 5px;
+	text-align: center;
+}
+.write > input{
+	width: 95%;
+	height: 30px;
+	padding:5px;
+	outline: none;
+	border-radius: 5px;
+	border:solid 1px #a9a9a9;
+}
+.dropdown{
+	width: 150px;
+	height: 40px;
+	border-radius: 5px;
+}
+.dropdown > option{
+	padding:5px;
+}
+.content_title > h2{
+	font-size: 1.2em;
+	margin-right: 5px;
+	text-align: center;
+	margin-bottom: 15px;
+	padding-bottom: 10px;
+	border-bottom: solid 1px #d9d9d9;
+}
+.content_write > textarea{
+	width: 100%;
+	height: 200px;
+	resize: none;
+	border:solid 1px #d9d9d9;
+	outline: none;
+	padding:10px;
+}
+#go_service{
+	background-color: #efefef;
+}
+#go_mypage{
+	background-color: #fff !important;
+}
+.contents{
+	margin-top: 30px;
+	padding-bottom: 30px;
+	border-bottom: solid 1px #d9d9d9;
+}
+.contents > h2{
+	display: inline-block;
+	color:#333;
+	font-size: 1.4em;
+}
+.contents > a > button{
+	width: 85px;
+	height: 26px;
+	margin-left: 20px;
+	background-color: #f3f3f3;
+	border:none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.contents > a > button:hover{
+	background-color: #e9e9e9;
+	transition: .2s;
+}
+.inquiry{
+	display: flex;
+	padding:5px 0;
+	border-bottom: solid 1px #d9d9d9;
+}
+#inquiry_content{
+	background-color:#f9f9f9;
+}
+.row{
+	height: 40px;
+	line-height: 40px;
+}
+.row > h2{
+	font-size: 1.1em;
+}
+.row > a > h2{
+	font-size: 1.1em;
+	color:#333;	
+}
+.row > a > h2:hover{
+	text-decoration: underline;
+}
+.row > a > button{
+	width: 75px;
+	height: 30px;
+	background-color: #98b7ff;
+	border:none;
+	border-radius: 5px;
+	color:#fff;
+	font-size: 0.8em;
+}
+.row > a > button:hover{
+	background-color: #739dff;
+	transition: .2s;
+}

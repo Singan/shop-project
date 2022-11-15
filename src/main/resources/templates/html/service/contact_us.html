@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>과자샵</title>
+	
+	<link rel="stylesheet" type="text/css" href="/common/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/common/css/contact_us.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+	<script
+	  src="https://code.jquery.com/jquery-3.6.1.min.js"
+	  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+	  crossorigin="anonymous"></script>
+	  <script type="text/javascript">
+          $(function(){ 
+
+              $("#inquiry_btn").click(function(){
+                  $(".modal").fadeIn();
+              });
+            
+              $(".modal_out_btn").click(function(){
+                  $(".modal").fadeOut();
+              });
+            
+          });
+
+
+      </script>
+</head>
+<body>
+	<form>
+		<div class="col-12 modal">
+		    <div class="col-4 modal_content">
+		        <div class="col-1 modal_out_btn">
+		        	<img src="img/delete_button.png">
+		        </div>
+		        <div class="col-11 model_layout">
+		        	<div class="col-2 title">
+		        		<h2>이메일</h2>
+		        	</div>
+		        	<div class="col-10 write">
+		        		<input class="" type="text" name="user_email">
+		        	</div>
+		        </div>
+		        <div class="col-11 model_layout">
+		        	<div class="col-2 title">
+		        		<h2>문의 분류</h2>
+		        	</div>
+		        	<div class="col-10 write">
+		        		<select class="dropdown">
+		        			<option value="" selected>선택</option>
+		        			<option value="상품">상품</option>
+		        			<option value="개선 제안">개선 제안</option>
+		        			<option value="환불">환불</option>
+		        			<option value="기타">기타</option>
+		        		</select>
+		        	</div>
+		        </div>
+		        <div class="col-11 model_layout">
+		        	<div class="col-2 title">
+		        		<h2>제목</h2>
+		        	</div>
+		        	<div class="col-10 write">
+		        		<input class="" type="text" name="user_name">
+		        	</div>
+		        </div>
+		        <div class="col-11 model_layout">
+		        	<div class="col-12 content_title">
+		        		<h2>내용</h2>
+		        	</div>
+		        	<div class="col-12 content_write">
+		        		<textarea></textarea>
+		        	</div>
+		        </div>
+		        <div class="col-5 insert_btn">
+		        	<input type="button" name="submit" value="문의접수">
+		        </div>
+		    </div>
+		</div>
+	</form>
+	
+	<div class="col-9 container">
+		<div class="col-12" id="header" th:replace="/html/common/header :: header">
+
+		</div>
+	</div>
+
+	<div class="col-9 container">		
+		<div class="col-12">
+			<div class="col-12 content_header">
+				<h2>고객센터</h2>
+				<div class="col-2 left_menu_btn">
+					<div class="col-8 left_menu_btns">
+						<input id="go_basket" type="button" name="go_basket" value="장바구니">
+					</div>
+					<div class="col-8 left_menu_btns">
+						<input id="go_service" type="button" name="go_service" value="고객센터">
+					</div>
+					<div class="col-8 left_menu_btns" id="left_menu_btns_choice">
+						<input id="go_mypage" type="button" name="go_mypage" value="마이페이지">
+					</div>
+					<div class="col-8 left_menu_btns">
+						<input id="go_notice" type="button" name="go_notice" value="공지사항">
+					</div>
+				</div>
+			</div>
+
+			<div class="col-9">
+				<div class="col-12 contents">
+					<h2>문의내역</h2>
+					<a href="#"><button id="inquiry_btn">1:1 문의하기</button></a>
+				</div>
+				<div class="col-12 inquiry" id="inquiry_content">
+					<div class="col-2 row">
+						<h2>문의번호</h2>
+					</div>
+					<div class="col-6 row">
+						<h2>제목</h2>
+					</div>
+					<div class="col-2 row">
+						<h2>작성날짜</h2>
+					</div>
+					<!-- 관리자만 보이는 버튼 -->
+					<div class="col-1 row">
+						<h2>답변여부</h2>
+					</div>
+				</div>
+				<div class="col-12 inquiry">
+					<div class="col-2 row">
+						<h2>19311</h2>
+					</div>
+					<div class="col-6 row">
+						<a href=""><h2>과자가 시큼해요.</h2></a>
+					</div>
+					<div class="col-2 row">
+						<h2>2022-11-14</h2>
+					</div>
+					<!-- 관리자만 보이는 버튼 -->
+					<div class="col-1 row">
+						<a href=""><button>답변미완료</button></a>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+   <div class="col-12" id="footer">
+
+   </div>
+   <script src="/common/js/footer.js"></script>
+
+</body>
+</html>
+
