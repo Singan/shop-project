@@ -50,6 +50,7 @@
 	margin:40px 0;
 }
 .notice_content_image > img{
+	width: 56%;
 	height: 100%;
 }
 .notice_content_write{

@@ -963,9 +963,11 @@ body::-webkit-scrollbar {
 }
 #lucky_box_image{
 	height: 500px;
-	background-image: url(../../img/lucky_box_img.png);
-	background-repeat: no-repeat;
-	background-position: center center;
+	margin-top: 5%;
+}
+#lucky_box_image > img{
+	width: 80%;
+    height: 100%;
 }
 #lucky_box_content{
 	height: 500px;
@@ -999,9 +1001,11 @@ body::-webkit-scrollbar {
 
 #lucky_box_components_img{
 	height: 500px;
-	background-image: url(../../img/lucky_box_components_image.png);
-	background-repeat: no-repeat;
 
+}
+#lucky_box_components_img > img{
+	width: 100%;
+	height: 100%;
 }
 #lucky_box_components_font{
 	margin-top: 20px;
