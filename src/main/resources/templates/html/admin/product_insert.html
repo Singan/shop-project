@@ -12,6 +12,7 @@
 	  src="https://code.jquery.com/jquery-3.6.1.min.js"
 	  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
 	  crossorigin="anonymous"></script>
+	  <script type="text/javascript" src="/js/product_insert.js"></script>
 </head>
 <body>
 	<div class="col-9 container">
@@ -23,20 +24,19 @@
 	<div class="col-9 container">		
 		<div class="col-12" id="registration_content">
 			<form class="col-12" action="/product/insert" method="post" enctype="multipart/form-data">
-			<div class="col-12 content_header">
-				<h2>상품등록</h2>
-			</div>
-			<div class="col-12" id="registration_upload_container">
-				<div class="col-2" id="registration_upload_image">
-					<img src="/img/lucky_box_img.png">
+				<div class="col-12 content_header">
+					<h2>상품등록</h2>
 				</div>
-				<div class="col-10" id="registration_upload_btn">
-					<input type="file" name="image" accept="image/*">
+				<div class="col-12 registration_upload_container">
+					<div class="col-2 registration_upload_image" id="registration_upload_image">
+						<img src="" class="insert_img">
+					</div>
+					<div class="col-10 registration_upload_btn">
+						<label for="product_insert_img">대표사진</label>
+						<input id="product_insert_img" type="file" name="product_insert_img" accept="image/*" onchange="productinsert(this)">
+					</div>
 				</div>
-
-
-			</div>
-			<div class="col-12" id="registration_contents">
+				<div class="col-12" id="registration_contents">
 
 					<div class="col-12 notice_insert_content" >
 						<div class="col-1">
@@ -46,7 +46,14 @@
 							<input type="text" name="name" placeholder="제품명을 입력해주세요.">
 						</div>
 					</div>
-					
+					<div class="col-12 notice_insert_content" >
+						<div class="col-1">
+							<p>간략한 소개</p>
+						</div>
+						<div class="col-11 notice_insert_contents">
+							<input type="text" name="short_content" placeholder="간략한 소개를 입력해주세요..">
+						</div>
+					</div>
 					<div class="col-12 notice_insert_content" >
 						<div class="col-1">
 							<p>가격</p>
@@ -78,17 +85,24 @@
 						<div class="col-11 notice_insert_contents">
 							<select name="category" class="registration_category_choice" required>
 							    <option value="" selected="selected">카테고리 선택</option>
+<<<<<<< Updated upstream
 							    <option value="크리스피" >크리스피</option>
 							    <option value="캔디">캔디</option>
 							    <option value="초콜릿">초콜릿</option>
 							    <option value="음료">음료</option>
+=======
+							    <option value="세일상품">세일상품</option>
+								<option value="크리스피" >크리스피</option>
+								<option value="캔디">캔디</option>
+								<option value="초콜릿">초콜릿</option>
+								<option value="음료">음료</option>
+>>>>>>> Stashed changes
 							</select>
 
 							<select name="category_detail"  class="registration_category_choice" required>
 							    <option value="" selected="selected">카테고리 선택</option>
 							    <option value="세일상품">묶음상품</option>
 							    <option value="크리스피" >단일상품</option>
-							  
 							</select>
 						</div>
 					</div>
@@ -100,14 +114,21 @@
 							<textarea class="col-12" name="content" placeholder="내용을 입력해주세요."></textarea>
 						</div>
 					</div>
-
-			</div>
-			<div class="col-2 insert_btn">
-            	<input type="submit" name="sign_up_submit" value="등록">
-            </div>
+					<div class="col-12 registration_upload_container">
+						<div class="col-2 registration_upload_image">
+							<img src="" class="content_img">
+						</div>
+						<div class="col-10 registration_upload_btn">
+							<label for="product_content_img">상세이미지</label>
+							<input id="product_content_img" type="file" name="product_content_img" accept="image/*" onchange="productcontent(this)">
+						</div>
+					</div>
+				</div>
+				<div class="col-2 insert_btn">
+	            	<input type="submit" name="sign_up_submit" value="등록">
+	            </div>
 			</form>
 		</div>
-
 	</div>
 
 	<div class="col-12" id="footer" th:replace="/html/common/footer.html :: footer">

@@ -1062,23 +1062,24 @@ body::-webkit-scrollbar {
 
 
 
-#registration_upload_container{
+
+.registration_upload_container{
 	display: flex;
 	
 }
-#registration_upload_image{
+.registration_upload_image{
 	margin:70px 0 0 0;
 	border:solid 1px #d0d0d0;
 	height: 200px;
 }
-#registration_upload_image > img{
+.registration_upload_image > img{
 	width:100%;
 	height: 100%;
 }
-#registration_upload_btn{
+.registration_upload_btn{
 	position: relative;
 }
-#registration_upload_btn > input{
+.registration_upload_btn > input{
 	position: absolute;
 	bottom: 0;
 	left: 20px;
@@ -1110,10 +1111,11 @@ body::-webkit-scrollbar {
 	height: 200px;
 }
 #registration_contnet_content > textarea{
-	height: 150px;
+	height: 180px;
 	border:none;
 	padding: 10px;
 	outline: none;
+	resize: none;
 }
 #registration_content_text{
 	height: 250px;
@@ -1140,6 +1142,29 @@ body::-webkit-scrollbar {
     margin:5px 0 0 5px;
     border:solid 1px #d9d9d9;
 }
+.registration_upload_btn > label{
+	width: 100px;
+	height: 40px;
+	position: absolute;
+	bottom:0;
+	left: 10px;
+	background-color: #98b7ff;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 5px;
+	color:#fff;
+	font-size: 1.0em;
+	font-weight: bold;
+}
+.registration_upload_btn > label:hover{
+	background-color: #739dff;
+	transition: .2s;
+}
+#product_insert_img, #product_content_img{
+	display: none;
+}
+
+
 
 
 
