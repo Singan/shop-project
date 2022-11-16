@@ -1,0 +1,124 @@
+  /*쿠폰함 모달 css*/
+.modal{ 
+	height: 100%;
+    position:absolute;
+    background: rgba(0,0,0,0.8);
+    top:0; 
+    left:0;
+    z-index: 1;
+    display: none;
+}
+.modal_content::-webkit-scrollbar{
+  display:none;
+}
+.modal_content{
+    height:600px;
+    background:#fff;
+    border-radius:10px;
+    position:relative; 
+	top: 20%;
+	padding:20px;
+    box-sizing:border-box; 
+    overflow-y: scroll;
+}
+.modal_out_btn{
+	position: absolute;
+	right: 0;
+	top:15px;
+	cursor: pointer;
+}
+.modal_out_btn > img{
+	width: 25px;
+	height: 25px;
+}
+.modal_header{
+	padding-bottom: 15px;
+	border-bottom: solid 1px #d9d9d9;
+}
+.model_layout{
+	height: 50px;
+	margin-left: 0;
+	margin:10px 0;
+	border-bottom: solid 1px #d9d9d9;
+}
+.model_layout > h2{
+	font-size: 1.0em;
+}
+.model_layout > p{
+	margin-top: 5px;
+	font-size: 0.7em;
+	color:#ababab;
+}
+
+/*mypage css*/
+
+.user_welcome{
+	margin-top: 15px;
+}
+.user_welcome > h2{
+	text-align: center;
+	font-size: 1.3em;
+}
+.mypage_btn{
+	margin-top: 30px;
+}
+.mypage_btns{
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: -1px;
+}
+.mypage_btns > a{
+	width: 40%;
+	height: 70px;
+	text-align: center;
+	display: inline-block;
+
+}
+.mypage_move_btn{
+	width: 100%;
+	height: 70px;
+	background-color: #fff;
+	border:solid 1px #d9d9d9;
+	border-radius: 8px;
+	padding:10px;
+	font-size: 1.4em;
+	font-weight: bold;
+	color:#333;
+}
+.mypage_move_btn:hover{
+	background-color: #efefef;
+	transition: .2s;
+}
+.left_menu_btn{
+	position: absolute;
+	left: 0;
+	top: 200%;
+	right: 0;
+	bottom: 0;
+	margin: 0;
+}
+.left_menu_btns{
+	margin: 0;
+}
+
+.mypage_move_btn,.left_menu_btns > input{
+	background-image: url(../../img/right_arrow.png);
+	background-size: 28px 28px;
+	background-repeat: no-repeat;
+	background-position: 90% center;
+	cursor: pointer;
+} 
+.left_menu_btns > input{
+	width: 100%;
+	height: 40px;
+	background-color: #fff;
+	border:solid 1px #e9e9e9;
+	font-weight: bold;
+	text-align: left;
+	padding-left: 20px;
+	
+}
+#left_menu_btns_choice > input{
+	background-color: #efefef;
+}
+

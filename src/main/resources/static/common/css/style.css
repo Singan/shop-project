@@ -656,15 +656,11 @@ body::-webkit-scrollbar {
 	text-align: center;
 	font-size: 1.0em;
 	color:#333;
-<<<<<<< HEAD
-=======
 }
 .notice_content{
 	height: 40px;
 	line-height: 40px;
-	margin-top: 20px;
 	display: flex;
-	border-top: solid 1px #d9d9d9;
 	border-bottom: solid 1px #d9d9d9;
 }
 
@@ -1476,72 +1472,3 @@ body::-webkit-scrollbar {
 
 
 
-.user_welcome{
-	margin-top: 15px;
-}
-.user_welcome > h2{
-	text-align: center;
-	font-size: 1.3em;
-}
-.mypage_btn{
-	margin-top: 30px;
-}
-.mypage_btns{
-	display: flex;
-	flex-wrap: wrap;
-	margin-top: -1px;
-}
-.mypage_btns > a{
-	width: 40%;
-	height: 70px;
-	text-align: center;
-	display: inline-block;
-
-}
-.mypage_move_btn{
-	width: 100%;
-	height: 70px;
-	background-color: #fff;
-	border:solid 1px #d9d9d9;
-	border-radius: 8px;
-	padding:10px;
-	font-size: 1.4em;
-	font-weight: bold;
-	color:#333;
-}
-.mypage_move_btn:hover{
-	background-color: #efefef;
-	transition: .2s;
-}
-.left_menu_btn{
-	position: absolute;
-	left: 0;
-	top: 200%;
-	right: 0;
-	bottom: 0;
-	margin: 0;
-}
-.left_menu_btns{
-	margin: 0;
-}
-
-.mypage_move_btn,.left_menu_btns > input{
-	background-image: url(../../img/right_arrow.png);
-	background-size: 28px 28px;
-	background-repeat: no-repeat;
-	background-position: 90% center;
-	cursor: pointer;
-} 
-.left_menu_btns > input{
-	width: 100%;
-	height: 40px;
-	background-color: #fff;
-	border:solid 1px #e9e9e9;
-	font-weight: bold;
-	text-align: left;
-	padding-left: 20px;
-	
-}
-#left_menu_btns_choice > input{
-	background-color: #efefef;
-}

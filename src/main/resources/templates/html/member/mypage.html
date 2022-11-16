@@ -5,6 +5,7 @@
 	<title>과자샵</title>
 	
 	<link rel="stylesheet" type="text/css" href="/common/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/common/css/mypage.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
@@ -12,8 +13,27 @@
 	  src="https://code.jquery.com/jquery-3.6.1.min.js"
 	  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
 	  crossorigin="anonymous"></script>
+	  <script type="text/javascript" src="/js/mypage.js"></script>
 </head>
 <body>
+	<div class="col-12 modal">
+		<div class="col-4 modal_content">
+		    <div class="col-1 modal_out_btn">
+		      	<img src="img/delete_button.png">
+		    </div>
+		    <div class="col-12 modal_header">
+		     	<h2>쿠폰함</h2>
+		    </div>
+		    <div class="col-12 model_layout">
+		        <h2>첫 가입기념 쿠폰</h2>
+		        <p>유효기간 : 2021-10-13 ~ 2023-12-31일 까지</p>
+		    </div>
+		    <div class="col-12 model_layout">
+		        <h2>첫 가입기념 쿠폰</h2>
+		        <p>유효기간 : 2021-10-13 ~ 2023-12-31일 까지</p>
+		    </div>
+		</div>
+	</div>
 	<div class="col-9 container">
 		<div class="col-12" id="header" th:replace="/html/common/header :: header">
 
@@ -57,7 +77,7 @@
 					<a href=""><input class="mypage_move_btn" type="button" name="" value="회원정보 수정"></a>
 				</div>
 				<div class="col-12 mypage_btns">
-					<a href=""><input class="mypage_move_btn" type="button" name="" value="쿠폰 확인"></a>
+					<a href="#"><input id="coupon" class="mypage_move_btn" type="button" name="" value="쿠폰 확인"></a>
 				</div>
 				<div class="col-12 mypage_btns">
 					<a href=""><input class="mypage_move_btn" type="button" name="" value="주문내역"></a>
