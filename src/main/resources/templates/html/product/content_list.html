@@ -39,45 +39,13 @@
 				<div class="col-12 mylist" th:replace="/html/common/mylist.html :: mylist">
 					
 				</div>
-				<div class="col-3 content">
-					<a href=""><img src="img/asd.jpg"></a>
-					<p>간략한 소개</p>
-					<h2>가격</h2>
-				</div>
-				<div class="col-3 content">
-					<a href=""><img src="img/asd.jpg"></a>
-					<p>간략한 소개</p>
-					<h2>가격</h2>
-				</div>
-				<div class="col-3 content">
-					<a href=""><img src="img/asd.jpg"></a>
-					<p>간략한 소개</p>
-					<h2>가격</h2>
-				</div>
-				<div class="col-3 content">
-					<a href=""><img src="img/asd.jpg"></a>
-					<p>간략한 소개</p>
-					<h2>가격</h2>
-				</div>
-				<div class="col-3 content">
-					<a href=""><img src="img/asd.jpg"></a>
-					<p>간략한 소개</p>
-					<h2>가격</h2>
-				</div>
-				<div class="col-3 content">
-					<a href=""><img src="img/asd.jpg"></a>
-					<p>간략한 소개</p>
-					<h2>가격</h2>
-				</div>
-				<div class="col-3 content">
-					<a href=""><img src="img/asd.jpg"></a>
-					<p>간략한 소개</p>
-					<h2>가격</h2>
-				</div>
-				<div class="col-3 content">
-					<a href=""><img src="img/asd.jpg"></a>
-					<p>간략한 소개</p>
-					<h2>가격</h2>
+				<div class="col-3 content" th:each="product : ${productList}">
+					<a th:href="@{/product/detail(no=${product.getProductNo()})}">
+						<img th:src="'data:image/jpeg;base64,'+${product.getProductThumbnail()}"
+							 th:if="${product.getProductThumbnail()!= null}"/>
+						<p th:text="${product.getProductShort()}">간략한 소개</p>
+						<h2 th:text="${product.getProductPrice()}">가격</h2>
+					</a>
 				</div>
 				
 				<div id="page_move">
