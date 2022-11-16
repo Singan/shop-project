@@ -13,21 +13,7 @@
 	  src="https://code.jquery.com/jquery-3.6.1.min.js"
 	  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
 	  crossorigin="anonymous"></script>
-	  <script type="text/javascript">
-          $(function(){ 
-
-              $("#inquiry_btn").click(function(){
-                  $(".modal").fadeIn();
-              });
-            
-              $(".modal_out_btn").click(function(){
-                  $(".modal").fadeOut();
-              });
-            
-          });
-
-
-      </script>
+	  <script type="text/javascript" src="/js/contact_us.js"></script>
 </head>
 <body>
 	<form>
@@ -63,7 +49,16 @@
 		        		<h2>제목</h2>
 		        	</div>
 		        	<div class="col-10 write">
-		        		<input class="" type="text" name="user_name">
+		        		<input class="" type="text" name="user_title">
+		        	</div>
+		        </div>
+		        <div class="col-11 model_layout">
+		        	<div class="col-2 title">
+		        		<h2>이미지</h2>
+		        	</div>
+		        	<div class="col-10 write">
+		        		<label for="img_insert">업로드</label>
+		        		<input id="img_insert" type="file" name="user_img">
 		        	</div>
 		        </div>
 		        <div class="col-11 model_layout">
@@ -80,7 +75,66 @@
 		    </div>
 		</div>
 	</form>
-	
+
+	<!-- 관리자가 보는 화면 --> 
+	<form>
+		<div class="col-12 modal_admin">
+		    <div class="col-4 modal_content">
+		        <div class="col-1 modal_out_btn">
+		        	<img src="img/delete_button.png">
+		        </div>
+		        <div class="col-11 model_layout">
+		        	<div class="col-2 title">
+		        		<h2>이메일</h2>
+		        	</div>
+		        	<div class="col-10 write">
+		        		<input class="" type="text" name="user_email" value="qmkst@naver.com" disabled>
+		        	</div>
+		        </div>
+		        <div class="col-11 model_layout">
+		        	<div class="col-2 title">
+		        		<h2>문의 분류</h2>
+		        	</div>
+		        	<div class="col-10 write">
+		        		<select class="dropdown" disabled>
+		        			<option value="">선택</option>
+		        			<option value="상품">상품</option>
+		        			<option value="개선 제안">개선 제안</option>
+		        			<option value="환불" selected>환불</option>
+		        			<option value="기타">기타</option>
+		        		</select>
+		        	</div>
+		        </div>
+		        <div class="col-11 model_layout">
+		        	<div class="col-2 title">
+		        		<h2>제목</h2>
+		        	</div>
+		        	<div class="col-10 write">
+		        		<input class="" type="text" name="user_title" value="과자가 시큼해요." disabled>
+		        	</div>
+		        </div>
+		        <div class="col-11 model_layout">
+		        	<div class="col-12 content_title">
+		        		<h2>내용</h2>
+		        	</div>
+		        	<div class="col-12 content_write">
+		        		<p>과자를 뜯었는데 냄새가 너무 시큼해요.</p>
+		        	</div>
+		        </div>
+		        <div class="col-11 model_layout">
+		        	<div class="col-12 content_title">
+		        		<h2>답변</h2>
+		        	</div>
+		        	<div class="col-12 content_write">
+		        		<textarea></textarea>
+		        	</div>
+		        </div>
+		        <div class="col-5 insert_btn">
+		        	<input type="button" name="submit" value="답변완료">
+		        </div>
+		    </div>
+		</div>
+	</form>
 	<div class="col-9 container">
 		<div class="col-12" id="header" th:replace="/html/common/header :: header">
 
@@ -139,7 +193,7 @@
 					</div>
 					<!-- 관리자만 보이는 버튼 -->
 					<div class="col-1 row">
-						<a href=""><button>답변미완료</button></a>
+						<a href="#"><button id="admin_answer">답변미완료</button></a>
 					</div>
 				</div>
 			</div>

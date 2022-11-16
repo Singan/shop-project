@@ -1,4 +1,4 @@
-.modal{ 
+.modal,.modal_admin{ 
 	height: 100%;
     position:absolute;
     background: rgba(0,0,0,0.8);
@@ -7,7 +7,9 @@
     z-index: 1;
     display: none;
 }
-
+.modal_content::-webkit-scrollbar{
+  display:none;
+}
 .modal_content{
     height:600px;
     background:#fff;
@@ -16,6 +18,7 @@
 	top: 20%;
 	padding:20px;
     box-sizing:border-box; 
+    overflow-y: scroll;
 }
 .modal_out_btn{
 	position: absolute;
@@ -26,6 +29,7 @@
 .modal_out_btn > img{
 	width: 25px;
 	height: 25px;
+	position: fixed;
 }
 .model_layout{
 	display: flex;
@@ -45,6 +49,16 @@
 	margin-right: 5px;
 	text-align: center;
 }
+.write > label{
+	width: 100px;
+	height: 30px;
+	background-color: #98b7ff;
+	border-radius: 5px;
+	color:#fff;
+}
+#img_insert{
+	display: none;
+}
 .write > input{
 	width: 95%;
 	height: 30px;
@@ -63,19 +77,23 @@
 }
 .content_title > h2{
 	font-size: 1.2em;
-	margin-right: 5px;
 	text-align: center;
-	margin-bottom: 15px;
-	padding-bottom: 10px;
+	margin:5px 0;
+	padding:5px 0;
 	border-bottom: solid 1px #d9d9d9;
+}
+.content_write{
+	width: 100%;
+	height: 200px;
+	border:solid 1px #d9d9d9;
+	padding:10px;
 }
 .content_write > textarea{
 	width: 100%;
-	height: 200px;
+	height: 100%;
 	resize: none;
-	border:solid 1px #d9d9d9;
 	outline: none;
-	padding:10px;
+	border:none;
 }
 #go_service{
 	background-color: #efefef;

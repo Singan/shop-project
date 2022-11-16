@@ -1,4 +1,4 @@
-  /*쿠폰함 모달 css*/
+/*쿠폰함 모달 css*/
 .modal{ 
 	height: 100%;
     position:absolute;
@@ -30,6 +30,7 @@
 .modal_out_btn > img{
 	width: 25px;
 	height: 25px;
+	position: fixed;
 }
 .modal_header{
 	padding-bottom: 15px;
@@ -49,6 +50,7 @@
 	font-size: 0.7em;
 	color:#ababab;
 }
+
 
 /*mypage css*/
 
@@ -89,36 +91,3 @@
 	background-color: #efefef;
 	transition: .2s;
 }
-.left_menu_btn{
-	position: absolute;
-	left: 0;
-	top: 200%;
-	right: 0;
-	bottom: 0;
-	margin: 0;
-}
-.left_menu_btns{
-	margin: 0;
-}
-
-.mypage_move_btn,.left_menu_btns > input{
-	background-image: url(../../img/right_arrow.png);
-	background-size: 28px 28px;
-	background-repeat: no-repeat;
-	background-position: 90% center;
-	cursor: pointer;
-} 
-.left_menu_btns > input{
-	width: 100%;
-	height: 40px;
-	background-color: #fff;
-	border:solid 1px #e9e9e9;
-	font-weight: bold;
-	text-align: left;
-	padding-left: 20px;
-	
-}
-#left_menu_btns_choice > input{
-	background-color: #efefef;
-}
-
