@@ -36,13 +36,21 @@ public class MemberController {
 
     @GetMapping("/member/profile")
     public String profileGo(){
-        System.out.println("프로필");
         return "/html/member/profile.html";
     }
 
     @PostMapping("/member/profile")
     public String profile(){
-        System.out.println("프로필");
         return "/html/member/profile.html";
+    }
+    @GetMapping("/member/mypage")
+    public String mypageGo(){
+
+        return "/html/member/mypage.html";
+    }
+
+    @PostMapping("/member/mypage")
+    public String mypage(){
+        return "/html/member/mypage.html";
     }
 }
