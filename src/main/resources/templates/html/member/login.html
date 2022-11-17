@@ -65,11 +65,9 @@
 			dataType : "json",
 			contentType: 'application/json',
 			success:(data)=>{
-			console.log(data);
-				if(data){
+				if(data!==null){
 					location.href = "/";
 				}
-
 			},
 			fail:()=>{
 				alert("없는 사용자입니다.")

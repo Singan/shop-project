@@ -1,15 +1,19 @@
 package com.shopping.snack.db.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
+
 public class Member {
     @Id
     @Column(name = "member_no")
@@ -37,5 +41,7 @@ public class Member {
     @Column(name = "member_image"  ,columnDefinition = "LONGTEXT")
     private String memberImage;
 
-
+    @OneToMany(mappedBy = "member" ,fetch =FetchType.LAZY)
+    @JsonIgnore
+    private List<Basket> basketList = new ArrayList<>();
 }

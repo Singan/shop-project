@@ -22,4 +22,5 @@ function count(type)  {
 	   
 	  }
 	  resultElement.innerText = number;
-	}
+}
+
