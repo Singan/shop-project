@@ -36,7 +36,7 @@ public class ServiceController {
     @GetMapping("/member/basketList")
     @ResponseBody
     public List<Basket> basket(Model model){
-        System.out.println("이게왜");
+        System.out.println("배스킷리스트 겟");
         Member member = (Member)httpServletRequest.getSession().getAttribute("user");
         return member.getBasketList();
     }
@@ -47,6 +47,8 @@ public class ServiceController {
         Member member = (Member) httpServletRequest.getSession().getAttribute("user");
 
         basketService.basketAppend(member,basketRequest.getNo());
+
+        System.out.println("배스킷 post");
         return "/html/service/basket";
     }
 

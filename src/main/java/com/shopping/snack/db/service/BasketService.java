@@ -15,7 +15,6 @@ public class BasketService {
         Basket basket = new Basket();
         basket.setMember(member);
         basket.setProduct(productService.productFind(no));
-        member.getBasketList().add(basket);
         basketRepository.basketAppend(basket);
     }
 }
