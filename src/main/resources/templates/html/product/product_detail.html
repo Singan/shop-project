@@ -6,6 +6,7 @@
 	
 	<link rel="stylesheet" type="text/css" href="/common/css/style.css">
 	<link rel="stylesheet" type="text/css" href="/common/css/swiper.css">
+	<link rel="stylesheet" type="text/css" href="/common/css/product_detail.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
@@ -37,23 +38,30 @@
 					<div class="col-12 product_content_btn">
 						<div id="product_content_heart">
 							
-						</div>
-						<a  th:href="@{/product/order(no=${product.getProductNo()})}">
-							<input id="product_purchase" class="submit" type="button" name="lucky_box_purchase"  value="구매하기"></a>
-						<input id="product_gift" class="submit" type="button" name="lucky_box_purchase"  value="선물하기">
-						<input id="product_basket" class="submit" type="button" name="lucky_box_purchase"  value="장바구니에 담기">
+						</div>	
+						<a th:href="@{/product/order(no=${product.getProductNo()})}"><button id="product_purchase" class="submit" type="button" name="lucky_box_purchase"  value="구매하기">구매하기</button></a>
+						<a href=""><button id="product_gift" class="submit" type="button" name="lucky_box_purchase"  value="선물하기">선물하기</button></a>
+						<a href=""><button id="product_basket" class="submit" type="button" name="lucky_box_purchase"  value="장바구니에 담기">장바구니에 담기</button></a>
 					</div>
 			</div>
 			<div class="col-12" id="lucky_box_components">
 				<div class="col-12" id="lucky_box_components_header">
 					<h2>제품상세</h2>
 				</div>
-				<div class="col-6" id="lucky_box_components_img">
+				<div class="col-6 contents" id="lucky_box_components_img">
 					<img src="/img/lucky_box_components_image.png">
 				</div>
 				<div class="col-6" id="lucky_box_components_font" th:text="${product.getProductDetail()}">
 					<h3>구성품</h3>
 					<p>고래밥, 배배, 초코칩쿠키, 오감자, 왕꿈틀이, 마이구미, 비틀즈, 오뜨 포카칩 오리지널, 초코송이, 꼬북칩, 썬칩, 눈을감자</p>
+				</div>
+			</div>
+			<div class="col-12 review">
+				<div class="col-12 content_title">
+					<h2>후기</h2>
+				</div>
+				<div class="col-8 contents">
+					<textarea placeholder="후기를 남겨주세요."></textarea>
 				</div>
 			</div>
 		</div>

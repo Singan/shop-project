@@ -976,7 +976,8 @@ body::-webkit-scrollbar {
 	bottom: 0;
 	flex-wrap: nowrap;
 }
-.product_content_btn > input{
+.product_content_btn > a{
+	width: 100%;
 	margin-right: 20px;
 }
 
@@ -1032,14 +1033,14 @@ body::-webkit-scrollbar {
 	position: absolute;
 	bottom: 60px;
 	left: 0;
-	background-image: url(../../img/heart.png);
+	background-image: url(/img/heart.png);
 	background-size: 100%;
 	background-repeat: no-repeat;
 	cursor: pointer;
 
 }
 #product_content_heart:hover{
-	background-image: url(../../img/heart_hover.png);
+	background-image: url(/img/heart_hover.png);
 	background-size: 100%;
 	background-repeat: no-repeat;
 	transition: .2s;
