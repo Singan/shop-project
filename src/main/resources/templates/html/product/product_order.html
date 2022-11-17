@@ -28,11 +28,11 @@
 				</div>
 				<div class="col-12 product_order_contents">
 					<div class="col-2 product_order_content_image">
-						
+						<img th:src="'data:image/jpeg;base64,'+${product.getProductThumbnail()}">
 					</div>
 					<div class="col-6 product_order_information">
 						<h2 th:text="${product.getProductName()}">제품명</h2>
-						<h2 th:text="${product.getPrice()}">가격</h2>
+						<h2 th:text="${product.getProductPrice()}">가격</h2>
 						<p th:text="${product.getProductShort()}">간략한 소개</p>
 					</div>
 					<div class="col-2 product_order_quantity">

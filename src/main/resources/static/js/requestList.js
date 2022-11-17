@@ -1,5 +1,6 @@
 requestBasketList();
 console.log("으으으으")
+var basketList = 0;
 function requestBasketList(){
 	$.ajax({
 			url:"/member/basketList",
@@ -9,6 +10,7 @@ function requestBasketList(){
 			success:(data)=>{
 			console.log("으음")
 			console.log(data);
+			basketList = data;
 			}
 	})
 }
