@@ -31,9 +31,9 @@
 						
 					</div>
 					<div class="col-6 product_order_information">
-						<h2>제품명</h2>
-						<h2>가격</h2>
-						<p>간략한 소개</p>
+						<h2 th:text="${product.getProductName()}">제품명</h2>
+						<h2 th:text="${product.getPrice()}">가격</h2>
+						<p th:text="${product.getProductShort()}">간략한 소개</p>
 					</div>
 					<div class="col-2 product_order_quantity">
 						<h2>1개</h2>

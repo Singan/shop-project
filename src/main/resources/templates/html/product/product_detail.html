@@ -38,7 +38,8 @@
 						<div id="product_content_heart">
 							
 						</div>
-						<input id="product_purchase" class="submit" type="button" name="lucky_box_purchase"  value="구매하기">
+						<a  th:href="@{/product/order(no=${product.getProductNo()})}">
+							<input id="product_purchase" class="submit" type="button" name="lucky_box_purchase"  value="구매하기"></a>
 						<input id="product_gift" class="submit" type="button" name="lucky_box_purchase"  value="선물하기">
 						<input id="product_basket" class="submit" type="button" name="lucky_box_purchase"  value="장바구니에 담기">
 					</div>

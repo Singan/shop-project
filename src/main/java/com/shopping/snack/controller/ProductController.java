@@ -49,6 +49,12 @@ public class ProductController {
             }
         }
         return "redirect:/";
+    }
 
+    @GetMapping("/product/order")
+    public String orderGo(Long no,Model model){
+
+        model.addAttribute("product",productService.productFind(no));
+        return "/html/product/product_order.html";
     }
 }
