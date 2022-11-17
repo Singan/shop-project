@@ -7,7 +7,7 @@
     left:0;
     z-index: 10;
     display: none;
-    overflow-y: hidden;
+    over
 }
 .modal_content::-webkit-scrollbar{
   display:none;
