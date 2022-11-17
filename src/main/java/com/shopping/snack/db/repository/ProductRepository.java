@@ -24,7 +24,7 @@ public class ProductRepository {
 
     public List<Product> productList(){
 
-        return em.createQuery("select p from Product p").getResultList();
+        return em.createQuery("select p from Product p").setFirstResult(0).setMaxResults(8).getResultList();
     }
 
     public List<Product> productList(String category){
