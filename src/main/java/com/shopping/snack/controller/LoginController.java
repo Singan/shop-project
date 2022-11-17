@@ -1,6 +1,7 @@
 package com.shopping.snack.controller;
 
 import com.shopping.snack.DTO.LoginDTO;
+import com.shopping.snack.DTO.SessionMemberDTO;
 import com.shopping.snack.db.entity.Member;
 import com.shopping.snack.db.service.MemberService;
 import lombok.RequiredArgsConstructor;
@@ -28,7 +29,7 @@ public class LoginController {
     }
     @PostMapping("/login")
     @ResponseBody
-    public Member login(HttpServletRequest request, @RequestBody LoginDTO loginDTO){
+    public SessionMemberDTO login(HttpServletRequest request, @RequestBody LoginDTO loginDTO){
         Member member = new Member();
         member.setMemberId(loginDTO.getId());
 
@@ -36,9 +37,10 @@ public class LoginController {
         System.out.println(findMember.getMemberPassword().equals(loginDTO.getPwd()));
         if(findMember.getMemberPassword().equals(loginDTO.getPwd())){
             HttpSession httpSession = request.getSession();
-            httpSession.setAttribute("user",findMember);
+            SessionMemberDTO sessionMemberDTO =new SessionMemberDTO(findMember);
+            httpSession.setAttribute("user",sessionMemberDTO);
 
-            return findMember;
+            return sessionMemberDTO ;
         };
         return null;
     }

@@ -17,7 +17,6 @@ public class IndexController {
     private final HttpServletRequest request;
     @GetMapping("/")
     public String index( Model model){
-        HttpSession httpSession = request.getSession();
         System.out.println("index Get");
 
         model.addAttribute("productList",productService.productList());

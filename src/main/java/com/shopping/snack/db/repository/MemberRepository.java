@@ -19,8 +19,9 @@ public class MemberRepository {
         em.persist(member);
         return member.getMemberNo();
     }
+    @Transactional
     public Member findMember(Member member){
-        return em.createQuery("select m from Member m where m.memberId = :id",Member.class).setParameter(
+        return em.createQuery("select m from Member m where m.memberId = :id ",Member.class).setParameter(
                 "id",member.getMemberId()).getSingleResult();
     }
 }

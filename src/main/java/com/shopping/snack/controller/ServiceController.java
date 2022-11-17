@@ -1,6 +1,8 @@
 package com.shopping.snack.controller;
 
+import com.shopping.snack.DTO.BasketDTO;
 import com.shopping.snack.DTO.BasketRequest;
+import com.shopping.snack.DTO.SessionMemberDTO;
 import com.shopping.snack.db.entity.Basket;
 import com.shopping.snack.db.entity.Board;
 import com.shopping.snack.db.entity.Member;
@@ -35,16 +37,19 @@ public class ServiceController {
     }
     @GetMapping("/member/basketList")
     @ResponseBody
-    public List<Basket> basket(Model model){
+    public List<BasketDTO> basket(Model model){
         System.out.println("배스킷리스트 겟");
-        Member member = (Member)httpServletRequest.getSession().getAttribute("user");
+        SessionMemberDTO member = (SessionMemberDTO)httpServletRequest.getSession().getAttribute("user");
+        for(BasketDTO b : member.getBasketList()){
+            System.out.println(b.getProductNo());
+        }
         return member.getBasketList();
     }
     @PostMapping("/member/basket")
     @ResponseBody
     public String basket(@RequestBody BasketRequest basketRequest){
         System.out.println("basket" + basketRequest.getNo());
-        Member member = (Member) httpServletRequest.getSession().getAttribute("user");
+        SessionMemberDTO member = (SessionMemberDTO) httpServletRequest.getSession().getAttribute("user");
 
         basketService.basketAppend(member,basketRequest.getNo());
 

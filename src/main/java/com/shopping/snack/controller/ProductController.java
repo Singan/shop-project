@@ -17,13 +17,11 @@ public class ProductController {
     private final ProductService productService;
     @GetMapping("/product")
     public String productList(HttpServletRequest request){
-        HttpSession httpSession = request.getSession();
         System.out.println("index Get");
         return "index.html";
     }
     @GetMapping("/product/detail")
     public String productDetail(Model model,HttpServletRequest request, Long no){
-        HttpSession httpSession = request.getSession();
         model.addAttribute("product", productService.productFind(no));
         return "/html/product/product_detail.html";
     }

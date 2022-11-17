@@ -2,6 +2,7 @@ package com.shopping.snack.controller;
 
 import com.shopping.snack.DTO.BoardDTO;
 import com.shopping.snack.DTO.ProductInsertDTO;
+import com.shopping.snack.DTO.SessionMemberDTO;
 import com.shopping.snack.db.entity.Member;
 import com.shopping.snack.db.repository.BoardRepository;
 import com.shopping.snack.db.service.BoardService;
@@ -35,7 +36,7 @@ public class AdminController {
     }
     @PostMapping("/notice/insert")
     public String noticeInsert( BoardDTO boardDTO ,  @RequestBody MultipartFile image) throws IOException{
-        Member member =(Member)request.getSession().getAttribute("user");
+        SessionMemberDTO member =(SessionMemberDTO)request.getSession().getAttribute("user");
         String photoImg = null;
         System.out.println(image != null);
         System.out.println(image);
@@ -48,9 +49,9 @@ public class AdminController {
             System.out.println("-=======================");
             photoImg = new String(photoEncode, "UTF8");
             System.out.println(photoImg.length());
-            no = boardService.boardInsert(boardDTO,member,photoImg);
+            no = boardService.boardInsert(boardDTO,member.createMember(),photoImg);
         }else{
-            no = boardService.boardInsert(boardDTO,member);
+            no = boardService.boardInsert(boardDTO,member.createMember());
         }
         return "redirect:/notice/detail?no="+no;
     }
