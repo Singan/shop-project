@@ -5,6 +5,7 @@
 	<title>과자샵</title>
 	
 	<link rel="stylesheet" type="text/css" href="/common/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/common/css/notice_insert.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
@@ -13,6 +14,7 @@
 	  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
 	  crossorigin="anonymous"></script>
 	<script src="/js/profile.js"></script>
+	<script src="/js/notice_insert.js"></script>
 </head>
 <body>
 	<div class="col-9 container">
@@ -53,21 +55,20 @@
 						</div>
 						<div class="col-11 notice_insert_contents" id="insert_content_image">
 							<label class="col-1" for="insert_content_image_upload">업로드</label>
-							<input type="file" id="insert_content_image_upload" name="image" value="이미지 찾기" accept="image/*">
+							<input type="file" id="insert_content_image_upload" name="image" value="이미지 찾기" accept="image/*" onchange="readURL(this)">
 						</div>
 					</div>
 
-					<div class="col-12 notice_insert_content" >
-						<div class="col-12">
+					<div class="col-12 notice_insert_content" id="notice_insert_text" >
+						<div class="col-12 notice_insert_contents" id="noticeHedaer">
 							<p>내용</p>
 						</div>
-						<div class="col-12 notice_insert_contents" id="notice_insert_contnet_content">
-							<textarea class="col-12" name="content" placeholder="내용을 입력해주세요."></textarea>
+						<div class="col-12 notice_insert_contents" id="notice_insert_contnet_content" contentEditable="true">
+							
 						</div>
 					</div>
 
 				</div>
-
 				<div class="col-2 insert_btn">
 	            	<input type="submit" name="sign_up_submit" value="등록">
 	            </div>

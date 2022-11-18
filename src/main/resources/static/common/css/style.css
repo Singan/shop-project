@@ -731,7 +731,7 @@ body::-webkit-scrollbar {
 
 
 #notice_insert_content_container{
-	height: 500px;
+	
 	border:solid 1px #d9d9d9;
 	margin-top: 30px;
 }
@@ -782,14 +782,10 @@ body::-webkit-scrollbar {
 	display: none;
 }
 
-#notice_insert_contnet_content{
-	height: 300px;
-}
-#notice_insert_contnet_content > textarea{
-	height: 90%;
-	border:none;
-	padding: 5px;
-	outline: none;
+
+#notice_insert_contnet_content > img{
+	width:400px;
+	height:400px;
 }
 
 #notice_insert_submit{
@@ -844,6 +840,8 @@ body::-webkit-scrollbar {
 .basket_content_counter > input{
 	width: 25px;
 	height: 25px;
+	
+	border:none;
 }
 
 #result{
@@ -855,12 +853,26 @@ body::-webkit-scrollbar {
 	background-image: url(../../img/delete_button.png);
 	background-size: 17%;
 	background-repeat: no-repeat;
-	background-position: center center;
+	background-position: top center;
 	cursor: pointer;
+}
+.basket_content_delete > a > button{
+	width:100%;
+	height: 40%;
+	background-color: #98b7ff;
+	border:none;
+	border-radius: 5px;
+	color:#fff;
+	font-weight: bold;
+	cursor: pointer;
+}
+.basket_content_delete > a > button:hover{
+	background-color: #739dff;
+	transition: .2s;
 }
 .basket_content_delete > button{
 	width: 100%;
-	height: 100%;
+	height: 30%;
 	position: relative;
 	background-color:transparent;
 	border:none;
