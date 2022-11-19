@@ -1,6 +1,4 @@
 requestBasketList();
-console.log("으으으으")
-var basketList = 0;
 function requestBasketList(){
 	$.ajax({
 			url:"/member/basketList",
@@ -10,16 +8,40 @@ function requestBasketList(){
 			success:(data)=>{
 			console.log("으음")
 			console.log(data);
-			basketList = data;
+			basketSetting(data);
 			}
 	})
 }
-
 var drop =  $("#basket_dropdown");
-drop.on("click",function(){
-	var basket= $("#basketlist_content");
-	basket.html({
-
+function basketSetting(basketList){
+	var basketlistContent= $("#basketlist_content");
+	var htmlString = "";
+	basketList.map(function(basket){
+		htmlString +=
+			`<a href="/product/detail?no=${basket.productNo}">
+				<div class='col-12 list_contents'>
+					<div class="col-2 list_image">
+						<img src="data:image/jpeg;base64,${basket.productThumbnail}">
+					</div>
+					<div class="col-9 list_text">
+					<h2>${basket.productName}</h2>
+						${basket.productShort}
+					</div>
+				</div>
+			</a>`;
 	})
-	console.log("클릭클릭")
-})
+	basketlistContent.html(htmlString)
+}
+//
+// < div
+// className = "col-12 list_contents" >
+// 	< div
+// className = "col-2 list_image" >
+// 	< img
+// src = "" >
+// 	< /div>
+// <div className="col-9 list_text">
+// 	<h2>제품명</h2>
+// 	<p>이것은 엄청난 제품 이것은 엄청난 제품</p>
+// </div>
+// </div>
