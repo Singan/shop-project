@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -35,25 +36,15 @@ public class AdminController {
         return "/html/admin/notice_insert.html";
     }
     @PostMapping("/notice/insert")
-    public String noticeInsert( BoardDTO boardDTO ,  @RequestBody MultipartFile image) throws IOException{
+    @ResponseBody
+    public Long noticeInsert(@RequestBody BoardDTO boardDTO) throws IOException{
         SessionMemberDTO member =(SessionMemberDTO)request.getSession().getAttribute("user");
-        String photoImg = null;
-        System.out.println(image != null);
-        System.out.println(image);
-        System.out.println("왜안됨??");
-        Long no = null;
-        if (image != null) {
-            Base64.Encoder encoder = Base64.getEncoder();
-            byte[] photoEncode = encoder.encode(image.getBytes());
-            System.out.println(photoEncode);
-            System.out.println("-=======================");
-            photoImg = new String(photoEncode, "UTF8");
-            System.out.println(photoImg.length());
-            no = boardService.boardInsert(boardDTO,member.createMember(),photoImg);
-        }else{
-            no = boardService.boardInsert(boardDTO,member.createMember());
-        }
-        return "redirect:/notice/detail?no="+no;
+
+        System.out.println(boardDTO.getContent());
+        System.out.println(boardDTO.getTitle());
+        Long no = boardService.boardInsert(boardDTO,member.createMember());
+
+        return no;
     }
     @GetMapping("/product/insert")
     public String goProductInsert(){

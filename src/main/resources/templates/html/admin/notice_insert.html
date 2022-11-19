@@ -28,7 +28,6 @@
 			<div class="col-12 content_header" id="notice_insert_content_header">
 				<h2>공지사항 등록</h2>
 			</div>
-			<form method="post" action="/notice/insert" enctype="multipart/form-data">
 				<div class="col-12" id="notice_insert_content_container">
 
 					<div class="col-12 notice_insert_content" >
@@ -70,12 +69,33 @@
 
 				</div>
 				<div class="col-2 insert_btn">
-	            	<input type="submit" name="sign_up_submit" value="등록">
+	            	<input type="submit" name="sign_up_submit" value="등록" onSubmit="return false;" id="submit">
 	            </div>
-        	</form>
 		</div>
 	</div>
 	<div class="col-12" id="footer" th:replace="/html/common/footer.html :: footer"></div>
 
 </body>
+<script>
+	$("#submit").on("click",function (){
+		var title = $("input[name=title]").val();
+		var content = $("#notice_insert_contnet_content").html();
+		$.ajax({
+			url:"/notice/insert",
+			type:"POST",
+			data:JSON.stringify({
+				title:title,
+				content:content,
+			}),
+			dataType : "json",
+			contentType: 'application/json',
+			success:(data)=>{
+				console.log(title)
+				console.log(content)
+				console.log(data)
+			},
+		});
+	})
+
+</script>
 </html>

@@ -11,3 +11,4 @@ function readURL(obj) {
         $('#notice_insert_contnet_content').append(img);
     }
 }
+

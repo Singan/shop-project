@@ -20,11 +20,7 @@ public class BoardService {
         return boardRepository.boardInsert(boardDTO.boardCreate(member));
     }
 
-    public Long boardInsert(BoardDTO boardDTO, Member member,String thumbnail){
-        Board board = boardDTO.boardCreate(member);
-        board.setBoardImg(thumbnail);
-        return boardRepository.boardInsert(board);
-    }
+
     public List<Board> boardList(){
         return boardRepository.boardList();
     }

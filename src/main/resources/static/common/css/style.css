@@ -1520,7 +1520,10 @@ body::-webkit-scrollbar {
 	background-color: #efefef;
 }
 
-
+#notice_content>img{
+	height: 200px;
+	width: 200px;
+}
 
 
 

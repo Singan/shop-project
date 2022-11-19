@@ -22,13 +22,11 @@ public class Board {
     @Column(name = "board_title")
     private String boardTitle;
 
-    @Column(name = "board_img" , columnDefinition = "MEDIUMTEXT")
-    private String boardImg;
 
     @Column(name = "board_day")
     private LocalDate boardDay;
 
-    @Column(name = "board_content")
+    @Column(name = "board_content" , columnDefinition = "LONGTEXT")
     private String boardContent;
 
 
