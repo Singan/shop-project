@@ -69,3 +69,8 @@
 	height: 50px;
 	margin:0 10px 0 10px;
 }
+.image_delete > h2{
+	font-size: 0.7em;
+	color:#a9a9a9;
+	padding: 5px 0 0 10px;
+}
