@@ -14,3 +14,12 @@ function requestBasketList(){
 			}
 	})
 }
+
+var drop =  $("#basket_dropdown");
+drop.on("click",function(){
+	var basket= $("#basketlist_content");
+	basket.html({
+
+	})
+	console.log("클릭클릭")
+})

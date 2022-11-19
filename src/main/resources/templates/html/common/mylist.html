@@ -1,5 +1,5 @@
 <div class="col-2 mylist" id="mylist" th:fragment="mylist">
-	<div class="col-12 wishlist" th:if="${session.user !=null}">
+	<div class="col-12 wishlist" >
 		<div class="col-12 list_title" id="wishlist">
 			<h2>찜목록</h2>
 			<img id="wishlist_dropdown" class="dropdown" src="/img/down_arrow2.png">
@@ -40,7 +40,7 @@
 	</div>	
 		<!-- 장바구니  -->
 	<div class="col-12">	
-		<div class="col-12 list_title" id="basketlist">
+		<div class="col-12 list_title" id="basketlist" th:if="${session.user !=null}">
 			<h2>장바구니</h2>
 			<img id="basket_dropdown" class="dropdown" src="/img/down_arrow2.png">
 		</div>

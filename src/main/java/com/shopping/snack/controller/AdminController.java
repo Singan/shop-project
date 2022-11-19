@@ -28,7 +28,7 @@ public class AdminController {
 
     @GetMapping("/notice/insert")
     public String goNoticeInsert(){
-        Member member =(Member)request.getSession().getAttribute("user");
+        SessionMemberDTO member =(SessionMemberDTO)request.getSession().getAttribute("user");
         if(member==null){
             return "redirect:/login";
         }
@@ -58,7 +58,7 @@ public class AdminController {
     @GetMapping("/product/insert")
     public String goProductInsert(){
         System.out.println("loginHTML");
-        Member member =(Member)request.getSession().getAttribute("user");
+        SessionMemberDTO member =(SessionMemberDTO)request.getSession().getAttribute("user");
         if(member == null){
             return "redirect:/login";
         }
@@ -68,7 +68,7 @@ public class AdminController {
     @PostMapping("/product/insert")
     public String productInsert(ProductInsertDTO productInsertDTO ,  @RequestBody MultipartFile image) throws IOException {
         System.out.println("loginHTML");
-        Member member =(Member)request.getSession().getAttribute("user");
+        SessionMemberDTO member =(SessionMemberDTO)request.getSession().getAttribute("user");
         if(member == null){
             return "redirect:/login";
         }
