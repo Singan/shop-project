@@ -29,7 +29,9 @@
 			</div>	
 			<div class="col-3">
 				<div class="col-6 profile_picture">
-					<img src="/img/profile_picture_img.png" class="profile_image">
+					<img src="/img/profile_picture_img.png" class="profile_image" th:if="${session.user.getMemberImage() ==null}"/>
+					<img th:src="'data:image/jpeg;base64,'+${session.user.getMemberImage()}"
+						 src="/img/profile_picture_img.png" class="profile_image" th:if="${session.user.getMemberImage() !=null}">
 					<label class="col-1 input_file_button" for="profile_picture_btn"><img src="/img/plus_button.png"></label>
 					<input id="profile_picture_btn" type="file" name="profile_picture_btn" onchange="readprofile(this)">
 				</div>
@@ -39,7 +41,7 @@
 					<h2>아이디</h2>
 				</div>
 				<div class="col-10 profile_user_infomation">
-					<input type="" name="" disabled="disabled" placeholder="hello">
+					<input type="" name="" disabled="disabled" th:placeholder="${session.user.getMemberId()}">
 				</div>
 
 				<div class="col-2 profile_infomations">
@@ -61,14 +63,14 @@
 					<h2>주소</h2>
 				</div>
 				<div class="col-10 profile_user_infomation" id="profile_address">
-					<input type="text" name="address" value="경기도 광주시 양벌2동 123-23">
+					<input type="text" name="address" th:value="${session.user.getMemberAddress()}">
 				</div>
 
 				<div class="col-2 profile_infomations">
 					<h2>이메일</h2>
 				</div>
 				<div class="col-10 profile_user_infomation" id="profile_email">
-					<input type="text" name="email" value="nice@naver.com">
+					<input type="text" name="email" th:value="${session.user.getMemberEmail()}">
 				</div>
 				
 			</div>

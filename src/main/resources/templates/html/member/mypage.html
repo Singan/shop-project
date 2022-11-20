@@ -63,11 +63,13 @@
 			
 			<div class="col-3 ">
 				<div class="col-6 profile_picture">
-					
+					<img src="/img/profile_picture_img.png" class="profile_image" th:if="${session.user.getMemberImage() ==null}"/>
+					<img th:src="'data:image/jpeg;base64,'+${session.user.getMemberImage()}"
+						 src="/img/profile_picture_img.png" class="profile_image" th:if="${session.user.getMemberImage() !=null}">
 				</div>
 				<div class="col-12">
 					<div class="col-12 user_welcome">
-						<h2>짱구님 어서오세요 !</h2>
+						<h2 th:text="${session.user.getMemberName()}"></h2>
 					</div>
 				</div>
 				

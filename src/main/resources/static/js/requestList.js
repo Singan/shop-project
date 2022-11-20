@@ -25,11 +25,15 @@ function basketSetting(basketList){
 					</div>
 					<div class="col-9 list_text">
 					<h2>${basket.productName}</h2>
-						${basket.productShort}
+						<p>${basket.productShort}</p>
+						<h4 class="list_count_title">수량</h4>
+						<h4 class="list_count">1개</h4>
 					</div>
+
 				</div>
 			</a>`;
 	})
+	htmlString +=`<div class="col-12 list_more"><button>더보기</button></div>`
 	basketlistContent.html(htmlString)
 }
 //
