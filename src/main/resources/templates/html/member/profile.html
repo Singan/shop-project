@@ -45,14 +45,6 @@
 				</div>
 
 				<div class="col-2 profile_infomations">
-					<h2>비밀번호</h2>
-				</div>
-				<div class="col-10 profile_user_infomation" id="profile_pwd_change">
-					<input type="password" name="pwd_change" placeholder="비밀번호">
-					<input type="password" name="re_pwd_change" placeholder="비밀번호 확인">
-				</div>
-
-				<div class="col-2 profile_infomations">
 					<h2>이름</h2>
 				</div>
 				<div class="col-10 profile_user_infomation">
@@ -60,7 +52,7 @@
 				</div>
 
 				<div class="col-2 profile_infomations">
-					<h2>주소</h2>
+					<h2>기본배송지</h2>
 				</div>
 				<div class="col-10 profile_user_infomation" id="profile_address">
 					<input type="text" name="address" th:value="${session.user.getMemberAddress()}">

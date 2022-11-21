@@ -4,6 +4,10 @@
 	font-size: 0.8em;
 	overflow-y: scroll;
 }
+#notice_insert_contnet_content > div > div > img{
+	width:400px;
+	height: 400px;
+}
 #notice_insert_contnet_content > div > img{
 	width:400px;
 	height: 400px;

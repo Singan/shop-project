@@ -57,8 +57,9 @@
 	padding-bottom: 30px;
 	border-bottom: solid 1px #d9d9d9;
 }
-.notice_content_write > p{
-
+.notice_content_write > div > img{
+	width:400px;
+	height: 400px;
 }
 .go_list_btn{
 	display: flex;
@@ -70,7 +71,7 @@
 	margin: 0;
 }
 .go_list_btn > a > button{
-	width: 100px;
+	width: 100px; 
 	height: 35px;
 	border-radius: 8px;
 	border:none;

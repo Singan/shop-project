@@ -16,6 +16,11 @@
 	background-repeat: no-repeat;
 	transition: .2s;
 }
+#lucky_box_content{
+	margin-top: 5%;
+    padding: 10px;
+    border: solid 1px #d1d1d1;
+}
 .review_write{
 	margin-top: 20px;
 }
@@ -40,6 +45,10 @@
     font-weight: bold;
     border-radius: 3px;
     cursor: pointer;
+}
+.contents > button:hover{
+	background-color:#e1e1e1;
+	transition: .2s;
 }
 .content_title > h2{
 	text-align: center;
@@ -73,4 +82,109 @@
 	font-size: 0.7em;
 	color:#a9a9a9;
 	padding: 5px 0 0 10px;
+}
+.quantity{
+	margin:20px 0 0 0;
+	display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.quantity > h2{
+	text-align: left;
+	border-bottom: solid 1px #d9caca;
+    padding-bottom: 10px;
+}
+.count{
+	margin-top: 10px;
+	text-align: left;
+}
+.plus, .minus{
+	width:25px;
+	height: 25px;
+	border-radius: 100%;
+	border:solid 1px #ececec;
+	background-color:transparent;
+	background-position: center center;
+	cursor: pointer;
+}
+.plus{
+	background-image: url("/img/plus.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.minus{
+	background-image: url("/img/minus.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.number{
+	width:35px;
+	height: 25px;
+	outline: none;
+	border:1px solid #ececec;
+	padding: 5px;
+	position: relative;
+    bottom: 8px;
+    text-align: center;
+}
+.replyHeader{
+	margin-top: 20px;
+	padding-bottom: 10px;
+	border-bottom: solid 1px #d9d9d9;
+}
+.replyHeader > h2{
+	font-size: 1.3em;
+	color:#333;
+}
+.replyHeader > select{
+	width:80px;
+	height: 35px;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+.replycontents{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-top: 20px;
+	border-bottom: solid 1px #ececec;
+}
+.replycontent{
+	height: 70px;
+	overflow-y:scroll; 
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	align-content: center;
+}
+.replycontent::-webkit-scrollbar { 
+    display: none;
+}
+.replycontent > h4{
+	width:100%;
+	font-size: 0.8em;
+	color:#c7c7c7;
+}
+.replycontent > p{
+	width:100%;
+	font-size: 1.0em;
+	color:#333;
+}
+.replyImage > img{
+	width: 50px;
+	height: 50px;
+}
+.userInfo{
+	display: flex;
+    flex-wrap: wrap;
+    height: 70px;
+}
+.userInfo > dt, .userInfo > dd{
+	display: inline-block;
+	font-size: 0.7em;
+	color:#a9a9a9;
+	width: 50%;	
+}
+.replyImage, .replycontent, .userInfo{
+	padding:5px;
 }
