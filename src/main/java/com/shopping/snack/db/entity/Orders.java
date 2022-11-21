@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -20,10 +22,9 @@ public class Orders {
     private OrdersStatus ordersStatus;
 
     @JoinColumn(name = "orders_member")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY )
     private Member ordersMember;
 
-    @JoinColumn(name="orders_items")
-    @OneToOne(fetch = FetchType.LAZY)
-    private OrdersItem ordersItem;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "orders" , cascade = CascadeType.ALL)
+    private List<OrdersItem> ordersItems = new ArrayList<>();
 }

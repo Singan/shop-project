@@ -15,7 +15,7 @@ public class OrdersItem {
     private Long ordersItemNo;
 
     @JoinColumn(name = "ordersItem_order")
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY , cascade = CascadeType.ALL)
     private Orders orders;
 
     @JoinColumn(name = "ordersItem_product")
@@ -23,5 +23,5 @@ public class OrdersItem {
     private Product product;
 
     @Column(name = "ordersItem_count")
-    private Long count;
+    private Integer count;
 }
