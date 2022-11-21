@@ -27,7 +27,7 @@ function basketSetting(basketList){
 					<h2>${basket.productName}</h2>
 						<p>${basket.productShort}</p>
 						<h4 class="list_count_title">수량</h4>
-						<h4 class="list_count">1개</h4>
+						<h4 class="list_count">${basket.productCount}</h4>
 					</div>
 
 				</div>

@@ -16,6 +16,7 @@ public class BasketService {
     public void basketAppend(SessionMemberDTO member, Long no){
         Basket basket = new Basket();
         basket.setMember(member.createMember());
+        basket.setBasketCount(1);
         basket.setProduct(productService.productFind(no));
         member.getBasketList().add(new BasketDTO(basket));
         basketRepository.basketAppend(basket);

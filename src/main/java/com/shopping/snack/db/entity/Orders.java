@@ -22,4 +22,8 @@ public class Orders {
     @JoinColumn(name = "orders_member")
     @ManyToOne(fetch = FetchType.LAZY)
     private Member ordersMember;
+
+    @JoinColumn(name="orders_items")
+    @OneToOne(fetch = FetchType.LAZY)
+    private OrdersItem ordersItem;
 }
