@@ -83,50 +83,6 @@
 	color:#a9a9a9;
 	padding: 5px 0 0 10px;
 }
-.quantity{
-	margin:20px 0 0 0;
-	display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-.quantity > h2{
-	text-align: left;
-	border-bottom: solid 1px #d9caca;
-    padding-bottom: 10px;
-}
-.count{
-	margin-top: 10px;
-	text-align: left;
-}
-.plus, .minus{
-	width:25px;
-	height: 25px;
-	border-radius: 100%;
-	border:solid 1px #ececec;
-	background-color:transparent;
-	background-position: center center;
-	cursor: pointer;
-}
-.plus{
-	background-image: url("/img/plus.png");
-	background-size: 100%;
-	background-repeat: no-repeat;
-}
-.minus{
-	background-image: url("/img/minus.png");
-	background-size: 100%;
-	background-repeat: no-repeat;
-}
-.number{
-	width:35px;
-	height: 25px;
-	outline: none;
-	border:1px solid #ececec;
-	padding: 5px;
-	position: relative;
-    bottom: 8px;
-    text-align: center;
-}
 .replyHeader{
 	margin-top: 20px;
 	padding-bottom: 10px;

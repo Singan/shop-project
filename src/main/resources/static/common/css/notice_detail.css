@@ -64,11 +64,10 @@
 .go_list_btn{
 	display: flex;
 	align-items: center;
-	flex-direction: row-reverse;
-
+	justify-content: flex-end;
 }
 .go_list_btn > a{
-	margin: 0;
+	margin: 0 0 0 10px;
 }
 .go_list_btn > a > button{
 	width: 100px; 

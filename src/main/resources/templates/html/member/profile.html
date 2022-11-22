@@ -5,6 +5,7 @@
 	<title>과자샵</title>
 	
 	<link rel="stylesheet" type="text/css" href="/common/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/common/css/profile.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
@@ -55,7 +56,10 @@
 					<h2>기본배송지</h2>
 				</div>
 				<div class="col-10 profile_user_infomation" id="profile_address">
-					<input type="text" name="address" th:value="${session.user.getMemberAddress()}">
+					<h4>주소</h4>
+					<input class="col-10" type="text" name="address" th:value="${session.user.getMemberAddress()}">
+					<h4>상세주소</h4>
+					<input class="col-10" type="text" name="addressDetail" value="우림아파트 103동 1204호">
 				</div>
 
 				<div class="col-2 profile_infomations">

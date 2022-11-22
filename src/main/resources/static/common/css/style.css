@@ -1204,7 +1204,7 @@ body::-webkit-scrollbar {
 .product_order_quantity{
 	text-align: center;
 	display: flex;
-    flex-wrap: wrap;
+    align-items: center;
 }
 .product_order_quantity > h2{
 	width: 100%;
@@ -1455,24 +1455,7 @@ body::-webkit-scrollbar {
 	padding-bottom: 30px;
 	border-bottom: solid 1px #d9d9d9;
 }
-.go_list_btn{
-	display: flex;
-	flex-direction: row-reverse;
-}
-.go_list_btn > a > input{
-	width: 100px;
-	height: 35px;
-	margin:10px 0 0 0;
-	border-radius: 8px;
-	border:none;
-	cursor: pointer;
-	background-color: #efefef;
-	font-size:0.9em;
-}
-.go_list_btn > a > input:hover{
-	background-color: #e5e5e5;
-	transition: .2s;
-}
+
 
 
 
