@@ -31,7 +31,8 @@ public class ServiceController {
     private final HttpServletRequest httpServletRequest;
     @GetMapping("/member/basket")
     public String basketGo(Model model){
-        System.out.println("basket");
+        SessionMemberDTO member = (SessionMemberDTO)httpServletRequest.getSession().getAttribute("user");
+        model.addAttribute("basketList",member.getBasketList());
 
         return "/html/service/basket";
     }

@@ -29,21 +29,19 @@
 			<div class="col-12 content_header">
 				<h2 class="col-12">장바구니</h2>
 			</div>
-			<form>
-				<div class="col-11 basket_content_container">
+				<div class="col-11 basket_content_container" th:each="basket : ${basketList}">
 					<div class="col-1 basket_content_image">
-						<img src="../img/snack_photo1.png">
+						<img th:src="'data:image/jpeg;base64,'+${basket.getProductThumbnail()}">
 					</div>
 					<div class="col-9 basket_content_font">
-						<h2>포카칩 오리지널맛 200g </h2>
-						<p>asdasdasdasdasdasdasdasd</p> 
+						<h2 th:text="${basket.getProductName()}"></h2>
+						<p th:text="${basket.getProductShort()}"></p>
 					</div>
 					<div class="col-1 basket_content_delete">
 						<button></button>
-						<a href=""><button>구매하기</button></a>
+						<a th:href="@{/product/order(no=${basket.getProductNo()})}"><button>구매하기</button></a>
 					</div>
-				</div>	
-			</form>	
+				</div>
 		</div>
 	</div>
 	</div>
