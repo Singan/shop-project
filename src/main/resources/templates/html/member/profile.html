@@ -34,7 +34,7 @@
 					<img th:src="'data:image/jpeg;base64,'+${session.user.getMemberImage()}"
 						 src="/img/profile_picture_img.png" class="profile_image" th:if="${session.user.getMemberImage() !=null}">
 					<label class="col-1 input_file_button" for="profile_picture_btn"><img src="/img/plus_button.png"></label>
-					<input id="profile_picture_btn" type="file" name="profile_picture_btn" onchange="readprofile(this)">
+					<input id="profile_picture_btn" type="file" name="profile_picture_btn" accept="image/*" onchange="readprofile(this)">
 				</div>
 			</div>
 			<div class="col-12" id="profile_infomation">
