@@ -53,7 +53,7 @@
 						<img th:src="'data:image/jpeg;base64,'+${product.getProductThumbnail()}"
 							 th:if="${product.getProductThumbnail()!= null}">
 						<p th:text="${product.getProductName()}"></p>
-						<h2 th:text="${product.getProductPrice()}"></h2>
+						<h2 th:text="${product.getProductPrice()} +' 원'"></h2>
 					</a>
 				</div>
 

@@ -24,7 +24,6 @@
 
 	<div class="col-9 container">		
 		<div class="col-12" id="product_order_content">
-			<form>
 				<div class="col-12 content_header">
 					<h2>주문정보</h2>
 				</div>
@@ -54,27 +53,27 @@
 				<div class="col-11 payment_information">
 					<div class="col-12 payment_information_content">
 						<h2>이름</h2>
-						<input type="text" name="payment_information_name">
+						<input type="text" name="name">
 					</div>
 					<div class="col-12 payment_information_content">
 						<h2>주소</h2>
-						<input type="text" name="payment_information_address">
+						<input type="text" name="address" disabled="disabled">
 						<div class="payment_information_small_btn">
-							<input id="payment_information_address_search" class="payment_information_small_button" type="button" name="payment_information_address_search" value="찾기">
+							<button id="addrSearch" class="payment_information_small_button">우편번호 검색</button>
 						</div>
 						
 					</div>
 					<div class="col-12 payment_information_content">
 						<h2>상세주소</h2>
-						<input type="text" name="payment_information_address_detail">
+						<input type="text" name="address_detail">
 					</div>
 					<div class="col-12 payment_information_content" id="payment_information_phone">
 						<h2>휴대폰 번호</h2>
-						<input type="text" name="payment_information_phone_number">-
-						<input type="text" name="payment_information_phone_number">-
-						<input type="text" name="payment_information_phone_number">
+						<input type="text" name="number">-
+						<input type="text" name="number">-
+						<input type="text" name="number">
 						<div class="payment_information_small_btn">
-							<input id="payment_information_phone_number" class="payment_information_small_button" type="button" name="payment_information_phone_certification" value="인증번호 받기">
+							<button id="certification" class="payment_information_small_button">인증번호 받기</button>
 						</div>
 						
 					</div>
@@ -82,7 +81,7 @@
 						<h2>쿠폰</h2>
 						<input type="text" name="payment_information_coupon">
 						<div class="payment_information_small_btn">
-							<input id="payment_information_coupon" class="payment_information_small_button" type="button" name="payment_information_phone_certification" value="쿠폰보기">
+							<button id="coupon" class="payment_information_small_button">쿠폰보기</button>
 						</div>
 					</div>
 				</div>
@@ -91,8 +90,7 @@
 				<div class="col-2 insert_btn">
 	            	<input type="submit" name="product_order_submit" value="완료">
 	            </div>
-			</form>
-			
+
 		</div>
 	</div>
 
@@ -100,4 +98,16 @@
 	</div>
 
 </body>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+	var addrSearch = $("#addrSearch");
+	addrSearch.on("click",function(){
+		new daum.Postcode({
+			oncomplete: function(data) {
+				console.log(data)
+			}
+		}).open();
+	})
+
+</script>
 </html>
