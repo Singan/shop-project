@@ -33,9 +33,9 @@ function basketSetting(basketList){
 						<h4 class="list_count">${basket.productCount}</h4>
 					</div>
 					<div class="col-2 listMoney">
-					<h2>가격</h2>
-					<p></p>
-				</div>
+						<h2>가격</h2>
+						<p></p>
+					</div>
 				</div>
 			</a>`;
 	})
