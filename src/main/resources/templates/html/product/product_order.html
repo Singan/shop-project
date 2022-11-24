@@ -105,6 +105,10 @@
 		new daum.Postcode({
 			oncomplete: function(data) {
 				console.log(data)
+				$("input[name='zonecode']").val(data.zonecode);
+				$("input[name='address']").val(data.roadAddress)
+				//roadAddress 주소
+				//zonecode 우편번호
 			}
 		}).open();
 	})
