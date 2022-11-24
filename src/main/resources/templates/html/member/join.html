@@ -64,8 +64,14 @@
                     </div>
                     <div class="col-8 sign_up_input">
                         <h2>기본배송지 : </h2>
-                        <input type="text" name="address" required>
-                       <button>찾기</button>
+                        <input type="text" name="address" disabled="disabled">
+                       <div class="payment_information_small_btn">
+                            <button id="addrSearch" class="payment_information_small_button" type="button">우편번호 검색</button>
+                        </div>
+                    </div>
+                    <div class="col-8 sign_up_input">
+                        <h2>우편번호</h2>
+                        <input type="text" name="zonecode" disabled="disabled">
                     </div>
                     <div class="col-8 sign_up_input" id="address_detail">
                         <h2>상세주소 : </h2>
@@ -94,6 +100,18 @@
     </div>
 
 </body>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    var addrSearch = $("#addrSearch");
+    addrSearch.on("click",function(){
+        new daum.Postcode({
+            oncomplete: function(data) {
+                console.log(data)
+            }
+        }).open();
+    })
+
+</script>
 <script>
     var submit = $("#submit")
     submit.on("click",function(){

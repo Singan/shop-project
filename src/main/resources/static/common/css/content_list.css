@@ -57,12 +57,14 @@
 .list_text{
 	position: relative;
 }
+.list_text > h2, .list_text > p{
+	width: 200px;
+    margin-left: 0;
+}
 .list_text > h2{
 	font-size: 1.0em;
 }
 .list_text > p{
-	width: 80%;
-	margin-left: 0;
 	font-size: 0.8em;
 	color: #a9a9a9;
 	overflow:hidden;
@@ -101,4 +103,29 @@
 	right: 10px;
 	font-size: 0.9em;
 	bottom:0;
+}
+.listTotal{
+	padding:10px 0;
+	display: flex;
+	flex-direction: column;
+}
+.listTotal >h1{
+	padding-bottom: 10px;
+	font-size: 1.2em;
+
+}
+.listTotal > h2{
+	font-size: 1.1em;
+}
+.listMoney{
+	text-align: center;
+}
+.listMoney > h2{
+	font-size: 1.1em;
+}
+.listMoney > p{
+	font-size: 1.0em;
+}
+.listChoice{
+	line-height: 40px;
 }
