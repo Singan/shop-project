@@ -6,6 +6,7 @@
 	
 	<link rel="stylesheet" type="text/css" href="/common/css/style.css">
 	<link rel="stylesheet" type="text/css" href="/common/css/swiper.css">
+	<link rel="stylesheet" type="text/css" href="/common/css/basket.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
@@ -30,20 +31,41 @@
 				<h2 class="col-12">장바구니</h2>
 			</div>
 				<div class="col-11 basket_content_container" th:each="basket : ${basketList}">
+					<div class="col-1 listCheck">
+						<input type="checkbox" name="">
+					</div>
 					<div class="col-1 basket_content_image">
 						<img th:src="'data:image/jpeg;base64,'+${basket.getProductThumbnail()}">
 					</div>
-					<div class="col-9 basket_content_font">
+					<div class="col-7 basket_content_font">
 						<h2 th:text="${basket.getProductName()}"></h2>
 						<p th:text="${basket.getProductShort()}"></p>
+					</div>
+					<div class="col-1 price">
+						<h2>가격</h2>
+						<p>12000원</p>
+					</div>
+					<div class="col-2">
+						<div class="col-11 quantity">
+							<h2 class="col-3">수량</h2>
+							<div class="col-6 count">
+								<button class="plus" type="button"></button>
+								<input class="number" type="text" name="" maxlength="3" value="1">
+								<button class="minus" type="button"></button>
+							</div>
+						</div>
 					</div>
 					<div class="col-1 basket_content_delete">
 						<button></button>
 						<a th:href="@{/product/order(no=${basket.getProductNo()})}"><button>구매하기</button></a>
 					</div>
 				</div>
+				<div class="col-12 totalPrice">
+					<h2>총가격</h2>
+					<p>12000원</p>
+				</div>
+			</div>
 		</div>
-	</div>
 	</div>
 	<div class="col-12" id="footer" th:replace="/html/common/footer.html :: footer">
 	</div>

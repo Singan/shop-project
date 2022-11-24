@@ -1,6 +1,7 @@
 .quantity{
-	margin:20px 0 0 0;
 	display: flex;
+	align-items: center;
+    flex-direction: column;
 }
 .quantity > h2{
 	text-align: left;
@@ -38,8 +39,13 @@
     bottom: 8px;
     text-align: center;
 }
-.address, .address_detail{
-	width: 250px;
+.price{
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.price > h2{
+	margin-bottom: 10px;
 }
 .totalPrice{
 	text-align: right;
@@ -52,6 +58,6 @@
 	line-height: 100px;
 }
 .listCheck > input{
-	width: 50px;
-	height: 50px;
+	width: 20px;
+	height: 20px;
 }
