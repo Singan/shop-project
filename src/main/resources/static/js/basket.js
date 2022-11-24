@@ -24,3 +24,45 @@ function count(type)  {
 	  resultElement.innerText = number;
 }
 
+// let count = 1;
+
+// $(document).ready(function() {
+// 	let plus = $(".plus");
+// 	lie minus = $(".minus");
+// 	$(plus).attr('id','appndImage' + count);
+// 	count += 1;
+// 	$(minus).attr('id','appndImage' + count);
+// 	count += 1;
+// 	 if($(".plus").length > 0){
+        
+//     }else{
+//         console.log("jquery : 해당 객체 존재안함");
+//     }
+// });
+
+// $(document).ready(function() {
+//     let count = $(".number").val();
+//     let num = parseInt(count, 10);
+//     let plus = $(".plus");
+//     let minus = $(".minus");
+//     $(".number").on("propertychange change paste input", function(){
+//         num = parseInt($(".number").val(), 10);
+//     });
+    
+
+//     plus.click(function(){
+//         num += 1; 
+//         $(".number").val(num);
+//     });
+//     minus.click(function(){
+//        if(num > 1){
+//             num -= 1;
+//             $(".number").val(num);
+//        }else{
+//             num = 1;
+
+//        }
+//     });
+        
+// });
+
