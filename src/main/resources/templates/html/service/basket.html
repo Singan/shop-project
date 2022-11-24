@@ -30,7 +30,7 @@
 			<div class="col-12 content_header">
 				<h2 class="col-12">장바구니</h2>
 			</div>
-				<div class="col-11 basket_content_container" th:each="basket : ${basketList}">
+				<div class="col-12 basket_content_container" th:each="basket : ${basketList}">
 					<div class="col-1 listCheck">
 						<input type="checkbox" name="">
 					</div>
@@ -43,7 +43,7 @@
 					</div>
 					<div class="col-1 price">
 						<h2>가격</h2>
-						<p>12000원</p>
+						<p th:text="${basket.getProductPrice()}"></p>
 					</div>
 					<div class="col-2">
 						<div class="col-12 quantity">
@@ -60,7 +60,7 @@
 						<a th:href="@{/product/order(no=${basket.getProductNo()})}"><button>구매하기</button></a>
 					</div>
 				</div>
-				<div class="col-11 totalPrice">
+				<div class="col-10 totalPrice">
 					<h2>총가격</h2>
 					<p>12000원</p>
 				</div>
