@@ -20,20 +20,26 @@ function basketSetting(basketList){
 		htmlString +=
 			`<a href="/product/detail?no=${basket.productNo}">
 				<div class='col-12 list_contents'>
+					<div class="listChoice">
+						<input type="checkbox" name="">
+					</div>
 					<div class="col-2 list_image">
 						<img src="data:image/jpeg;base64,${basket.productThumbnail}">
 					</div>
-					<div class="col-9 list_text">
+					<div class="col-7 list_text">
 					<h2>${basket.productName}</h2>
 						<p>${basket.productShort}</p>
 						<h4 class="list_count_title">수량</h4>
 						<h4 class="list_count">${basket.productCount}</h4>
 					</div>
-
+					<div class="col-2 listMoney">
+					<h2>가격</h2>
+					<p></p>
+				</div>
 				</div>
 			</a>`;
 	})
-	htmlString +=`<div class="col-12 list_more"><button>더보기</button></div>`
+	htmlString +=`<div class="col-12 list_more"><button>구매하기</button></div>`
 	basketlistContent.html(htmlString)
 }
 //

@@ -38,3 +38,6 @@
     bottom: 8px;
     text-align: center;
 }
+.address, .address_detail{
+	width: 250px;
+}
