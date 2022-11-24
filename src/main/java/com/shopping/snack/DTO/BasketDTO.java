@@ -7,6 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class BasketDTO {
+    private Long basketNo;
     private Long productNo;
     private String productName;
     private Long productPrice;
@@ -20,5 +21,6 @@ public class BasketDTO {
         this.productThumbnail = basket.getProduct().getProductThumbnail();
         this.productShort = basket.getProduct().getProductShort();
         this.productCount = basket.getBasketCount();
+        this.basketNo = basket.getBasketNo();
     }
 }
