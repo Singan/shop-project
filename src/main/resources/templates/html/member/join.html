@@ -12,6 +12,7 @@
       src="https://code.jquery.com/jquery-3.6.1.min.js"
       integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
       crossorigin="anonymous"></script>
+    
 </head>
 <body>
     <div class="col-9 container">
@@ -31,7 +32,7 @@
                     <div class="col-12">
                         <div class="col-8 sign_up_input" id="name_input" >
                             <h2>이름 : </h2>
-                            <input type="text" name="name" placeholder="이름을 입력주세요." required oninvalid="'필수입력입니다'">
+                            <input type="text" name="name" placeholder="이름을 입력주세요." required>
                         </div>
                     </div>
                     <div class="col-8 sign_up_input" id="phone_number">
@@ -49,6 +50,7 @@
                         <h2>비밀번호 : </h2>
                         <input type="password" name="pwd" placeholder="비밀번호를 입력주세요." required>
                     </div>
+
                     <div class="col-8 sign_up_input" id="re_pwd_input">
                         <h2>비밀번호 확인 : </h2>
                         <input type="password" name="pwd_confirm" placeholder="비밀번호를 입력주세요." required>
@@ -89,7 +91,8 @@
                         </select>
                     </div>
                     <div class="col-2 insert_btn">
-                        <input type="submit" name="sign_up_submit" id="submit" class="join_submit" value="가입하기">
+                        <input type="submit" name="sign_up_submit" id="submit" class="join_submit" value="가입하기" >
+                        <button type="submit" name="sign_up_submit" id="submits" class="join_submits" disabled={a}>가입</button>
                     </div>
                 </form>
                 </div>
