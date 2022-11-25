@@ -1,6 +1,7 @@
 package com.shopping.snack.DTO;
 
 import com.shopping.snack.db.entity.Member;
+import com.sun.istack.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,6 +19,8 @@ public class JoinDTO {
     private String email;
     private String name;
     private String phone;
+    private Integer zoneCode;
+    private String addressDetail;
     public Member getMember(){
         Member member = new Member();
         member.setMemberId(this.id);
@@ -28,6 +31,8 @@ public class JoinDTO {
         member.setMemberPassword(this.pwd);
         member.setMemberPhone(this.phone);
         member.setMemberName(this.name);
+        member.setMemberZoneCode(this.zoneCode);
+        member.setMemberDetailAddress(this.addressDetail);
         return member;
     }
 }

@@ -28,6 +28,12 @@ public class Member {
     private LocalDate memberBirth;
     @Column(name = "member_gender")
     private String memberGender;
+    @Column(name  ="member_zone_code")
+    private Integer memberZoneCode;
+
+
+    @Column(name  ="member_detail_address")
+    private String memberDetailAddress;
     @Column(name = "member_address")
     private String memberAddress;
     @Column(name = "member_email")
