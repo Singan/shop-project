@@ -32,7 +32,7 @@
 			</div>
 				<div class="col-12 basket_content_container" th:each="basket : ${basketList}">
 					<div class="col-1 listCheck">
-						<input type="checkbox" name="">
+						<input type="checkbox" name="checkbox_button">
 					</div>
 					<div class="col-1 basket_content_image">
 						<img th:src="'data:image/jpeg;base64,'+${basket.getProductThumbnail()}">

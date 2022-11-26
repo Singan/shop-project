@@ -24,6 +24,24 @@ function count(type)  {
 	  resultElement.innerText = number;
 }
 
+$(document).ready(function(){
+	let id = 1;
+	let sum = 0;
+	$('input:checkbox[name="checkbox_name"]').each(function() {
+	    this.checked = true; 
+ 	});
+ 	
+ 	$(".price > p")
+	    .attr("id", function(arr){
+	    	return "price_" + arr;
+	    })
+	  .each(function(){
+	    	console.log(this);
+	    	$("p", this).attr("id", this.id);
+		});
+	  console.log(sum);
+});
+
 // let count = 1;
 
 // $(document).ready(function() {
