@@ -8,6 +8,7 @@ import com.shopping.snack.db.entity.Board;
 import com.shopping.snack.db.entity.Member;
 import com.shopping.snack.db.service.BasketService;
 import com.shopping.snack.db.service.BoardService;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -71,4 +72,6 @@ public class ServiceController {
         model.addAttribute("board",board);
         return "/html/service/notice_detail.html";
     }
+
+
 }

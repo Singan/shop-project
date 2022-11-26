@@ -24,6 +24,8 @@ public class SessionMemberDTO {
     private String memberPhone;
     private String memberName;
     private String memberRoles;
+    private String memberDetailAddress;
+    private Integer memberZoneCode;
     private String memberImage;
     private List<BasketDTO> basketList = new ArrayList<>();
     public SessionMemberDTO(Member member){
@@ -38,6 +40,8 @@ public class SessionMemberDTO {
         this.memberName = member.getMemberName();
         this.memberImage = member.getMemberImage();
         this.memberRoles = member.getMemberRoles();
+        this.memberZoneCode = member.getMemberZoneCode();
+        this.memberDetailAddress = member.getMemberDetailAddress();
         this.basketList =member.getBasketList().stream().map(basket -> {
             return new BasketDTO(basket);
         }).collect(Collectors.toList());

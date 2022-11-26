@@ -1,5 +1,6 @@
 package com.shopping.snack.db.service;
 
+import com.shopping.snack.DTO.LoginDTO;
 import com.shopping.snack.db.entity.Member;
 import com.shopping.snack.db.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +15,15 @@ public class MemberService {
         memberRepository.join(member);
         return member.getMemberNo();
     }
-    public Member findMember(Member member){
-        return memberRepository.findMember(member);
+    public Member findMember(LoginDTO loginDTO){
+        return memberRepository.findMember(loginDTO.getId());
+    }
+
+    public Boolean findMember(String id){
+        Boolean flag = false;
+        if(memberRepository.findMember(id) == null){
+            flag=true;
+        }
+        return flag;
     }
 }

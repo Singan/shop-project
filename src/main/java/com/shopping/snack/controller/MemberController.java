@@ -2,14 +2,12 @@ package com.shopping.snack.controller;
 
 import com.shopping.snack.DTO.JoinDTO;
 import com.shopping.snack.DTO.LoginDTO;
+import com.shopping.snack.db.entity.Member;
 import com.shopping.snack.db.repository.MemberRepository;
 import com.shopping.snack.db.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequiredArgsConstructor
@@ -52,5 +50,12 @@ public class MemberController {
     @PostMapping("/member/mypage")
     public String mypage(){
         return "/html/member/mypage.html";
+    }
+
+    @PostMapping("/member/check")
+    @ResponseBody
+    public Boolean idCheck(@RequestBody LoginDTO loginDTO){
+        Boolean flag = memberService.findMember(loginDTO.getId());
+        return flag;
     }
 }

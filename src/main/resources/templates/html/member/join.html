@@ -45,6 +45,10 @@
                     <div class="col-8 sign_up_input" id="id_input">
                         <h2>아이디 : </h2>
                         <input type="text" name="id" placeholder="아이디를 입력주세요." required>
+                        <div class="payment_information_small_btn">
+                            <button id="idCheck" class="payment_information_small_button" type="button">중복확인</button>
+                        </div>
+                        <h2 id="checkResult" style="color: red;"></h2>
                     </div>
                     <div class="col-8 sign_up_input" id="pwd_input">
                         <h2>비밀번호 : </h2>
@@ -110,23 +114,27 @@
 <script>
     var submit = $("#submit")
     submit.on("click",function(){
-        var id = $("input[name='id']").val();
-        var pwd = $("input[name='pwd']").val();
-        var birth = $("input[name='birth']").val();
-        var gender = $("input[name='gender']").val();
-        var address = $("input[name='address']").val();
-        var email = $("input[name='email']").val();
-        var zoneCode = $("input[name='zoneCode']").val();
-        var email2 = $("#sign_up_email").val();
-        var addressDetail = $("input[name='address_detail']").val();
-        var phone = "";
-        var phoneInput = $("input[name='phone']");
+        let id = $("input[name='id']").val();
+        let pwd = $("input[name='pwd']").val();
+        let birth = $("input[name='birth']").val();
+        let gender = $("input[name='gender']").val();
+        let address = $("input[name='address']").val();
+        let email = $("input[name='email']").val();
+        let zoneCode = $("input[name='zoneCode']").val();
+        let email2 = $("#sign_up_email").val();
+        let addressDetail = $("input[name='address_detail']").val();
+        let phone = "";
+        let phoneInput = $("input[name='phone']");
 
         for(let i = 0; i<phoneInput.length;i++){
 
             phone += phoneInput[i].value ;
             if(i<phoneInput.length-1)
                 phone+= "-"
+        }
+        if(!idCheck()){
+            $("input[name='id']").focus();
+            return;
         }
         $.ajax(
         	{
@@ -166,7 +174,31 @@
         }).open();
     })
 
+    $("#idCheck").on("click",idCheck);
 
+    function idCheck(){
+        let id = $("input[name='id']").val();
+        let check = false;
+        let text = "사용 불가능한 아이디입니다.";
+        $.ajax({
+            url:"/member/check",
+            type:"POST",
+            data:JSON.stringify({
+                id: id,
+            }),
+            dataType : "json",
+            contentType: 'application/json',
+            success:function(data){
+                    check= data;
+            },
+        })
+
+        if(check){
+            text = "사용 가능한 아이디입니다."
+        }
+        $("#checkResult").text(text);
+        return check;
+    }
 
 </script>
 

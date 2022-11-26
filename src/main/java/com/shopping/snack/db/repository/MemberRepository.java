@@ -7,8 +7,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
-@Repository
+ @Repository
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
 public class MemberRepository {
@@ -20,8 +21,15 @@ public class MemberRepository {
         return member.getMemberNo();
     }
     @Transactional
-    public Member findMember(Member member){
-        return em.createQuery("select m from Member m where m.memberId = :id ",Member.class).setParameter(
-                "id",member.getMemberId()).getSingleResult();
+    public Member findMember(String id){
+            List<Member> memberList = em.createQuery("select m from Member m where m.memberId = :id ",Member.class).setParameter(
+                "id",id).getResultList();
+            if(memberList.isEmpty()) {
+                System.out.println(id);
+                System.out.println(memberList.size());
+                System.out.println("없는 아이디");
+                return null;
+            }
+            return memberList.get(0);
     }
 }

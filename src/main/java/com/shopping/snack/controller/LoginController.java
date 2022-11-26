@@ -30,19 +30,21 @@ public class LoginController {
     @PostMapping("/login")
     @ResponseBody
     public SessionMemberDTO login(HttpServletRequest request, @RequestBody LoginDTO loginDTO){
-        Member member = new Member();
-        member.setMemberId(loginDTO.getId());
-
-        Member findMember = memberService.findMember(member);
+        Member findMember = memberService.findMember(loginDTO);
+        if(findMember==null){
+            throw new RuntimeException("없는 아이디입니다.");
+        }
         System.out.println(findMember.getMemberPassword().equals(loginDTO.getPwd()));
         if(findMember.getMemberPassword().equals(loginDTO.getPwd())){
             HttpSession httpSession = request.getSession();
             SessionMemberDTO sessionMemberDTO =new SessionMemberDTO(findMember);
             httpSession.setAttribute("user",sessionMemberDTO);
-
+            
             return sessionMemberDTO ;
-        };
-        return null;
+        }else {
+            throw new RuntimeException("비밀번호가 틀렸습니다.");
+        }
+
     }
 
 }
