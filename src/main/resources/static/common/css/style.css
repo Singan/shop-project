@@ -516,7 +516,10 @@ body::-webkit-scrollbar {
 	background-color: #739dff;
 	transition: .2s;
 }
-
+#checkResult{
+	width: 200px;
+	font-size: 1.0em;
+}
 
 
 
