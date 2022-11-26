@@ -1,8 +1,10 @@
+
+
 function check(){
-	const emailRegex = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
-	const passwordRegex = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,16}$/;
-	const idRegx = /^[a-z]+[a-z0-9]{5,19}$/g;
-	const nameRegx = /[ㄱ-힣]/;
+	const emailRegex = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i; // 
+	const passwordRegex = /^[A-Za-z0-9]{6,18}$/; //대,소문자 + 숫자 6자리부터 18자리
+	const idRegx = /^[a-z]+[a-z0-9]{5,16}$/g; // 소문자, 숫자 5자리부터 19자리까지
+	const nameRegx = /[ㄱ-힣]/; // 한글만 가능
 
 	let id = $("input[name='id']");
 	let pwd = $("input[name='pwd']");
@@ -12,54 +14,76 @@ function check(){
 	let repwd = $("input[name='pwd_confirm']");
 	let email_add = $("#sign_up_email option:selected");
 
-	let email_check = emailRegex.test(email + "@" + email_add);
-	let pwd_check = passwordRegex.test(pwd);
-	let id_check = idRegx.test(id);
-	let name_check = nameRegx.test(name);
-
+	let email_check = emailRegex.test(email.val() + "@" + email_add.val());
+	let pwd_check = passwordRegex.test(pwd.val());
+	let id_check = idRegx.test(id.val());
+	let name_check = nameRegx.test(name.val());
+	
 
 	if(id.val() == ""){
         alert("아이디를 입력해주세요.");
-        id.focus();
-        return false;
+        return;
     }
+    if(!id_check){
+        alert("아이디 형식을 맞춰주세요..");
+        return;
+    }
+
 
     if(!name_check){
     	alert("형식에 맞춰 작성해주세요.");
     	name.focus();
-    	return false;
+    	console.log(name_check);
+    	console.log(nameRegx.test(name));
+    	return;
     }
 
     if(!pwd_check) {
       alert("형식에 맞춰서 비밀번호를 입력해주세요.");
       pwd.focus();
-      return false;
+      return;
     }
 
-    if(pwd.val() != repwd.val()){ 
-      alert("비밀번호가 다릅니다.");
-      $("input[name='pwd']").val("");
-      $("input[name='pwd_confirm']").val("");
-      pwd.focus();
-      return false;
-    }
 
     if(email.val() == ""){
         alert("이메일을 입력해주세요");
         email.focus();
-        return false;
+        return;
     }
 
     if(!email_check){
         alert("이메일형식에 맞게 입력해주세요")
         email.focus();
-        return false;
+        return;
     }
 
-    
-    return true;
 }
 
+
+$(document).ready(function(){
+	let pwd = $("input[name='pwd']");
+	let repwd = $("input[name='pwd_confirm']");
+	$(pwd).change(function(){
+		$(repwd).change(function(){
+			if(pwd.val() != repwd.val()){ 
+		   		$("#checkpwd").text("비밀번호가 다릅니다.");
+
+		    }else if(pwd.val() == repwd.val()){
+				$("#checkpwd").text("비밀번호가 맞습니다.");
+		    }
+		});
+	});
+	$(repwd).change(function(){
+		$(pwd).change(function(){
+			if(pwd.val() != repwd.val()){ 
+		   		$("#checkpwd").text("비밀번호가 다릅니다.");
+
+		    }else if(pwd.val() == repwd.val()){
+				$("#checkpwd").text("비밀번호가 맞습니다.");
+		    }
+		});
+	});
+});
 
 
 $(document).ready(function(){
@@ -77,7 +101,7 @@ $(document).ready(function(){
         let addressDetail = $("input[name='address_detail']").val();
         let phone = "";
         let phoneInput = $("input[name='phone']");
-
+        check();
         for(let i = 0; i<phoneInput.length;i++){
 
             phone += phoneInput[i].value ;

@@ -516,11 +516,15 @@ body::-webkit-scrollbar {
 	background-color: #739dff;
 	transition: .2s;
 }
-#checkResult{
+.checkEventText{
 	font-size: 1.0em;
     display: inline;
+    color: red;
 }
-
+.helpText{
+	font-size: 0.9em;
+	color:#ccc;
+}
 
 
 
