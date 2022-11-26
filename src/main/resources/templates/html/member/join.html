@@ -12,7 +12,7 @@
       src="https://code.jquery.com/jquery-3.6.1.min.js"
       integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
       crossorigin="anonymous"></script>
-    
+    <script type="text/javascript" src="/js/join.js"></script>
 </head>
 <body>
     <div class="col-9 container">
@@ -109,97 +109,5 @@
 
 </body>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-
-<script>
-    var submit = $("#submit")
-    submit.on("click",function(){
-        let id = $("input[name='id']").val();
-        let pwd = $("input[name='pwd']").val();
-        let birth = $("input[name='birth']").val();
-        let gender = $("input[name='gender']").val();
-        let address = $("input[name='address']").val();
-        let email = $("input[name='email']").val();
-        let zoneCode = $("input[name='zoneCode']").val();
-        let email2 = $("#sign_up_email").val();
-        let addressDetail = $("input[name='address_detail']").val();
-        let phone = "";
-        let phoneInput = $("input[name='phone']");
-
-        for(let i = 0; i<phoneInput.length;i++){
-
-            phone += phoneInput[i].value ;
-            if(i<phoneInput.length-1)
-                phone+= "-"
-        }
-        if(!idCheck()){
-            $("input[name='id']").focus();
-            return;
-        }
-        $.ajax(
-        	{
-                url:"/member/join",
-                type:"POST",
-                data:JSON.stringify({
-                    name:name,
-                    id:id,
-                    pwd:pwd,
-                    birth:birth,
-                    gender:gender,
-                    address:address,
-                    email:email+"@"+email2,
-                    zoneCode:zoneCode,
-                    addressDetail:addressDetail,
-                    phone:phone,
-                }),
-                dataType : "json",
-                contentType: 'application/json',
-                success:()=>{
-                    location.href = "http://localhost:8080/login";
-                }
-		    }
-		)
-    })
-
-    var addrSearch = $("#addrSearch");
-    addrSearch.on("click",function(){
-        new daum.Postcode({
-            oncomplete: function(data) {
-                console.log(data)
-                $("input[name='zoneCode']").val(data.zonecode);
-                $("input[name='address']").val(data.roadAddress)
-                //roadAddress 주소
-                //zonecode 우편번호
-            }
-        }).open();
-    })
-
-    $("#idCheck").on("click",idCheck);
-
-    function idCheck(){
-        let id = $("input[name='id']").val();
-        let check = false;
-        let text = "사용 불가능한 아이디입니다.";
-        $.ajax({
-            url:"/member/check",
-            type:"POST",
-            data:JSON.stringify({
-                id: id,
-            }),
-            dataType : "json",
-            contentType: 'application/json',
-            success:function(data){
-                    check= data;
-                    if(check){
-                    text = "사용 가능한 아이디입니다."
-                    }
-                $("#checkResult").text(text);
-            },
-        })
-
-
-        return check;
-    }
-
-</script>
 
 </html>

@@ -517,8 +517,8 @@ body::-webkit-scrollbar {
 	transition: .2s;
 }
 #checkResult{
-	width: 200px;
 	font-size: 1.0em;
+    display: inline;
 }
 
 
