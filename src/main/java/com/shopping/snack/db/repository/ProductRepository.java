@@ -36,4 +36,10 @@ public class ProductRepository {
     public Product productFind(Long no){
         return em.find(Product.class , no);
     }
+    public List<Product> productFind(List<Long> no){
+
+        return em.createQuery("select p from Product p where p.productNo in (:no)").
+                setParameter("no",no).getResultList();
+    }
+
 }

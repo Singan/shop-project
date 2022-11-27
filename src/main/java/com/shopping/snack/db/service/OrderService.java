@@ -12,7 +12,6 @@ public class OrderService {
     private final OrderRepository orderRepository;
 
 
-    @PostMapping
     public void orderInsert(OrderRequestDTO orderRequestDTO){
         orderRepository.orderInsert(orderRequestDTO.getOrders());
     }

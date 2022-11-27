@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,4 +29,18 @@ public class Orders {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "orders" , cascade = CascadeType.ALL)
     private List<OrdersItem> ordersItems = new ArrayList<>();
+
+    @Column(name = "orders_phone")
+    private String ordersPhone;
+    @Column(name  ="orders_detail_address")
+    private String ordersDetailAddress;
+    @Column(name = "orders_address")
+    private String ordersAddress;
+    @Column(name  ="orders_zone_code")
+    private Integer ordersZoneCode;
+    @Column(name = "orders_name")
+    private String ordersName;
+    @Column(name = "orders_date")
+    private LocalDateTime ordersDate;
+
 }

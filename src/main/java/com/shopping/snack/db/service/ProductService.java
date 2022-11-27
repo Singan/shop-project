@@ -6,6 +6,8 @@ import com.shopping.snack.db.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -32,5 +34,9 @@ public class ProductService {
     }
     public Product productFind(Long no){
         return productRepository.productFind(no);
+    }
+    public List<Product> productFind(Long[] no){
+        List<Long> noList = Arrays.asList(no);
+        return productRepository.productFind(noList);
     }
 }

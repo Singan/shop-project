@@ -26,8 +26,8 @@ public class BasketService {
         List<Basket> basketList = basketRepository.findBasket(product,realMember);
         if(basketList.isEmpty()){
             basket.setBasketCount(1);
-            basketDTOList.add(new BasketDTO(basket));
             basketRepository.basketAppend(basket);
+            basketDTOList.add(new BasketDTO(basket));
         }else{
             basket = basketList.get(0);
             basket.setBasketCount(basket.getBasketCount()+1);

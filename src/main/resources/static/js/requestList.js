@@ -20,34 +20,36 @@ function basketSetting(basketList){
 	basketList.map(function(basket){
 	    totalPrice += basket.productPrice *basket.productCount;
 		htmlString +=
-			`<a href="/product/detail?no=${basket.productNo}">
-				<div class='col-12 list_contents' >
+			`<div class='col-12 list_contents' >
 					<div class="listChoice">
-						<input type="checkbox" class='check' id=${basket.basketNo} checked>
+						<input type="checkbox" class='check' id=${basket.productNo} checked>
 					</div>
 					<div class="col-2 list_image">
 						<img src="data:image/jpeg;base64,${basket.productThumbnail}">
 					</div>
 					<div class="col-7 list_text">
-					    <h2>${basket.productName}</h2>
+						<a href="/product/detail?no=${basket.productNo}">
+					    	<h2>${basket.productName}</h2>
+					    </a>
 						<p>${basket.productShort}</p>
 						<h4 class="list_count_title">수량</h4>
-						<h4 class="list_count" id=count_${basket.basketNo}>${basket.productCount}</h4>
+						<input class="list_count" id=count_${basket.productNo} value="${basket.productCount}">
 					</div>
 					<div class="col-2 listMoney">
                         <h2>가격</h2>
-                        <p id=price_${basket.basketNo}>${basket.productPrice}</p>
+                        <p id=price_${basket.productNo}>${basket.productPrice}</p>
 				    </div>
-				</div>
-			</a>`;
+				</div>`;
 	})
-	htmlString +=`<div class="col-12 listTotal"><h1>총가격</h1><h2 id='totalPrice'>${totalPrice}</h2></div><div class="col-12 list_more"><button>구매하기</button></div>`
+	htmlString +=`
+		<div class="col-12 listTotal"><h1>총가격</h1>
+			<h2 id='totalPrice'>${totalPrice}</h2>
+		</div>
+		<div class="col-12 list_more">
+			<button id="order">구매하기</button>
+		</div>`
 	basketlistContent.html(htmlString)
-	console.log(".check")
-	console.log($(".check"))
 	$(".check").map(function(index,obj){
-	    console.log("obj")
-	    console.log(obj)
         obj.onclick=function(e){
             var id =e.target.id;
             var price = Number($("#price_"+id).text());
@@ -69,9 +71,29 @@ function basketSetting(basketList){
             $("#totalPrice").html(totalPrice)
         }
     })
+	$("#order").on("click",order);
 }
 
+function order(){
+	console.log("구매하기 클릭")
+	let link = "/product/order?";
+	let c = 0;
+	$(".check").map(function(index,obj){
+		if(obj.checked){
+			let count = Number($("#count_"+obj.id).text());
+			if(count>0){
+			if(c>0){
+				link+="&"
+			}
+			link+="no="+obj.id+"&count="+count;
 
+			c++;
+			}
+		}
+	})
+	location.href= link;
+
+}
 
 //
 // < div

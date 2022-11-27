@@ -49,13 +49,13 @@ public class ServiceController {
     }
     @PostMapping("/member/basket")
     @ResponseBody
-    public String basket(@RequestBody BasketRequest basketRequest){
+    public void basket(@RequestBody BasketRequest basketRequest){
         System.out.println("basket" + basketRequest.getNo());
         SessionMemberDTO member = (SessionMemberDTO) httpServletRequest.getSession().getAttribute("user");
         basketService.basketAppend(member,basketRequest.getNo());
 
         System.out.println("배스킷 post");
-        return "/html/service/basket";
+
     }
 
     @GetMapping("/notice")
