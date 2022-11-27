@@ -14,13 +14,14 @@ public class OrderViewDTO {
     private String productDetail;
     private Integer productCount;
     private Long productPrice;
-
+    private String productShort;
     public OrderViewDTO(Product product){
         productNo = product.getProductNo();
         productThumbnail = product.getProductThumbnail();
         productName = product.getProductName();
         productDetail = product.getProductDetail();
         productPrice = product.getProductPrice();
+        productShort = product.getProductShort();
         productCount = 1;
     }
     public OrderViewDTO(Product product,Integer count){

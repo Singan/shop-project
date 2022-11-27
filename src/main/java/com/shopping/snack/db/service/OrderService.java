@@ -12,8 +12,8 @@ public class OrderService {
     private final OrderRepository orderRepository;
 
 
-    public void orderInsert(OrderRequestDTO orderRequestDTO){
-        orderRepository.orderInsert(orderRequestDTO.getOrders());
+    public Long orderInsert(OrderRequestDTO orderRequestDTO){
+        return orderRepository.orderInsert(orderRequestDTO.getOrders());
     }
 
 }

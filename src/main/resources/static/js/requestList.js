@@ -80,14 +80,14 @@ function order(){
 	let c = 0;
 	$(".check").map(function(index,obj){
 		if(obj.checked){
-			let count = Number($("#count_"+obj.id).text());
+			let count = Number($("#count_"+obj.id).val());
 			if(count>0){
-			if(c>0){
-				link+="&"
-			}
-			link+="no="+obj.id+"&count="+count;
+				if(c>0){
+					link+="&"
+				}
+				link+="no="+obj.id+"&count="+count;
 
-			c++;
+				c++;
 			}
 		}
 	})

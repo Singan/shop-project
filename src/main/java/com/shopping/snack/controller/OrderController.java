@@ -18,10 +18,10 @@ public class OrderController {
 
     @PostMapping("/product/order")
     @ResponseBody
-    public Object order(@RequestBody OrderRequestDTO orderRequestDTO){
-        //orderService.orderInsert(orderRequestDTO);
-        System.out.println("실행됨");
-        return orderRequestDTO;
+    public Long order(@RequestBody OrderRequestDTO orderRequestDTO){
+
+        System.out.println("오더 실행됨");
+        return orderService.orderInsert(orderRequestDTO);
     }
 
 }
