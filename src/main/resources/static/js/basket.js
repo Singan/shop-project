@@ -27,7 +27,11 @@ function count(type)  {
 $(document).ready(function(){
 	let id = 1;
 	let sum = 0;
-	$('input:checkbox[name="checkbox_name"]').each(function() {
+	let allCheck = $("input[name=all_checkbox_button]");
+	let checks = $("input[name=checkbox_button]");
+
+	$('input[name="checkbox_button"]').each(function() {
+		console.log(this);
 	    this.checked = true; 
  	});
  	
@@ -38,9 +42,40 @@ $(document).ready(function(){
 	  .each(function(){
 	    	console.log(this);
 	    	$("p", this).attr("id", this.id);
+	    	
 		});
-	  console.log(sum);
+	  
+	  
+	 
+
+	allCheck.click(function() {
+		
+		if(allCheck.is(":checked")){
+			checks.prop("checked", true);
+		} 
+		else{
+			checks.prop("checked", false);
+		} 
+	});
+
+	checks.click(function() {
+		var total = checks.length;
+		var checked = $("input[name=checkbox_button]:checked").length;
+
+		if(total != checked){
+			allCheck.prop("checked", false);
+		} 
+		else{
+			allCheck.prop("checked", true);	
+		}  
+	});
+
+	let prices = $("price > p").text();
+	sum += parseInt(prices);
+
+	console.log(sum);
 });
+
 
 // let count = 1;
 

@@ -30,6 +30,26 @@
 			<div class="col-12 content_header">
 				<h2 class="col-12">장바구니</h2>
 			</div>
+			<div class="col-12 basket_content_container" id="contentHeader">
+				<div class="col-1 AllCheck" id="AllCheck">
+					<input type="checkbox" name="all_checkbox_button" checked>
+				</div>
+				<div class="col-1">
+					<h2>이미지</h2>
+				</div>
+				<div class="col-7">
+					<h2>상품정보</h2>
+				</div>
+				<div class="col-1">
+					<h2>가격</h2>
+				</div>
+				<div class="col-2">
+					<h2>수량</h2>
+				</div>
+				<div class="col-1">
+					<h2></h2>
+				</div>
+			</div>
 				<div class="col-12 basket_content_container" th:each="basket : ${basketList}">
 					<div class="col-1 listCheck">
 						<input type="checkbox" name="checkbox_button">
@@ -43,7 +63,7 @@
 					</div>
 					<div class="col-1 price">
 						<h2>가격</h2>
-						<p th:text="${basket.getProductPrice()}"></p>
+						<p th:text="${basket.getProductPrice()}">원</p>
 					</div>
 					<div class="col-2">
 						<div class="col-12 quantity">
