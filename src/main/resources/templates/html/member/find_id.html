@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>과자샵</title>
+	
+	<link rel="stylesheet" type="text/css" href="/common/css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+	<script
+	  src="https://code.jquery.com/jquery-3.6.1.min.js"
+	  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+	  crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="col-9 container">
+		<div class="col-12" id="header" th:replace="/html/common/header :: header">
+
+		</div>
+	</div>
+
+	<div class="col-9 container">		
+		<div class="col-12" id="content">
+			<form id="find_id_form">
+				<div class="col-4" id="find_id">
+					<div class="col-9" id="find_id_font">
+						<h2>아이디 찾기</h2>
+					</div>
+					<div class="col-9">
+						<input class="find_id_password_input" type="text" name="user_id_name" placeholder="이름을 입력하세요.">
+						<input class="find_id_password_input user_phone" id="" type="password" name="user_id_phone" placeholder="휴대폰 번호를 입력하세요.">
+						<input class="find_id_password_input find_user_id_phone_btn" type="button" name="user_id_phone_call" value="인증번호">
+					</div>
+					<div class="col-9 find_id_pwd_btn">
+						<button class="submit">아이디 찾기</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="col-12" id="footer" th:replace="/html/common/footer.html :: footer">
+	</div>
+
+</body>
+</html>

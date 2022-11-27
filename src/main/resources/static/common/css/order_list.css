@@ -22,3 +22,41 @@
     font-weight: bold;
     font-size: 1.0em;
 }
+
+
+
+.orderContent{
+	position: absolute;
+	right: 0;
+	bottom: 20px;
+}
+.orderNumber{
+	position: relative;
+	color: #777;
+    font-size: 0.7em;
+    border: solid 1px #a9a9a9;
+    border-radius: 5px;
+    width: 200px;
+    height: 35px;
+    padding: 5px 35px 5px 5px;
+    outline: none;
+}
+.orderNumber:hover{
+	 border: solid 1px #c7c7c7;
+	 transition: .2s;
+}
+.numberButton{
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	right: 0;
+	top: 0;
+	bottom:0;
+	background-color: transparent;
+	border:none;
+	cursor: pointer;
+}
+.numberButton > img{
+	width: 70%;
+	height: 70%;
+}

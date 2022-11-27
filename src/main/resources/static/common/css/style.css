@@ -1195,6 +1195,7 @@ body::-webkit-scrollbar {
 
 .product_order_contents{
 	display: flex;
+	flex-wrap: wrap;
 	margin-top: 20px;
 	border-top: solid 1px #d9d9d9;
 	border-bottom: solid 1px #d9d9d9;

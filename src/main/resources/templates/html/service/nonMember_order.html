@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>과자샵</title>
+	
+	<link rel="stylesheet" type="text/css" href="/common/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/common/css/order_list.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+	<script
+	  src="https://code.jquery.com/jquery-3.6.1.min.js"
+	  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+	  crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="col-9 container">
+		<div class="col-12" id="header" th:replace="/html/common/header :: header">
+
+		</div>
+	</div>
+
+	<div class="col-9 container">		
+		<div class="col-12" id="product_order_content">
+			<div class="col-12 content_header">
+				<h2>비회원 주문정보</h2>
+				<div class="orderContent">
+					<input class="orderNumber" type="text" name="search" placeholder="주문번호를 입력해주세요.">
+					<div>
+						<button class="numberButton"><img src="/img/search_logo.png"></button>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 product_order_contents">
+				<div class="col-2 product_order_content_image">
+					
+				</div>
+				<div class="col-6 product_order_information">
+					<h2>제품명</h2>
+					<h2>가격</h2>
+					<p>간략한 소개</p>
+				</div>
+				<div class="col-2 product_order_quantity">
+					<h2>1개</h2>
+					<a href=""><button class="cancel_btn" type="button" name="cancel_btn" value="취소하기">취소하기</button></a>
+					
+				</div>
+			</div>	
+		</div>
+	</div>
+
+	<div class="col-12" id="footer" th:replace="/html/common/footer.html :: footer">
+	</div>
+
+</body>
+</html>
