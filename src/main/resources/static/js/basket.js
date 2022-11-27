@@ -71,51 +71,64 @@ $(document).ready(function(){
 	});
 
 	let prices = $("price > p").text();
-	sum += parseInt(prices);
+	sum += parseInt(prices, 10);
 
 	console.log(sum);
 });
 
 
+// $(document).on('click', '.', function(){
+//     var idx = $('.car-image-list li .btn-delete').index(this);
+//     $('.car-image-list li').eq(idx).remove();
+// });
+
 // let count = 1;
 
-// $(document).ready(function() {
-// 	let plus = $(".plus");
-// 	lie minus = $(".minus");
-// 	$(plus).attr('id','appndImage' + count);
-// 	count += 1;
-// 	$(minus).attr('id','appndImage' + count);
-// 	count += 1;
-// 	 if($(".plus").length > 0){
-        
-//     }else{
-//         console.log("jquery : 해당 객체 존재안함");
-//     }
-// });
+$(document).ready(function() {
+	let plus = $(".plus")
+    let minus = $(".minus")
+    let number = $(".number")
+    let count = 1;
+    for(let i = 0;i <= plus.length; i++){
+    	$(plus[i]).attr("class", "plus " + count);
+    	$(minus[i]).attr("class", "minus " + count);
+    	$(number[i]).attr("class", "number " + count);
+    	count += 1;
+    	console.log("변경");
+    }
+    plus.click(function(event) {
+    	let btn = event.target.className[1];
+		let number = $(btn:eq(1));
+        alert(btn);
+        let a = $(btn)
+        console.log(number.val());
 
-// $(document).ready(function() {
-//     let count = $(".number").val();
-//     let num = parseInt(count, 10);
-//     let plus = $(".plus");
-//     let minus = $(".minus");
-//     $(".number").on("propertychange change paste input", function(){
-//         num = parseInt($(".number").val(), 10);
-//     });
+    });
+});
+
+$(document).ready(function() {
+    let count = $(".number").val();
+    let num = parseInt(count, 10);
+    let plus = $(".plus");
+    let minus = $(".minus");
+    $(".number").on("propertychange change paste input", function(){
+        num = parseInt($(".number").val(), 10);
+    });
     
 
-//     plus.click(function(){
-//         num += 1; 
-//         $(".number").val(num);
-//     });
-//     minus.click(function(){
-//        if(num > 1){
-//             num -= 1;
-//             $(".number").val(num);
-//        }else{
-//             num = 1;
+    plus.click(function(){
+        num += 1; 
+        $(".number").val(num);
+    });
+    minus.click(function(){
+       if(num > 1){
+            num -= 1;
+            $(".number").val(num);
+       }else{
+            num = 1;
 
-//        }
-//     });
+       }
+    });
         
-// });
+});
 
