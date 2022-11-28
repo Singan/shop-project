@@ -17,7 +17,6 @@ public class OrderRepository {
         em.persist(orders);
         for (OrdersItem o: orders.getOrdersItems()) {
             o.setOrders(orders);
-            
         }
 
         return orders.getOrdersNo();
