@@ -1,5 +1,6 @@
 package com.shopping.snack.DTO;
 
+import com.shopping.snack.db.entity.Member;
 import com.shopping.snack.db.entity.Orders;
 import com.shopping.snack.db.entity.OrdersItem;
 import com.shopping.snack.db.entity.Product;
@@ -35,4 +36,9 @@ public class OrderRequestDTO {
       orders.setOrdersStatus(OrdersStatus.배송전);
       return orders;
     };
+    public Orders getOrders(Member member){
+        Orders orders =getOrders();
+        orders.setOrdersMember(member);
+        return orders;
+    }
 }

@@ -44,7 +44,7 @@
 							<p>작성자</p>
 						</div>
 						<div class="col-11 notice_insert_contents">
-							<input type="text" name="writer" value="관리자" disabled="disabled">
+							<input type="text" name="writer" th:value="${session.user.getMemberName()}" disabled="disabled">
 						</div>
 					</div>
 

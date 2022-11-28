@@ -16,6 +16,7 @@ public class BoardRepository {
     private final EntityManager em;
     @Transactional
     public Long boardInsert(Board board){
+
          em.persist(board);
         return board.getBoardNo();
     }
@@ -26,7 +27,8 @@ public class BoardRepository {
     }
 
     public Board boardDetail(Long no){
-
-        return em.find(Board.class,no);
+        Board board = em.find(Board.class,no);
+        board.setBoardViews(board.getBoardViews()+1);
+        return board;
     }
 }

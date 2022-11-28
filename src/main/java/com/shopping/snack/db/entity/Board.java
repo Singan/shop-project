@@ -29,5 +29,7 @@ public class Board {
     @Column(name = "board_content" , columnDefinition = "LONGTEXT")
     private String boardContent;
 
+    @Column(name = "board_views")
+    private Integer boardViews;
 
 }

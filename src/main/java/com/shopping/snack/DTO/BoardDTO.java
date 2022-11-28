@@ -19,6 +19,7 @@ public class BoardDTO {
         board.setBoardWriter(member);
         board.setBoardContent(this.content);
         board.setBoardTitle(this.title);
+        board.setBoardViews(0);
         return board;
     }
 }

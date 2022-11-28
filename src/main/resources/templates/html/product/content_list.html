@@ -43,7 +43,7 @@
 						<img th:src="'data:image/jpeg;base64,'+${product.getProductThumbnail()}"
 							 th:if="${product.getProductThumbnail()!= null}"/>
 						<p th:text="${product.getProductShort()}">간략한 소개</p>
-						<h2 th:text="${product.getProductPrice()}">가격</h2>
+						<h2 th:text="${product.getProductPrice()} +' 원'">가격</h2>
 					</a>
 				</div>
 				

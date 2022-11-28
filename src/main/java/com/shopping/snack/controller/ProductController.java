@@ -1,9 +1,13 @@
 package com.shopping.snack.controller;
 
 import com.shopping.snack.DTO.OrderViewDTO;
+import com.shopping.snack.DTO.OrdersItemDTO;
+import com.shopping.snack.DTO.SessionMemberDTO;
+import com.shopping.snack.db.entity.Orders;
 import com.shopping.snack.db.entity.Product;
 import com.shopping.snack.db.enumClass.Category;
 import com.shopping.snack.db.enumClass.SpecialProduct;
+import com.shopping.snack.db.service.OrderService;
 import com.shopping.snack.db.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -21,8 +25,10 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ProductController {
     private final ProductService productService;
+    private final HttpServletRequest request;
+    private final OrderService orderService;
     @GetMapping("/product")
-    public String productList(HttpServletRequest request){
+    public String productList(){
         System.out.println("index Get");
         return "index.html";
     }
@@ -32,8 +38,14 @@ public class ProductController {
         return "/html/product/product_detail.html";
     }
     @GetMapping("/member/order")
-    public String product_order(){
-        System.out.println("주문정보");
+    public String product_order(Model model){
+        SessionMemberDTO memberDTO = (SessionMemberDTO) request.getSession().getAttribute("user");
+
+        List<Orders> ordersList = orderService.ordersList(memberDTO.createMember());
+        model.addAttribute("ordersList",ordersList);
+        for (Orders o:ordersList) {
+            System.out.println(o.getOrdersNo());
+        }
         return "/html/member/order_list.html";
     }
     @GetMapping("/product/category")
