@@ -21,6 +21,11 @@
     padding: 10px;
     border: solid 1px #d1d1d1;
 }
+.price{
+	font-size: 1.3em;
+    font-weight: 600;
+    margin-top: 10px; 
+}
 .review_write{
 	margin-top: 20px;
 }
