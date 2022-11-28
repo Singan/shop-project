@@ -49,6 +49,28 @@
 					</div>
 				</div>
 
+				<div class="col-12 product_order_contents" th:each="product : ${productList}">
+					<div class="col-2 product_order_content_image">
+						<img th:src="'data:image/jpeg;base64,'+${product.getProductThumbnail()}">
+					</div>
+					<div class="col-6 product_order_information">
+						<h2 th:text="${product.getProductName()}">제품명</h2>
+						<h2 th:text="${product.getProductPrice()} + ' 원'">가격</h2>
+						<p th:text="${product.getProductShort()}">간략한 소개</p>
+						<p class="productNo" th:text="${product.getProductNo()}"></p>
+					</div>
+					<div class="col-2 product_order_quantity">
+						<div class="col-12 quantity">
+							<h2 class="col-12">수량</h2>
+							<div class="col-12 count">
+								<button class="plus" type="button"></button>
+								<input class="number" type="text" name="count" maxlength="3" value="1" th:value="${product.getProductCount()}">
+								<button class="minus" type="button"></button>
+							</div>
+						</div>
+					</div>
+				</div>
+
 				<div class="col-12 content_header">
 					<h2>결제하기</h2>
 				</div>

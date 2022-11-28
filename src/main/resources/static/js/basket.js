@@ -26,7 +26,6 @@ function count(type)  {
 
 $(document).ready(function(){
 	let id = 1;
-	let sum = 0;
 	let allCheck = $("input[name=all_checkbox_button]");
 	let checks = $("input[name=checkbox_button]");
 
@@ -42,7 +41,6 @@ $(document).ready(function(){
 	  .each(function(){
 	    	console.log(this);
 	    	$("p", this).attr("id", this.id);
-	    	
 		});
 	  
 	  
@@ -70,65 +68,56 @@ $(document).ready(function(){
 		}  
 	});
 
-	let prices = $("price > p").text();
-	sum += parseInt(prices, 10);
+	let prices = $(".price > p");
+	let total = $(".totalPrice > p");
+	let sum = 0;
+
+	for(var i = 0; i <= prices.length; i++){
+		let a = $("#price_"+i).text();
+		let b = parseInt(a);
+		sum = isNaN(b) ? sum : sum + b;
+	}
 
 	console.log(sum);
+	total.text(sum + "원");
+	
 });
 
 
-// $(document).on('click', '.', function(){
-//     var idx = $('.car-image-list li .btn-delete').index(this);
-//     $('.car-image-list li').eq(idx).remove();
-// });
-
-// let count = 1;
 
 $(document).ready(function() {
 	let plus = $(".plus")
     let minus = $(".minus")
-    let number = $(".number")
     let count = 1;
+    let in_val = 1;
+    let btn;
+    let number;
+    let num;
+
     for(let i = 0;i <= plus.length; i++){
-    	$(plus[i]).attr("class", "plus " + count);
-    	$(minus[i]).attr("class", "minus " + count);
-    	$(number[i]).attr("class", "number " + count);
+    	$(plus[i]).attr("id", "p"+count);
+    	$(minus[i]).attr("id", "m"+count);
     	count += 1;
-    	console.log("변경");
     }
     plus.click(function(event) {
-    	let btn = event.target.className[1];
-		let number = $(btn:eq(1));
-        alert(btn);
-        let a = $(btn)
-        console.log(number.val());
-
+    	let btn = event.target.id;
+    	let number = $("#"+btn).next();
+    	let num = parseInt(number.val());
+    	num += 1;
+        number.val(num);
     });
-});
+    minus.click(function(event) {
+    	btn = event.target.id;
+    	number = $("#"+btn).prev();
+    	num = parseInt(number.val());
 
-$(document).ready(function() {
-    let count = $(".number").val();
-    let num = parseInt(count, 10);
-    let plus = $(".plus");
-    let minus = $(".minus");
-    $(".number").on("propertychange change paste input", function(){
-        num = parseInt($(".number").val(), 10);
-    });
-    
-
-    plus.click(function(){
-        num += 1; 
-        $(".number").val(num);
-    });
-    minus.click(function(){
-       if(num > 1){
+		if(num > 1){
             num -= 1;
-            $(".number").val(num);
-       }else{
+            number.val(num);
+        }else{
             num = 1;
 
-       }
+        }
     });
-        
 });
 

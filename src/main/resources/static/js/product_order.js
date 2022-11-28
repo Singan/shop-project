@@ -8,27 +8,37 @@ $(document).ready(function () {
 
 
 $(document).ready(function() {
-    let count = $(".number").val();
-    let num = parseInt(count, 10);
-    let plus = $(".plus");
-    let minus = $(".minus");
-    $(".number").on("propertychange change paste input", function(){
-        num = parseInt($(".number").val(), 10);
-    });
-    
+    let plus = $(".plus")
+    let minus = $(".minus")
+    let count = 1;
+    let in_val = 1;
+    let btn;
+    let number;
+    let num;
 
-    plus.click(function(){
-        num += 1; 
-        $(".number").val(num);
+    for(let i = 0;i <= plus.length; i++){
+        $(plus[i]).attr("id", "p"+count);
+        $(minus[i]).attr("id", "m"+count);
+        count += 1;
+    }
+    plus.click(function(event) {
+        let btn = event.target.id;
+        let number = $("#"+btn).next();
+        let num = parseInt(number.val());
+        num += 1;
+        number.val(num);
     });
-    minus.click(function(){
-       if(num > 1){
+    minus.click(function(event) {
+        btn = event.target.id;
+        number = $("#"+btn).prev();
+        num = parseInt(number.val());
+
+        if(num > 1){
             num -= 1;
-            $(".number").val(num);
-       }else{
+            number.val(num);
+        }else{
             num = 1;
 
-       }
+        }
     });
-        
 });
