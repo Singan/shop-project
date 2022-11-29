@@ -32,4 +32,18 @@ public class MemberRepository {
             }
             return memberList.get(0);
     }
+
+     @Transactional
+     public String findMemberId(String name,String phone){
+         String str;
+        try {
+             str = em.createQuery("select m.memberName from Member m " +
+                             "where m.memberName = :name and m.memberPhone = :phone ",String.class)
+                     .setParameter("name",name).
+                     setParameter("phone",phone).getSingleResult();
+        }catch (Exception e){
+            str="아이디를 찾을 수 없습니다.";
+        }
+         return str;
+     }
 }

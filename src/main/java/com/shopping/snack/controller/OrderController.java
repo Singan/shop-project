@@ -2,15 +2,14 @@ package com.shopping.snack.controller;
 
 import com.shopping.snack.DTO.OrderRequestDTO;
 import com.shopping.snack.DTO.SessionMemberDTO;
+import com.shopping.snack.db.entity.Orders;
 import com.shopping.snack.db.entity.OrdersItem;
 import com.shopping.snack.db.service.OrderService;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -32,6 +31,18 @@ public class OrderController {
             ordersNo = orderService.orderInsert(orderRequestDTO);
         }
         return ordersNo;
+    }
+    @GetMapping("/view/orders")
+    public String viewsOrdersGo(){
+        return "/html/service/nonMember_order";
+    }
+
+    @PostMapping("/view/orders")
+    @ResponseBody
+    public Orders viewsOrders(@RequestParam(name = "no")Long no){
+
+
+        return orderService.findOrders(no);
     }
 
 }

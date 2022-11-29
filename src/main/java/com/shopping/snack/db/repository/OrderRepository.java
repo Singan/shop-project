@@ -27,4 +27,14 @@ public class OrderRepository {
         return em.createQuery("select o from Orders o where o.ordersMember =:member")
                 .setParameter("member",member).getResultList();
     }
+
+    public Orders findOrders(Long no){
+        Orders o = null;
+        try {
+            o =em.createQuery("select o from Orders o where o.ordersNo = :no",Orders.class).setParameter("no",no).getSingleResult();
+        }catch (Exception e){
+
+        }
+        return o;
+    }
 }

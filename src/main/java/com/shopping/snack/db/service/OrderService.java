@@ -26,4 +26,9 @@ public class OrderService {
 
         return orderRepository.ordersList(member);
     }
+
+    public Orders findOrders(Long no){
+
+        return orderRepository.findOrders(no);
+    }
 }

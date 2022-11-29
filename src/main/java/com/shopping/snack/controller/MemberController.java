@@ -5,6 +5,7 @@ import com.shopping.snack.DTO.LoginDTO;
 import com.shopping.snack.db.entity.Member;
 import com.shopping.snack.db.repository.MemberRepository;
 import com.shopping.snack.db.service.MemberService;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -57,5 +58,31 @@ public class MemberController {
     public Boolean idCheck(@RequestBody LoginDTO loginDTO){
         Boolean flag = memberService.findMember(loginDTO.getId());
         return flag;
+    }
+
+    @GetMapping("/find/id")
+    public String findIdGo(){
+        return "/html/member/find_id.html";
+    }
+    @GetMapping("/find/pw")
+    public String findPwGo(){
+        return "/html/member/find_pwd.html";
+    }
+
+
+    @PostMapping("/find/id")
+    public String findId(FindId findId){
+        System.out.println(memberService.findMember(findId.getId(),findId.getPhone()));
+        return "/html/member/find_id.html";
+    }
+    @PostMapping("/find/pw")
+    public String findPw(@RequestBody FindId findId){
+        return "/html/member/find_pwd.html";
+    }
+    @Data
+    class FindId{
+        String id;
+        String name;
+        String phone;
     }
 }

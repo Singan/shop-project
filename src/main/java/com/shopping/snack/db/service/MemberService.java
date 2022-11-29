@@ -26,4 +26,11 @@ public class MemberService {
         }
         return flag;
     }
+
+    public String findMember(String name,String phone){
+      String str = memberRepository.findMemberId(name,phone);
+
+      return str;
+
+    };
 }
