@@ -60,3 +60,65 @@
 	width: 70%;
 	height: 70%;
 }
+.title_btn{
+	cursor: pointer;
+}
+.title_btn:hover{
+	text-decoration: underline;
+}
+
+.modal{ 
+	height: 100vw;
+    position:absolute;
+    background: rgba(0,0,0,0.8);
+    top:0; 
+    left:0;
+    z-index: 10;
+    display: none;
+}
+.modal_content::-webkit-scrollbar{
+  display:none;
+}
+.modal_content{
+    height:600px;
+    background:#fff;
+    border-radius:10px;
+    position:relative; 
+	top: 20%;
+	padding:20px;
+    box-sizing:border-box; 
+    overflow-y: scroll;
+}
+.modal_out_btn{
+	position: absolute;
+	right: 0;
+	top:15px;
+	cursor: pointer;
+}
+.modal_out_btn > img{
+	width: 25px;
+	height: 25px;
+}
+.modal_header{
+	padding-bottom: 15px;
+	border-bottom: solid 1px #d9d9d9;
+}
+.modal_layout{
+	display: flex;
+	padding: 10px 0;
+    border-bottom: solid 1px #d9d9d9;
+    align-items: center;
+}
+.modal_image > img{
+	width: 50px;
+	height: 50px;
+}
+.modal_contents > h2{
+	font-size: 1.2em;
+}
+.modal_image > h2{
+	font-size: 1.2em;
+}
+.modal_contents > p{
+	font-size: 1.0em;
+}
