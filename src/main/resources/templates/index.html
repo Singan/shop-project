@@ -48,9 +48,7 @@
 
 				</div>
 			</div>
-		
-				
-		
+
 			<div class="col-12" id="content_main" >
 				<div class="col-3 content" th:each="product : ${productList}">
 					<a th:href="@{/product/detail(no=${product.getProductNo()})}">
@@ -59,18 +57,6 @@
 						<p th:text="${product.getProductName()}"></p>
 						<h2 th:text="${product.getProductPrice()} +' 원'"></h2>
 					</a>
-				</div>
-
-				<div id="page_move">
-					<ul>
-						<li><a href=""><</a></li>
-						<li><a href="">1</a></li>
-						<li><a href="">2</a></li>
-						<li><a href="">3</a></li>
-						<li><a href="">4</a></li>
-						<li><a href="">5</a></li>
-						<li><a href="">></a></li>
-					</ul>
 				</div>
 			</div>
 		</div>
