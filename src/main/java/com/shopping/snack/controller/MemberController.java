@@ -74,9 +74,8 @@ public class MemberController {
     @PostMapping("/find/id")
     @ResponseBody
     public String findId(@RequestBody FindIdDTO findId){
-        System.out.println(findId.getName());
-        System.out.println(memberService.findMemberId(findId.getName()));
-        return memberService.findMemberId(findId.getName());
+        String res = memberService.findMemberId(findId.getName());
+        return res;
     }
     @PostMapping("/find/pw")
     public String findPw(@RequestBody FindIdDTO findId){
