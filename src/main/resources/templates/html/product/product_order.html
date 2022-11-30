@@ -76,13 +76,11 @@
 					<div class="col-12 payment_information_content">
 						<h2>이름</h2>
 						<input type="text" name="name" th:if="${session.user} !=null" th:value="${session.user.getMemberName()}">
-						<input type="text" name="name">
 					</div>
 					<div class="col-12 payment_information_content">
 
 						<h2>우편번호</h2>
 						<input type="text" name="zonecode" th:if="${session.user} !=null"  th:value="${session.user.getMemberZoneCode()}" disabled="disabled" >
-						<input type="text" name="zonecode" disabled="disabled">
 						<div class="payment_information_small_btn">
 							<button id="addrSearch" class="payment_information_small_button">우편번호 검색</button>
 						</div>
@@ -91,12 +89,10 @@
 						<h2>주소</h2>
 						<input class="address" type="text" name="address" th:if="${session.user} !=null"
 							   disabled="disabled" th:value="${session.user.getMemberAddress()}">
-						<input class="address" type="text" name="address" disabled="disabled">
 					</div>
 					<div class="col-12 payment_information_content">
 						<h2>상세주소</h2>
 						<input class="address_detail" type="text" name="address_detail" th:value="${session.user.getMemberDetailAddress()}" th:if="${session.user} !=null" >
-						<input class="address_detail" type="text" name="address_detail">
 					</div>
 					<div class="col-12 payment_information_content" id="payment_information_phone">
 						<h2>휴대폰 번호</h2>
@@ -118,7 +114,7 @@
 				
 
 				<div class="col-2 insert_btn">
-	            	<input type="submit" name="product_order_submit" value="완료" id="submit">
+	            	<input type="submit" name="product_order_submit" value="구매하기" id="submit">
 	            </div>
 
 		</div>

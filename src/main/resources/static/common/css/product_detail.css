@@ -30,6 +30,22 @@
     margin-top: 10px; 
 
 }
+.product_delete{
+	position: absolute;
+	bottom:0;
+	right: 0;
+	width: 100px;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #efefef;
+    font-size: 0.9em;
+}
+.product_delete:hover{
+	background-color: #e5e5e5;
+	transition: .2s;
+}
 .review_write{
 	margin-top: 20px;
 }

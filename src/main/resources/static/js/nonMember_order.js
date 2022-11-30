@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#detail').click(function() {
+	$('#detail').click(function() {
         $('.modal').fadeIn();
         $('.modal_content').css({
             "top": (($(window).height() - $(".modal_content").outerHeight()) / 2 + $(window).scrollTop()) + "px"
@@ -8,7 +8,7 @@ $(document).ready(function(){
         $("body").css("overflow","hidden");
     });
     $(".modal_out_btn").click(function(){
-            $(".modal").fadeOut();
-            $("body").css("overflow","auto");
+        	$(".modal").fadeOut();
+        	$("body").css("overflow","auto");
     });
 });
