@@ -49,14 +49,18 @@ public class ProductController {
         return "/html/member/order_list.html";
     }
     @GetMapping("/product/category")
-    public String categorySelect(String category,Model model) throws IllegalArgumentException{
+    public String categorySelect(String category,Integer pageNo,Model model) throws IllegalArgumentException{
         model.addAttribute("category",category);
-        SpecialProduct[] sp = SpecialProduct.values();
+        
         Category[] ct = Category.values();
-        for (SpecialProduct s:sp) {
-            if(s.name().equals(category)){
+        
+        if(SpecialProduct.인기상품.equals(category)){
+                model.addAttribute("productList,",productService.productPopularList(pageNo));
                 return "/html/product/content_list.html";
-            }
+        }
+        if(SpecialProduct.세일상품.equals(category)){
+            model.addAttribute("productList,",productService.productSaleList(pageNo));
+            return "/html/product/content_list.html";
         }
         for (Category c:ct) {
             if(c.name().equals(category)){

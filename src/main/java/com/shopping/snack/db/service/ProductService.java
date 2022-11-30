@@ -32,11 +32,26 @@ public class ProductService {
 
         return productRepository.productList(category);
     }
+    public List<Product> productList(String category,Integer count){
+
+        return productRepository.productList(category);
+    }
     public Product productFind(Long no){
         return productRepository.productFind(no);
     }
     public List<Product> productFind(Long[] no){
         List<Long> noList = Arrays.asList(no);
         return productRepository.productFind(noList);
+    }
+
+    public List<Product> productPopularList(Integer pageNo){
+        if(pageNo==null)
+            pageNo=0;
+        return productRepository.productPopularList(pageNo);
+    }
+    public List<Product> productSaleList(Integer pageNo){
+        if(pageNo==null)
+            pageNo=0;
+        return productRepository.productSalesList(pageNo);
     }
 }
