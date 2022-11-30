@@ -1,8 +1,7 @@
-/*
+
 $(document).ready(function(){
 	$(function() {
 
-		// 스크롤 감지
 	    var didScroll = false;
 			
 	    $(window).on('scroll', function() { didScroll = true; });
@@ -20,16 +19,12 @@ $(document).ready(function(){
 	    function infiniteScrollContent() {
 	      
 	        var scrollcon = '';
-	        for (var k = 0; k < 6; k++) {
+	        for (var i = 0; i < 12; i++) {
 	            scrollcon += 
-	            	`<div class="col-3 content" th:each="product : ${productList}">
-						<a th:href="@{/product/detail(no=${product.getProductNo()})}">
-							<img th:src="'data:image/jpeg;base64,'+${product.getProductThumbnail()}"
-								 th:if="${product.getProductThumbnail()!= null}">
-							<p th:text="${product.getProductName()}"></p>
-							<h2 th:text="${product.getProductPrice()} +' 원'"></h2>
-						</a>
-					</div>`;
+	            	`<div class="col-12">
+	            		<p>asdasdasd</p>
+	            		<p>asdasdasd</p>
+	            	</div>`;
 	        }			
 	        $("#content_main").append(scrollcon);
 	    }
@@ -37,4 +32,16 @@ $(document).ready(function(){
 
 });
 
-*/
+$( document ).ready( function() {
+    $( window ).scroll( function() {
+        if ( $( this ).scrollTop() > 200 ) {
+        	$( '.top' ).fadeIn();
+        } else {
+        	$( '.top' ).fadeOut();
+        }
+    } );
+    $( '.top' ).click( function() {
+        $( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+        return false;
+    } );
+} );

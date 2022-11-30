@@ -5,6 +5,7 @@
 	<title>과자샵</title>
 	
 	<link rel="stylesheet" type="text/css" href="/common/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/common/css/find_id.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
@@ -12,6 +13,7 @@
 	  src="https://code.jquery.com/jquery-3.6.1.min.js"
 	  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
 	  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/js/find_id.js"></script>  
 </head>
 <body>
 	<div class="col-9 container">
@@ -19,7 +21,19 @@
 
 		</div>
 	</div>
-
+	<div class="col-12 modal">
+		<div class="col-4 modal_content">
+		    <div class="col-1 modal_out_btn">
+		      	<img src="/img/delete_button.png">
+		    </div>
+		    <div class="col-12 modal_header">
+		     	<h2>아이디찾기</h2>
+		    </div>
+		    <div class="col-12 model_layout">
+		        <h2></h2> 
+		    </div>
+		</div>
+	</div>
 	<div class="col-9 container">		
 		<div class="col-12" id="content">
 			<form id="find_id_form" method="post" action="/find/id">
@@ -29,11 +43,11 @@
 					</div>
 					<div class="col-9">
 						<input class="find_id_password_input" type="text" name="id" placeholder="이름을 입력하세요.">
-						<input class="find_id_password_input user_phone" id="" type="password" name="phone" placeholder="휴대폰 번호를 입력하세요.">
+						<input class="find_id_password_input user_phone" type="text" name="phone" placeholder="휴대폰 번호를 입력하세요.(- 빼고 입력)">
 						<input class="find_id_password_input find_user_id_phone_btn" type="button" name="user_id_phone_call" value="인증번호">
 					</div>
 					<div class="col-9 find_id_pwd_btn">
-						<button class="submit">아이디 찾기</button>
+						<button class="submit" type="button">아이디 찾기</button>
 					</div>
 				</div>
 			</form>

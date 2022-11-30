@@ -33,10 +33,12 @@
 		    <div class="col-12 model_layout">
 		        <h2>첫 가입기념 쿠폰</h2>
 		        <p>유효기간 : 2021-10-13 ~ 2023-12-31일 까지</p>
+		        <button>선택</button>
 		    </div>
 		    <div class="col-12 model_layout">
 		        <h2>첫 가입기념 쿠폰</h2>
 		        <p>유효기간 : 2021-10-13 ~ 2023-12-31일 까지</p>
+		        <button>선택</button>
 		    </div>
 		</div>
 	</div>
@@ -107,7 +109,7 @@
 					</div>
 					<div class="col-12 payment_information_content" th:if="${session.user} !=null">
 						<h2>쿠폰</h2>
-						<input type="text" name="payment_information_coupon">
+						<input type="text" name="payment_information_coupon" disabled="disabled">
 						<div class="payment_information_small_btn">
 							<button id="coupon" class="payment_information_small_button">쿠폰보기</button>
 						</div>
