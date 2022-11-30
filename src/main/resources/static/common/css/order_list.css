@@ -118,11 +118,21 @@
 	height: 50px;
 }
 .modal_contents > h2{
+	width: 90%;
+	overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    margin:0;
 	font-size: 1.2em;
 }
 .modal_image > h2{
 	font-size: 1.2em;
 }
 .modal_contents > p{
+	width: 90%;
 	font-size: 1.0em;
+	overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    margin:0;
 }

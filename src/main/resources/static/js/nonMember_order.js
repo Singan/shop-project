@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('#detail').click(function() {
+	$('.detail').click(function() {
         $('.modal').fadeIn();
         $('.modal_content').css({
             "top": (($(window).height() - $(".modal_content").outerHeight()) / 2 + $(window).scrollTop()) + "px"
