@@ -1,5 +1,6 @@
 package com.shopping.snack.controller;
 
+import com.shopping.snack.DTO.FindIdDTO;
 import com.shopping.snack.DTO.JoinDTO;
 import com.shopping.snack.DTO.LoginDTO;
 import com.shopping.snack.db.entity.Member;
@@ -71,18 +72,14 @@ public class MemberController {
 
 
     @PostMapping("/find/id")
-    public String findId(FindId findId){
-        System.out.println(memberService.findMember(findId.getId(),findId.getPhone()));
-        return "/html/member/find_id.html";
+    @ResponseBody
+    public String findId(@RequestBody FindIdDTO findId){
+        System.out.println(findId.getName());
+        System.out.println(memberService.findMemberId(findId.getName()));
+        return memberService.findMemberId(findId.getName());
     }
     @PostMapping("/find/pw")
-    public String findPw(@RequestBody FindId findId){
+    public String findPw(@RequestBody FindIdDTO findId){
         return "/html/member/find_pwd.html";
-    }
-    @Data
-    class FindId{
-        String id;
-        String name;
-        String phone;
     }
 }

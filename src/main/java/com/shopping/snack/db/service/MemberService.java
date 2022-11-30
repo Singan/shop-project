@@ -27,8 +27,8 @@ public class MemberService {
         return flag;
     }
 
-    public String findMember(String name,String phone){
-      String str = memberRepository.findMemberId(name,phone);
+    public String findMemberId(String name){
+      String str = memberRepository.findMemberId(name);
 
       return str;
 

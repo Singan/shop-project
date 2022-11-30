@@ -34,13 +34,14 @@ public class MemberRepository {
     }
 
      @Transactional
-     public String findMemberId(String name,String phone){
+     public String findMemberId(String name){
          String str;
         try {
              str = em.createQuery("select m.memberName from Member m " +
-                             "where m.memberName = :name and m.memberPhone = :phone ",String.class)
+                             "where m.memberName = :name ",String.class)
+                     //.setParameter("phone",phone)
                      .setParameter("name",name).
-                     setParameter("phone",phone).getSingleResult();
+                     getSingleResult();
         }catch (Exception e){
             str="아이디를 찾을 수 없습니다.";
         }
