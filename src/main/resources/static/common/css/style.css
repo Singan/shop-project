@@ -683,6 +683,11 @@ body::-webkit-scrollbar {
 	font-size: 1.0em;
 	color:#333;
 }
+.notice_board > p{
+	text-align: center;
+	font-size: 1.0em;
+	color:#333;
+}
 .notice_content{
 	height: 40px;
 	line-height: 40px;

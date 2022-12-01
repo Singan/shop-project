@@ -29,8 +29,15 @@
                     <h2 th:text="${board.getBoardTitle()}"></h2>
                 </div>
                 <div class="col-12 write_name">
-                    <h2 th:text="${board.getBoardWriter().getMemberName()}">관리자</h2>
-                    <p th:text="${board.getBoardDay()}">2022.11.17</p>
+                    <div class="col-11 name">
+                        <h2 th:text="${board.getBoardWriter().getMemberName()}">관리자</h2>
+                        <p th:text="${board.getBoardDay()}">2022.11.17</p>
+                    </div>
+                    <div class="col-1 board_views">
+                        <h2>조회수</h2>
+                        <h2>5</h2>
+                    </div>
+                    
                 </div>
                 <div class="col-12 notice_content">
                     <div class="col-12 notice_content_image">
