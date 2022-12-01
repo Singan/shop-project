@@ -35,7 +35,9 @@
 							<p>제목</p>
 						</div>
 						<div class="col-11 notice_insert_contents">
-							<input type="text" name="title" placeholder="제목을 입력해주세요.">
+							<input type="text" name="title" placeholder="제목을 입력해주세요." th:if="${board ==null}">
+							<input type="text" name="title" placeholder="제목을 입력해주세요." th:if="${board !=null}" th:value="${board.getBoardTitle()}">
+
 						</div>
 					</div>
 
@@ -62,8 +64,11 @@
 						<div class="col-12 notice_insert_contents" id="noticeHedaer">
 							<p>내용</p>
 						</div>
-						<div class="col-12 notice_insert_contents" id="notice_insert_contnet_content" contentEditable="true">
+						<div class="col-12 notice_insert_contents" id="notice_insert_contnet_content" contentEditable="true" th:if="${board !=null}" th:text="${board.getBoardContent()}">
 							
+						</div>
+						<div class="col-12 notice_insert_contents" id="notice_insert_contnet_content" contentEditable="true" th:if="${board ==null}">
+
 						</div>
 					</div>
 
@@ -76,7 +81,29 @@
 	<div class="col-12" id="footer" th:replace="/html/common/footer.html :: footer"></div>
 
 </body>
-<script>
+<script th:if="${board!=null}" th:inline="javascript" >
+	var boardNo = "[[${board.getBoardNo()}]]";
+	$("#submit").on("click",function (){
+		var title = $("input[name=title]").val();
+		var content = $("#notice_insert_contnet_content").html();
+		$.ajax({
+			url:"/notice/update",
+			type:"put",
+			data:JSON.stringify({
+				no:boardNo,
+				title:title,
+				content:content,
+			}),
+			dataType : "text",
+			contentType: 'application/json',
+			success:(data)=>{
+				location.href="/notice/detail?no="+data
+			},
+		});
+	})
+
+</script>
+<script th:if="${board==null}">
 	$("#submit").on("click",function (){
 		var title = $("input[name=title]").val();
 		var content = $("#notice_insert_contnet_content").html();

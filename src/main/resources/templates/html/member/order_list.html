@@ -107,10 +107,10 @@
 						<p th:text="${orders.getOrdersItems().get(0).getProduct().getProductShort()}">간략한 소개</p>
 					</div>
 					<div class="col-1 product_order_information">
-						<h2>배송중</h2>
+						<h2 th:text="${orders.getOrdersStatus()}">배송중</h2>
 					</div>
 					<div class="col-1 product_order_information">
-						<h4>2022-11-15</h4>
+						<h4 th:text="${orders.getOrdersDate()}">2022-11-15</h4>
 					</div>
 					<div class="col-2 product_order_quantity">
 						<h2 th:text="${orders.getOrdersItems().get(0).getCount()} +' 개'">1개</h2>
@@ -127,4 +127,13 @@
 	</div>
 
 </body>
+<script th:inline="javascript">
+		console.log("에이에이")
+		var ordersList = [[${ordersList}]];
+		console.log(ordersList)
+		$(document).ready(function(){
+
+		})
+
+</script>
 </html>

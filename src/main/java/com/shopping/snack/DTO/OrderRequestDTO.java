@@ -8,6 +8,7 @@ import com.shopping.snack.db.enumClass.OrdersStatus;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +33,7 @@ public class OrderRequestDTO {
       orders.setOrdersDetailAddress(ordersDetailAddress);
       orders.setOrdersZoneCode(ordersZoneCode);
       orders.setOrdersName(ordersName);
-      orders.setOrdersDate(LocalDateTime.now());
+      orders.setOrdersDate(LocalDate.now());
       orders.setOrdersStatus(OrdersStatus.배송전);
       return orders;
     };

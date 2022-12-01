@@ -1,6 +1,7 @@
 package com.shopping.snack.db.service;
 
 import com.shopping.snack.DTO.BoardDTO;
+import com.shopping.snack.DTO.BoardUpdateDTO;
 import com.shopping.snack.db.entity.Board;
 import com.shopping.snack.db.entity.Member;
 import com.shopping.snack.db.repository.BoardRepository;
@@ -31,5 +32,8 @@ public class BoardService {
 
     public void boardDelete(Long no){
         boardRepository.boardDelete(no);
+    }
+    public void boardUpdate(BoardUpdateDTO boardUpdateDTO){
+        boardRepository.boardUpdate(boardUpdateDTO);
     }
 }

@@ -35,7 +35,7 @@
                     </div>
                     <div class="col-1 board_views">
                         <h2>조회수</h2>
-                        <h2>5</h2>
+                        <h2 th:text="${board.getBoardViews()}"></h2>
                     </div>
                     
                 </div>
@@ -45,7 +45,7 @@
 
                     </div>
                     <div class="col-12 go_list_btn">
-                        <a href=""  th:if="${session.user !=null}">
+                        <a th:href="@{/notice/update(no=${board.getBoardNo()})}"  th:if="${b}">
                             <button name="">수정하기</button>
                         </a>
 

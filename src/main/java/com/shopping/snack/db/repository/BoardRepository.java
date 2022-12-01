@@ -1,5 +1,6 @@
 package com.shopping.snack.db.repository;
 
+import com.shopping.snack.DTO.BoardUpdateDTO;
 import com.shopping.snack.db.entity.Board;
 import com.shopping.snack.db.entity.Member;
 import lombok.RequiredArgsConstructor;
@@ -25,15 +26,22 @@ public class BoardRepository {
         List<Board> boardList = em.createQuery("select b from Board b where b.boardDisplay = 1").getResultList();
         return boardList;
     }
-
+    @Transactional
     public Board boardDetail(Long no){
         Board board = em.find(Board.class,no);
         board.setBoardViews(board.getBoardViews()+1);
         return board;
     }
-
+    @Transactional
     public void boardDelete(Long no){
         Board board = em.find(Board.class,no);
         board.setBoardDisplay(false);
+    }
+
+    @Transactional
+    public void boardUpdate(BoardUpdateDTO boardUpdateDTO){
+        Board board = em.find(Board.class,boardUpdateDTO.getNo());
+        board.setBoardContent(boardUpdateDTO.getContent());
+        board.setBoardTitle(boardUpdateDTO.getTitle());
     }
 }

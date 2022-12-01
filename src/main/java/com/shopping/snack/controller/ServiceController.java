@@ -2,6 +2,7 @@ package com.shopping.snack.controller;
 
 import com.shopping.snack.DTO.BasketDTO;
 import com.shopping.snack.DTO.BasketRequest;
+import com.shopping.snack.DTO.BoardUpdateDTO;
 import com.shopping.snack.DTO.SessionMemberDTO;
 import com.shopping.snack.db.entity.Basket;
 import com.shopping.snack.db.entity.Board;
@@ -14,10 +15,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -88,6 +86,19 @@ public class ServiceController {
         model.addAttribute("board",board);
         return "/html/service/notice_detail.html";
     }
+    @GetMapping("/notice/update")
+    public String noticeUpdate(Model model,Long no){
 
+        Board board = boardService.boardDetail(no);
+        model.addAttribute("board",board);
+        return "/html/admin/notice_insert.html";
+    }
+    @PutMapping("/notice/update")
+    @ResponseBody
+    public Long noticeUpdate(@RequestBody BoardUpdateDTO boardUpdateDTO){
 
+        boardService.boardUpdate(boardUpdateDTO);
+
+        return boardUpdateDTO.getNo();
+    }
 }

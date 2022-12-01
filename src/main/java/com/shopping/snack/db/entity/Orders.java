@@ -41,6 +41,6 @@ public class Orders {
     @Column(name = "orders_name")
     private String ordersName;
     @Column(name = "orders_date")
-    private LocalDateTime ordersDate;
+    private LocalDate ordersDate;
 
 }
