@@ -31,7 +31,9 @@
 	position: absolute;
 	bottom: 80px;
     left: 10px;
-   
+    display: flex;
+    
+
 }
 .product_delete{
 	position: absolute;
