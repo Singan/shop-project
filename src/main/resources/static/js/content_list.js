@@ -26,8 +26,18 @@ $(document).ready( function() {
 				$("#basket_dropdown").css({'transform':'rotate(180deg)'});
 			}
 		});	
+
       	getContentList();
     });
+
+      	
+
+    if(localStorage.getItem('1')){
+		var lastData = localStorage.getItem('1');
+		console.log(lastData);
+	}  	
+});
+>>>>>>> Stashed changes
 
 function getContentList(){
     let category = $("#category").text();

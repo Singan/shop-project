@@ -39,8 +39,8 @@
 					<p th:text="${product.getProductShort()}">여러가지 과자를 맛볼 수 있는 가성비 템 ! 지금 구매하세요!</p>
 					<div class="price_content">
 						<div>
-							<p class="price" th:text="${product.getProductPrice()}"></p>
-							<h2 class="discount_price">500</h2>
+							<p class="price" th:text="${product.getProductPrice()} + '원'"></p>
+							<h2 class="discount_price" th:text="(${product.getProductPrice()}*(1-(${product.getProductDiscount()}/100)))"></h2>
 						</div>
 						
 						<p class="discount" th:text="${product.getProductDiscount()} + '%'"></p>

@@ -5,6 +5,7 @@
 	<title>과자샵</title>
 
 	<link rel="stylesheet" type="text/css" href="/common/css/style.css">
+	<link rel="stylesheet" type="text/css" href="common/css/product_detail.css">
 	<link rel="stylesheet" type="text/css" href="/common/css/swiper.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,7 +56,12 @@
 						<img th:src="'data:image/jpeg;base64,'+${product.getProductThumbnail()}"
 							 th:if="${product.getProductThumbnail()!= null}">
 						<p th:text="${product.getProductName()}"></p>
-						<h2 th:text="${product.getProductPrice()} +' 원'"></h2>
+						<div>
+							<p class="price" th:text="${product.getProductPrice()} + '원'"></p>
+							<h2 class="discount_price" th:text="(${product.getProductPrice()}*(1-(${product.getProductDiscount()}/100)))"></h2>
+						</div>
+						
+						<p class="discount" th:text="${product.getProductDiscount()} + '%'"></p>
 					</a>
 				</div>
 			</div>
