@@ -30,15 +30,16 @@
 .write_name{
 	padding:10px 15px;
 	border-bottom: solid 1px #d9d9d9;
+	display: flex;
 }
-.write_name > h2{
+.name > h2{
 	color: #555;
 	font-size: 0.9em;
 	display: inline-block;
 	border-right: solid 1px #d9d9d9;
 	padding:5px 5px 5px 0;
 }
-.write_name > p{
+.name > p{
 	color: #555;
 	font-size: 0.8em;
 	display: inline-block;
@@ -86,4 +87,12 @@
 #notice_content > img{
 	height: 400px;
 	width: 400px;
+}
+.board_views{
+	border-left: solid 1px #d9d9d9;
+}
+.board_views > h2{
+	font-size: 0.8em;
+	color:#a9a9a9;
+	text-align: center;
 }
