@@ -65,10 +65,26 @@ public class ServiceController {
         model.addAttribute("boardList",boardList);
         return "/html/service/notice.html";
     }
+    @GetMapping("/notice/delete")
+    public String noticeDelete(Long no){
+        boardService.boardDelete(no);
+        System.out.println("삭제 들어옴");
+        return "redirect:/notice";
+    }
     @GetMapping("/notice/detail")
     public String noticeDetail(Model model,Long no){
 
         Board board = boardService.boardDetail(no);
+        SessionMemberDTO member = (SessionMemberDTO) httpServletRequest.getSession().getAttribute("user");
+        boolean b= false;
+        if(member !=null){
+
+            if(board.getBoardWriter().getMemberId().equals(member.getMemberId())){
+                b=true;
+            }
+
+        }
+        model.addAttribute("b",b);
         model.addAttribute("board",board);
         return "/html/service/notice_detail.html";
     }

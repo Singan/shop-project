@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -48,29 +49,31 @@ public class ProductController {
         }
         return "/html/member/order_list.html";
     }
-    @GetMapping("/product/category")
-    public String categorySelect(String category,Integer pageNo,Model model) throws IllegalArgumentException{
-        model.addAttribute("category",category);
-        
+    @GetMapping("/product/category/get")
+    @ResponseBody
+    public List<Product> categoryGetContent(String category,Integer pageNo) throws IllegalArgumentException{
+
         Category[] ct = Category.values();
-        
+        System.out.println(category);
         if(SpecialProduct.인기상품.equals(category)){
-                model.addAttribute("productList,",productService.productPopularList(pageNo));
-                return "/html/product/content_list.html";
+                return productService.productPopularList(pageNo);
         }
         if(SpecialProduct.세일상품.equals(category)){
-            model.addAttribute("productList,",productService.productSaleList(pageNo));
-            return "/html/product/content_list.html";
+            return productService.productSaleList(pageNo);
         }
         for (Category c:ct) {
             if(c.name().equals(category)){
-                model.addAttribute("productList", productService.productList(category));
-                return "/html/product/content_list.html";
+                System.out.println(productService.productList(category));
+                return productService.productList(category);
             }
         }
-        return "redirect:/";
+        return null;
     }
-
+    @GetMapping("/product/category")
+    public String categorySelect(String category , Model model) throws IllegalArgumentException{
+        model.addAttribute("category",category);
+        return "/html/product/content_list.html";
+    }
     @GetMapping("/product/order")
     public String orderGo(Model model, Long[] no ,@RequestParam(defaultValue = "1") Integer[] count){
         List<Product> productList= productService.productFind(no);

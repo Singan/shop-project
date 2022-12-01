@@ -22,7 +22,7 @@ public class BoardRepository {
     }
 
     public List<Board> boardList(){
-        List<Board> boardList = em.createQuery("select b from Board b").getResultList();
+        List<Board> boardList = em.createQuery("select b from Board b where b.boardDisplay = 1").getResultList();
         return boardList;
     }
 
@@ -30,5 +30,10 @@ public class BoardRepository {
         Board board = em.find(Board.class,no);
         board.setBoardViews(board.getBoardViews()+1);
         return board;
+    }
+
+    public void boardDelete(Long no){
+        Board board = em.find(Board.class,no);
+        board.setBoardDisplay(false);
     }
 }

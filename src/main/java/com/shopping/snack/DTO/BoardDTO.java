@@ -20,6 +20,7 @@ public class BoardDTO {
         board.setBoardContent(this.content);
         board.setBoardTitle(this.title);
         board.setBoardViews(0);
+        board.setBoardDisplay(Boolean.TRUE);
         return board;
     }
 }

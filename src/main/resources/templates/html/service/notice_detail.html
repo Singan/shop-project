@@ -41,7 +41,9 @@
                         <a href=""  th:if="${session.user !=null}">
                             <button name="">수정하기</button>
                         </a>
-                        <a href=""  th:if="${session.user !=null}">
+
+                        <a th:href="@{/notice/delete(no=${board.getBoardNo()})}"
+                           th:if="${b}">
                             <button name="">삭제하기</button>
                         </a>
                         <a href="/notice">

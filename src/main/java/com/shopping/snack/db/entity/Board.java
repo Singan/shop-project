@@ -32,4 +32,7 @@ public class Board {
     @Column(name = "board_views")
     private Integer boardViews;
 
+    @Column(name = "board_display")
+    private Boolean boardDisplay;
+
 }

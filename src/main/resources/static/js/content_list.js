@@ -1,5 +1,8 @@
 const Time = 400;
+let count = 0;
+
 $(document).ready( function() {
+
 		$("#wishlist").click( function() {
   			if($("#wishlist_content").css("display") == "block"){ 
 				$("#wishlist_content").slideUp(Time);
@@ -23,6 +26,33 @@ $(document).ready( function() {
 				$("#basket_dropdown").css({'transform':'rotate(180deg)'});
 			}
 		});	
-      	
+      	getContentList();
     });
+
+function getContentList(){
+    let category = $("#category").text();
+    console.log(category)
+    $.ajax({
+        				url:"/product/category/get?category="+category+"&pageNo="+count,
+        				type:"get",
+        				dataType : "json",
+        				contentType: 'application/json',
+        				success:function(data){
+                            count++;
+                            let str ="";
+
+                            data.map((product)=>{
+                                str =str+`
+                                <div class="col-3 content">
+                                    <a href="/product/detail?no=${product.productNo}">
+                                        <img src="data:image/jpeg;base64,${product.productThumbnail}"/>
+                                        <p>${product.productShort}</p>
+                                        <h2>${product.productPrice} 원</h2>
+                                    </a>
+                                </div>`
+                            })
+                            $(".content_main").append(str);
+        				}
+    })
+}
 

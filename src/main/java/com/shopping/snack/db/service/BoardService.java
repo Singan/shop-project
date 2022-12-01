@@ -28,4 +28,8 @@ public class BoardService {
     public Board boardDetail(Long no){
         return boardRepository.boardDetail(no);
     }
+
+    public void boardDelete(Long no){
+        boardRepository.boardDelete(no);
+    }
 }
