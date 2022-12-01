@@ -1200,7 +1200,6 @@ body::-webkit-scrollbar {
 	height: 100%;
 }
 .product_order_quantity{
-	text-align: center;
 	display: flex;
     align-items: center;
 }
@@ -1214,7 +1213,7 @@ body::-webkit-scrollbar {
 	flex-wrap: wrap;
     align-items: center;
 }
-.product_order_information > h2, .product_order_information > p{
+.product_order_information > h2, .product_order_information > h4, .product_order_information > p{
 	width: 100%;
 	color: #a0a0a0;
 }

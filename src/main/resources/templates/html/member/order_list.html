@@ -77,14 +77,40 @@
 				<div class="col-12 content_header">
 					<h2>주문정보</h2>
 				</div>
+				<div class="col-12 contents_header">
+					<div class="col-2">
+						<h2>제품 이미지</h2>
+					</div>
+					<div class="col-5">
+						<h2>제품소개</h2>
+					</div>
+					<div class="col-1 ">
+						<h2>배송상태</h2>
+					</div>
+					<div class="col-1">
+						<h2>주문날짜</h2>
+					</div>
+					<div class="col-2">
+						<h2>개수</h2>
+					</div>
+					<div class="col-2">
+						
+					</div>
+				</div>	
 				<div class="col-12 product_order_contents" th:each="orders : ${ordersList}">
 					<div class="col-2 product_order_content_image">
 						<img th:src="'data:image/jpeg;base64,'+${orders.getOrdersItems().get(0).getProduct().getProductThumbnail()}">
 					</div>
-					<div class="col-6 product_order_information">
+					<div class="col-5 product_order_information">
 						<h2 class="title_btn" th:text="${orders.getOrdersItems().get(0).getProduct().getProductName()}">제품명</h2>
 						<h2 th:text="${orders.getOrdersItems().get(0).getProduct().getProductPrice()} +' 원'">가격</h2>
 						<p th:text="${orders.getOrdersItems().get(0).getProduct().getProductShort()}">간략한 소개</p>
+					</div>
+					<div class="col-1 product_order_information">
+						<h2>배송중</h2>
+					</div>
+					<div class="col-1 product_order_information">
+						<h4>2022-11-15</h4>
 					</div>
 					<div class="col-2 product_order_quantity">
 						<h2 th:text="${orders.getOrdersItems().get(0).getCount()} +' 개'">1개</h2>
