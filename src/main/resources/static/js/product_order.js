@@ -59,15 +59,32 @@ $(document).ready(function() {
 $(document).ready(function(){
     let add_check = $('#new_address');
     let add_input = $('.address');
+    let zone = $('input[name=zonecode]');
+    let add_detali_input = $('.address_detail');
     let default_address = add_input.val();
+    let add_detali = add_detali_input.val();
+    let zonecode = zone.val();
     let def_add = $('#default_address');
+    let search_btn = $('#addrSearch');
     add_check.click(function(){
         add_input.attr('disabled', false);
+        add_detali_input.attr('disabled', false);
         add_input.val("");
+        add_detali_input.val("");
+        zone.val("");
     });
     def_add.click(function(){
         add_input.attr('disabled', true);
+        add_detali_input.attr('disabled', true);
         add_input.val(default_address);
+        add_detali_input.val(add_detali);
+        zone.val(zonecode);
     });
+    let check = def_add.is(':checked');
+    if(check){
+        search_btn.attr('disabled', true);
+    }else if(!check){
+        search_btn.attr('disabled', false);
+    }
 
 });
