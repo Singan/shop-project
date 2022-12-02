@@ -108,10 +108,10 @@ $(document).ready(function(){
             if(i<phoneInput.length-1)
                 phone+= "-"
         }
-        if(!idCheck()){
-            $("input[name='id']").focus();
-            return;
-        }
+        // if(!idCheck()){
+        //     $("input[name='id']").focus();
+        //     return;
+        // }
         $.ajax(
         	{
                 url:"/member/join",
@@ -170,11 +170,11 @@ $(document).ready(function(){
                     text = "사용 가능한 아이디입니다."
                     }
                 $("#checkResult").text(text);
+                return check;
             },
         })
 
 
-        return check;
     }
 
 });
