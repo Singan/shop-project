@@ -284,10 +284,7 @@ body::-webkit-scrollbar {
 	box-shadow: 1px 1px 3px 1px #dadce0;
 	transition: .2s;
 }
-.content > a > h2{
-	font-size: 23pt;
-	color:#333;
-}
+
 .content:hover h2{
 	text-decoration: underline;
 	

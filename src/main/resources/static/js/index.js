@@ -46,28 +46,25 @@ $( document ).ready( function() {
     } );
 } );
 
+
 $(window).on('load',function(){
     let price = $(".price");
+    let price_num = parseInt(price.text());
     let dis_price = $(".discount_price");
     let dis_priceInt = parseInt($(".discount_price").text());
-    let dis = $('.discount');
-    let count = $('.content').length;
-    
-    for(let i = 0; i <= count - 1; i++){
-    	let discount = parseInt($(dis[i]).text());
-    	price[i].attr('id', 'dis_' + i);
-    	console.log(discount);
-    	if(discount[i] > 0){
-	        price[i].css('text-decoration' , 'line-through');
-	        price[i].css('color' , '#e9e9e9');
-	        dis[i].css('display' , 'block');
-	        dis_price[i].css('display' , 'block');
-	        $(".discount_price").text(dis_priceInt);
-	        $(dis_price[i].text(dis_priceInt[i] + '원'));
-	    }else if(discount[i] <= 0){
-	        dis[i].css('display' , 'none');
-	        dis_price[i].css('display' , 'none');
-	    }
-    }
-    
+    dis_price.text(dis_priceInt + '원');
+    price.each(function (index, item) {
+	    $(this).attr('id', index);
+	});
+
+	for(let i = 0; i <= price.length - 1; i++){
+		if(!dis_price[i]){
+			$('#' + i).css({
+				'text-decoration' : 'line-through',
+				'font-size' : '1.0em',
+				'color' : '#e9e9e9'
+			});
+		}
+	}
+   
 });

@@ -55,3 +55,19 @@ $(document).ready(function() {
             $("body").css("overflow","auto");
     });
 });
+
+$(document).ready(function(){
+    let add_check = $('#new_address');
+    let add_input = $('.address');
+    let default_address = add_input.val();
+    let def_add = $('#default_address');
+    add_check.click(function(){
+        add_input.attr('disabled', false);
+        add_input.val("");
+    });
+    def_add.click(function(){
+        add_input.attr('disabled', true);
+        add_input.val(default_address);
+    });
+
+});

@@ -30,7 +30,29 @@
     right: 0;
     top: 5px;
 }
+.price{
+	font-size: 1.3em;
+    font-weight: 600;
+    margin-top: 10px; 
+    color: #333;
+}
+.price_content{
+	position: absolute;
+	bottom: 80px;
+    left: 10px;
+    display: flex;
+    align-items: center;
 
+}
+.discount{
+	color: #a9a9a9;
+    font-size: 1.2em;
+}
+.discount_price{
+	margin-top: 5px;
+	font-size:1.5em;
+	color:#333;
+}
 
 #wishlist_content{
 	display: none;

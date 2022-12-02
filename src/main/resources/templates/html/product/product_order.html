@@ -87,6 +87,10 @@
 					</div>
 					<div class="col-12 payment_information_content">
 						<h2>주소</h2>
+						<div class="address_check" th:if="${session.user} !=null">
+							<span>새 배송지 입력</span><input id="new_address" type="radio" name="address_check">
+							<span>기본배송지 선택</span><input id="default_address" type="radio" name="address_check" checked>
+						</div>
 						<input class="address" type="text" name="address" th:if="${session.user} !=null"
 							   disabled="disabled" th:value="${session.user.getMemberAddress()}">
 					</div>
