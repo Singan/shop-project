@@ -89,6 +89,7 @@ $(document).ready(function(){
 $(document).ready(function(){
 
 	var submit = $("#submit")
+    let idCheckV = false;
     submit.on("click",function(){
         let id = $("input[name='id']").val();
         let pwd = $("input[name='pwd']").val();
@@ -108,10 +109,11 @@ $(document).ready(function(){
             if(i<phoneInput.length-1)
                 phone+= "-"
         }
-        // if(!idCheck()){
-        //     $("input[name='id']").focus();
-        //     return;
-        // }
+        console.log("아아아")
+        if(!idCheckV){
+            return;
+        }
+
         $.ajax(
         	{
                 url:"/member/join",
@@ -131,6 +133,7 @@ $(document).ready(function(){
                 dataType : "json",
                 contentType: 'application/json',
                 success:()=>{
+                    console.log("아아아")
                     location.href = "http://localhost:8080/login";
                 }
 		    }
@@ -151,10 +154,11 @@ $(document).ready(function(){
     })
 
     $("#idCheck").on("click",idCheck);
-
+    $("input[name='id']").on("change",function(){
+        idCheckV = false;
+    })
     function idCheck(){
         let id = $("input[name='id']").val();
-        let check = false;
         let text = "사용 불가능한 아이디입니다.";
         $.ajax({
             url:"/member/check",
@@ -165,12 +169,11 @@ $(document).ready(function(){
             dataType : "json",
             contentType: 'application/json',
             success:function(data){
-                    check= data;
-                    if(check){
+                    idCheckV= data;
+                    if(idCheckV){
                     text = "사용 가능한 아이디입니다."
                     }
                 $("#checkResult").text(text);
-                return check;
             },
         })
 
