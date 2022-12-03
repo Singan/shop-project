@@ -50,20 +50,8 @@
 		        	<h2>배송상태</h2>
 		        </div>
 		    </div>
-		    <div class="col-12 modal_layout">
-		        <div class="col-1 modal_image">
-		        	<img src="/img/snack_photo1.png">
-		        </div>
-		        <div class="col-4 modal_contents">
-		        	<h2>제품명</h2>
-		        	<p>간략한 소개</p>
-		        </div>
-		        <div class="col-1 modal_contents">
-		        	<h2>1개</h2>
-		        </div>
-		        <div class="col-2 modal_contents">
-		        	<h2>37000원</h2>
-		        </div>
+		    <div class="col-12 modal_layout" id="modal">
+
 		    </div>
 		</div>
 	</div>
@@ -100,21 +88,21 @@
 			</div>	
 			<div class="col-12 product_order_contents">
 				<div class="col-2 product_order_content_image">
-
+					<img class="product_order_content_image" id="productImage">
 				</div>
 				<div class="col-5 product_order_information">
-					<h2 class="title_btn">제품명</h2>
-					<h2>가격</h2>
-					<p>간략한 소개</p>
+					<h2 class="title_btn" id="productName">제품명</h2>
+					<h2 id="productPrice">가격</h2>
+					<p id="productShort">간략한 소개</p>
 				</div>
 				<div class="col-1 product_order_information">
-					<h2>배송중</h2>
+					<h2 id="ordersStatus">배송현황</h2>
 				</div>
 				<div class="col-1 product_order_information">
-					<h4>2022-11-15</h4>
+					<h4 id="ordersDate">2022-11-15</h4>
 				</div>
 				<div class="col-2 product_order_quantity">
-					<h2>1개</h2>
+					<h2 id="productCount">1개</h2>
 					<div>
 						<button class="cancel_btn detail">주문상세</button>
 						<a href=""><button class="cancel_btn" type="button" name="cancel_btn" value="취소하기">취소하기</button></a>
@@ -138,8 +126,35 @@
 
 			dataType : "json",
 			contentType: 'application/json',
-			success:(data)=>{
-				console.log(data)
+			success:(orders)=>{
+				$("#productName").text(orders.ordersItems[0].productName)
+				$("#productPrice").text(orders.ordersItems[0].productPrice)
+				$("#productShort").text(orders.ordersItems[0].productShort)
+				$("#ordersStatus").text(orders.ordersStatus)
+				$("#ordersDate").text(orders.ordersDate)
+				$("#productImage").attr("src","data:image/png;base64,"+orders.ordersItems[0].productThumbnail)
+				$("#productCount").text(orders.ordersItems[0].count+"개")
+
+				console.log(orders)
+				let html="";
+				orders.ordersItems.map((ordersItem)=>{
+					html+=`<div class="col-1 modal_image">
+						<img src="data:image/png;base64,${ordersItem.productThumbnail}">
+					</div>
+					<div class="col-4 modal_contents">
+						<h2>${ordersItem.productName}</h2>
+						<p>${ordersItem.productShort}</p>
+					</div>
+					<div class="col-1 modal_contents">
+						<h2>${ordersItem.count}개</h2>
+					</div>
+					<div class="col-2 modal_contents">
+						<h2>${ordersItem.productPrice} 원</h2>
+					</div>`
+
+				})
+				$("#modal").html(html);
+
 			}
 		})
 	})

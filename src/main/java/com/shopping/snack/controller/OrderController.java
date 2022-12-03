@@ -1,6 +1,7 @@
 package com.shopping.snack.controller;
 
 import com.shopping.snack.DTO.OrderRequestDTO;
+import com.shopping.snack.DTO.OrderViewDTO;
 import com.shopping.snack.DTO.SessionMemberDTO;
 import com.shopping.snack.db.entity.Orders;
 import com.shopping.snack.db.entity.OrdersItem;
@@ -39,10 +40,10 @@ public class OrderController {
 
     @PostMapping("/view/orders")
     @ResponseBody
-    public Orders viewsOrders(@RequestParam(name = "no")Long no){
+    public OrderViewDTO viewsOrders(@RequestParam(name = "no")Long no){
 
-
-        return orderService.findOrders(no);
+        OrderViewDTO orderViewDTO = new OrderViewDTO(orderService.findOrders(no));
+        return orderViewDTO;
     }
 
 }
