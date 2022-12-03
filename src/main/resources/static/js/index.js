@@ -52,19 +52,25 @@ $(window).on('load',function(){
     let price_num = parseInt(price.text());
     let dis_price = $(".discount_price");
     let dis_priceInt = parseInt($(".discount_price").text());
-    dis_price.text(dis_priceInt + '원');
     price.each(function (index, item) {
 	    $(this).attr('id', index);
 	});
+	$(".discount_price").each(function(){
+	    $(this).text(parseInt($(this).text()) + "원");
 
-	for(let i = 0; i <= price.length - 1; i++){
-		if(!dis_price[i]){
-			$('#' + i).css({
+	})
+
+	for(let i = 0; i <= price.length; i++){
+		console.log(i)
+		if(dis_price[i]){
+			let a = $(dis_price[i]).prev();
+			$(a).css({
 				'text-decoration' : 'line-through',
 				'font-size' : '1.0em',
 				'color' : '#e9e9e9'
 			});
 		}
+		
 	}
    
 });

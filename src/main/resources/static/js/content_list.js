@@ -74,3 +74,21 @@ function getContentList(){
     })
 }
 
+// $(document).ready(function(){
+//     $(function() {
+
+//         var didScroll = false;
+            
+//         $(window).on('scroll', function() { didScroll = true; });
+        
+//         setInterval(function() {
+//             var bottomHeight = $(window).scrollTop() + $(window).height() + 600;
+//             var docHeight = $(document).height();
+
+//             if (didScroll) {
+//                 didScroll = false;
+//                 if (bottomHeight > docHeight) getContentList();
+//             }
+//         }, 250);
+//     });    
+// });
