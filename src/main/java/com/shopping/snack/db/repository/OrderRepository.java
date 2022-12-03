@@ -24,7 +24,7 @@ public class OrderRepository {
         return orders.getOrdersNo();
     }
     public List<Orders> ordersList(Member member){
-        return em.createQuery("select o from Orders o where o.ordersMember =:member")
+        return em.createQuery("select distinct o from Orders o join fetch o.ordersItems where o.ordersMember =:member")
                 .setParameter("member",member).getResultList();
     }
 

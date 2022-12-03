@@ -16,7 +16,7 @@ public class ReplyInsertDTO
 {
     private String content;
     private Long productNo;
-    private MultipartFile image;
+    private String image;
 
     public Reply getReply(){
         Reply reply = new Reply();
@@ -25,16 +25,9 @@ public class ReplyInsertDTO
         reply.setReplyProduct(product);
         reply.setReplyDay(LocalDate.now());
         reply.setReplyContent(content);
-
+        reply.setReplyImage(image);
         return reply;
     }
 
-    @Override
-    public String toString() {
-        return "ReplyInsertDTO{" +
-                "content='" + content + '\'' +
-                ", productNo=" + productNo +
-                ", image='" + image + '\'' +
-                '}';
-    }
+
 }

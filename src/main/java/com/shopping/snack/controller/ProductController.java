@@ -1,9 +1,6 @@
 package com.shopping.snack.controller;
 
-import com.shopping.snack.DTO.OrderViewDTO;
-import com.shopping.snack.DTO.OrdersItemDTO;
-import com.shopping.snack.DTO.ReplyInsertDTO;
-import com.shopping.snack.DTO.SessionMemberDTO;
+import com.shopping.snack.DTO.*;
 import com.shopping.snack.db.entity.Orders;
 import com.shopping.snack.db.entity.Product;
 import com.shopping.snack.db.entity.Reply;
@@ -43,7 +40,9 @@ public class ProductController {
         SessionMemberDTO memberDTO = (SessionMemberDTO) request.getSession().getAttribute("user");
 
         List<Orders> ordersList = orderService.ordersList(memberDTO.createMember());
-        model.addAttribute("ordersList",ordersList);
+
+        List<OrderViewDTO> orderViewDTOList = ordersList.stream().map(orders -> new OrderViewDTO(orders)).collect(Collectors.toList());
+        model.addAttribute("ordersList",orderViewDTOList);
         for (Orders o:ordersList) {
             System.out.println(o.getOrdersNo());
         }
@@ -94,11 +93,15 @@ public class ProductController {
 
     @PostMapping("/product/reply")
     @ResponseBody
-    public Reply replyInsert(@RequestBody ReplyInsertDTO replyInsertDTO){
+    public ReplyViewDTO replyInsert(@RequestBody ReplyInsertDTO replyInsertDTO){
         SessionMemberDTO memberDTO = (SessionMemberDTO) request.getSession().getAttribute("user");
 
-        System.out.println(replyInsertDTO);
-        productService.replyInsert(replyInsertDTO,memberDTO);
-        return productService.replyInsert(replyInsertDTO,memberDTO);
+        Reply reply = productService.replyInsert(replyInsertDTO,memberDTO);
+
+        System.out.println("repppppppppppppppp");
+        System.out.println(reply.getReplyWriter().getMemberName());
+        ReplyViewDTO replyViewDTO = new ReplyViewDTO(reply);
+        replyViewDTO.setReplyWriter(memberDTO.getMemberName());
+        return replyViewDTO;
     }
 }

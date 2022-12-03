@@ -18,7 +18,7 @@ public class IndexController {
     @GetMapping("/")
     public String index( Model model){
 
-
+        System.out.println("인덱스");
         model.addAttribute("productList",productService.productList());
         return "index.html";
     }

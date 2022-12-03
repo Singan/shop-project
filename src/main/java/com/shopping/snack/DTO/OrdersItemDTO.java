@@ -8,15 +8,30 @@ import lombok.Setter;
 @Getter
 @Setter
 public class OrdersItemDTO {
-    private Long orderItemNo;
-    private Integer orderCount;
-
+    private Long productNo;
+    private Integer count;
+    private String productThumbnail;
+    private String productName;
+    private String productShort;
+    private Long productPrice;
     public OrdersItem getOrdersItem(){
         OrdersItem ordersItem = new OrdersItem();
         Product product = new Product();
-        product.setProductNo(orderItemNo);
+        product.setProductNo(productNo);
         ordersItem.setProduct(product);
-        ordersItem.setCount(orderCount);
+        ordersItem.setCount(count);
         return ordersItem;
+    }
+
+    public OrdersItemDTO(OrdersItem ordersItem){
+        this.productNo = ordersItem.getOrdersItemNo();
+        this.productThumbnail = ordersItem.getProduct().getProductThumbnail();
+        this.productShort = ordersItem.getProduct().getProductShort();
+        this.productName = ordersItem.getProduct().getProductName();
+        this.productPrice = ordersItem.getProduct().getProductPrice();
+        this.count = ordersItem.getCount();
+    }
+    public OrdersItemDTO(){
+
     }
 }

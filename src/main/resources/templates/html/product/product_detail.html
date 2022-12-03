@@ -108,12 +108,12 @@
 					</div>
 					<div class="col-12" id="replyZone" th:each="reply : ${product.getReplyList()}">
 						<div class="col-12 replycontents">
-							<div class="col-12 replyImage">
-								<img src="/img/lucky_box_img.png">
+							<div class="col-12 replyImage" th:if="${reply.getReplyImage() != null}">
+								<img th:src="${reply.getReplyImage()}">
 							</div>
-							<div class="col-11 replycontent" th:text="${reply.getReplyContent()}">
-								<h4>과자세트</h4>
-								<p>이 제품은 아주 획기적이고 좋습니다 매우 추천합니다 !</p>
+							<div class="col-11 replycontent" >
+								<h4 th:text="${reply.getReplyProduct().getProductName()}">과자세트</h4>
+								<p th:text="${reply.getReplyContent()}">이 제품은 아주 획기적이고 좋습니다 매우 추천합니다 !</p>
 							</div>
 							<div class="col-1 userInfo">
 								<dt >작성자 :</dt>
@@ -133,6 +133,8 @@
 </body>
 <script th:inline="javascript">
 	let no =[[${product.getProductNo()}]];
+	let name =[[${product.getProductName()}]];
+
 	$("#product_basket").on("click",function(){
 		$.ajax({
 			url:"/member/basket",
@@ -155,32 +157,37 @@
 		// let image = $("#reviewImageFile")[0].files[0];
 		// console.log(image)
 		let replyZone = $("#replyZone");
+		let image = null;
+		if($(".appndImage").length !=0){
+			image = $(".appndImage")[0].src;
+		}
 		$.ajax({
 			url:"/product/reply",
 			type:"POST",
 			data:JSON.stringify({
 				productNo:no,
 				content:content,
+				image:image
 			}),
 			dataType : "json",
 			contentType: 'application/json',
 			success:(data)=>{
-				console.log(data);
 				if(data!=null){
-					let html = `
-					<div class="col-12 replycontents">
-						<div class="col-12 replyImage">
-							<img src="/img/lucky_box_img.png">
-						</div>
-						<div class="col-11 replycontent">
-							<h4>과자세트</h4>
-							<p>이 제품은 아주 획기적이고 좋습니다 매우 추천합니다 !</p>
+					let html = `<div class="col-12 replycontents">`;
+						if(data.replyImage !=undefined){
+							html+= `<div class="col-12 replyImage">
+								<img src="${data.replyImage}">
+							</div>`
+						}
+						html+=`<div class="col-11 replycontent">
+							<h4>${name}</h4>
+							<p>${data.replyContent}</p>
 						</div>
 						<div class="col-1 userInfo">
 							<dt>작성자 :</dt>
-							<dd>ad***</dd>
+							<dd>${data.replyWriter}</dd>
 							<dt>등록일 :</dt>
-							<dd>2022.11.10</dd>
+							<dd>${data.replyDay}</dd>
 						</div>
 					</div>`
 					replyZone.prepend(html);

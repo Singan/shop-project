@@ -27,7 +27,7 @@ public class Reply {
     @Column(name = "reply_day")
     private LocalDate replyDay;
 
-    @Column
+    @Column(name = "reply_image",columnDefinition = "LONGTEXT")
     private String replyImage;
 
     @Column(name = "reply_content")

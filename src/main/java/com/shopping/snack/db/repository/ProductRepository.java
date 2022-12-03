@@ -39,7 +39,7 @@ public class ProductRepository {
                 .getResultList();
     }
     public Product productFind(Long no){
-        return em.createQuery("select p from Product p join fetch p.replyList where p.productNo = :no",Product.class)
+        return em.createQuery("select p from Product p  where p.productNo = :no",Product.class)
                 .setParameter("no",no).getSingleResult();
     }
     public List<Product> productFind(List<Long> no){

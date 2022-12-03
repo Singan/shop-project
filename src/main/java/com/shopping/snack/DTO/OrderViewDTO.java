@@ -1,10 +1,16 @@
 package com.shopping.snack.DTO;
 
+import com.shopping.snack.db.entity.Orders;
 import com.shopping.snack.db.entity.Product;
+import com.shopping.snack.db.enumClass.OrdersStatus;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Column;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Getter
 @Setter
 public class OrderViewDTO {
@@ -15,6 +21,10 @@ public class OrderViewDTO {
     private Integer productCount;
     private Long productPrice;
     private String productShort;
+    private Long orderNo;
+    private List<OrdersItemDTO> ordersItems;
+    private OrdersStatus ordersStatus;
+    private LocalDate ordersDate;
     public OrderViewDTO(Product product){
         productNo = product.getProductNo();
         productThumbnail = product.getProductThumbnail();
@@ -28,5 +38,10 @@ public class OrderViewDTO {
         this(product);
         this.productCount = count;
     }
-
+    public OrderViewDTO(Orders orders){
+        this.orderNo = orders.getOrdersNo();
+        this.ordersStatus = orders.getOrdersStatus();
+        this.ordersDate = orders.getOrdersDate();
+        ordersItems = orders.getOrdersItems().stream().map(ordersItem -> new OrdersItemDTO(ordersItem)).collect(Collectors.toList());
+    }
 }
