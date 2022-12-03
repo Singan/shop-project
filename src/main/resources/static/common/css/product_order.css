@@ -111,3 +111,9 @@
 .productNo{
 	display: none;
 }
+.address_check{
+	display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 20px 0;
+}
