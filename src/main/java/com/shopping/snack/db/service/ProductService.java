@@ -1,7 +1,10 @@
 package com.shopping.snack.db.service;
 
 import com.shopping.snack.DTO.ProductInsertDTO;
+import com.shopping.snack.DTO.ReplyInsertDTO;
+import com.shopping.snack.DTO.SessionMemberDTO;
 import com.shopping.snack.db.entity.Product;
+import com.shopping.snack.db.entity.Reply;
 import com.shopping.snack.db.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -53,5 +56,11 @@ public class ProductService {
         if(pageNo==null)
             pageNo=0;
         return productRepository.productSalesList(pageNo);
+    }
+
+    public Reply replyInsert(ReplyInsertDTO replyInsertDTO, SessionMemberDTO memberDTO){
+        Reply reply = replyInsertDTO.getReply();
+        reply.setReplyWriter(memberDTO.createMember());
+        return productRepository.replyInsert(reply);
     }
 }

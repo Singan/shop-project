@@ -111,6 +111,7 @@ $(document).ready(function(){
         }
         console.log("아아아")
         if(!idCheckV){
+            alert("아이디 중복확인을 해주세요")
             return;
         }
 

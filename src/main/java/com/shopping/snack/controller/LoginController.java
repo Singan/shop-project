@@ -25,7 +25,7 @@ public class LoginController {
     public String logout(HttpServletRequest request){
         request.getSession().setAttribute("user",null);
         System.out.println("로그아웃");
-        return "/index";
+        return "redirect:/";
     }
     @PostMapping("/login")
     @ResponseBody

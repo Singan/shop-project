@@ -19,12 +19,17 @@ public class Reply {
     @ManyToOne(fetch = FetchType.LAZY)
     private Member replyWriter;
 
-
+    @JoinColumn(name = "reply_product")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Product replyProduct;
 
 
     @Column(name = "reply_day")
     private LocalDate replyDay;
 
-    @Column(name = "reply_content" , columnDefinition = "LONGTEXT")
+    @Column
+    private String replyImage;
+
+    @Column(name = "reply_content")
     private String replyContent;
 }

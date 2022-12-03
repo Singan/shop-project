@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -37,4 +38,8 @@ public class Product {
 
     @Column(name="product_short_des")
     private String productShort;
+
+
+    @OneToMany(mappedBy = "replyProduct" ,fetch =FetchType.LAZY)
+    private List<Reply> replyList;
 }

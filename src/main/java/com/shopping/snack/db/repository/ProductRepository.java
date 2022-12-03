@@ -2,6 +2,7 @@ package com.shopping.snack.db.repository;
 
 import com.shopping.snack.db.entity.Member;
 import com.shopping.snack.db.entity.Product;
+import com.shopping.snack.db.entity.Reply;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,7 +21,11 @@ public class ProductRepository {
         em.persist(product);
         return product.getProductNo();
     }
-
+    @Transactional
+    public Reply replyInsert(Reply reply){
+        em.persist(reply);
+        return reply;
+    }
 
     public List<Product> productList(){
 
@@ -34,7 +39,8 @@ public class ProductRepository {
                 .getResultList();
     }
     public Product productFind(Long no){
-        return em.find(Product.class , no);
+        return em.createQuery("select p from Product p join fetch p.replyList where p.productNo = :no",Product.class)
+                .setParameter("no",no).getSingleResult();
     }
     public List<Product> productFind(List<Long> no){
 

@@ -2,9 +2,11 @@ package com.shopping.snack.controller;
 
 import com.shopping.snack.DTO.OrderViewDTO;
 import com.shopping.snack.DTO.OrdersItemDTO;
+import com.shopping.snack.DTO.ReplyInsertDTO;
 import com.shopping.snack.DTO.SessionMemberDTO;
 import com.shopping.snack.db.entity.Orders;
 import com.shopping.snack.db.entity.Product;
+import com.shopping.snack.db.entity.Reply;
 import com.shopping.snack.db.enumClass.Category;
 import com.shopping.snack.db.enumClass.SpecialProduct;
 import com.shopping.snack.db.service.OrderService;
@@ -12,9 +14,7 @@ import com.shopping.snack.db.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -90,5 +90,15 @@ public class ProductController {
         }
         model.addAttribute("productList",orderViewDTOList);
         return "/html/product/product_order.html";
+    }
+
+    @PostMapping("/product/reply")
+    @ResponseBody
+    public Reply replyInsert(@RequestBody ReplyInsertDTO replyInsertDTO){
+        SessionMemberDTO memberDTO = (SessionMemberDTO) request.getSession().getAttribute("user");
+
+        System.out.println(replyInsertDTO);
+        productService.replyInsert(replyInsertDTO,memberDTO);
+        return productService.replyInsert(replyInsertDTO,memberDTO);
     }
 }
