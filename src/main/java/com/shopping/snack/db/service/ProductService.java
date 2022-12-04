@@ -31,7 +31,7 @@ public class ProductService {
     }
     public Long productUpdate(ProductInsertDTO productInsertDTO){
 
-        productRepository.productUpdate(productInsertDTO);
+        return productRepository.productUpdate(productInsertDTO);
     }
     public List<Product> productList(){
 

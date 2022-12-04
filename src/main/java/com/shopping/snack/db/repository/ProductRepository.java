@@ -28,11 +28,12 @@ public class ProductRepository {
         Product product = em.find(Product.class,productInsertDTO.getProductNo());
         product.setProductCount(productInsertDTO.getCount());
         product.setProductName(productInsertDTO.getName());
-        product.setProductDetail(productInsertDTO.getName());
+        product.setProductDetail(productInsertDTO.getContent());
         product.setProductCate(productInsertDTO.getCategory());
         product.setProductDiscount(productInsertDTO.getDiscountRate());
         product.setProductPrice(productInsertDTO.getPrice());
         product.setProductShort(productInsertDTO.getShortContent());
+
         if(productInsertDTO.getProductThumbnail() != null){
             product.setProductThumbnail(productInsertDTO.getProductThumbnail());
         }

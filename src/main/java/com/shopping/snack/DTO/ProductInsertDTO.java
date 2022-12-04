@@ -37,7 +37,6 @@ public class ProductInsertDTO {
     }
 
     public ProductInsertDTO(Product product){
-
         setCount(product.getProductCount());
         setName(product.getProductName());
         setContent(product.getProductDetail());
@@ -47,22 +46,6 @@ public class ProductInsertDTO {
         setShortContent(product.getProductShort());
         productThumbnail = product.getProductThumbnail();
         productNo = product.getProductNo();
-
     }
 
-    @Override
-    public String toString() {
-        return "ProductInsertDTO{" +
-                "name='" + name + '\'' +
-                ", content='" + content + '\'' +
-                ", count=" + count +
-                ", category='" + category + '\'' +
-                ", discountRate=" + discountRate +
-                ", price=" + price +
-                ", shortContent='" + shortContent + '\'' +
-                ", productNo=" + productNo +
-                ", productThumbnail='" + productThumbnail + '\'' +
-                ", image='" + image + '\'' +
-                '}';
-    }
 }
