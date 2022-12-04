@@ -52,7 +52,7 @@ public class AdminController {
 
     @PostMapping("/product/insert")
     @ResponseBody
-    public void productInsert(@ModelAttribute ProductInsertDTO productInsertDTO , MultipartFile image) throws IOException {
+    public void productInsert(@RequestPart(value = "product") ProductInsertDTO productInsertDTO , @RequestPart(value = "image") MultipartFile image) throws IOException {
         System.out.println("인설트 들어옴");
         SessionMemberDTO member =(SessionMemberDTO)request.getSession().getAttribute("user");
         String photoImg = null;

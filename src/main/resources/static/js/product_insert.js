@@ -35,9 +35,11 @@ $(document).ready(function(){
         let categorydetail = $('select[name=categorydetail]');
         let productNo = $('input[name=productNo]');
         let content = $(".product_insert_contents");
+        console.log(productNo)
 
         if(productNo != undefined){
             formData.append("productNo",productNo.val());
+        }else{
         }
         console.log("아아아아아아")
 
@@ -56,6 +58,7 @@ $(document).ready(function(){
         
         formData.append("image", $("#product_content_img")[0].files[0]);
         
+        formData.append("content", $(".product_insert_contents").html());
         $.ajax({
             type : "POST",
             url : "/product/insert",
