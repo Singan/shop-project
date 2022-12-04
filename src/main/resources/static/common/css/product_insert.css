@@ -12,6 +12,10 @@
 	width:400px;
 	height: 400px;
 }
+.product_insert_contents > img{
+	width:400px;
+	height: 400px;
+}
 #registration_content_text{
 	height: 100%;
 }
