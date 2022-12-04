@@ -37,4 +37,9 @@ public class OrderRepository {
         }
         return o;
     }
+    @Transactional
+    public void orderDelete(Long no){
+        Orders o =findOrders(no);
+        em.remove(o);
+    }
 }

@@ -31,4 +31,9 @@ public class OrderService {
 
         return orderRepository.findOrders(no);
     }
+    public void orderDelete(Long no){
+
+         orderRepository.orderDelete(no);
+    }
+
 }

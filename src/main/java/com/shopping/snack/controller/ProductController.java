@@ -35,8 +35,14 @@ public class ProductController {
         model.addAttribute("product", productService.productFind(no));
         return "/html/product/product_detail.html";
     }
+    @GetMapping("/order/delete")
+    public String orderDelete(Long no){
+
+        orderService.orderDelete(no);
+        return "redirect:/member/order";
+    }
     @GetMapping("/member/order")
-    public String product_order(Model model){
+    public String productOrder(Model model){
         SessionMemberDTO memberDTO = (SessionMemberDTO) request.getSession().getAttribute("user");
 
         List<Orders> ordersList = orderService.ordersList(memberDTO.createMember());
