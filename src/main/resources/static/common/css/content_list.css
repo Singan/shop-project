@@ -45,8 +45,9 @@
 
 }
 .discount{
-	color: #a9a9a9;
-    font-size: 1.2em;
+	font-size: 12pt;
+    color: #c9c9c9;
+    font-weight:normal;
 }
 .discount_price{
 	margin-top: 5px;

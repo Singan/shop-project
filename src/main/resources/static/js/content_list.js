@@ -84,12 +84,16 @@ $(document).ready(function(){
         setInterval(function() {
             var bottomHeight = $(window).scrollTop() + $(window).height() + 600;
             var docHeight = $(document).height();
-
             if (didScroll) {
                 didScroll = false;
-                if (bottomHeight > docHeight) getContentList();
+                if (bottomHeight > docHeight){
+                    getContentList();
+                }
             }
         }, 250);
+        
+
+        
     });    
 });
 
@@ -106,3 +110,7 @@ $( document ).ready( function() {
         return false;
     } );
 } );
+
+$(window).on('load', function(){
+
+});
