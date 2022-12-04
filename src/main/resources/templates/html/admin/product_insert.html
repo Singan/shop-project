@@ -28,7 +28,10 @@
 					<h2>상품등록</h2>
 				</div>
 				<div class="col-12 registration_upload_container">
-					<div class="col-2 registration_upload_image" id="registration_upload_image">
+					<div class="col-2 registration_upload_image" id="registration_upload_image" th:if="${product != null}">
+						<img th:src="'data:image/jpeg;base64,'+${product.getProductThumbnail()}" class="insert_img">
+					</div>
+					<div class="col-2 registration_upload_image" id="registration_upload_image" th:if="${product == null}">
 						<img src="" class="insert_img">
 					</div>
 					<div class="col-10 registration_upload_btn">
@@ -43,31 +46,40 @@
 							<p>제품명</p>
 						</div>
 						<div class="col-11 notice_insert_contents">
-							<input type="text" name="name" placeholder="제품명을 입력해주세요.">
+							<input type="text" name="name" placeholder="제품명을 입력해주세요." th:if="${product == null}">
+							<input type="text" name="name" placeholder="제품명을 입력해주세요." th:if="${product != null}" th:value="${product.getProductName()}">
 						</div>
 					</div>
 					<div class="col-12 notice_insert_content" >
 						<div class="col-1">
 							<p>간략한 소개</p>
 						</div>
-						<div class="col-11 notice_insert_contents">
-							<input type="text" name="shortContent" placeholder="간략한 소개를 입력해주세요..">
+						<div class="col-11 notice_insert_contents" th:if="${product != null}">
+							<input type="text" name="shortContent" placeholder="간략한 소개를 입력해주세요.." th:if="${product == null}">
+							<input type="text" name="shortContent" placeholder="간략한 소개를 입력해주세요.." th:if="${product != null}"
+								   th:value="${product.getProductShort()}">
+
+						</div>
+						<div class="col-11 notice_insert_contents" th:if="${product == null}">
 						</div>
 					</div>
 					<div class="col-12 notice_insert_content" >
-						<div class="col-1">
+						<div class="col-1" >
 							<p>가격</p>
 						</div>
-						<div class="col-11 notice_insert_contents">
+						<div class="col-11 notice_insert_contents" th:if="${product == null}">
 							<input type="text" name="price" placeholder="가격을 입력해주세요.">
+							<input type="text" name="price" placeholder="가격을 입력해주세요." th:if="${product != null}" th:value="${product.getProductPrice()}" >
 						</div>
+
 					</div>
 					<div class="col-12 notice_insert_content" >
 						<div class="col-1">
 							<p>수량</p>
 						</div>
-						<div class="col-11 notice_insert_contents">
+						<div class="col-11 notice_insert_contents" th:if="${product == null}">
 							<input type="text" name="count" placeholder="수량을 입력해주세요.">
+							<input type="text" name="count" placeholder="수량을 입력해주세요." th:value="${product.getProductCount()}">
 						</div>
 					</div>
 					<div class="col-12 notice_insert_content" >
@@ -75,7 +87,9 @@
 							<p>할인율</p>
 						</div>
 						<div class="col-11 notice_insert_contents">
-							<input type="text" name="discountRate" placeholder="할인율을 입력해주세요.">
+							<input type="text" name="discountRate" placeholder="할인율을 입력해주세요."
+								   th:if="${product != null}" th:value="${product.getProductDiscount()}">
+							<input type="text" name="discountRate" placeholder="할인율을 입력해주세요." th:if="${product == null}">
 						</div>
 					</div>
 					<div class="col-12 notice_insert_content" >
@@ -103,7 +117,11 @@
 							<p>내용</p>
 						</div>
 						<div class="col-12 " id="registration_contnet_content">
-							<textarea class="col-12" name="content" placeholder="내용을 입력해주세요."></textarea>
+							<textarea class="col-12" name="content" placeholder="내용을 입력해주세요." th:if="${product != null}"
+									  th:value="${product.getProductDetail()}"></textarea>
+							<textarea class="col-12" name="content" placeholder="내용을 입력해주세요." th:if="${product == null}">
+
+							</textarea>
 						</div>
 					</div>
 					<div class="col-12 registration_upload_container">

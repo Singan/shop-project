@@ -115,4 +115,17 @@ public class ProductController {
         replyViewDTO.setReplyWriter(memberDTO.getMemberName());
         return replyViewDTO;
     }
+
+    @GetMapping("/product/delete")
+    public String productDelete(Long no){
+        productService.productDelete(no);
+        return "redirect:/";
+    }
+
+    @GetMapping("/product/update")
+    public String productUpdate(Model model,Long no){
+        Product p = productService.productFind(no);
+        model.addAttribute("product",p);
+        return "/html/admin/product_insert";
+    }
 }

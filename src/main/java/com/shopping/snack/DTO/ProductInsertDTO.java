@@ -24,6 +24,7 @@ public class ProductInsertDTO {
         product.setProductDiscount(this.discountRate);
         product.setProductPrice(this.price);
         product.setProductShort(this.shortContent);
+        product.setProductView(true);
         return product;
     }
 }
