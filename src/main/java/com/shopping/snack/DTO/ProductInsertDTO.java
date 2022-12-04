@@ -17,6 +17,7 @@ public class ProductInsertDTO {
     private String shortContent;
     private Long productNo;
     private String productThumbnail;
+    private String test;
     public Product getProduct(){
         Product product = new Product();
         product.setProductCount(this.count);
@@ -37,6 +38,7 @@ public class ProductInsertDTO {
     }
 
     public ProductInsertDTO(Product product){
+
         setCount(product.getProductCount());
         setName(product.getProductName());
         setContent(product.getProductDetail());

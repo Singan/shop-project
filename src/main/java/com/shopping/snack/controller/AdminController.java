@@ -61,16 +61,22 @@ public class AdminController {
             return "redirect:/login";
         }
         String photoImg = null;
-        if (image != null) {
+        if (!image.isEmpty()) {
             Base64.Encoder encoder = Base64.getEncoder();
             byte[] photoEncode = encoder.encode(image.getBytes());
             photoImg = new String(photoEncode, "UTF8");
         }
+        System.out.println("테스트");
+        System.out.println(productInsertDTO.getTest());
+
+        System.out.println("-------------------------------");
         if(productInsertDTO.getProductNo() ==null) {
             productService.productInsert(productInsertDTO, photoImg);
         }else{
-            if(image != null)
+            if(!image.isEmpty()) {
+                System.out.println("썸네일 변경");
                 productInsertDTO.setProductThumbnail(photoImg);
+            }
             productService.productUpdate(productInsertDTO);
         }
         return "redirect:/";

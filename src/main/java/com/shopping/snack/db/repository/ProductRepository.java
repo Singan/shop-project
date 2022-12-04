@@ -33,6 +33,7 @@ public class ProductRepository {
         product.setProductDiscount(productInsertDTO.getDiscountRate());
         product.setProductPrice(productInsertDTO.getPrice());
         product.setProductShort(productInsertDTO.getShortContent());
+        product.setProductThumbnail(productInsertDTO.getProductThumbnail());
     }
 
     @Transactional
