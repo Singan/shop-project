@@ -51,8 +51,11 @@ public class MemberController {
             Base64.Encoder encoder = Base64.getEncoder();
             byte[] photoEncode = encoder.encode(image.getBytes());
             photoImg = new String(photoEncode, "UTF8");
+            updateDTO.setProfileImage(photoImg);
         }
         updateDTO.setNo(sessionMember.getMemberNo());
+        sessionMember=new SessionMemberDTO(memberService.updateMember(updateDTO));
+        httpServletRequest.getSession().setAttribute("user",sessionMember);
         return "/html/member/profile.html";
     }
     @GetMapping("/member/mypage")
