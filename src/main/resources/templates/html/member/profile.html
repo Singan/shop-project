@@ -24,17 +24,18 @@
 
 	<div class="col-9 container">		
 		<div class="col-12" id="content">
-			<form action="/member/profile" enctype="multipart/form-data">
+			<form action="/member/profile" enctype="multipart/form-data" method="post">
 			<div class="col-12 content_header" id="profile_content_header">
 				<h2 class="col-12">마이페이지</h2>
 			</div>	
 			<div class="col-3">
 				<div class="col-6 profile_picture">
-					<img src="/img/profile_picture_img.png" class="profile_image" th:if="${session.user.getMemberImage() ==null}"/>
-					<img th:src="'data:image/jpeg;base64,'+${session.user.getMemberImage()}"
-						 src="/img/profile_picture_img.png" class="profile_image" th:if="${session.user.getMemberImage() !=null}">
-					<label class="col-1 input_file_button" for="profile_picture_btn"><img src="/img/plus_button.png"></label>
-					<input id="profile_picture_btn" type="file" name="profile_picture_btn" accept="image/*" onchange="readprofile(this)">
+					<img src="/img/profile_picture_img.png" class="profile_image" th:if="${session.user.getMemberImage()==null}"/>
+					<img th:if="${session.user.getMemberImage()!=null}"
+						 th:src="'data:image/jpeg;base64,'+${session.user.getMemberImage()}" class="profile_image" >
+					<label class="col-1 input_file_button" for="profile_picture_btn"><img src="/img/plus_button.png">
+					</label>
+					<input id="profile_picture_btn" type="file" name="image" accept="image/*" onchange="readprofile(this)">
 				</div>
 			</div>
 			<div class="col-12" id="profile_infomation">
