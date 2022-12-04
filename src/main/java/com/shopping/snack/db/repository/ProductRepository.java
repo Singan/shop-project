@@ -1,5 +1,6 @@
 package com.shopping.snack.db.repository;
 
+import com.shopping.snack.DTO.ProductInsertDTO;
 import com.shopping.snack.db.entity.Member;
 import com.shopping.snack.db.entity.Product;
 import com.shopping.snack.db.entity.Reply;
@@ -21,6 +22,19 @@ public class ProductRepository {
         em.persist(product);
         return product.getProductNo();
     }
+
+    @Transactional
+    public void productUpdate(ProductInsertDTO productInsertDTO){
+        Product product = em.find(Product.class,productInsertDTO.getProductNo());
+        product.setProductCount(productInsertDTO.getCount());
+        product.setProductName(productInsertDTO.getName());
+        product.setProductDetail(productInsertDTO.getName());
+        product.setProductCate(productInsertDTO.getCategory());
+        product.setProductDiscount(productInsertDTO.getDiscountRate());
+        product.setProductPrice(productInsertDTO.getPrice());
+        product.setProductShort(productInsertDTO.getShortContent());
+    }
+
     @Transactional
     public Reply replyInsert(Reply reply){
         em.persist(reply);

@@ -66,7 +66,13 @@ public class AdminController {
             byte[] photoEncode = encoder.encode(image.getBytes());
             photoImg = new String(photoEncode, "UTF8");
         }
-        productService.productInsert(productInsertDTO,photoImg);
+        if(productInsertDTO.getProductNo() ==null) {
+            productService.productInsert(productInsertDTO, photoImg);
+        }else{
+            if(image != null)
+                productInsertDTO.setProductThumbnail(photoImg);
+            productService.productUpdate(productInsertDTO);
+        }
         return "redirect:/";
     }
 }

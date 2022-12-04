@@ -19,7 +19,7 @@ public class Product {
     private String productThumbnail;
     @Column(name = "product_name")
     private String productName;
-    @Column(name = "product_detail")
+    @Column(name = "product_detail" ,columnDefinition = "LONGTEXT")
     private String productDetail;
     @Column(name = "product_count")
     private Long productCount;

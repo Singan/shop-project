@@ -25,7 +25,9 @@
 		<div class="col-12" id="registration_content">
 			<form class="col-12" action="/product/insert" method="post" enctype="multipart/form-data">
 				<div class="col-12 content_header">
-					<h2>상품등록</h2>
+					<h2 th:if="${product == null}">상품등록</h2>
+					<h2 th:if="${product != null}">상품수정</h2>
+					<input type="number" th:if="${product != null}" name="productNo" th:value="${product.getProductNo()}" style="display: none;">
 				</div>
 				<div class="col-12 registration_upload_container">
 					<div class="col-2 registration_upload_image" id="registration_upload_image" th:if="${product != null}">
@@ -37,6 +39,8 @@
 					<div class="col-10 registration_upload_btn">
 						<label for="product_insert_img">대표사진</label>
 						<input id="product_insert_img" type="file" name="image" accept="image/*" onchange="productinsert(this)">
+						<input th:if="${product !=null}"
+							   type="text" name="productThumbnail" style="display: none;" th:value="${product.getProductThumbnail()}">
 					</div>
 				</div>
 				<div class="col-12" id="registration_contents">
@@ -47,29 +51,26 @@
 						</div>
 						<div class="col-11 notice_insert_contents">
 							<input type="text" name="name" placeholder="제품명을 입력해주세요." th:if="${product == null}">
-							<input type="text" name="name" placeholder="제품명을 입력해주세요." th:if="${product != null}" th:value="${product.getProductName()}">
+							<input type="text" name="name" placeholder="제품명을 입력해주세요." th:if="${product != null}" th:value="${product.getName()}">
 						</div>
 					</div>
 					<div class="col-12 notice_insert_content" >
 						<div class="col-1">
 							<p>간략한 소개</p>
 						</div>
-						<div class="col-11 notice_insert_contents" th:if="${product != null}">
+						<div class="col-11 notice_insert_contents">
 							<input type="text" name="shortContent" placeholder="간략한 소개를 입력해주세요.." th:if="${product == null}">
 							<input type="text" name="shortContent" placeholder="간략한 소개를 입력해주세요.." th:if="${product != null}"
-								   th:value="${product.getProductShort()}">
-
-						</div>
-						<div class="col-11 notice_insert_contents" th:if="${product == null}">
+								   th:value="${product.getShortContent()}">
 						</div>
 					</div>
 					<div class="col-12 notice_insert_content" >
 						<div class="col-1" >
 							<p>가격</p>
 						</div>
-						<div class="col-11 notice_insert_contents" th:if="${product == null}">
-							<input type="text" name="price" placeholder="가격을 입력해주세요.">
-							<input type="text" name="price" placeholder="가격을 입력해주세요." th:if="${product != null}" th:value="${product.getProductPrice()}" >
+						<div class="col-11 notice_insert_contents">
+							<input type="text" name="price" placeholder="가격을 입력해주세요." th:if="${product == null}">
+							<input type="text" name="price" placeholder="가격을 입력해주세요." th:if="${product != null}" th:value="${product.getPrice()}" >
 						</div>
 
 					</div>
@@ -77,9 +78,9 @@
 						<div class="col-1">
 							<p>수량</p>
 						</div>
-						<div class="col-11 notice_insert_contents" th:if="${product == null}">
-							<input type="text" name="count" placeholder="수량을 입력해주세요.">
-							<input type="text" name="count" placeholder="수량을 입력해주세요." th:value="${product.getProductCount()}">
+						<div class="col-11 notice_insert_contents" >
+							<input type="text" name="count" placeholder="수량을 입력해주세요." th:if="${product == null}">
+							<input type="text" name="count" placeholder="수량을 입력해주세요." th:if="${product != null}" th:value="${product.getCount()}">
 						</div>
 					</div>
 					<div class="col-12 notice_insert_content" >
@@ -88,7 +89,7 @@
 						</div>
 						<div class="col-11 notice_insert_contents">
 							<input type="text" name="discountRate" placeholder="할인율을 입력해주세요."
-								   th:if="${product != null}" th:value="${product.getProductDiscount()}">
+								   th:if="${product != null}" th:value="${product.getDiscountRate()}">
 							<input type="text" name="discountRate" placeholder="할인율을 입력해주세요." th:if="${product == null}">
 						</div>
 					</div>
@@ -97,14 +98,21 @@
 							<p>카테고리</p>
 						</div>
 						<div class="col-11 notice_insert_contents">
-							<select name="category" class="registration_category_choice" required>
-							    <option value="" selected="selected">카테고리 선택</option>
+							<select name="category" class="registration_category_choice"  required th:if="${product !=null}">
+							    <option value="">카테고리 선택</option>
+								<option value="크리스피" th:selected="${product.getCategory() =='크리스피'}">크리스피</option>
+								<option value="캔디" th:selected="${product.getCategory() =='캔디'}">캔디</option>
+								<option value="초콜릿" th:selected="${product.getCategory() =='초콜릿'}">초콜릿</option>
+								<option value="음료" th:selected="${product.getCategory() =='음료'}">음료</option>
+							</select>
+
+							<select name="category" class="registration_category_choice" required th:if="${product ==null}">
+								<option value="" selected="selected">카테고리 선택</option>
 								<option value="크리스피" >크리스피</option>
 								<option value="캔디">캔디</option>
 								<option value="초콜릿">초콜릿</option>
 								<option value="음료">음료</option>
 							</select>
-
 							<select name="category_detail"  class="registration_category_choice" required>
 							    <option value="" selected="selected">카테고리 선택</option>
 							    <option value="세일상품">묶음상품</option>
@@ -118,7 +126,7 @@
 						</div>
 						<div class="col-12 " id="registration_contnet_content">
 							<textarea class="col-12" name="content" placeholder="내용을 입력해주세요." th:if="${product != null}"
-									  th:value="${product.getProductDetail()}"></textarea>
+									  th:text="${product.getContent()}"></textarea>
 							<textarea class="col-12" name="content" placeholder="내용을 입력해주세요." th:if="${product == null}">
 
 							</textarea>
