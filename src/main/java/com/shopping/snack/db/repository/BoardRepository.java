@@ -26,7 +26,7 @@ public class BoardRepository {
         List<Board> boardList = em.createQuery("select b from Board b " +
                         "join fetch b.boardWriter where b.boardDisplay = true order by b.boardNo desc")
                 .setFirstResult((pageNo-1)*3)
-                .setMaxResults(pageNo*3).
+                .setMaxResults(3).
                 getResultList();
         return boardList;
     }
