@@ -22,11 +22,11 @@ function check(){
 
 	if(id.val() == ""){
         alert("아이디를 입력해주세요.");
-        return;
+        return false;
     }
     if(!id_check){
         alert("아이디 형식을 맞춰주세요..");
-        return;
+        return false;
     }
 
 
@@ -35,20 +35,20 @@ function check(){
     	name.focus();
     	console.log(name_check);
     	console.log(nameRegx.test(name));
-    	return;
+    	return false;
     }
 
     if(!pwd_check) {
       alert("형식에 맞춰서 비밀번호를 입력해주세요.");
       pwd.focus();
-      return;
+      return false;
     }
 
 
     if(email.val() == ""){
         alert("이메일을 입력해주세요");
         email.focus();
-        return;
+        return false;
     }
 
     if(!email_check){
@@ -56,7 +56,7 @@ function check(){
         email.focus();
         return;
     }
-
+    return true;
 }
 
 
@@ -104,7 +104,9 @@ $(document).ready(function(){
         let addressDetail = $("input[name='address_detail']").val();
         let phone = "";
         let phoneInput = $("input[name='phone']");
-        check();
+         if(!check()){
+            return;
+        }
         for(let i = 0; i<phoneInput.length;i++){
 
             phone += phoneInput[i].value ;
