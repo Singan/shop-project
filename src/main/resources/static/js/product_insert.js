@@ -60,7 +60,6 @@ $(document).ready(function(){
             processData: false,
             success : function(data){
                 console.log(data);
-                return false;
             }
 
         });
