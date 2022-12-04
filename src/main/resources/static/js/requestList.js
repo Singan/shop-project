@@ -92,7 +92,6 @@ function order(){
 		}
 	})
 	location.href= link;
-
 }
 
 //

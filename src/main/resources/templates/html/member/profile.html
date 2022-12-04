@@ -60,17 +60,16 @@
 				<div class="col-10 profile_user_infomation" id="profile_address">
 					<div class="address_layout">
 						<h4 class="col-1">우편번호</h4>
-						<input class="col-3" type="text" name="zoneCode" th:value="${session.user.getMemberZoneCode()}" disabled="disabled">
-						<button>우편번호 찾기</button>
-
+						<input class="col-3" type="text" name="zoneCode" th:value="${session.user.getMemberZoneCode()}">
+						<button type="button" id="addrSearch">우편번호 찾기</button>
 					</div>
 					<div class="address_layout">
-						<h4 class="col-1">상세주소</h4>
-						<input class="col-5" type="text" name="addressDetail" disabled="disabled" th:value="${session.user.getMemberDetailAddress()}">
+						<h4 class="col-1">주소</h4>
+						<input class="col-5" type="text" name="address"  th:value="${session.user.getMemberAddress()}">
 					</div>		
 					<div class="address_layout">
-						<h4 class="col-1">주소</h4>
-						<input class="col-5" type="text" name="address" disabled="disabled" th:value="${session.user.getMemberAddress()}">
+						<h4 class="col-1">상세주소</h4>
+						<input class="col-5" type="text" name="addressDetail" th:value="${session.user.getMemberDetailAddress()}">
 					</div>
 					
 				</div>
@@ -94,4 +93,19 @@
 
    </div>
 </body>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+	var addrSearch = $("#addrSearch");
+	addrSearch.on("click",function(){
+		new daum.Postcode({
+			oncomplete: function(data) {
+				console.log(data)
+				$("input[name='zoneCode']").val(data.zonecode);
+				$("input[name='address']").val(data.roadAddress)
+				//roadAddress 주소
+				//zonecode 우편번호
+			}
+		}).open();
+	})
+</script>
 </html>
