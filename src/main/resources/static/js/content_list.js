@@ -57,19 +57,24 @@ function getContentList(){
             count++;
             let str ="";
             console.log(data);
-
-            data.map((product)=>{
-                str =str+`
-                <div class="col-3 content">
-                    <a href="/product/detail?no=${product.productNo}">
-                        <img src="data:image/jpeg;base64,${product.productThumbnail}"/>
-                        <p>${product.productName}</p>
-                        <h2 class="price">${product.productPrice} 원</h2>
-                        <h2 class="discount">${product.productDiscount}</h2>
-                    </a>
-                </div>`
-            })
-            $(".content_main").append(str);
+            if(data.length <= 0){
+                return false;
+                console.log(data.length);
+            }else if(data.length > 0){
+                 console.log(data.length);
+                data.map((product)=>{
+                    str =str+`
+                    <div class="col-3 content">
+                        <a href="/product/detail?no=${product.productNo}">
+                            <img src="data:image/jpeg;base64,${product.productThumbnail}"/>
+                            <p>${product.productName}</p>
+                            <h2 class="price">${product.productPrice} 원</h2>
+                            <h2 class="discount">${product.productDiscount}</h2>
+                        </a>
+                    </div>`
+                })
+                $(".content_main").append(str);
+            }   
    	    }
     })
 }
