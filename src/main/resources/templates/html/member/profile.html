@@ -44,14 +44,14 @@
 					<h2>아이디</h2>
 				</div>
 				<div class="col-10 profile_user_infomation">
-					<input type="" name="" disabled="disabled" th:placeholder="${session.user.getMemberId()}">
+					<input type="text" name="" disabled="disabled" th:placeholder="${session.user.getMemberId()}">
 				</div>
 
 				<div class="col-2 profile_infomations">
 					<h2>이름</h2>
 				</div>
 				<div class="col-10 profile_user_infomation">
-					<input type="" name="name" th:placeholder="${session.user.getMemberName()}">
+					<input type="text" name="name" th:value="${session.user.getMemberName()}">
 				</div>
 
 				<div class="col-2 profile_infomations">
