@@ -58,10 +58,19 @@
 					<h2>기본배송지</h2>
 				</div>
 				<div class="col-10 profile_user_infomation" id="profile_address">
-					<h4>주소</h4>
-					<input class="col-10" type="text" name="address" th:value="${session.user.getMemberAddress()}">
-					<h4>상세주소</h4>
-					<input class="col-10" type="text" name="addressDetail" th:value="${session.user.getMemberDetailAddress()}">
+					<div class="address_layout">
+						<h4 class="col-1">주소</h4>
+						<input class="col-5" type="text" name="address" th:value="${session.user.getMemberAddress()}">
+					</div>
+					<div class="address_layout">
+						<h4 class="col-1">상세주소</h4>
+						<input class="col-5" type="text" name="addressDetail" th:value="${session.user.getMemberDetailAddress()}">
+					</div>		
+					<div class="address_layout">
+						<h4 class="col-1">우편번호</h4>
+						<input class="col-3" type="text" name="addressDetail" th:value="${session.user.getMemberZoneCode()}">
+					</div>
+					
 				</div>
 
 				<div class="col-2 profile_infomations">
