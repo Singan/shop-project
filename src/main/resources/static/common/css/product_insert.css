@@ -1,0 +1,17 @@
+.product_insert_contents{
+	height: 1000px;
+	padding:10px;
+	font-size: 0.8em;
+	overflow-y: scroll;
+}
+.product_insert_contents > div > div > img{
+	width:400px;
+	height: 400px;
+}
+.product_insert_contents > div > img{
+	width:400px;
+	height: 400px;
+}
+#registration_content_text{
+	height: 100%;
+}

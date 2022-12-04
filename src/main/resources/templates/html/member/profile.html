@@ -59,15 +59,16 @@
 				<div class="col-10 profile_user_infomation" id="profile_address">
 					<div class="address_layout">
 						<h4 class="col-1">주소</h4>
-						<input class="col-5" type="text" name="address" th:value="${session.user.getMemberAddress()}">
+						<input class="col-5" type="text" name="address" disabled="disabled" th:value="${session.user.getMemberAddress()}">
 					</div>
 					<div class="address_layout">
 						<h4 class="col-1">상세주소</h4>
-						<input class="col-5" type="text" name="addressDetail" th:value="${session.user.getMemberDetailAddress()}">
+						<input class="col-5" type="text" name="addressDetail" disabled="disabled" th:value="${session.user.getMemberDetailAddress()}">
 					</div>		
 					<div class="address_layout">
 						<h4 class="col-1">우편번호</h4>
-						<input class="col-3" type="text" name="addressDetail" th:value="${session.user.getMemberZoneCode()}">
+						<input class="col-3" type="text" name="addressDetail" disabled="disabled" th:value="${session.user.getMemberZoneCode()}">
+						<button>우편번호 찾기</button>
 					</div>
 					
 				</div>

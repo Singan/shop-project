@@ -1154,7 +1154,7 @@ body::-webkit-scrollbar {
 	width: 100px;
 	height: 40px;
 	position: absolute;
-	bottom:0;
+	bottom:5px;
 	left: 10px;
 	background-color: #98b7ff;
 	text-align: center;
