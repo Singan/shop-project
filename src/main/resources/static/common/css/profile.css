@@ -1,3 +1,36 @@
 #profile_address > h4{
 	display: inline;
 }
+#profile_address input{
+	height: 30px;
+	text-align: left;
+    padding: 5px;
+    outline-color: #d9d9d9d9;
+    border-radius: 5px;
+    border: solid 2px #777;
+}
+.address_layout{
+	display: flex;
+	margin: 10px 0;
+}
+.address_layout h4{
+	margin:0 20px 0 0;
+}
+.address_layout input{
+	margin: 0 0 0 10px;
+}
+.address_layout button{
+	width: 80px;
+	height: 35px;
+	color: #fff;
+	background-color:#98b7ff;
+	border:none;
+	border-radius: 8px;
+	font-size: 0.8em;
+	cursor: pointer;
+	margin:0 0 0 10px;
+}
+.address_layout button:hover{
+	background-color:#739dff;
+	transition: .2s;
+}
