@@ -55,6 +55,7 @@ public class MemberController {
         }
         updateDTO.setNo(sessionMember.getMemberNo());
         sessionMember=new SessionMemberDTO(memberService.updateMember(updateDTO));
+        
         httpServletRequest.getSession().setAttribute("user",sessionMember);
         return "/html/member/profile.html";
     }
