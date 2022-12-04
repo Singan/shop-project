@@ -15,6 +15,8 @@ public class ProductInsertDTO {
     private Long discountRate;
     private Long price;
     private String shortContent;
+    private Long productNo;
+    private String productThumbnail;
     public Product getProduct(){
         Product product = new Product();
         product.setProductCount(this.count);
@@ -25,6 +27,25 @@ public class ProductInsertDTO {
         product.setProductPrice(this.price);
         product.setProductShort(this.shortContent);
         product.setProductView(true);
+        product.setProductNo(this.productNo);
+        System.out.println("프로덕트 인설트 생성");
+        System.out.println(productNo);
         return product;
+    }
+    public ProductInsertDTO(){
+
+    }
+
+    public ProductInsertDTO(Product product){
+        setCount(product.getProductCount());
+        setName(product.getProductName());
+        setContent(product.getProductDetail());
+        setCategory(product.getProductCate());
+        setDiscountRate(product.getProductDiscount());
+        setPrice(product.getProductPrice());
+        setShortContent(product.getProductShort());
+        productThumbnail = product.getProductThumbnail();
+        productNo = product.getProductNo();
+
     }
 }

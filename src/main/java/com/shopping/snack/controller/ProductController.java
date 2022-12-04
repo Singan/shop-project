@@ -124,7 +124,7 @@ public class ProductController {
 
     @GetMapping("/product/update")
     public String productUpdate(Model model,Long no){
-        Product p = productService.productFind(no);
+        ProductInsertDTO p = new ProductInsertDTO(productService.productFind(no));
         model.addAttribute("product",p);
         return "/html/admin/product_insert";
     }

@@ -27,14 +27,15 @@ public class ProductService {
         product.setProductThumbnail(thumbnail);
         return productRepository.productInsert(product);
     }
+    public void productUpdate(ProductInsertDTO productInsertDTO){
+
+        productRepository.productUpdate(productInsertDTO);
+    }
     public List<Product> productList(){
 
         return productRepository.productList();
     }
-    public List<Product> productList(String category){
 
-        return productRepository.productList(category);
-    }
     public List<Product> productList(String category,Integer count){
 
         return productRepository.productList(category,count);
