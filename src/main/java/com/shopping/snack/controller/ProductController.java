@@ -50,20 +50,31 @@ public class ProductController {
     }
     @GetMapping("/product/category/get")
     @ResponseBody
-    public List<Product> categoryGetContent(String category,Integer pageNo) throws IllegalArgumentException{
+    public List<ProductViewDTO> categoryGetContent(String category,Integer pageNo) throws IllegalArgumentException{
 
         Category[] ct = Category.values();
         System.out.println(category);
         if(SpecialProduct.인기상품.equals(category)){
-                return productService.productPopularList(pageNo);
+
+            List<ProductViewDTO> res=
+                    productService.productPopularList(pageNo).stream().map(product -> new ProductViewDTO(product)).
+                            collect(Collectors.toList());
+            return res;
         }
         if(SpecialProduct.세일상품.equals(category)){
-            return productService.productSaleList(pageNo);
+
+            List<ProductViewDTO> res=
+                    productService.productSaleList(pageNo).stream().map(product -> new ProductViewDTO(product)).
+                            collect(Collectors.toList());
+            return res;
         }
         for (Category c:ct) {
             if(c.name().equals(category)){
-                System.out.println(productService.productList(category));
-                return productService.productList(category);
+                System.out.println("음");
+                List<ProductViewDTO> res=
+                        productService.productList(category,pageNo).stream().map(product -> new ProductViewDTO(product)).
+                                collect(Collectors.toList());
+                return res;
             }
         }
         return null;

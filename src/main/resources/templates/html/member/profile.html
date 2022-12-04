@@ -59,7 +59,7 @@
 					<h4>주소</h4>
 					<input class="col-10" type="text" name="address" th:value="${session.user.getMemberAddress()}">
 					<h4>상세주소</h4>
-					<input class="col-10" type="text" name="addressDetail" value="우림아파트 103동 1204호">
+					<input class="col-10" type="text" name="addressDetail" th:value="${session.user.getMemberDetailAddress()}">
 				</div>
 
 				<div class="col-2 profile_infomations">

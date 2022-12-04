@@ -37,7 +37,7 @@ public class ProductService {
     }
     public List<Product> productList(String category,Integer count){
 
-        return productRepository.productList(category);
+        return productRepository.productList(category,count);
     }
     public Product productFind(Long no){
         return productRepository.productFind(no);

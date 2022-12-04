@@ -38,6 +38,12 @@ public class ProductRepository {
                 .setParameter("category",category)
                 .getResultList();
     }
+    public List<Product> productList(String category,Integer count){
+
+        return em.createQuery("select p from Product p where p.productCate = :category")
+                .setParameter("category",category)
+                .getResultList();
+    }
     public Product productFind(Long no){
         return em.createQuery("select p from Product p  where p.productNo = :no",Product.class)
                 .setParameter("no",no).getSingleResult();
