@@ -89,8 +89,3 @@ $(document).ready(function(){
 
 });
 
-function modal(data){
-    let order_num = $('.order_number');
-    order_num.text("주문번호는 " + data + "입니다");
-
-}
