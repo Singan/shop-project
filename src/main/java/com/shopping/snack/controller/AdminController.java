@@ -54,22 +54,15 @@ public class AdminController {
     }
 
     @PostMapping("/product/insert")
-    public String productInsert(ProductInsertDTO productInsertDTO ,  @RequestBody MultipartFile image) throws IOException {
-        System.out.println("loginHTML");
+    @ResponseBody
+    public void productInsert(ProductInsertDTO productInsertDTO ,  @RequestBody MultipartFile image) throws IOException {
         SessionMemberDTO member =(SessionMemberDTO)request.getSession().getAttribute("user");
-        if(member == null){
-            return "redirect:/login";
-        }
         String photoImg = null;
         if (!image.isEmpty()) {
             Base64.Encoder encoder = Base64.getEncoder();
             byte[] photoEncode = encoder.encode(image.getBytes());
             photoImg = new String(photoEncode, "UTF8");
         }
-        System.out.println("테스트");
-        System.out.println(productInsertDTO.getTest());
-
-        System.out.println("-------------------------------");
         if(productInsertDTO.getProductNo() ==null) {
             productService.productInsert(productInsertDTO, photoImg);
         }else{
@@ -79,6 +72,5 @@ public class AdminController {
             }
             productService.productUpdate(productInsertDTO);
         }
-        return "redirect:/";
     }
 }
