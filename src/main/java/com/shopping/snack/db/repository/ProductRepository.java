@@ -41,6 +41,7 @@ public class ProductRepository {
     public List<Product> productList(String category,Integer count){
 
         return em.createQuery("select p from Product p where p.productCate = :category")
+                        .setFirstResult(count*8).setMaxResults((count+1)*8).getResultList()
                 .setParameter("category",category)
                 .getResultList();
     }
