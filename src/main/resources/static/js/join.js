@@ -98,6 +98,8 @@ $(document).ready(function(){
         let address = $("input[name='address']").val();
         let email = $("input[name='email']").val();
         let zoneCode = $("input[name='zoneCode']").val();
+        let name = $("input[name='name']").val();
+
         let email2 = $("#sign_up_email").val();
         let addressDetail = $("input[name='address_detail']").val();
         let phone = "";

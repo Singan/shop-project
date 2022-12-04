@@ -9,10 +9,7 @@ import com.shopping.snack.db.service.BoardService;
 import com.shopping.snack.db.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -55,7 +52,7 @@ public class AdminController {
 
     @PostMapping("/product/insert")
     @ResponseBody
-    public void productInsert(@RequestBody ProductInsertDTO productInsertDTO , MultipartFile image) throws IOException {
+    public void productInsert(@ModelAttribute ProductInsertDTO productInsertDTO , MultipartFile image) throws IOException {
         System.out.println("인설트 들어옴");
         SessionMemberDTO member =(SessionMemberDTO)request.getSession().getAttribute("user");
         String photoImg = null;
