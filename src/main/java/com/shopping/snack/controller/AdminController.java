@@ -39,9 +39,6 @@ public class AdminController {
     @ResponseBody
     public Long noticeInsert(@RequestBody BoardDTO boardDTO) throws IOException{
         SessionMemberDTO member =(SessionMemberDTO)request.getSession().getAttribute("user");
-
-        System.out.println(boardDTO.getContent());
-        System.out.println(boardDTO.getTitle());
         Long no = boardService.boardInsert(boardDTO,member.createMember());
 
         return no;

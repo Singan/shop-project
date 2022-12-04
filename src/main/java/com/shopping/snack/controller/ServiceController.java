@@ -1,9 +1,6 @@
 package com.shopping.snack.controller;
 
-import com.shopping.snack.DTO.BasketDTO;
-import com.shopping.snack.DTO.BasketRequest;
-import com.shopping.snack.DTO.BoardUpdateDTO;
-import com.shopping.snack.DTO.SessionMemberDTO;
+import com.shopping.snack.DTO.*;
 import com.shopping.snack.db.entity.Basket;
 import com.shopping.snack.db.entity.Board;
 import com.shopping.snack.db.entity.Member;
@@ -59,9 +56,14 @@ public class ServiceController {
     @GetMapping("/notice")
     public String noticeList(Model model,@RequestParam(defaultValue = "1") Integer pageNo){
         System.out.println(pageNo);
-        System.out.println(boardService.boardTotalCount());
+        System.out.println();
+        PageDTO pageDTO = new PageDTO(boardService.boardTotalCount(), pageNo);
+
+        System.out.println(pageDTO);
         List<Board> boardList = boardService.boardList(pageNo);
         model.addAttribute("boardList",boardList);
+
+        model.addAttribute("page",pageDTO);
         return "/html/service/notice.html";
     }
     @GetMapping("/notice/delete")

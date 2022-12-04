@@ -62,12 +62,9 @@
 					<p th:text="${board.getBoardViews()}"></p>
 				</div>
 			</div>
-			<div class="view_num">
-				<a href="/notice?pageNo=1">1</a>
-				<a href="/notice?pageNo=2">2</a>
-				<a href="/notice?pageNo=3">3</a>
-				<a href="/notice?pageNo=4">4</a>
-				<a href="/notice?pageNo=5">5</a>
+			<div class="view_num" >
+				<a th:each="num : ${#numbers.sequence(page.getStartPageNo(),page.getEndPageNo())}"
+				   th:href="@{/notice(pageNo=${num})}" th:text="${num}"></a>
 			</div>
 		</div>
 	</div>
