@@ -45,21 +45,26 @@
 				</div>
 			</div>
 			<div class="col-12 notice_content" th:each="board : ${boardList}">
-					<div class="col-1 notice_board">
-						<h2 th:text="${board.getBoardNo()}">1</h2>
-					</div>
-					<div class="col-5 notice_board" id="content">
-						<a th:href="@{/notice/detail(no=${board.getBoardNo()})}"><h2 th:text="${board.getBoardTitle()}"></h2></a>
-					</div>
-					<div class="col-2 notice_board">
-						<h2 th:text="${board.getBoardWriter().getMemberName()}">관리자</h2>
-					</div>
-					<div class="col-2 notice_board">
-						<h2 th:text="${board.getBoardDay()}">2022.11.08</h2>
-					</div>
-					<div class="col-1 notice_board">
-						<p th:text="${board.getBoardViews()}"></p>
-					</div>
+				<div class="col-1 notice_board">
+					<h2 th:text="${board.getBoardNo()}">1</h2>
+				</div>
+				<div class="col-5 notice_board" id="content">
+					<a th:href="@{/notice/detail(no=${board.getBoardNo()})}"><h2 th:text="${board.getBoardTitle()}"></h2></a>
+				</div>
+				<div class="col-2 notice_board">
+					<h2 th:text="${board.getBoardWriter().getMemberName()}">관리자</h2>
+				</div>
+				<div class="col-2 notice_board">
+					<h2 th:text="${board.getBoardDay()}">2022.11.08</h2>
+				</div>
+				<div class="col-1 notice_board">
+					<p th:text="${board.getBoardViews()}"></p>
+				</div>
+			</div>
+			<div class="view_num">
+				<a href="#">1</a>
+				<a href="#">2</a>
+				<a href="#">3</a>
 			</div>
 		</div>
 	</div>

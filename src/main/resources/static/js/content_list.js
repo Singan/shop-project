@@ -74,21 +74,35 @@ function getContentList(){
     })
 }
 
-// $(document).ready(function(){
-//     $(function() {
+$(document).ready(function(){
+    $(function() {
 
-//         var didScroll = false;
+        var didScroll = false;
             
-//         $(window).on('scroll', function() { didScroll = true; });
+        $(window).on('scroll', function() { didScroll = true; });
         
-//         setInterval(function() {
-//             var bottomHeight = $(window).scrollTop() + $(window).height() + 600;
-//             var docHeight = $(document).height();
+        setInterval(function() {
+            var bottomHeight = $(window).scrollTop() + $(window).height() + 600;
+            var docHeight = $(document).height();
 
-//             if (didScroll) {
-//                 didScroll = false;
-//                 if (bottomHeight > docHeight) getContentList();
-//             }
-//         }, 250);
-//     });    
-// });
+            if (didScroll) {
+                didScroll = false;
+                if (bottomHeight > docHeight) getContentList();
+            }
+        }, 250);
+    });    
+});
+
+$( document ).ready( function() {
+    $( window ).scroll( function() {
+        if ( $( this ).scrollTop() > 200 ) {
+            $( '.top' ).fadeIn();
+        } else {
+            $( '.top' ).fadeOut();
+        }
+    } );
+    $( '.top' ).click( function() {
+        $( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+        return false;
+    } );
+} );
