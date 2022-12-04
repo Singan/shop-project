@@ -131,9 +131,9 @@ public class ProductController {
 
     @PostMapping("/member/reply")
     @ResponseBody
-    public List<ReplyViewDTO> myReplyList(){
+    public List<MyReply> myReplyList(){
         SessionMemberDTO memberDTO = (SessionMemberDTO) request.getSession().getAttribute("user");
 
-        return productService.myReplyList(memberDTO.createMember()).stream().map(reply -> new ReplyViewDTO(reply)).collect(Collectors.toList());
+        return productService.myReplyList(memberDTO.createMember()).stream().map(reply -> new MyReply(reply)).collect(Collectors.toList());
     }
 }
