@@ -65,6 +65,41 @@
 	background-color: #739dff;
 	transition: .2s;
 }
+#order_content{
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+#order_content > h2{
+	margin-bottom:10px;
+	font-size: 1.2em;
+
+}
+#order_content > p{
+	font-size: 1.1em;
+	color:#a9a9a9;
+}
+.okay{
+	position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+	width: 200px;
+    height: 70px;
+    border-radius: 10px;
+    border: none;
+    background-color: #98b7ff;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.okay:hover{
+	background-color: #739dff;
+	transition: .2s;
+}
 
 .quantity{
 	margin:20px 0 0 0;

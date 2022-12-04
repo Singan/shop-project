@@ -44,10 +44,13 @@
 	font-size:1.5em;
 	color:#333;
 }
-.product_delete{
+.product_btn{
 	position: absolute;
 	bottom:0;
 	right: 0;
+	
+}
+.product_update, .product_delete{
 	width: 100px;
     height: 35px;
     border-radius: 8px;
@@ -56,7 +59,7 @@
     background-color: #efefef;
     font-size: 0.9em;
 }
-.product_delete:hover{
+.product_btn button:hover{
 	background-color: #e5e5e5;
 	transition: .2s;
 }
