@@ -23,8 +23,23 @@ function productcontent(obj) {
 }
 
 $(document).ready(function(){
-    let formData = new formData($("#product_form"));
+    let formData;
+    formData = new formData($("#product_form"));
+    let name = $('input[name=name]');
+    let shortContent = $('input[name=shortContent]');
+    let price = $('input[name=price]');
+    let count = $('input[name=count]');
+    let discountRate = $('input[name=discountRate]');
+    let category = $('select[name=category]');
+    let categorydetail = $('select[name=categorydetail]');
 
+    formData.append("product_name",name.val());
+    formData.append("product_count",shortContent.val());
+    formData.append("product_price",price.val());
+    formData.append("product_count",count.val());
+    formData.append("product_discount",discountRate.val());
+    formData.append("product_category",category.val());
+    formData.append("product_categorydetail",categorydetail.val());
     formData.append("product_image", $("#product_content_img")[0].files[0]);
     formData.append("product_content", $(".product_insert_contents").html());
 
@@ -36,7 +51,7 @@ $(document).ready(function(){
             processData: false,
             contentType: false,
             success : function(data){
-
+                console.log(data);
             }
 
         });

@@ -12,6 +12,10 @@
 	width:400px;
 	height: 400px;
 }
+#notice_insert_contnet_content > img{
+	width:400px;
+	height: 400px;
+}
 #notice_insert_text{
 	height: 100%;
 	margin-left:-1px;
