@@ -27,12 +27,13 @@
 			<form action="/member/profile" enctype="multipart/form-data" method="post">
 			<div class="col-12 content_header" id="profile_content_header">
 				<h2 class="col-12">마이페이지</h2>
-			</div>	
+			</div>
 			<div class="col-3">
 				<div class="col-6 profile_picture">
 					<img src="/img/profile_picture_img.png" class="profile_image" th:if="${session.user.getMemberImage()==null}"/>
 					<img th:if="${session.user.getMemberImage()!=null}"
 						 th:src="'data:image/jpeg;base64,'+${session.user.getMemberImage()}" class="profile_image" >
+					<input style="display: none;"  name="profileImage" th:value="${session.user.getMemberImage()}">
 					<label class="col-1 input_file_button" for="profile_picture_btn"><img src="/img/plus_button.png">
 					</label>
 					<input id="profile_picture_btn" type="file" name="image" accept="image/*" onchange="readprofile(this)">
@@ -50,7 +51,7 @@
 					<h2>이름</h2>
 				</div>
 				<div class="col-10 profile_user_infomation">
-					<input type="" name="" disabled="disabled" th:placeholder="${session.user.getMemberName()}">
+					<input type="" name="name" th:placeholder="${session.user.getMemberName()}">
 				</div>
 
 				<div class="col-2 profile_infomations">

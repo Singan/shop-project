@@ -4,10 +4,11 @@ import lombok.Data;
 
 @Data
 public class ProfileUpdateDTO {
-    private String zipCode;
+    private Integer zoneCode;
     private String address;
     private String detailAddress;
     private String email;
     private Long no;
     private String profileImage;
+    private String name;
 }

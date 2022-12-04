@@ -1,6 +1,7 @@
 package com.shopping.snack.db.service;
 
 import com.shopping.snack.DTO.LoginDTO;
+import com.shopping.snack.DTO.ProfileUpdateDTO;
 import com.shopping.snack.db.entity.Member;
 import com.shopping.snack.db.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
@@ -33,4 +34,8 @@ public class MemberService {
       return str;
 
     };
+
+    public Member updateMember(ProfileUpdateDTO updateDTO){
+        return memberRepository.updateMember(updateDTO);
+    }
 }
