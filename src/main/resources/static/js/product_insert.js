@@ -27,7 +27,7 @@ $(document).ready(function(){
 
     $('#submit').click(function(){
         let form = $("#product_form")[0];
-        let formData = new formData(form);
+        let formData = new FormData(form);
         let name = $('input[name=name]');
         let shortContent = $('input[name=shortContent]');
         let price = $('input[name=price]');
