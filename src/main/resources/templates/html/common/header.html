@@ -1,7 +1,7 @@
 <div class="col-12" id="header" th:fragment="header">
     <div class="col-12" id="a">
         <ul class="col-12" id="top_a">
-            <li><a href="/notice">공지사항</a></li>
+            <li><a href="/notice?pageNo=1">공지사항</a></li>
             <li th:if="${session.user !=null}" ><a href="/member/basket">장바구니</a></li>
             <li th:if="${session.user !=null}" ><a href="/member/order">주문정보</a></li>
             <li th:if="${session.user ==null}"><a href="/login">로그인</a></li>

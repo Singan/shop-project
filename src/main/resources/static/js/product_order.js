@@ -43,15 +43,15 @@ $(document).ready(function() {
     });
 
     $('#coupon').click(function() {
-        $('.modal').fadeIn();
-        $('.modal_content').css({
-            "top": (($(window).height() - $(".modal_content").outerHeight()) / 2 + $(window).scrollTop()) + "px"
+        $('#modal_coupon').fadeIn();
+        $('#coupon_content').css({
+            "top": (($(window).height() - $("#coupon_content").outerHeight()) / 2 + $(window).scrollTop()) + "px"
         }).show();
 
         $("body").css("overflow","hidden");
     });
     $(".modal_out_btn").click(function(){
-            $(".modal").fadeOut();
+            $("#modal_coupon").fadeOut();
             $("body").css("overflow","auto");
     });
 });
@@ -88,3 +88,9 @@ $(document).ready(function(){
     }
 
 });
+
+function modal(data){
+    let order_num = $('.order_number');
+    order_num.text("주문번호는 " + data + "입니다");
+
+}
