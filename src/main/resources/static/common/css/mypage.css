@@ -67,6 +67,7 @@
 }
 .review_layout{
 	margin:10px 0;
+	border-top: solid 1px #d9d9d9;
 	border-bottom: solid 1px #d9d9d9;
 	display: flex;
 	align-items: center;
