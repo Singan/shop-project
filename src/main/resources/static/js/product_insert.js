@@ -34,20 +34,28 @@ $(document).ready(function(){
         let category = $('select[name=category]');
         let categorydetail = $('select[name=categorydetail]');
         let productNo = $('input[name=productNo]');
+        let content = $(".product_insert_contents");
 
         if(productNo != undefined){
             formData.append("productNo",productNo.val());
         }
         console.log("아아아아아아")
-        formData.append("name",name.val());
-        formData.append("shortContent",shortContent.val());
-        formData.append("price",price.val());
-        formData.append("count",count.val());
-        formData.append("discountRate",discountRate.val());
-        formData.append("category",category.val());
-        formData.append("categorydetail",categorydetail.val());
+
+        let data = {
+            name : name.val(),
+            shortContent : shortContent.val(),
+            price : price.val(),
+            count : count.val(),
+            discountRate : discountRate.val(),
+            category : category.val(),
+            categorydetail : categorydetail.val(),
+            content : content.html();
+
+        }
+        formData.append(FormData, data);
+        
         formData.append("image", $("#product_content_img")[0].files[0]);
-        formData.append("content", $(".product_insert_contents").html());
+        
         $.ajax({
             type : "POST",
             url : "/product/insert",
