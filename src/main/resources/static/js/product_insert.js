@@ -23,11 +23,9 @@ function productcontent(obj) {
 }
 
 $(document).ready(function(){
-
-
     $('#submit').click(function(){
         let formData;
-        formData = new formData($("#product_form"));
+        formData = new FormData($("#product_form")[0]);
         let name = $('input[name=name]');
         let shortContent = $('input[name=shortContent]');
         let price = $('input[name=price]');
@@ -35,7 +33,12 @@ $(document).ready(function(){
         let discountRate = $('input[name=discountRate]');
         let category = $('select[name=category]');
         let categorydetail = $('select[name=categorydetail]');
+        let productNo = $('input[name=productNo]');
 
+        if(productNo != undefined){
+            formData.append("productNo",productNo.val());
+        }
+        console.log("아아아아아아")
         formData.append("name",name.val());
         formData.append("shortContent",shortContent.val());
         formData.append("price",price.val());
@@ -49,8 +52,12 @@ $(document).ready(function(){
             type : "POST",
             url : "/product/insert",
             data : formData,
-            processData: false,
+            error: function(data){
+                console.log(data);
+            },
+            cache: false,
             contentType: false,
+            processData: false,
             success : function(data){
                 console.log(data);
                 return false;
