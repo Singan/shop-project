@@ -1,3 +1,4 @@
+let image ;
 function productinsert(obj) {
     let reader = new FileReader();
     if(!obj.files.length) {
@@ -7,6 +8,7 @@ function productinsert(obj) {
     reader.onload = function (e) {
         $('.insert_img').attr('src', e.target.result);
         a = e.target.result;
+        image = e.target.result;
     }
 }
 function productcontent(obj) {
@@ -37,10 +39,7 @@ $(document).ready(function(){
         let content = $(".product_insert_contents");
         console.log(productNo)
 
-        if(productNo != undefined){
-            formData.append("productNo",productNo.val());
-        }else{
-        }
+
         console.log("아아아아아아")
 
         let data = {
@@ -51,23 +50,19 @@ $(document).ready(function(){
             discountRate : discountRate.val(),
             category : category.val(),
             categorydetail : categorydetail.val(),
-            content : content.html();
-
+            content : content.html(),
+            image:image
         }
-        formData.append(FormData, data);
-        
-        formData.append("image", $("#product_content_img")[0].files[0]);
-        
-        formData.append("content", $(".product_insert_contents").html());
+
         $.ajax({
             type : "POST",
             url : "/product/insert",
-            data : formData,
+            data : data,
             error: function(data){
                 console.log(data);
             },
             cache: false,
-            contentType: false,
+            contentType: "application/json",
             processData: false,
             success : function(data){
                 console.log(data);

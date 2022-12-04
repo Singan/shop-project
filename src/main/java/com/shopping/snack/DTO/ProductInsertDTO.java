@@ -25,7 +25,7 @@ public class ProductInsertDTO {
     private Long productNo;
 
     private String productThumbnail;
-
+    private String image;
     public Product getProduct(){
         Product product = new Product();
         product.setProductCount(this.count);
@@ -36,6 +36,7 @@ public class ProductInsertDTO {
         product.setProductPrice(this.price);
         product.setProductShort(this.shortContent);
         product.setProductView(true);
+        product.setProductThumbnail(image);
         product.setProductNo(this.productNo);
         return product;
     }
@@ -55,5 +56,21 @@ public class ProductInsertDTO {
         productThumbnail = product.getProductThumbnail();
         productNo = product.getProductNo();
 
+    }
+
+    @Override
+    public String toString() {
+        return "ProductInsertDTO{" +
+                "name='" + name + '\'' +
+                ", content='" + content + '\'' +
+                ", count=" + count +
+                ", category='" + category + '\'' +
+                ", discountRate=" + discountRate +
+                ", price=" + price +
+                ", shortContent='" + shortContent + '\'' +
+                ", productNo=" + productNo +
+                ", productThumbnail='" + productThumbnail + '\'' +
+                ", image='" + image + '\'' +
+                '}';
     }
 }

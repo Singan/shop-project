@@ -52,21 +52,16 @@ public class AdminController {
 
     @PostMapping("/product/insert")
     @ResponseBody
-    public void productInsert(@RequestPart(value = "product") ProductInsertDTO productInsertDTO , @RequestPart(value = "image") MultipartFile image) throws IOException {
+    public void productInsert(@RequestBody ProductInsertDTO productInsertDTO) throws IOException {
         System.out.println("인설트 들어옴");
         SessionMemberDTO member =(SessionMemberDTO)request.getSession().getAttribute("user");
-        String photoImg = null;
-        if (!image.isEmpty()) {
-            Base64.Encoder encoder = Base64.getEncoder();
-            byte[] photoEncode = encoder.encode(image.getBytes());
-            photoImg = new String(photoEncode, "UTF8");
-        }
+
         if(productInsertDTO.getProductNo() ==null) {
-            productService.productInsert(productInsertDTO, photoImg);
+            productService.productInsert(productInsertDTO);
         }else{
-            if(!image.isEmpty()) {
+            if(productInsertDTO.getImage() !=null) {
                 System.out.println("썸네일 변경");
-                productInsertDTO.setProductThumbnail(photoImg);
+                productInsertDTO.setProductThumbnail(productInsertDTO.getImage());
             }
             productService.productUpdate(productInsertDTO);
         }

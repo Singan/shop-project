@@ -86,7 +86,7 @@ public class ProductRepository {
     }
 
     public List<Reply> myReplyList(Member member){
-        return em.createQuery("select r from Reply r where r.replyWriter = :member")
+        return em.createQuery("select r from Reply r join fetch r.replyProduct where r.replyWriter = :member")
                 .setParameter("member",member).getResultList();
     }
 }

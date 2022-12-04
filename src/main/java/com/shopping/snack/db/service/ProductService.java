@@ -20,14 +20,16 @@ public class ProductService {
     private final ProductRepository productRepository;
 
     public Long productInsert(ProductInsertDTO productInsertDTO){
-        return productRepository.productInsert(productInsertDTO.getProduct());
-    }
-
-    public Long productInsert(ProductInsertDTO productInsertDTO,String thumbnail){
         Product product=productInsertDTO.getProduct();
-        product.setProductThumbnail(thumbnail);
+        product.setProductThumbnail(productInsertDTO.getProductThumbnail());
         return productRepository.productInsert(product);
     }
+
+//    public Long productInsert(ProductInsertDTO productInsertDTO,String thumbnail){
+//        Product product=productInsertDTO.getProduct();
+//        product.setProductThumbnail(thumbnail);
+//        return productRepository.productInsert(product);
+//    }
     public void productUpdate(ProductInsertDTO productInsertDTO){
 
         productRepository.productUpdate(productInsertDTO);

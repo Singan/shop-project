@@ -9,11 +9,12 @@ public class MyReply {
     private LocalDate replyDay;
     private String replyImage;
     private String replyContent;
-
+    private String productName;
     public MyReply(Reply reply){
         replyDay=reply.getReplyDay();
         replyImage=reply.getReplyImage();
         replyContent=reply.getReplyContent();
+        productName = reply.getReplyProduct().getProductName();
     };
 
 }
