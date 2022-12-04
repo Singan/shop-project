@@ -1,0 +1,7 @@
+.view_num{
+	text-align: center;
+	margin: 10px 0;
+}
+.view_num > a{
+	color:#333;
+}
