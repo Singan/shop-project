@@ -22,9 +22,16 @@ public class BoardRepository {
         return board.getBoardNo();
     }
 
-    public List<Board> boardList(){
-        List<Board> boardList = em.createQuery("select b from Board b where b.boardDisplay = 1").getResultList();
+    public List<Board> boardList(int pageNo){
+        List<Board> boardList = em.createQuery("select b from Board b " +
+                        "join fetch b.boardWriter where b.boardDisplay = true order by b.boardNo desc")
+                .setFirstResult((pageNo-1)*3)
+                .setMaxResults(pageNo*3).
+                getResultList();
         return boardList;
+    }
+    public Long boardTotalCount(){
+        return em.createQuery("select count(b) from Board b where b.boardDisplay = true ",Long.class).getSingleResult();
     }
     @Transactional
     public Board boardDetail(Long no){

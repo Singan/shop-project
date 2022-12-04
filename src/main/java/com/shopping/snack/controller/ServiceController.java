@@ -57,9 +57,10 @@ public class ServiceController {
     }
 
     @GetMapping("/notice")
-    public String noticeList(Model model){
-
-        List<Board> boardList = boardService.boardList();
+    public String noticeList(Model model,@RequestParam(defaultValue = "1") Integer pageNo){
+        System.out.println(pageNo);
+        System.out.println(boardService.boardTotalCount());
+        List<Board> boardList = boardService.boardList(pageNo);
         model.addAttribute("boardList",boardList);
         return "/html/service/notice.html";
     }

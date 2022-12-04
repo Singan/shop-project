@@ -22,8 +22,8 @@ public class BoardService {
     }
 
 
-    public List<Board> boardList(){
-        return boardRepository.boardList();
+    public List<Board> boardList(int pageNo){
+        return boardRepository.boardList(pageNo);
     }
 
     public Board boardDetail(Long no){
@@ -35,5 +35,10 @@ public class BoardService {
     }
     public void boardUpdate(BoardUpdateDTO boardUpdateDTO){
         boardRepository.boardUpdate(boardUpdateDTO);
+    }
+
+    public Long boardTotalCount(){
+
+       return boardRepository.boardTotalCount();
     }
 }

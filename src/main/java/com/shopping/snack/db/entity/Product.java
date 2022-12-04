@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -41,5 +42,5 @@ public class Product {
 
 
     @OneToMany(mappedBy = "replyProduct" ,fetch =FetchType.LAZY)
-    private List<Reply> replyList;
+    private List<Reply> replyList = new ArrayList<>();
 }
