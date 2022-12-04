@@ -21,16 +21,15 @@ public class ProductService {
 
     public Long productInsert(ProductInsertDTO productInsertDTO){
         Product product=productInsertDTO.getProduct();
-        product.setProductThumbnail(productInsertDTO.getProductThumbnail());
         return productRepository.productInsert(product);
     }
 
-//    public Long productInsert(ProductInsertDTO productInsertDTO,String thumbnail){
-//        Product product=productInsertDTO.getProduct();
-//        product.setProductThumbnail(thumbnail);
-//        return productRepository.productInsert(product);
-//    }
-    public void productUpdate(ProductInsertDTO productInsertDTO){
+    public Long productInsert(ProductInsertDTO productInsertDTO,String thumbnail){
+        Product product=productInsertDTO.getProduct();
+        product.setProductThumbnail(thumbnail);
+        return productRepository.productInsert(product);
+    }
+    public Long productUpdate(ProductInsertDTO productInsertDTO){
 
         productRepository.productUpdate(productInsertDTO);
     }

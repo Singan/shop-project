@@ -24,7 +24,7 @@ public class ProductRepository {
     }
 
     @Transactional
-    public void productUpdate(ProductInsertDTO productInsertDTO){
+    public Long productUpdate(ProductInsertDTO productInsertDTO){
         Product product = em.find(Product.class,productInsertDTO.getProductNo());
         product.setProductCount(productInsertDTO.getCount());
         product.setProductName(productInsertDTO.getName());
@@ -33,7 +33,10 @@ public class ProductRepository {
         product.setProductDiscount(productInsertDTO.getDiscountRate());
         product.setProductPrice(productInsertDTO.getPrice());
         product.setProductShort(productInsertDTO.getShortContent());
-        product.setProductThumbnail(productInsertDTO.getProductThumbnail());
+        if(productInsertDTO.getProductThumbnail() != null){
+            product.setProductThumbnail(productInsertDTO.getProductThumbnail());
+        }
+        return product.getProductNo();
     }
 
     @Transactional

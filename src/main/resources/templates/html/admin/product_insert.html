@@ -129,8 +129,12 @@
 								<input id="product_content_img" type="file" name="product_content_img" accept="image/*" onchange="productcontent(this)">
 							</div>
 						</div>
-						<div class="col-12 product_insert_contents" contentEditable="true">
-							
+						<div class="col-12 product_insert_contents" contentEditable="true" th:if="${product ==null}">
+
+						</div>
+						<div class="col-12 product_insert_contents" contentEditable="true" th:if="${product !=null}"
+							 th:utext="${product.getProductDetail()}">
+
 						</div>
 					</div>
 				</div>

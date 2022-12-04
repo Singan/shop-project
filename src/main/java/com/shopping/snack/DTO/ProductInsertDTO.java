@@ -9,21 +9,13 @@ import org.springframework.web.multipart.MultipartFile;
 public class ProductInsertDTO {
 
     private String name;
-
     private String content;
-
     private Long count;
-
     private String category;
-
     private Long discountRate;
-
     private Long price;
-
     private String shortContent;
-
     private Long productNo;
-
     private String productThumbnail;
     private String image;
     public Product getProduct(){

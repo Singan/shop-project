@@ -1,4 +1,3 @@
-let image ;
 function productinsert(obj) {
     let reader = new FileReader();
     if(!obj.files.length) {
@@ -8,7 +7,6 @@ function productinsert(obj) {
     reader.onload = function (e) {
         $('.insert_img').attr('src', e.target.result);
         a = e.target.result;
-        image = e.target.result;
     }
 }
 function productcontent(obj) {
@@ -51,21 +49,26 @@ $(document).ready(function(){
             category : category.val(),
             categorydetail : categorydetail.val(),
             content : content.html(),
-            image:image
         }
-
+        if(productNo.length>0){
+            data.productNo = productNo.val();
+        }else{
+        }
+        formData.append('product', new Blob([ JSON.stringify(data) ], {type : "application/json"}));
+        formData.append("image", $("#product_content_img")[0].files[0]);
         $.ajax({
             type : "POST",
             url : "/product/insert",
-            data : data,
+            data : formData,
             error: function(data){
                 console.log(data);
             },
             cache: false,
-            contentType: "application/json",
+            enctype : 'multipart/form-data',
+            contentType: false,
             processData: false,
             success : function(data){
-                console.log(data);
+                location.href="/product/detail?no="+data;
             }
 
         });
