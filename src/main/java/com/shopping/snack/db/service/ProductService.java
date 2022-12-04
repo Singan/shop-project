@@ -3,6 +3,7 @@ package com.shopping.snack.db.service;
 import com.shopping.snack.DTO.ProductInsertDTO;
 import com.shopping.snack.DTO.ReplyInsertDTO;
 import com.shopping.snack.DTO.SessionMemberDTO;
+import com.shopping.snack.db.entity.Member;
 import com.shopping.snack.db.entity.Product;
 import com.shopping.snack.db.entity.Reply;
 import com.shopping.snack.db.repository.ProductRepository;
@@ -66,5 +67,10 @@ public class ProductService {
     }
     public void productDelete(Long no){
         productRepository.productDelete(no);
+    }
+
+    public List<Reply> myReplyList(Member member){
+
+        return productRepository.myReplyList(member);
     }
 }

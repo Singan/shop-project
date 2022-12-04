@@ -55,7 +55,7 @@ public class AdminController {
 
     @PostMapping("/product/insert")
     @ResponseBody
-    public void productInsert(ProductInsertDTO productInsertDTO ,  @RequestBody MultipartFile image) throws IOException {
+    public void productInsert(@RequestBody ProductInsertDTO productInsertDTO ,  @RequestBody MultipartFile image) throws IOException {
         SessionMemberDTO member =(SessionMemberDTO)request.getSession().getAttribute("user");
         String photoImg = null;
         if (!image.isEmpty()) {

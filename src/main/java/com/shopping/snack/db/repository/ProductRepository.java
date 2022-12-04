@@ -84,4 +84,9 @@ public class ProductRepository {
     public void productDelete(Long no) {
         em.createQuery("update Product p set p.productView = false where p.productNo = :no").setParameter("no",no).executeUpdate();
     }
+
+    public List<Reply> myReplyList(Member member){
+        return em.createQuery("select r from Reply r where r.replyWriter = :member")
+                .setParameter("member",member).getResultList();
+    }
 }

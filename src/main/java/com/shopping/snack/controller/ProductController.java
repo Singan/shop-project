@@ -128,4 +128,12 @@ public class ProductController {
         model.addAttribute("product",p);
         return "/html/admin/product_insert";
     }
+
+    @PostMapping("/member/reply")
+    @ResponseBody
+    public List<ReplyViewDTO> myReplyList(){
+        SessionMemberDTO memberDTO = (SessionMemberDTO) request.getSession().getAttribute("user");
+
+        return productService.myReplyList(memberDTO.createMember()).stream().map(reply -> new ReplyViewDTO(reply)).collect(Collectors.toList());
+    }
 }
