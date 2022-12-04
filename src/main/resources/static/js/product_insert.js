@@ -26,8 +26,8 @@ $(document).ready(function(){
 
 
     $('#submit').click(function(){
-        let formData;
-        formData = new formData($("#product_form"));
+        let form = $("#product_form")[0];
+        let formData = new formData(form);
         let name = $('input[name=name]');
         let shortContent = $('input[name=shortContent]');
         let price = $('input[name=price]');
@@ -53,7 +53,6 @@ $(document).ready(function(){
             contentType: false,
             success : function(data){
                 console.log(data);
-                return false;
             }
 
         });
