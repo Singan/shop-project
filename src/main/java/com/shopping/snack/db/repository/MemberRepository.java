@@ -55,7 +55,7 @@ public class MemberRepository {
         Member m = em.find(Member.class, updateDTO.getNo());
         m.setMemberZoneCode(updateDTO.getZoneCode());
         m.setMemberName(updateDTO.getName());
-        m.setMemberDetailAddress(updateDTO.getDetailAddress());
+        m.setMemberDetailAddress(updateDTO.getAddressDetail());
         m.setMemberAddress(updateDTO.getAddress());
         m.setMemberImage(updateDTO.getProfileImage());
         m.setMemberEmail(updateDTO.getEmail());

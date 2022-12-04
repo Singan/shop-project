@@ -43,9 +43,7 @@ public class ProductController {
 
         List<OrderViewDTO> orderViewDTOList = ordersList.stream().map(orders -> new OrderViewDTO(orders)).collect(Collectors.toList());
         model.addAttribute("ordersList",orderViewDTOList);
-        for (Orders o:ordersList) {
-            System.out.println(o.getOrdersNo());
-        }
+
         return "/html/member/order_list.html";
     }
     @GetMapping("/product/category/get")

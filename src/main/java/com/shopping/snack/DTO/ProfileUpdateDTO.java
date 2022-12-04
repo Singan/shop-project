@@ -6,7 +6,7 @@ import lombok.Data;
 public class ProfileUpdateDTO {
     private Integer zoneCode;
     private String address;
-    private String detailAddress;
+    private String addressDetail;
     private String email;
     private Long no;
     private String profileImage;

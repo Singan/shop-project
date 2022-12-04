@@ -116,7 +116,7 @@
 						<h2 th:text="${orders.getOrdersItems().get(0).getCount()} +' 개'">1개</h2>
 						<div>
 							<button class="cancel_btn detail">주문상세</button>
-							<a href=""><button class="cancel_btn" type="button" name="cancel_btn" value="취소하기">취소하기</button></a>
+							<a th:href="@{/order/delete(no=${orders.getOrderNo()})}"><button class="cancel_btn" type="button" name="cancel_btn" value="취소하기">취소하기</button></a>
 						</div>
 					</div>
 				</div>
