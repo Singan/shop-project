@@ -63,4 +63,7 @@ public class ProductService {
         reply.setReplyWriter(memberDTO.createMember());
         return productRepository.replyInsert(reply);
     }
+    public void productDelete(Long no){
+        productRepository.productDelete(no);
+    }
 }

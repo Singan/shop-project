@@ -26,42 +26,47 @@ public class ProductRepository {
         em.persist(reply);
         return reply;
     }
-
+    @Transactional
     public List<Product> productList(){
 
-        return em.createQuery("select p from Product p").setFirstResult(0).setMaxResults(8).getResultList();
+
+        return em.createQuery("select p from Product p where p.productView = true").setFirstResult(0).setMaxResults(8).getResultList();
     }
 
     public List<Product> productList(String category){
 
-        return em.createQuery("select p from Product p where p.productCate = :category")
+        return em.createQuery("select p from Product p where p.productCate = :category and p.productView = true")
                 .setParameter("category",category)
                 .getResultList();
     }
     public List<Product> productList(String category,Integer count){
 
-        return em.createQuery("select p from Product p where p.productCate = :category")
+        return em.createQuery("select p from Product p where p.productCate = :category and p.productView = true")
                         .setFirstResult(count*8).setMaxResults((count+1)*8)
                 .setParameter("category",category)
                 .getResultList();
     }
     public Product productFind(Long no){
-        return em.createQuery("select p from Product p  where p.productNo = :no",Product.class)
+        return em.createQuery("select p from Product p  where p.productNo = :no and p.productView = true",Product.class)
                 .setParameter("no",no).getSingleResult();
     }
     public List<Product> productFind(List<Long> no){
 
-        return em.createQuery("select p from Product p where p.productNo in (:no)").
+        return em.createQuery("select p from Product p where p.productNo in (:no) and p.productView = true").
                 setParameter("no",no).getResultList();
     }
     public List<Product> productPopularList(Integer pageNo){
 
-        return em.createQuery("select p from Product p where p.productDiscount >0 order by p.productDiscount desc").
+        return em.createQuery("select p from Product p where p.productDiscount >0 and p.productView = true order by p.productDiscount desc").
                 setFirstResult(pageNo*8).setMaxResults((pageNo+1)*8).getResultList();
     }
     public List<Product> productSalesList(Integer pageNo){
 
-        return em.createQuery("select p from Product p where p.productDiscount >0 order by p.productDiscount desc").
+        return em.createQuery("select p from Product p where p.productDiscount >0 and p.productView = true order by p.productDiscount desc").
                 setFirstResult(pageNo*8).setMaxResults((pageNo+1)*8).getResultList();
+    }
+    @Transactional
+    public void productDelete(Long no) {
+        em.createQuery("update Product p set p.productView = false where p.productNo = :no").setParameter("no",no).executeUpdate();
     }
 }

@@ -30,8 +30,10 @@
 			<div class="col-12 content_header" id="product_detail_content_header">
 					<h2 class="col-12">제품</h2>
 					<div class="product_btn">
-						<button class="product_update" th:if="${session.user !=null}">수정하기</button>
-						<button class="product_delete" th:if="${session.user !=null}">삭제하기</button>
+						<a th:if="${session.user !=null}" th:href="@{/product/update(no=${product.getProductNo()})}">
+							<button class="product_update" th:if="${session.user !=null}">수정하기</button></a>
+						<a th:if="${session.user !=null}" th:href="@{/product/delete(no=${product.getProductNo()})}">
+							<button class="product_delete" >삭제하기</button></a>
 					</div>
 					
 				</div>
