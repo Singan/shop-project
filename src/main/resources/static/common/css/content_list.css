@@ -80,12 +80,16 @@
 .list_text{
 	position: relative;
 }
-.list_text > h2, .list_text > p{
+.list_text h2, .list_text p{
 	width: 200px;
     margin-left: 0;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
 }
-.list_text > h2{
+.list_text h2{
 	font-size: 1.0em;
+	color:#333;
 }
 .list_text > p{
 	font-size: 0.8em;
@@ -93,7 +97,6 @@
 	overflow:hidden;
     text-overflow:ellipsis;
     white-space:nowrap;
-
 }
 .list_more{
 	height: 50px;
@@ -123,6 +126,7 @@
 }
 .list_count{
 	position: absolute;
+	width:40px;
 	right: 10px;
 	font-size: 0.9em;
 	bottom:0;
@@ -131,6 +135,7 @@
 	padding:10px 0;
 	display: flex;
 	flex-direction: column;
+	background-color: #fff;
 }
 .listTotal >h1{
 	padding-bottom: 10px;
