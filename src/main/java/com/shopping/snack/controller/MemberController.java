@@ -22,7 +22,7 @@ public class MemberController {
     @GetMapping("/member/join")
     public String joinHtml(){
         System.out.println("조인");
-        return "/html/member/join.html";
+        return "html/member/join.html";
     }
 
     @PostMapping("/member/join")
@@ -35,12 +35,12 @@ public class MemberController {
     @GetMapping("/member/find")
     public String findIdOrPwd(){
         System.out.println("아이디 비밀번호 찾기");
-        return "/html/member/find_id_password.html";
+        return "html/member/find_id_password.html";
     }
 
     @GetMapping("/member/profile")
     public String profileGo(){
-        return "/html/member/profile.html";
+        return "html/member/profile.html";
     }
 
     @PostMapping("/member/profile")
@@ -57,17 +57,17 @@ public class MemberController {
         sessionMember=new SessionMemberDTO(memberService.updateMember(updateDTO));
         
         httpServletRequest.getSession().setAttribute("user",sessionMember);
-        return "/html/member/profile.html";
+        return "html/member/profile.html";
     }
     @GetMapping("/member/mypage")
     public String mypageGo(){
 
-        return "/html/member/mypage.html";
+        return "html/member/mypage.html";
     }
 
     @PostMapping("/member/mypage")
     public String mypage(){
-        return "/html/member/mypage.html";
+        return "html/member/mypage.html";
     }
 
     @PostMapping("/member/check")

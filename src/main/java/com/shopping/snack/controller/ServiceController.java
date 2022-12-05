@@ -29,7 +29,7 @@ public class ServiceController {
         SessionMemberDTO member = (SessionMemberDTO)httpServletRequest.getSession().getAttribute("user");
         model.addAttribute("basketList",member.getBasketList());
 
-        return "/html/service/basket";
+        return "html/service/basket";
     }
     @GetMapping("/member/basketList")
     @ResponseBody
@@ -63,7 +63,7 @@ public class ServiceController {
         model.addAttribute("boardList",boardList);
 
         model.addAttribute("page",pageDTO);
-        return "/html/service/notice.html";
+        return "html/service/notice.html";
     }
     @GetMapping("/notice/delete")
     public String noticeDelete(Long no){
@@ -86,14 +86,14 @@ public class ServiceController {
         }
         model.addAttribute("b",b);
         model.addAttribute("board",board);
-        return "/html/service/notice_detail.html";
+        return "html/service/notice_detail.html";
     }
     @GetMapping("/notice/update")
     public String noticeUpdate(Model model,Long no){
 
         Board board = boardService.boardDetail(no);
         model.addAttribute("board",board);
-        return "/html/admin/notice_insert.html";
+        return "html/admin/notice_insert.html";
     }
     @PutMapping("/notice/update")
     @ResponseBody

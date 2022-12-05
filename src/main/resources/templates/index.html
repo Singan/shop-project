@@ -45,7 +45,7 @@
 			<div class="col-12 content_header" id="main_content_header">
 				<h2 class="col-2">오늘의 추천</h2>
 				<!-- 관리자만 보이는 버튼 (글쓰기) -->
-				<a id="product_admin_write" href="/product/insert">상품등록</a>
+				<a id="product_admin_write" href="/product/insert" th:if="${session.user !=null}">상품등록</a>
 
 				</div>
 			</div>
@@ -58,7 +58,7 @@
 						<p th:text="${product.getProductName()}"></p>
 						<div>
 							<p class="price" th:text="${product.getProductPrice()} + '원'"></p>
-							<h2 class="discount_price"th:if="${product.getProductPrice()} != (${product.getProductPrice()}*(1-(${product.getProductDiscount()}/100)))" th:text="(${product.getProductPrice()}*(1-(${product.getProductDiscount()}/100)))"></h2>
+							<h2 class="discount_price"th:if="${prduct.getProductDiscount() != null}" th:text="(${product.getProductPrice()}*(1-(${product.getProductDiscount()}/100)))"></h2>
 						</div>
 						
 						<p class="discount" th:if="${product.getProductDiscount() !=0}" th:text="${product.getProductDiscount()} + '% 할인!'"></p>

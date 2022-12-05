@@ -112,8 +112,8 @@
 							<option></option>
 						</select>
 					</div>
-					<div class="col-12" id="replyZone" th:each="reply : ${product.getReplyList()}">
-						<div class="col-12 replycontents">
+					<div class="col-12" id="replyZone" >
+						<div class="col-12 replycontents" th:each="reply : ${product.getReplyList()}">
 							<div class="col-12 replyImage" th:if="${reply.getReplyImage() != null}">
 								<img th:src="${reply.getReplyImage()}">
 							</div>

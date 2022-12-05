@@ -139,7 +139,7 @@ $(document).ready(function(){
                 contentType: 'application/json',
                 success:()=>{
                     console.log("아아아")
-                    location.href = "http://localhost:8080/login";
+                    location.href = "/login";
                 }
 		    }
 		)
