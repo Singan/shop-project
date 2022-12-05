@@ -58,7 +58,7 @@ public class ProductController {
 
         Category[] ct = Category.values();
         System.out.println(category);
-        if(SpecialProduct.인기상품.values().equals(category)){
+        if(category.equals("인기상품")){
             System.out.println("인기상품 선택");
             List<ProductViewDTO> res=
                     productService.productPopularList(pageNo).stream().map(product -> new ProductViewDTO(product)).
