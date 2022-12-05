@@ -56,7 +56,7 @@ function getContentList(){
                             <p>${product.productName}</p>
                             <h2 class="price">${product.productPrice} 원</h2>
                             <h2 class="discount_price"></h2>
-                            <h2 class="discount">${product.productDiscount}</h2>
+                            <h2 class="discount">${product.productDiscount}%할인!</h2>
                         </a>
                     </div>`
                 })
