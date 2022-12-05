@@ -113,7 +113,8 @@ function discount(){
                 'color' : '#e9e9e9'
             });
         }else if(b <= 0){
-            $('#dispri_' + index).text("");
+            $('#dispri_' + index).css('display','none');
+            $('#dis_' + index).css('display','none');
         }
     });
 }
