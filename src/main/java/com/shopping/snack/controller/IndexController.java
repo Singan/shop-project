@@ -20,7 +20,7 @@ public class IndexController {
 
         System.out.println("인덱스");
         model.addAttribute("productList",productService.productList());
-        return "index.html";
+        return "/index.html";
     }
     @GetMapping("/loginCheck")
     @ResponseBody
