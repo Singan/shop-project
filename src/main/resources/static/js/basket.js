@@ -7,12 +7,12 @@ $(document).ready(function() {
     let number;
     let num;
 	let id = 1;
+	let asd = []
 	let allCheck = $("input[name=all_checkbox_button]");
 	let checks = $("input[name=checkbox_button]");
 	let amount = $(".number");
 	let prices = $(".price > p");
 	let total = $(".totalPrice > p");
-	let ss = [];
 	let sum = 0;
     for(let i = 0;i <= plus.length; i++){
     	$(plus[i]).attr("id", "p"+count);
@@ -23,12 +23,15 @@ $(document).ready(function() {
     	count += 1;
     }
     plus.click(function(event) {
+    	let price_ind = $('.price > p').index();
     	btn = event.target.id;
+
     	number = $("#"+btn).next();
     	num = parseInt(number.val());
     	num += 1;
         number.val(num);
-
+        //sum = sum + (price * num);
+        console.log(parseInt(btn));
         console.log(sum);
     });
     minus.click(function(event) {
@@ -39,13 +42,12 @@ $(document).ready(function() {
 		if(num > 1){
             num -= 1;
             number.val(num);
-            sum = sum - ss[price_ind-1];
+            //sum = sum -;
         }else{
             num = 1;
 
         }
     });
-    console.log(num);
 
     
 
@@ -61,6 +63,7 @@ $(document).ready(function() {
 	    .each(function(){
 	    	console.log(this);
 	    	$("p", this).attr("id", this.id);
+	    	
 		});
 	  
 	  
@@ -70,10 +73,12 @@ $(document).ready(function() {
 		
 		if(allCheck.is(":checked")){
 			checks.prop("checked", true);
+			totalPrice();
 		} 
 		else{
 			checks.prop("checked", false);
 			sum = 0;
+			total.text(sum);
 		} 
 	});
 
@@ -91,17 +96,19 @@ $(document).ready(function() {
 
 	
 	
-	for(var i = 0; i <= prices.length; i++){
-		let a = $("#price_"+i).text();
-		let amo = $("#amount_"+i).val();
-		let b = parseInt(a);
-		let num = parseInt(amo);
-		ss.push(b);
-		sum = isNaN(b) ? sum : sum + (b * num);
+	function totalPrice(){
+		for(var i = 0; i <= prices.length; i++){
+			let a = $("#price_"+i).text();
+			let amo = $("#amount_"+i).val();
+			let b = parseInt(a);
+			let num = parseInt(amo);
+			asd.push(i);
+			sum = isNaN(b) ? sum : sum + (b * num);
+		}
+
+		total.text(sum);
 	}
-
-	total.text(sum);
-
+	totalPrice();
 
 	checks.click(function(e){
 		let notCheck = $("#"+e.target.id);
@@ -118,7 +125,6 @@ $(document).ready(function() {
 		console.log(e.target.id);
 		total.text(sum);
 	});
-
 
 
 });
