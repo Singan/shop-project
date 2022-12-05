@@ -30,7 +30,7 @@ public class AdminController {
         if(member==null){
             return "redirect:/login";
         }
-        return "/html/admin/notice_insert.html";
+        return "html/admin/notice_insert.html";
     }
     @PostMapping("/notice/insert")
     @ResponseBody
@@ -47,7 +47,7 @@ public class AdminController {
         if(member == null){
             return "redirect:/login";
         }
-        return "/html/admin/product_insert.html";
+        return "html/admin/product_insert.html";
     }
 
     @PostMapping("/product/insert")

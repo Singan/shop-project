@@ -28,12 +28,12 @@ public class ProductController {
     @GetMapping("/product")
     public String productList(){
         System.out.println("index Get");
-        return "index.html";
+        return "redirect:/";
     }
     @GetMapping("/product/detail")
     public String productDetail(Model model,HttpServletRequest request, Long no){
         model.addAttribute("product", productService.productFind(no));
-        return "/html/product/product_detail.html";
+        return "html/product/product_detail.html";
     }
     @GetMapping("/order/delete")
     public String orderDelete(Long no){
@@ -50,7 +50,7 @@ public class ProductController {
         List<OrderViewDTO> orderViewDTOList = ordersList.stream().map(orders -> new OrderViewDTO(orders)).collect(Collectors.toList());
         model.addAttribute("ordersList",orderViewDTOList);
 
-        return "/html/member/order_list.html";
+        return "html/member/order_list.html";
     }
     @GetMapping("/product/category/get")
     @ResponseBody
@@ -86,7 +86,7 @@ public class ProductController {
     @GetMapping("/product/category")
     public String categorySelect(String category , Model model) throws IllegalArgumentException{
         model.addAttribute("category",category);
-        return "/html/product/content_list.html";
+        return "html/product/content_list.html";
     }
     @GetMapping("/product/order")
     public String orderGo(Model model, Long[] no ,@RequestParam(defaultValue = "1") Integer[] count){
@@ -103,7 +103,7 @@ public class ProductController {
             orderViewDTOList.get(i).setProductCount(count[i]);
         }
         model.addAttribute("productList",orderViewDTOList);
-        return "/html/product/product_order.html";
+        return "html/product/product_order.html";
     }
 
     @PostMapping("/product/reply")
@@ -113,8 +113,6 @@ public class ProductController {
 
         Reply reply = productService.replyInsert(replyInsertDTO,memberDTO);
 
-        System.out.println("repppppppppppppppp");
-        System.out.println(reply.getReplyWriter().getMemberName());
         ReplyViewDTO replyViewDTO = new ReplyViewDTO(reply);
         replyViewDTO.setReplyWriter(memberDTO.getMemberName());
         return replyViewDTO;
@@ -130,7 +128,7 @@ public class ProductController {
     public String productUpdate(Model model,Long no){
         ProductInsertDTO p = new ProductInsertDTO(productService.productFind(no));
         model.addAttribute("product",p);
-        return "/html/admin/product_insert";
+        return "html/admin/product_insert";
     }
 
     @PostMapping("/member/reply")

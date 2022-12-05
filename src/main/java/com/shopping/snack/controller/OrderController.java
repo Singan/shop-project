@@ -35,7 +35,7 @@ public class OrderController {
     }
     @GetMapping("/view/orders")
     public String viewsOrdersGo(){
-        return "/html/service/nonMember_order";
+        return "html/service/nonMember_order";
     }
 
     @PostMapping("/view/orders")
