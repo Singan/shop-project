@@ -59,17 +59,20 @@ public class ProductController {
         Category[] ct = Category.values();
         System.out.println(category);
         if(SpecialProduct.인기상품.equals(category)){
-
+            
             List<ProductViewDTO> res=
                     productService.productPopularList(pageNo).stream().map(product -> new ProductViewDTO(product)).
                             collect(Collectors.toList());
             return res;
         }
         if(SpecialProduct.세일상품.equals(category)){
-
+            System.out.println("세일상품 선택");
             List<ProductViewDTO> res=
                     productService.productSaleList(pageNo).stream().map(product -> new ProductViewDTO(product)).
                             collect(Collectors.toList());
+            for (ProductViewDTO r:res) {
+                System.out.println(r.getProductNo());
+            }
             return res;
         }
         for (Category c:ct) {

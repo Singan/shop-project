@@ -76,12 +76,14 @@ public class ProductRepository {
     }
     public List<Product> productPopularList(Integer pageNo){
 
-        return em.createQuery("select p from Product p where p.productDiscount >0 and p.productView = true order by p.productDiscount desc").
+        return em.createQuery("select p from Product p where p.productDiscount >0 and p.productView = true " +
+                        "order by p.productDiscount desc").
                 setFirstResult(pageNo*8).setMaxResults(8).getResultList();
     }
     public List<Product> productSalesList(Integer pageNo){
 
-        return em.createQuery("select p from Product p where p.productDiscount >0 and p.productView = true order by p.productDiscount desc").
+        return em.createQuery("select p from Product p where p.productDiscount > 0 and p.productView = true " +
+                        "order by p.productDiscount desc").
                 setFirstResult(pageNo*8).setMaxResults(8).getResultList();
     }
     @Transactional
