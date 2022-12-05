@@ -61,7 +61,7 @@ public class ProductRepository {
     public List<Product> productList(String category,Integer count){
 
         return em.createQuery("select p from Product p where p.productCate = :category and p.productView = true")
-                        .setFirstResult(count*8).setMaxResults((count+1)*8)
+                        .setFirstResult(count*8).setMaxResults(8)
                 .setParameter("category",category)
                 .getResultList();
     }
@@ -77,12 +77,12 @@ public class ProductRepository {
     public List<Product> productPopularList(Integer pageNo){
 
         return em.createQuery("select p from Product p where p.productDiscount >0 and p.productView = true order by p.productDiscount desc").
-                setFirstResult(pageNo*8).setMaxResults((pageNo+1)*8).getResultList();
+                setFirstResult(pageNo*8).setMaxResults(8).getResultList();
     }
     public List<Product> productSalesList(Integer pageNo){
 
         return em.createQuery("select p from Product p where p.productDiscount >0 and p.productView = true order by p.productDiscount desc").
-                setFirstResult(pageNo*8).setMaxResults((pageNo+1)*8).getResultList();
+                setFirstResult(pageNo*8).setMaxResults(8).getResultList();
     }
     @Transactional
     public void productDelete(Long no) {
