@@ -104,7 +104,7 @@ function discount(){
         $(discount_price[index]).attr('id', 'dispri_' + index);
         let a = parseInt($(this).text());
         let b = parseInt($('#dis_' + index).text());
-        $('#dispri_' + index).text(a * (1 - (b / 100)) + "원");
+        $('#dispri_' + index).text(parseInt(a * (1 - (b / 100))) + "원");
         console.log(index);
         if(b > 0){
             $(this).css({
