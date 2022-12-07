@@ -125,7 +125,7 @@
 			contentType: 'application/json',
 			success:(orders)=>{
 				$("#productName").text(orders.ordersItems[0].productName)
-				$("#productPrice").text(orders.ordersItems[0].productPrice)
+				$("#productPrice").text(orders.ordersItems[0].productPrice + "원")
 				$("#productShort").text(orders.ordersItems[0].productShort)
 				$("#ordersStatus").text(orders.ordersStatus)
 				$("#ordersDate").text(orders.ordersDate)

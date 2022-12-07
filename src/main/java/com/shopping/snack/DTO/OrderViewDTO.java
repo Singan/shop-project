@@ -26,6 +26,7 @@ public class OrderViewDTO {
     private List<OrdersItemDTO> ordersItems;
     private OrdersStatus ordersStatus;
     private LocalDate ordersDate;
+    private Long ordersPrice;
     public OrderViewDTO(Product product){
         productNo = product.getProductNo();
         productThumbnail = product.getProductThumbnail();
@@ -44,6 +45,7 @@ public class OrderViewDTO {
         this.orderNo = orders.getOrdersNo();
         this.ordersStatus = orders.getOrdersStatus();
         this.ordersDate = orders.getOrdersDate();
+        this.ordersPrice = orders.getOrdersPrice();
         ordersItems = orders.getOrdersItems().stream().map(ordersItem -> new OrdersItemDTO(ordersItem)).collect(Collectors.toList());
     }
 }
