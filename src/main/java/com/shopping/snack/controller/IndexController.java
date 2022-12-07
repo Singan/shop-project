@@ -25,7 +25,7 @@ public class IndexController {
     @GetMapping("/luckybox")
     public String index(){
 
-        return "product/lucky_box.html";
+        return "html/product/lucky_box.html";
     }
     @GetMapping("/loginCheck")
     @ResponseBody
