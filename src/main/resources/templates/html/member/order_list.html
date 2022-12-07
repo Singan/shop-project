@@ -43,6 +43,7 @@
 		        	<h2>가격</h2>
 		        </div>
 		    </div>
+
 		    <div class="col-12 modal_layout">
 		        <div class="col-1 modal_image">
 		        	<img src="/img/snack_photo1.png">
@@ -57,6 +58,10 @@
 		        <div class="col-2 modal_contents">
 		        	<h2>37000원</h2>
 		        </div>
+
+		    <div class="col-12 modal_layout" id="modal_content">
+
+
 		    </div>
 		</div>
 	</div>
@@ -104,7 +109,7 @@
 					<div class="col-2 product_order_quantity">
 						<h2 th:text="${orders.getOrdersItems().get(0).getCount()} +' 개'">1개</h2>
 						<div>
-							<button class="cancel_btn detail">주문상세</button>
+							<button class="cancel_btn detail" th:id="'order' + ${orders.getOrderNo()}">주문상세</button>
 							<a th:href="@{/order/delete(no=${orders.getOrderNo()})}"><button class="cancel_btn" type="button" name="cancel_btn" value="취소하기">취소하기</button></a>
 						</div>
 					</div>
@@ -117,11 +122,40 @@
 
 </body>
 <script th:inline="javascript">
-		console.log("에이에이")
+
 		var ordersList = [[${ordersList}]];
 		console.log(ordersList)
 		$(document).ready(function(){
+			ordersList.map(order => {
+				$("#order"+order.orderNo).on("click",function(){
+					let string = "";
+					order.ordersItems.map(orderItem => {
+						string+=`<div class="col-1 modal_image">
+							<img src="data:image/jpeg;base64,${orderItem.productThumbnail}">
+						</div>
+						<div class="col-4 modal_contents">
+							<h2 id="name">${orderItem.productName}</h2>
+							<p id="short">${orderItem.productShort}</p>
+							<p class="user_address">경기도 광주시</p>
+						</div>
+						<div class="col-1 modal_contents">
+							<h2 id="count">${orderItem.productCount}</h2>
+						</div>
+						<div class="col-2 modal_contents">
+							<h2 id="price">${orderItem.productPrice}</h2>
+						</div>`
+					})
+					$("#modal_content").html(string);
 
+					$('.modal').fadeIn();
+					$('.modal_content').css({
+						"top": (($(window).height() - $(".modal_content").outerHeight()) / 2 + $(window).scrollTop()) + "px"
+					}).show();
+
+					$("body").css("overflow","hidden");
+				})
+
+			})
 		})
 
 </script>
