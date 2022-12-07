@@ -189,15 +189,9 @@
 }
 
 
-#lucky_box_components_font > div > div > img{
-	width:400px;
-	height: 400px;
+#lucky_box_components_font img{
+	max-width: 90%;
 }
-#lucky_box_components_font > div > img{
-	width:400px;
-	height: 400px;
-}
-#lucky_box_components_font > img{
-	width:400px;
-	height: 400px;
+#lucky_box_components_font div{
+	max-width: 90%;
 }

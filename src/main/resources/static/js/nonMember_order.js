@@ -11,4 +11,12 @@ $(document).ready(function(){
         	$(".modal").fadeOut();
         	$("body").css("overflow","auto");
     });
+
+        
+        $('.numberButton').click(function(){
+            
+        });
+
 });
+
+

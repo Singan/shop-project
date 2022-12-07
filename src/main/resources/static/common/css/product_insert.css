@@ -4,18 +4,13 @@
 	font-size: 0.8em;
 	overflow-y: scroll;
 }
-.product_insert_contents > div > div > img{
-	width:400px;
-	height: 400px;
+.product_insert_contents  div{
+	max-width: 90%;
 }
-.product_insert_contents > div > img{
-	width:400px;
-	height: 400px;
+.product_insert_contents img{
+	max-width: 90%;
 }
-.product_insert_contents > img{
-	width:400px;
-	height: 400px;
-}
+
 #registration_content_text{
 	height: 100%;
 }
