@@ -101,9 +101,9 @@
 					<h4 id="ordersDate">2022-11-15</h4>
 				</div>
 				<div class="col-2 product_order_information" id="user_address">
-					<p>경기도 광주시</p>
-					<p>상세주소</p>
-					<p>우편번호</p>
+					<h3 id="zoneCode">우편번호</h3>
+					<p id="address">경기도 광주시</p>
+					<p id="detailAddress">상세주소</p>
 				</div>
 				<div class="col-1 product_order_quantity">
 					<div>
@@ -136,8 +136,11 @@
 				$("#ordersStatus").text(orders.ordersStatus)
 				$("#ordersDate").text(orders.ordersDate)
 				$("#productImage").attr("src","data:image/png;base64,"+orders.ordersItems[0].productThumbnail)
-				$("#productCount").text(orders.ordersItems[0].count+"개")
 				$('#productdisCount').text(orders.ordersItems[0].productDiscount);
+				$("#zoneCode").text(orders.ordersZoneCode)
+				$("#Address").text(orders.ordersAddress)
+				$("#detailAddress").text(orders.ordersDetailAddress)
+
 				console.log(orders)
 				let html="";
 				orders.ordersItems.map((ordersItem)=>{
@@ -158,12 +161,9 @@
 
 				})
 				$("#modal").html(html);
-				$('.price').each(function(){
-					let pri; 
-					pri += parseInt($('.price').text());
-					console.log(parseInt(pri));
-					$('.total_price').text(parseInt(pri) + "원");
-				});
+				let pri;
+				
+				
 				let disCount = parseInt($('#productdisCount').text());
 		        let price = parseInt($('#productPrice').text());
 		        let disPrice;
@@ -177,7 +177,13 @@
 		            $('#productdisCount').css('display','none');
 		        }
 		        console.log(disPrice);
-
+		        $('.price').each(function(){
+					
+					pri = parseInt($('.price').text());
+					console.log(parseInt(pri));
+					
+				});
+		        $('.total_price').text(parseInt(pri) + "원");
 			}
 		});
 	});
