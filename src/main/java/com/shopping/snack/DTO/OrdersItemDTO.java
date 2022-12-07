@@ -14,6 +14,7 @@ public class OrdersItemDTO {
     private String productName;
     private String productShort;
     private Long productPrice;
+    private Long productDiscount;
     public OrdersItem getOrdersItem(){
         OrdersItem ordersItem = new OrdersItem();
         Product product = new Product();

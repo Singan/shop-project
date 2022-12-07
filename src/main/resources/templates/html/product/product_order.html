@@ -66,8 +66,8 @@
 						<h2 th:text="${product.getProductPrice()} + ' 원'">가격</h2>
 						<p th:text="${product.getProductShort()}">간략한 소개</p>
 						<p class="productNo" th:text="${product.getProductNo()}"></p>
-						<input class="productPrice" th:value="${product.getProductPrice()}">
-						<input class="productDiscount" th:value="${product.getProductDiscount()}">
+						<input class="productPrice" th:value="${product.getProductPrice()}" style="display: none">
+						<input class="productDiscount" th:value="${product.getProductDiscount()}" style="display: none">
 					</div>
 					<div class="col-2 product_order_quantity">
 						<div class="col-12 quantity">

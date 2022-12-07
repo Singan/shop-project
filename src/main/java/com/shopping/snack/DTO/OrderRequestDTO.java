@@ -35,9 +35,11 @@ public class OrderRequestDTO {
       orders.setOrdersName(ordersName);
       orders.setOrdersDate(LocalDate.now());
       orders.setOrdersStatus(OrdersStatus.배송전);
+      Long price =0L;
         for (OrdersItemDTO o:ordersItems) {
-            orders.setOrdersPrice((o.getProductPrice()*o.getCount()) + o.getProductPrice());
+            price +=(o.getProductPrice() - (o.getProductPrice() * (o.getProductDiscount()/100)));
         }
+        orders.setOrdersPrice(price);
       return orders;
     };
     public Orders getOrders(Member member){
