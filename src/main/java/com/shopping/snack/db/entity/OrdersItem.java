@@ -24,4 +24,6 @@ public class OrdersItem {
 
     @Column(name = "ordersItem_count")
     private Integer count;
+    @Column(name = "ordersItem_discount")
+    private Long disCount;
 }
