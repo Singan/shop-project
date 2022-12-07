@@ -43,6 +43,8 @@
 .user_address{
 	font-size: 0.8em;
     color: #a9a9a9;
+    position: absolute;
+    width: 70%;
 }
 
 .orderContent{
