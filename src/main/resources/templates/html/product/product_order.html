@@ -63,7 +63,8 @@
 					</div>
 					<div class="col-6 product_order_information">
 						<h2 th:text="${product.getProductName()}">제품명</h2>
-						<h2 th:text="${product.getProductPrice()} + ' 원'">가격</h2>
+						<h2 th:if="${product.getProductDiscount() <= 0}" th:text="${product.getProductPrice()} + ' 원'">가격</h2>
+						<h2 class="discount_price"th:if="${product.getProductDiscount() > 0}" th:text="(${product.getProductPrice()}*(1-(${product.getProductDiscount()}/100)))"></h2>
 						<p th:text="${product.getProductShort()}">간략한 소개</p>
 						<p class="productNo" th:text="${product.getProductNo()}"></p>
 						<input class="productPrice" th:value="${product.getProductPrice()}" style="display: none">

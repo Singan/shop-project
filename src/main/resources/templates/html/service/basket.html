@@ -63,14 +63,15 @@
 					</div>
 					<div class="col-1 price">
 						<h2>가격</h2>
-						<p th:text="${basket.getProductPrice()} +' 원'"></p>
+						<p th:if="${basket.getProductDiscount() <= 0}" th:text="${basket.getProductPrice()} +' 원'"></p>
+						<p th:if="${basket.getProductDiscount() > 0}" th:text="(${basket.getProductPrice()}*(1-(${basket.getProductDiscount()}/100)))"></p>
 					</div>
 					<div class="col-2">
 						<div class="col-12 quantity">
 							<h2 class="col-3">수량</h2>
 							<div class="col-6 count">
 								<button class="plus" type="button"></button>
-								<input class="number" type="text" name="" maxlength="3" value="1">
+								<input class="number" type="text" name="" maxlength="3" value="1" disabled>
 								<button class="minus" type="button"></button>
 							</div>
 						</div>
@@ -80,6 +81,7 @@
 					</div>
 				</div>
 				<div class="col-10 totalPrice">
+					<a href="#"><button type="button">구매하기</button></a>
 					<h2>총가격</h2>
 					<p>12000원</p>
 				</div>

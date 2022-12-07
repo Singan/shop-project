@@ -152,3 +152,15 @@
 #productCount{
 	font-size: 1.3em;
 }
+.total{
+	text-align: center;
+	margin-top: 50px;
+}
+.total h2{
+	width: 80%;
+	padding: 10px;
+    border-bottom: solid 1px #d9d9d9;
+}
+.total_price{
+	padding:10px;
+}

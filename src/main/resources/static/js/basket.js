@@ -63,7 +63,6 @@ $(document).ready(function() {
 	    .each(function(){
 	    	console.log(this);
 	    	$("p", this).attr("id", this.id);
-	    	
 		});
 	  
 	  
@@ -102,6 +101,8 @@ $(document).ready(function() {
 			let amo = $("#amount_"+i).val();
 			let b = parseInt(a);
 			let num = parseInt(amo);
+			let pri = parseInt(a);
+	    	$('#price_' + i).text(pri + '원');
 			sum = isNaN(b) ? sum : sum + (b * num);
 		}
 
@@ -129,5 +130,16 @@ $(document).ready(function() {
 	    this.checked = true; 
  	});
 
+
+	// amount.change(function(){
+	// 	let col = String(amount.index(this));
+	// 	let a = parseInt($('#price_'+col).text())
+	// 	let b = parseInt($('#amount_'+col).val())
+	// 	console.log(a,b);
+	// 	if($('#'+col).is(':checked')){
+	// 		sum = (sum-a) + (a*b);
+	// 		total.text(sum);
+	// 	}
+	// });
 });
 

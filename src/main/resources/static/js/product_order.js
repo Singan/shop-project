@@ -87,5 +87,9 @@ $(document).ready(function(){
         search_btn.attr('disabled', false);
     }
 
+    let dis = $('.discount_price');
+    let discount = parseInt(dis.text());
+    dis.text(discount + '원');
+
 });
 
