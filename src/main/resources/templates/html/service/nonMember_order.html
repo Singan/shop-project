@@ -158,6 +158,7 @@
 					let price; 
 					price += parseInt($('.price').text());
 					console.log(parseInt(price));
+					$('.total_price').text(parseInt(price) + "원");
 				});
 				let disCount = parseInt($('#productdisCount').text());
 		        let price = parseInt($('#productPrice').text());
@@ -167,7 +168,7 @@
 		            $('#productPrice').text(parseInt(disPrice) + '원');
 		            $('#productdisCount').css('display','none');
 		            $('.price').text(parseInt(disPrice) + '원');
-		            $('.total_price').text(orders.ordersPrice + "원");
+		            
 		        }else if(disCount <= 0 || disCount == null){
 		            $('#productdisCount').css('display','none');
 		        }
