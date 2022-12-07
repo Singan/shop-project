@@ -80,8 +80,8 @@
 						<img th:src="'data:image/jpeg;base64,'+${orders.getOrdersItems().get(0).getProductThumbnail()}">
 					</div>
 					<div class="col-5 product_order_information">
-						<h2 id="productPrice" class="title_btn" th:text="${orders.getOrdersItems().get(0).getProductName()}">제품명</h2>
-						<h2 id="productdisCount" th:text="${orders.getOrdersItems().get(0).getProductPrice()} +' 원'">가격</h2>
+						<h2 class="title_btn" th:text="${orders.getOrdersItems().get(0).getProductName()}">제품명</h2>
+						<h2 id="productPrice" th:text="${orders.getOrdersItems().get(0).getProductPrice()} +' 원'">가격</h2>
 						<h2 id="productdisCount"></h2>
 						<p th:text="${orders.getOrdersItems().get(0).getProductShort()}">간략한 소개</p>
 					</div>
