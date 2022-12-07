@@ -131,13 +131,12 @@
 				$(".modal").fadeOut();
 				$("body").css("overflow","auto");
 			});
-			
 
-			$('.total_price').text(parseInt(pri) + "원");
+
 			ordersList.map(order => {
 				$("#order"+order.orderNo).on("click",function(){
 					let string = "";
-
+					let pri;
 					order.ordersItems.map(orderItem => {
 						string+=`<div class="col-1 modal_image">
 							<img src="data:image/jpeg;base64,${orderItem.productThumbnail}">
@@ -155,6 +154,7 @@
 						</div>`
 					})
 					$("#modal_content").html(string);
+					$('.total_price').text(order.ordersPrice+ "원");
 
 					$('.detail').click(function() {
 						$('.modal').fadeIn();

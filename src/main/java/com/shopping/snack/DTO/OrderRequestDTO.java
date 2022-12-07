@@ -37,7 +37,7 @@ public class OrderRequestDTO {
       orders.setOrdersStatus(OrdersStatus.배송전);
       Long price =0L;
         for (OrdersItemDTO o:ordersItems) {
-            price +=(o.getProductPrice() - (o.getProductPrice() * (o.getProductDiscount()/100)))*o.getCount();
+            price +=(o.getProductPrice() * (1- (o.getProductDiscount()/100)))*o.getCount();
         }
         orders.setOrdersPrice(price);
       return orders;
