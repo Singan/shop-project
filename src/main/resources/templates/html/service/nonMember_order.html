@@ -78,9 +78,6 @@
 					<h2>주문날짜</h2>
 				</div>
 				<div class="col-2">
-					<h2>개수</h2>
-				</div>
-				<div class="col-2">
 					<h2>배송지</h2>
 				</div>
 				<div class="col-1">
@@ -162,10 +159,10 @@
 				})
 				$("#modal").html(html);
 				$('.price').each(function(){
-					let price; 
-					price += parseInt($('.price').text());
-					console.log(parseInt(price));
-					$('.total_price').text(parseInt(price) + "원");
+					let pri; 
+					pri += parseInt($('.price').text());
+					console.log(parseInt(pri));
+					$('.total_price').text(parseInt(pri) + "원");
 				});
 				let disCount = parseInt($('#productdisCount').text());
 		        let price = parseInt($('#productPrice').text());
