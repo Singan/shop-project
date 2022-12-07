@@ -139,6 +139,7 @@
 					let string = "";
 					let pri;
 					order.ordersItems.map(orderItem => {
+						let price = orderItem.productPrice -((orderItem.productPrice/100)*orderItem.productDiscount)
 						string+=`<div class="col-1 modal_image">
 							<img src="data:image/jpeg;base64,${orderItem.productThumbnail}">
 						</div>
@@ -151,7 +152,7 @@
 							<h2 id="count">${orderItem.count}</h2>
 						</div>
 						<div class="col-2 modal_contents">
-							<h2 class="price">${orderItem.productPrice} 원</h2>
+							<h2 class="price">${price} 원</h2>
 						</div>`
 					})
 					$("#modal_content").html(string);
