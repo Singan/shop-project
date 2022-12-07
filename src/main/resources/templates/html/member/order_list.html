@@ -80,8 +80,9 @@
 						<img th:src="'data:image/jpeg;base64,'+${orders.getOrdersItems().get(0).getProductThumbnail()}">
 					</div>
 					<div class="col-5 product_order_information">
-						<h2 class="title_btn" th:text="${orders.getOrdersItems().get(0).getProductName()}">제품명</h2>
-						<h2 th:text="${orders.getOrdersItems().get(0).getProductPrice()} +' 원'">가격</h2>
+						<h2 id="productPrice" class="title_btn" th:text="${orders.getOrdersItems().get(0).getProductName()}">제품명</h2>
+						<h2 id="productdisCount" th:text="${orders.getOrdersItems().get(0).getProductPrice()} +' 원'">가격</h2>
+						<h2 id="productdisCount"></h2>
 						<p th:text="${orders.getOrdersItems().get(0).getProductShort()}">간략한 소개</p>
 					</div>
 					<div class="col-1 product_order_information">
@@ -121,7 +122,9 @@
 			ordersList.map(order => {
 				$("#order"+order.orderNo).on("click",function(){
 					let string = "";
+
 					order.ordersItems.map(orderItem => {
+						$('#productdisCount').text(orderItem.ordersItems[0].productDiscount);
 						string+=`<div class="col-1 modal_image">
 							<img src="data:image/jpeg;base64,${orderItem.productThumbnail}">
 						</div>
@@ -134,7 +137,7 @@
 							<h2 id="count">${orderItem.count}</h2>
 						</div>
 						<div class="col-2 modal_contents">
-							<h2 id="price">${orderItem.productPrice}</h2>
+							<h2 class="price">${ordersItem.productPrice} 원</h2>
 						</div>`
 					})
 					$("#modal_content").html(string);
@@ -147,6 +150,27 @@
 
 						$("body").css("overflow","hidden");
 					});
+					let pri;
+					let disCount = parseInt($('#productdisCount').text());
+			        let price = parseInt($('#productPrice').text());
+			        let disPrice;
+			        if(disCount > 0 || disCount != null){
+			            disPrice = price * (1-(disCount/100));
+			            $('#productPrice').text(parseInt(disPrice) + '원');
+			            $('#productdisCount').css('display','none');
+			            $('.price').text(parseInt(disPrice) + '원');
+			            
+			        }else if(disCount <= 0 || disCount == null){
+			            $('#productdisCount').css('display','none');
+			        }
+			        console.log(disPrice);
+			        $('.price').each(function(){
+						
+						pri = parseInt($('.price').text());
+						console.log(parseInt(pri));
+						
+					});
+			        $('.total_price').text(parseInt(pri) + "원");
 				})
 			})
 		})
