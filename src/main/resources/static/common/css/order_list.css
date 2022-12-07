@@ -45,6 +45,9 @@
     color: #a9a9a9;
     position: absolute;
     width: 70%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
 }
 
 .orderContent{
@@ -146,7 +149,7 @@
 .modal_image > h2{
 	font-size: 1.2em;
 }
-.modal_contents > p{
+.modal_contents > p:first-child{
 	width: 90%;
 	font-size: 1.0em;
 	overflow:hidden;
