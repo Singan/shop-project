@@ -85,8 +85,16 @@
 					</div>
 					<div class="col-5 product_order_information">
 						<h2 class="title_btn" th:text="${orders.getOrdersItems().get(0).getProductName()}">제품명</h2>
-						<h2 class="productPrice" th:text="${orders.getOrdersItems().get(0).getProductPrice()} +' 원'">가격</h2>
-						<h2 class="productDisCount" th:text="${orders.getOrdersItems().get(0).getProductDiscount()} +'%'"></h2>
+						<h2 class="productPrice"
+							th:if="${orders.getOrdersItems().get(0).getProductDiscount() >0 ||orders.getOrdersItems().get(0).getProductDiscount()!=null}"
+							th:text="${orders.getOrdersItems().get(0).getProductPrice() * (1 - orders.getOrdersItems().get(0).getProductDiscount()/100)} +' 원'">가격</h2>
+
+						<h2 class="productPrice"
+							th:if="${orders.getOrdersItems().get(0).getProductDiscount() ==0 ||orders.getOrdersItems().get(0).getProductDiscount()==null}"
+							th:text="${orders.getOrdersItems().get(0).getProductPrice()} +' 원'">가
+
+						<h2 th:if="${orders.getOrdersItems().get(0).getProductDiscount() >0 ||orders.getOrdersItems().get(0).getProductDiscount()!=null}"
+							class="productDisCount" th:text="${orders.getOrdersItems().get(0).getProductDiscount()} +'%'"></h2>
 						<p th:text="${orders.getOrdersItems().get(0).getProductShort()}">간략한 소개</p>
 					</div>
 					<div class="col-1 product_order_information">
@@ -123,27 +131,7 @@
 				$(".modal").fadeOut();
 				$("body").css("overflow","auto");
 			});
-			let pri;
-			let disCount = $('.productdisCount');
-			let price = $('.productPrice');
-			let disPrice;
-			if(disCount > 0 || disCount != null){
-				disPrice = price * (1-(disCount/100));
-				$('#productPrice').text(parseInt(disPrice) + '원');
-				$('#productdisCount').css('display','none');
-				$('.price').text(parseInt(disPrice) + '원');
-
-			}else if(disCount <= 0 || disCount == null){
-				$('#productdisCount').css('display','none');
-			}
-			console.log(disPrice);
-			$('.price').each(function(){
-				pri = parseInt($('.price').text());
-				console.log(parseInt(pri));
-			});
-
-
-
+			
 
 			$('.total_price').text(parseInt(pri) + "원");
 			ordersList.map(order => {
