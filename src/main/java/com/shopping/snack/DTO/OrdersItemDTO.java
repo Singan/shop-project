@@ -22,7 +22,7 @@ public class OrdersItemDTO {
         ordersItem.setProduct(product);
         ordersItem.setCount(count);
         ordersItem.setDisCount(this.productDiscount);
-
+        ordersItem.setPrice(this.productPrice);
         return ordersItem;
     }
 
@@ -31,7 +31,7 @@ public class OrdersItemDTO {
         this.productThumbnail = ordersItem.getProduct().getProductThumbnail();
         this.productShort = ordersItem.getProduct().getProductShort();
         this.productName = ordersItem.getProduct().getProductName();
-        this.productPrice = ordersItem.getProduct().getProductPrice();
+        this.productPrice = ordersItem.getPrice();
         this.count = ordersItem.getCount();
         this.productDiscount = ordersItem.getDisCount();
     }
