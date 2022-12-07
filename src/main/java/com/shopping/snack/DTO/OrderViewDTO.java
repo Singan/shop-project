@@ -27,6 +27,9 @@ public class OrderViewDTO {
     private OrdersStatus ordersStatus;
     private LocalDate ordersDate;
     private Long ordersPrice;
+    private String ordersDetailAddress;
+    private String ordersAddress;
+    private Integer ordersZoneCode;
     public OrderViewDTO(Product product){
         productNo = product.getProductNo();
         productThumbnail = product.getProductThumbnail();
@@ -46,6 +49,10 @@ public class OrderViewDTO {
         this.ordersStatus = orders.getOrdersStatus();
         this.ordersDate = orders.getOrdersDate();
         this.ordersPrice = orders.getOrdersPrice();
+        this.ordersDetailAddress = orders.getOrdersDetailAddress();
+        this.ordersAddress = orders.getOrdersAddress();
+        this.ordersPrice = orders.getOrdersPrice();
+        ordersZoneCode = orders.getOrdersZoneCode();
         ordersItems = orders.getOrdersItems().stream().map(ordersItem -> new OrdersItemDTO(ordersItem)).collect(Collectors.toList());
     }
 }
