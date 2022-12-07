@@ -87,12 +87,13 @@
 						<h2 class="title_btn" th:text="${orders.getOrdersItems().get(0).getProductName()}">제품명</h2>
 						<h2 class="productPrice"
 							th:if="${orders.getOrdersItems().get(0).getProductDiscount() >0 ||orders.getOrdersItems().get(0).getProductDiscount()!=null}"
-							th:text="${orders.getOrdersItems().get(0).getProductPrice() * (1 - orders.getOrdersItems().get(0).getProductDiscount()/100)} +' 원'">가격</h2>
+							th:text="${orders.getOrdersItems().get(0).getProductPrice() -
+							((orders.getOrdersItems().get(0).getProductPrice()/100)* orders.getOrdersItems().get(0).getProductDiscount())} +' 원'">가격</h2>
 
 						<h2 class="productPrice"
 							th:if="${orders.getOrdersItems().get(0).getProductDiscount() ==0 ||orders.getOrdersItems().get(0).getProductDiscount()==null}"
 							th:text="${orders.getOrdersItems().get(0).getProductPrice()} +' 원'">가
-
+							((o.getProductPrice()/100) * o.getProductDiscount())
 						<h2 th:if="${orders.getOrdersItems().get(0).getProductDiscount() >0 ||orders.getOrdersItems().get(0).getProductDiscount()!=null}"
 							class="productDisCount" th:text="${orders.getOrdersItems().get(0).getProductDiscount()} +'%'"></h2>
 						<p th:text="${orders.getOrdersItems().get(0).getProductShort()}">간략한 소개</p>
