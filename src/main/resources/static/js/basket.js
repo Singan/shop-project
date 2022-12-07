@@ -7,7 +7,6 @@ $(document).ready(function() {
     let number;
     let num;
 	let id = 1;
-	let asd = []
 	let allCheck = $("input[name=all_checkbox_button]");
 	let checks = $("input[name=checkbox_button]");
 	let amount = $(".number");
@@ -23,18 +22,21 @@ $(document).ready(function() {
     	count += 1;
     }
     plus.click(function(event) {
+    	let col = String(plus.index(this));
     	let price_ind = $('.price > p').index();
+    	let pri = parseInt($('#price_' + col).text());
     	btn = event.target.id;
-
+    	
     	number = $("#"+btn).next();
     	num = parseInt(number.val());
     	num += 1;
         number.val(num);
-        //sum = sum + (price * num);
-        console.log(parseInt(btn));
-        console.log(sum);
+        sum = sum + pri;
+        total.text(sum);
     });
     minus.click(function(event) {
+    	let col = String(minus.index(this));
+    	let pri = parseInt($('#price_' + col).text());
     	btn = event.target.id;
     	number = $("#"+btn).prev();
     	num = parseInt(number.val());
@@ -42,7 +44,8 @@ $(document).ready(function() {
 		if(num > 1){
             num -= 1;
             number.val(num);
-            //sum = sum -;
+            sum = sum - pri;
+        total.text(sum);
         }else{
             num = 1;
 
@@ -51,10 +54,7 @@ $(document).ready(function() {
 
     
 
-	$('input[name="checkbox_button"]').each(function() {
-		console.log(this);
-	    this.checked = true; 
- 	});
+	
  	
  	$(".price > p")
 	    .attr("id", function(arr){
@@ -102,7 +102,6 @@ $(document).ready(function() {
 			let amo = $("#amount_"+i).val();
 			let b = parseInt(a);
 			let num = parseInt(amo);
-			asd.push(i);
 			sum = isNaN(b) ? sum : sum + (b * num);
 		}
 
@@ -125,7 +124,10 @@ $(document).ready(function() {
 		console.log(e.target.id);
 		total.text(sum);
 	});
-
+	$('input[name="checkbox_button"]').each(function() {
+		console.log(this);
+	    this.checked = true; 
+ 	});
 
 });
 
