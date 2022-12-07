@@ -42,6 +42,6 @@ public class Orders {
     private String ordersName;
     @Column(name = "orders_date")
     private LocalDate ordersDate;
-    @Column(name  ="orders_zone_code")
+    @Column(name  ="orders_price")
     private Long ordersPrice;
 }
