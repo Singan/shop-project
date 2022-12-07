@@ -111,7 +111,7 @@
 			ordersList.map(order => {
 				$("#order"+order.orderNo).on("click",function(){
 					let string = "";
-					order.orderItems.map(orderItem => {
+					order.ordersItems.map(orderItem => {
 						string+=`<div class="col-1 modal_image">
 							<img src="data:image/jpeg;base64,${orderItem.productThumbnail}">
 						</div>
