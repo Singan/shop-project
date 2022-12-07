@@ -38,9 +38,12 @@ public class OrderRequestDTO {
         orders.setOrdersStatus(OrdersStatus.배송전);
         Long price = 0L;
         for (OrdersItemDTO o : ordersItems) {
+            System.out.println("할인율 :" +o.getProductDiscount());
+            System.out.println("할인율/100 :" + (1 - (o.getProductDiscount()/100)));
+            System.out.println("가격 :" +o.getProductPrice() *(1 - (o.getProductDiscount()/100)));
             price += (o.getProductPrice() * (1 - (o.getProductDiscount() / 100))) * o.getCount();
         }
-        System.out.println(price);
+        System.out.println("가격"+price);
         orders.setOrdersPrice(price);
         return orders;
     }

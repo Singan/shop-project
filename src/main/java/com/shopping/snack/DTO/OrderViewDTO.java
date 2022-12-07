@@ -48,7 +48,6 @@ public class OrderViewDTO {
         this.orderNo = orders.getOrdersNo();
         this.ordersStatus = orders.getOrdersStatus();
         this.ordersDate = orders.getOrdersDate();
-        this.ordersPrice = orders.getOrdersPrice();
         this.ordersDetailAddress = orders.getOrdersDetailAddress();
         this.ordersAddress = orders.getOrdersAddress();
         this.ordersPrice = orders.getOrdersPrice();
