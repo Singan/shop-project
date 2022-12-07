@@ -14,6 +14,7 @@ public class BasketDTO {
     private String productThumbnail;
     private String productShort;
     private Integer productCount;
+    private Long productDiscount;
     public BasketDTO(Basket basket){
         this.productName = basket.getProduct().getProductName();
         this.productNo = basket.getProduct().getProductNo();
@@ -22,5 +23,6 @@ public class BasketDTO {
         this.productShort = basket.getProduct().getProductShort();
         this.productCount = basket.getBasketCount();
         this.basketNo = basket.getBasketNo();
+        this.productDiscount = basket.getProduct().getProductDiscount();
     }
 }

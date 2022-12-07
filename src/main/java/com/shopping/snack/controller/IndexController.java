@@ -22,6 +22,11 @@ public class IndexController {
         model.addAttribute("productList",productService.productList());
         return "index.html";
     }
+    @GetMapping("/luckbox")
+    public String index(){
+
+        return "product/lucky_box.html";
+    }
     @GetMapping("/loginCheck")
     @ResponseBody
     public Object indexPost(){
