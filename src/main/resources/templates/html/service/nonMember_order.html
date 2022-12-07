@@ -133,7 +133,6 @@
 				$("#ordersDate").text(orders.ordersDate)
 				$("#productImage").attr("src","data:image/png;base64,"+orders.ordersItems[0].productThumbnail)
 				$("#productCount").text(orders.ordersItems[0].count+"개")
-				$('.total_price').text(orders.ordersPrice + "원");
 				$('#productdisCount').text(orders.ordersItems[0].productDiscount);
 				console.log(orders)
 				let html="";
@@ -144,17 +143,22 @@
 					<div class="col-4 modal_contents">
 						<h2>${ordersItem.productName}</h2>
 						<p>${ordersItem.productShort}</p>
+						<p class="user_address"></p>
 					</div>
 					<div class="col-1 modal_contents">
 						<h2>${ordersItem.count}개</h2>
 					</div>
 					<div class="col-2 modal_contents">
-						<h2>${ordersItem.productPrice} 원</h2>
+						<h2 class="price">${ordersItem.productPrice} 원</h2>
 					</div>`
 
 				})
 				$("#modal").html(html);
-
+				$('.price').each(function(){
+					let price; 
+					price += parseInt($('.price').text());
+					console.log(parseInt(price));
+				});
 				let disCount = parseInt($('#productdisCount').text());
 		        let price = parseInt($('#productPrice').text());
 		        let disPrice;
@@ -162,6 +166,8 @@
 		            disPrice = price * (1-(disCount/100));
 		            $('#productPrice').text(parseInt(disPrice) + '원');
 		            $('#productdisCount').css('display','none');
+		            $('.price').text(parseInt(disPrice) + '원');
+		            $('.total_price').text(orders.ordersPrice + "원");
 		        }else if(disCount <= 0 || disCount == null){
 		            $('#productdisCount').css('display','none');
 		        }
