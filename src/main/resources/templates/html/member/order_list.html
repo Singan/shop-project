@@ -43,7 +43,24 @@
 		        	<h2>가격</h2>
 		        </div>
 		    </div>
+
+		    <div class="col-12 modal_layout">
+		        <div class="col-1 modal_image">
+		        	<img src="/img/snack_photo1.png">
+		        </div>
+		        <div class="col-4 modal_contents">
+		        	<h2>제품명</h2>
+		        	<p>간략한 소개</p>
+		        </div>
+		        <div class="col-1 modal_contents">
+		        	<h2>1개</h2>
+		        </div>
+		        <div class="col-2 modal_contents">
+		        	<h2>37000원</h2>
+		        </div>
+
 		    <div class="col-12 modal_layout" id="modal_content">
+
 
 		    </div>
 		</div>
@@ -81,6 +98,7 @@
 						<h2 class="title_btn" th:text="${orders.getOrdersItems().get(0).getProductName()}">제품명</h2>
 						<h2 th:text="${orders.getOrdersItems().get(0).getProductPrice()} +' 원'">가격</h2>
 						<p th:text="${orders.getOrdersItems().get(0).getProductShort()}">간략한 소개</p>
+						<p class="user_address">경기도 광주시</p>
 					</div>
 					<div class="col-1 product_order_information">
 						<h2 th:text="${orders.getOrdersStatus()}">배송중</h2>
