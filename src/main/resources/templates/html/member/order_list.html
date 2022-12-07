@@ -86,7 +86,7 @@
 					<div class="col-5 product_order_information">
 						<h2 class="title_btn" th:text="${orders.getOrdersItems().get(0).getProductName()}">제품명</h2>
 						<h2 id="productPrice" th:text="${orders.getOrdersItems().get(0).getProductPrice()} +' 원'">가격</h2>
-						<h2 id="productdisCount"></h2>
+						<h2 id="productDisCount" th:text="${orders.getOrdersItems().get(0).getProductDiscount()} +'%'"></h2>
 						<p th:text="${orders.getOrdersItems().get(0).getProductShort()}">간략한 소개</p>
 					</div>
 					<div class="col-1 product_order_information">
@@ -128,7 +128,6 @@
 					let string = "";
 
 					order.ordersItems.map(orderItem => {
-						$('#productdisCount').text(orderItem.ordersItems[0].productDiscount);
 						string+=`<div class="col-1 modal_image">
 							<img src="data:image/jpeg;base64,${orderItem.productThumbnail}">
 						</div>

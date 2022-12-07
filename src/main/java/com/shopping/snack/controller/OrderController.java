@@ -20,27 +20,29 @@ import javax.servlet.http.HttpSession;
 public class OrderController {
     private final OrderService orderService;
     private final HttpSession httpSession;
+
     @PostMapping("/product/order")
     @ResponseBody
-    public Long order(@RequestBody OrderRequestDTO orderRequestDTO){
+    public Long order(@RequestBody OrderRequestDTO orderRequestDTO) {
 
-        Long ordersNo ;
+        Long ordersNo;
         SessionMemberDTO member = (SessionMemberDTO) httpSession.getAttribute("user");
-        if(member!=null){
-            ordersNo = orderService.orderInsert(orderRequestDTO,member.createMember());
-        }else{
+        if (member != null) {
+            ordersNo = orderService.orderInsert(orderRequestDTO, member.createMember());
+        } else {
             ordersNo = orderService.orderInsert(orderRequestDTO);
         }
         return ordersNo;
     }
+
     @GetMapping("/view/orders")
-    public String viewsOrdersGo(){
+    public String viewsOrdersGo() {
         return "html/service/nonMember_order";
     }
 
     @PostMapping("/view/orders")
     @ResponseBody
-    public OrderViewDTO viewsOrders(@RequestParam(name = "no")Long no){
+    public OrderViewDTO viewsOrders(@RequestParam(name = "no") Long no) {
 
         OrderViewDTO orderViewDTO = new OrderViewDTO(orderService.findOrders(no));
         return orderViewDTO;
