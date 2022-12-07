@@ -23,27 +23,32 @@ public class OrderRequestDTO {
     private String ordersAddress;
     private Integer ordersZoneCode;
     private String ordersName;
-    public Orders getOrders(){
-      Orders orders = new Orders();
-      orders.setOrdersItems(ordersItems.stream().map(ordersItemDTO -> {
-          return ordersItemDTO.getOrdersItem();
-      }).collect(Collectors.toList()));
-      orders.setOrdersPhone(ordersPhone);
-      orders.setOrdersAddress(ordersAddress);
-      orders.setOrdersDetailAddress(ordersDetailAddress);
-      orders.setOrdersZoneCode(ordersZoneCode);
-      orders.setOrdersName(ordersName);
-      orders.setOrdersDate(LocalDate.now());
-      orders.setOrdersStatus(OrdersStatus.배송전);
-      Long price =0L;
-        for (OrdersItemDTO o:ordersItems) {
-            price +=(o.getProductPrice() * (1- (o.getProductDiscount()/100)))*o.getCount();
+
+    public Orders getOrders() {
+        Orders orders = new Orders();
+        orders.setOrdersItems(ordersItems.stream().map(ordersItemDTO -> {
+            return ordersItemDTO.getOrdersItem();
+        }).collect(Collectors.toList()));
+        orders.setOrdersPhone(ordersPhone);
+        orders.setOrdersAddress(ordersAddress);
+        orders.setOrdersDetailAddress(ordersDetailAddress);
+        orders.setOrdersZoneCode(ordersZoneCode);
+        orders.setOrdersName(ordersName);
+        orders.setOrdersDate(LocalDate.now());
+        orders.setOrdersStatus(OrdersStatus.배송전);
+        Long price = 0L;
+        for (OrdersItemDTO o : ordersItems) {
+            price += (o.getProductPrice() * (1 - (o.getProductDiscount() / 100))) * o.getCount();
         }
+        System.out.println(price);
         orders.setOrdersPrice(price);
-      return orders;
-    };
-    public Orders getOrders(Member member){
-        Orders orders =getOrders();
+        return orders;
+    }
+
+
+
+    public Orders getOrders(Member member) {
+        Orders orders = getOrders();
         orders.setOrdersMember(member);
         return orders;
     }
