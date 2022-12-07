@@ -43,5 +43,5 @@ public class Orders {
     @Column(name = "orders_date")
     private LocalDate ordersDate;
     @Column(name  ="orders_zone_code")
-    private Integer ordersPrice;
+    private Long ordersPrice;
 }

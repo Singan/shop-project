@@ -21,6 +21,7 @@ public class OrderViewDTO {
     private Integer productCount;
     private Long productPrice;
     private String productShort;
+    private Long productDiscount;
     private Long orderNo;
     private List<OrdersItemDTO> ordersItems;
     private OrdersStatus ordersStatus;
@@ -32,6 +33,7 @@ public class OrderViewDTO {
         productDetail = product.getProductDetail();
         productPrice = product.getProductPrice();
         productShort = product.getProductShort();
+        productDiscount = product.getProductDiscount();
         productCount = 1;
     }
     public OrderViewDTO(Product product,Integer count){

@@ -66,6 +66,8 @@
 						<h2 th:text="${product.getProductPrice()} + ' 원'">가격</h2>
 						<p th:text="${product.getProductShort()}">간략한 소개</p>
 						<p class="productNo" th:text="${product.getProductNo()}"></p>
+						<input class="productPrice" th:value="${product.getProductPrice()}">
+						<input class="productDiscount" th:value="${product.getProductDiscount()}">
 					</div>
 					<div class="col-2 product_order_quantity">
 						<div class="col-12 quantity">
@@ -165,6 +167,9 @@
 		let ordersItem =[];
 		let productNoList =$(".productNo");
 		let countList =$(".number");
+		let priceList =$(".productPrice");
+		let discountList =$(".productDiscount");
+
 		function modal(data){
 		    let order_num = $('.order_number');
 		    order_num.text("주문번호는 " + data + "입니다");
@@ -177,9 +182,13 @@
 		for(let i= 0;i<productNoList.length;i++){
 			let no = Number(productNoList[i].innerText);
 			let count = Number(countList[i].value);
+			let price = Number(priceList[i].value);
+			let discount = Number(discountList[i].value)
 			ordersItem.push({
 				productNo:no,
-				count:count
+				count:count,
+				productPrice:price,
+				productDiscount:discount,
 			})
 		}
 
