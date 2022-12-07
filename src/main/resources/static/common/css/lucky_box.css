@@ -1,0 +1,26 @@
+.price_content{	
+	position: absolute;
+    bottom: 80px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+}
+.price{
+	font-size: 1.3em;
+    font-weight: 600;
+    margin-top: 10px;
+    text-decoration: line-through;
+    color: rgb(233, 233, 233);
+}
+.discount_price{
+	margin-top: 5px;
+    font-size: 1.5em;
+    color: #333;
+}
+.discount{
+	color: #a9a9a9;
+    font-size: 1.2em;
+}
+#lucky_box_purchase, #lucky_box_basket{
+	margin-right: 20px;
+}
