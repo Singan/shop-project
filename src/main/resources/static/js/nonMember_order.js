@@ -11,4 +11,21 @@ $(document).ready(function(){
         	$(".modal").fadeOut();
         	$("body").css("overflow","auto");
     });
+
+        
+        $('.numberButton').click(function(){
+            let disCount = parseInt($('#productdisCount').text());
+            let price = parseInt($('#productPrice').text());
+            let disPrice;
+            if(disCount > 0){
+                disPrice = price * (1-(disCount/100));
+                console.log(disPrice);
+            }else if(disCount <= 0){
+                $('#productdisCount').css('display','none');
+            }
+            console.log(disPrice);
+        });
+
 });
+
+
