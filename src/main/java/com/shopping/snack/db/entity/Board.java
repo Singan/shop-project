@@ -15,6 +15,7 @@ public class Board {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long boardNo;
 
+
     @JoinColumn(name = "board_writer")
     @ManyToOne(fetch = FetchType.LAZY)
     private Member boardWriter;

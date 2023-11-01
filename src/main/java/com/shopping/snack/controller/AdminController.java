@@ -32,6 +32,7 @@ public class AdminController {
         }
         return "html/admin/notice_insert.html";
     }
+
     @PostMapping("/notice/insert")
     @ResponseBody
     public Long noticeInsert(@RequestBody BoardDTO boardDTO) throws IOException{

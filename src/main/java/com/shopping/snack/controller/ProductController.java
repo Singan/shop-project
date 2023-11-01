@@ -91,6 +91,7 @@ public class ProductController {
     public String categorySelect(String category , Model model) throws IllegalArgumentException{
         model.addAttribute("category",category);
         return "html/product/content_list.html";
+
     }
     @GetMapping("/product/order")
     public String orderGo(Model model, Long[] no ,@RequestParam(defaultValue = "1") Integer[] count){

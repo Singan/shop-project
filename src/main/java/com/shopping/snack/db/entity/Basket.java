@@ -18,6 +18,7 @@ public class Basket {
     @ManyToOne(fetch = FetchType.LAZY)
     private Member member;
 
+
     @JoinColumn(name="basket_product")
     @ManyToOne(fetch = FetchType.LAZY)
     private Product product;

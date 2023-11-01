@@ -24,6 +24,7 @@ public class ProductService {
         return productRepository.productInsert(product);
     }
 
+
     public Long productInsert(ProductInsertDTO productInsertDTO,String thumbnail){
         Product product=productInsertDTO.getProduct();
         product.setProductThumbnail(thumbnail);

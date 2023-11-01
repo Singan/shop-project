@@ -23,6 +23,7 @@ public class BasketService {
         Product product = productService.productFind(no);
         basket.setProduct(product);
         List<BasketDTO> basketDTOList = member.getBasketList();
+
         List<Basket> basketList = basketRepository.findBasket(product,realMember);
         if(basketList.isEmpty()){
             basket.setBasketCount(1);

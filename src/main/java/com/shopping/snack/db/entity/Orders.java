@@ -23,6 +23,7 @@ public class Orders {
     @Column(name = "orders_status")
     private OrdersStatus ordersStatus;
 
+
     @JoinColumn(name = "orders_member")
     @ManyToOne(fetch = FetchType.LAZY )
     private Member ordersMember;

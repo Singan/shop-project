@@ -18,6 +18,7 @@ public class BoardService {
 
     public Long boardInsert(BoardDTO boardDTO, Member member){
 
+
         return boardRepository.boardInsert(boardDTO.boardCreate(member));
     }
 

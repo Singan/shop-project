@@ -19,6 +19,8 @@ public class Reply {
     @ManyToOne(fetch = FetchType.LAZY)
     private Member replyWriter;
 
+
+
     @JoinColumn(name = "reply_product")
     @ManyToOne(fetch = FetchType.LAZY)
     private Product replyProduct;

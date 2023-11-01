@@ -22,6 +22,7 @@ public class Member {
 
     @Column(name = "member_id")
     private String memberId;
+
     @Column(name = "member_password")
     private String memberPassword;
     @Column(name = "member_birth")

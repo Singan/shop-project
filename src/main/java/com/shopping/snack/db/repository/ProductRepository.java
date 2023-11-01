@@ -17,6 +17,7 @@ import java.util.List;
 public class ProductRepository {
     private final EntityManager em;
 
+
     @Transactional
     public Long productInsert(Product product){
         em.persist(product);

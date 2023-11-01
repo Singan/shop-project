@@ -22,6 +22,7 @@ public class IndexController {
         model.addAttribute("productList",productService.productList());
         return "index.html";
     }
+
     @GetMapping("/luckybox")
     public String index(){
 

@@ -15,6 +15,7 @@ import java.util.List;
 @Transactional(readOnly = true)
 public class BoardRepository {
     private final EntityManager em;
+
     @Transactional
     public Long boardInsert(Board board){
 

@@ -25,6 +25,7 @@ public class MemberController {
         return "html/member/join.html";
     }
 
+
     @PostMapping("/member/join")
     @ResponseBody
     public Long join(@RequestBody JoinDTO joinDTO){

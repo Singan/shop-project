@@ -17,6 +17,7 @@ public class MemberService {
         return member.getMemberNo();
     }
     public Member findMember(LoginDTO loginDTO){
+
         return memberRepository.findMember(loginDTO.getId());
     }
 

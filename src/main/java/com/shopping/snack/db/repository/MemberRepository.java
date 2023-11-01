@@ -45,7 +45,7 @@ public class MemberRepository {
                     .setParameter("name", name).
                     getSingleResult();
         } catch (Exception e) {
-            str = "아이디를 찾을 수 없습니다.";
+            throw new RuntimeException("없는 아이디입니다.");
         }
         return str;
     }
@@ -60,5 +60,8 @@ public class MemberRepository {
         m.setMemberImage(updateDTO.getProfileImage());
         m.setMemberEmail(updateDTO.getEmail());
         return m;
+    public Member findMember(Member member){
+        return em.createQuery("select m from Member m where m.memberId = :id",Member.class).setParameter(
+                "id",member.getMemberId())).getSingleResult();
     }
 }
